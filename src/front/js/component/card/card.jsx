@@ -1,11 +1,11 @@
 import React from "react";
-import Mojito from "../../img/Mojito.jpg";
+import Mojito from "../../../img/Mojito.jpg";
 import cssCard from "./cssCard.css";
-import BirthdayIcon from "../../img/BirthdayIcon.png";
-import GenderIcon from "../../img/GenderIcon.png";
-import RazaIcon from "../../img/razaIcon.png";
-import IconUbic from "../../img/IconUbicacion.png";
-import IconHearth from "../../img/IconHearth.png";
+import BirthdayIcon from "../../../img/BirthdayIcon.png";
+import GenderIcon from "../../../img/GenderIcon.png";
+import RazaIcon from "../../../img/razaIcon.png";
+import IconUbic from "../../../img/IconUbicacion.png";
+import IconHearth from "../../../img/IconHearth.png";
 
 export const Card = () => {
   return (
