@@ -17,8 +17,7 @@ a {
 
 #muevete {
   display: flex;
-  flex-wrap: nowrap;
-  padding: 0 1%;
+  padding: 0 3%;
 }
 
 #sacameelpadding {
