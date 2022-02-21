@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
+
+.card {
+  margin-left: 40%;
+  position: relative;
+  display: block;
+  margin-top: 10rem;
+  width: 15rem;
+  background-color: #faf4f7;
+  border-radius: 1rem;
+  font-family: "Alegreya Sans", sans-serif;
+  text-align: center;
+}
+.card-body {
+  margin-top: 3.3rem;
+}
+#cardphoto {
+  top: -28%;
+  left: 17%;
+  position: absolute;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 10rem;
+  height: 10rem;
+}
+.card-text {
+  width: 25ch;
+}
+.IconsAndDescription {
+  margin-bottom: 1rem;
+}
+.IconsCard {
+  margin-bottom: 1rem;
+}
+.CaractIcon {
+  width: 2rem;
+  height: 2rem;
+}
+.IconsDescription {
+  font-size: 0.7rem;
+}
+.btn {
+  background-color: #f8d2c3;
+  color: black;
+  border: none;
+}
+.FavButton {
+  top: 70%;
+  left: 85%;
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 122, 122, 1) 50%,
+    rgba(255, 0, 0, 1) 100%
+  );
+  width: 2.9rem;
+  height: 2.9rem;
+}
+#hearthbutton {
+  margin-top: 0.4rem;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+.localication {
+  margin-top: 1rem;
+  display: block;
+}
+.IconUbic {
+  width: 0.7rem;
+  height: 0.9rem;
+}
