@@ -1,6 +1,6 @@
 import React from "react";
 import Mojito from "../../img/Mojito.jpg";
-import  "../../styles/cssCard.css";
+import  "../../styles/Card.css";
 import BirthdayIcon from "../../img/BirthdayIcon.png";
 import GenderIcon from "../../img/GenderIcon.png";
 import RazaIcon from "../../img/razaIcon.png";
