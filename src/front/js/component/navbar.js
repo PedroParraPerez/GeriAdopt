@@ -7,53 +7,64 @@ import PropTypes from "prop-types";
 export const Navbar = (props) => {
   return (
     <>
-      <nav className="navbar navbar-light">
+      <nav className="navbar navbar-expand-md navbar-light" id="muevete">
         <img
           className="logoNav"
           src={Logo_GeriAdopt_2}
           alt="Responsive image"
         />
-        <a className="navbar-brand" href="#">
+
+        <a className="navbar-brand" id="sacameelpadding" href="#">
           GeriAdopt
         </a>
 
-        <div className="container">
-          <Link to="/">
-            <span className="quienesSomos">Quienes Somos</span>
-          </Link>
-          <Link to="/demo">
-            <span className="tuMatch">Encuentra tu Match</span>
-          </Link>
-          <Link to="/demo">
-            <span className="protectoras">Protectoras</span>
-          </Link>
-          <Link to="/demo">
-            <span className="blog">Blog de Noticias</span>
-          </Link>
-          <Link to="/demo">
-            <span className="contacto">Contacto</span>
-          </Link>
-          <div className="cointainerDos">
-            <Link to="/demo">
-              <span className="iniciar">Iniciar Sesión</span>
-            </Link>
+        <button
+          type="button"
+          className="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#MenuNavegacion"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-            <Link to="/demo">
-              <span className="registro">Registrate</span>
-            </Link>
-          </div>
-
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+        <div id="MenuNavegacion" className="collapse navbar-collapse">
+          <ul className="navbar-nav ms-3 enlaces">
+            <li className="nav-item">
+              <Link to="/">
+                <span classNameName="quienesSomos">Quienes Somos</span>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/demo">
+                <span classNameName="tuMatch">Encuentra tu Match</span>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/demo">
+                <span classNameName="protectoras">Protectoras</span>
+              </Link>
+            </li>
+            <li className="nav-item dropdown">
+              <Link to="/demo">
+                <span classNameName="blog">Blog de Noticias</span>
+              </Link>
+            </li>
+            <li className="nav-item dropdown">
+              <Link to="/demo">
+                <span classNameName="contacto">Contacto</span>
+              </Link>
+            </li>
+            <li className="nav-item dropdown">
+              <Link to="/demo">
+                <span classNameName="iniciar">Iniciar Sesión</span>
+              </Link>
+            </li>
+            <li className="nav-item dropdown">
+              <Link to="/demo">
+                <span classNameName="registro">Registrate</span>
+              </Link>
+            </li>
+          </ul>
         </div>
       </nav>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
