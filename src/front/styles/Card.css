@@ -8,6 +8,12 @@
   border-radius: 1rem;
   font-family: "Alegreya Sans", sans-serif;
   text-align: center;
+  margin-top: 10rem;
+  margin-right: 5rem;
+}
+.cards{
+  display: flex;
+  margin: auto;
 }
 .card-body {
   margin-top: 3.3rem;
