@@ -1,10 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
 
 .card {
-  margin-left: 40%;
   position: relative;
   display: block;
-  margin-top: 10rem;
   width: 15rem;
   background-color: #faf4f7;
   border-radius: 1rem;
@@ -64,7 +62,7 @@
   width: 2.2rem;
   height: 2.2rem;
 }
-.localication {
+.location {
   margin-top: 1rem;
   display: block;
 }

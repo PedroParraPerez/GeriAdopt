@@ -55,7 +55,7 @@ export const Card = () => {
           <div className="FavButton">
             <img src={IconHearth} alt="FavButton" id="hearthbutton" />
           </div>
-          <span className="localication">
+          <span className="location">
             <img src={IconUbic} className="IconUbic" /> Madrid
           </span>
         </div>
