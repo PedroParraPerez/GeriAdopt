@@ -1,0 +1,40 @@
+.foot {
+  background-color: #686696;
+}
+.colum1 {
+  padding-left: 3%;
+  padding-bottom: 1%;
+  padding-right: 3%;
+}
+.colum2 {
+  text-align: right;
+  padding-top: 2%;
+}
+
+.colum3 {
+  text-align: right;
+}
+.chapi {
+  width: 200px;
+  height: 170px;
+}
+p {
+  color: white;
+  font-size: small;
+}
+
+.menufoot {
+  color: white;
+}
+.perrete {
+  height: auto;
+  width: 180px;
+  margin-top: -157px;
+}
+.nombrefoot {
+  color: white;
+  padding-top: 15%;
+}
+.logogeri {
+  display: flex;
+}
