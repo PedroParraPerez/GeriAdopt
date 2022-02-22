@@ -1,20 +1,15 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
+import React from "react";
 
 import "../../styles/adopter.css";
 
-import { Navbar } from "../component/navbar.js";
 import { Card } from "../component/card.js";
 import GirlPhoto from "../../img/girlphoto.jpg";
 import EditIcon from "../../img/editIcon.png";
 import ImgTitleFavs from "../../img/imagetitlefavs.png";
 
 export const Adopter = () => {
-  const { store, actions } = useContext(Context);
-
   return (
     <>
-      <Navbar />
       <div className="container-fluid">
         <div className="row adopterprofile">
           <div className="col-md-5 imgprofile">
