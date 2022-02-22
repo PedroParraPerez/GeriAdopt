@@ -1,6 +1,6 @@
 import React from "react";
 import Mojito from "../../img/Mojito.jpg";
-import  "../../styles/Card.css";
+import "../../styles/Card.css";
 import BirthdayIcon from "../../img/BirthdayIcon.png";
 import GenderIcon from "../../img/GenderIcon.png";
 import RazaIcon from "../../img/razaIcon.png";
@@ -10,13 +10,13 @@ import IconHearth from "../../img/IconHearth.png";
 export const Card = () => {
   return (
     <>
-      <div className="card">
+      <div className="card carddogs">
         <img src={Mojito} id="cardphoto" />
-        <div className="card-body">
+        <div className="card-body dogcardsbody">
           <h5 className="card-title">
             <b>Mojito</b>
           </h5>
-          <p className="card-text">
+          <p className="card-text textcarddog">
             Solo con su nombre se pueden hacer una idea de lo dulce que es...
           </p>
           <div className="IconsAndDescription">

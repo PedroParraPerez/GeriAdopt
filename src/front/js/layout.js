@@ -10,6 +10,7 @@ import injectContext from "./store/appContext";
 import { Footer } from "./component/footer.js";
 import { Adopter } from "./pages/adopter";
 import { Navbar } from "./component/navbar";
+import { AllDogsList } from "./pages/alldogslist";
 
 //create your first component
 const Layout = () => {
@@ -28,6 +29,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/adopter">
               <Adopter />
+            </Route>
+            <Route exact path="/alldogslist">
+              <AllDogsList />
             </Route>
             <Route exact path="/demo">
               <Demo />
