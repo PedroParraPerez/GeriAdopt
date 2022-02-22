@@ -8,7 +8,7 @@
   border-radius: 1rem;
   font-family: "Alegreya Sans", sans-serif;
   text-align: center;
-
+  margin-right: 1rem;
 }
 
 .card-body {
@@ -24,7 +24,7 @@
   height: 10rem;
 }
 .card-text {
-  width: 25ch;
+  width: 90%;
 }
 .IconsAndDescription {
   margin-bottom: 1rem;

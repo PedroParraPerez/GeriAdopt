@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
+
+.adopterInfo {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: large;
+  width: 70%;
+  padding: 1rem;
+}
+.imgprofile {
+  display: flex;
+  justify-content: flex-end;
+
+  padding-right: 5rem;
+}
+.adopterphoto {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.adopterInfo {
+  vertical-align: middle;
+  background-color: #faf4f7;
+}
+.editbutton {
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
+  padding: 1rem 1rem 0 0;
+}
+.editbutton:hover {
+  cursor: pointer;
+}
+.prymaryinfo {
+  padding-left: 1rem;
+}
+.titleFavs {
+  position: relative;
+  display: flex;
+  margin-top: 5rem;
+  padding-left: 3rem;
+  border-bottom: 0.3rem solid orange;
+  font-family: "Alegreya Sans", sans-serif;
+}
+.ImgTitleFavs {
+  position: absolute;
+  width: 8rem;
+  top: -4rem;
+}
+.cardList {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+}

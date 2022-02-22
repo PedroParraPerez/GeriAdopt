@@ -8,6 +8,7 @@ import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
 import { Footer } from "./component/footer.js";
+import { Adopter } from "./pages/adopter";
 
 //create your first component
 const Layout = () => {
@@ -22,6 +23,9 @@ const Layout = () => {
           <Switch>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/adopter">
+              <Adopter />
             </Route>
             <Route exact path="/demo">
               <Demo />
