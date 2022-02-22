@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300&family=Comforter&family=Josefin+Sans:ital,wght@1,500&family=Sansita+Swashed:wght@300&family=Ubuntu:wght@300&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400&family=Comforter&family=Josefin+Sans:ital,wght@1,500&family=Sansita+Swashed:wght@300&family=Ubuntu:wght@300&display=swap");
 .containerHeader {
   display: flex;
 }
@@ -42,6 +41,26 @@
   display: flex;
 }
 
-.beneficios {
+.benefits {
+  font-family: "Alegreya Sans", 400 sans-serif;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.divIconText {
+  text-align: center;
+}
+
+.middleBarIcon {
+  width: 25%;
+  height: 10%;
+  margin: 0 auto;
+}
+
+.textmiddleBar {
+  margin-top: 5%;
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 25px;
+  font-weight: bolder;
   text-align: center;
 }
