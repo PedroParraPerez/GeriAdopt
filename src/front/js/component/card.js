@@ -21,29 +21,29 @@ export const Card = () => {
           </p>
           <div className="IconsAndDescription">
             <div className="row IconsCard">
-              <div className="col-4">
+              <div className="col-md-4">
                 <img src={BirthdayIcon} alt="Birthday" className="CaractIcon" />
               </div>
-              <div className="col-4">
+              <div className="col-md-4">
                 <img src={RazaIcon} alt="breed" className="CaractIcon" />
               </div>
-              <div className="col-4">
+              <div className="col-md-4">
                 <img src={GenderIcon} alt="gender" className="CaractIcon" />
               </div>
             </div>
-            <div className="row IconsDescription">
-              <div className="col-4">
-                <span>
+            <div className="row Icons_text">
+              <div className="col-md-4">
+                <span className="iconTexInv">
                   <b>Date</b>
                 </span>
               </div>
-              <div className="col-4">
-                <span>
+              <div className="col-md-4">
+                <span className="iconTexInv">
                   <b>Breed</b>
                 </span>
               </div>
-              <div className="col-4">
-                <span>
+              <div className="col-md-4">
+                <span className="iconTexInv">
                   <b>Gender</b>
                 </span>
               </div>
