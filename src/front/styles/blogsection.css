@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100&family=Source+Code+Pro:wght@200&family=Vollkorn:ital,wght@1,500&display=swap");
+
+.perrogafasblog {
+  height: 500;
+  width: 1000px;
+  display: block;
+  margin: auto;
+  border-radius: 5%;
+}
+
+.tituloblog1 {
+  font-family: "Vollkorn", serif;
+  text-align: center;
+}
