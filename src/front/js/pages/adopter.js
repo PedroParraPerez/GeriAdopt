@@ -32,21 +32,33 @@ export const Adopter = () => {
               <div className="row">
                 <div className="col-md-6 primayinfo">
                   <p>
-                    <b>Nombre: Maria</b>
+                    <b>
+                      <span className="labelprofileinfo">Nombre: </span>Maria
+                    </b>
                   </p>
                   <p>
-                    <b>Apellidos: Gutierrez Mola</b>
+                    <b>
+                      <span className="labelprofileinfo">Apellidos: </span>
+                      Gutierrez Mola
+                    </b>
                   </p>
                   <p>
-                    <b>Ciudad: Madrid</b>
+                    <b>
+                      <span className="labelprofileinfo">Ciudad: </span>Madrid
+                    </b>
                   </p>
                 </div>
                 <div className="col-md-6 secundaryinfo">
                   <p>
-                    <b>Tel: 666554477</b>
+                    <b>
+                      <span className="labelprofileinfo">Tel: </span>666554477
+                    </b>
                   </p>
                   <p>
-                    <b>Correo: maria.guti@gmail.com</b>
+                    <b>
+                      <span className="labelprofileinfo">Correo: </span>
+                      maria.guti@gmail.com
+                    </b>
                   </p>
                 </div>
               </div>
