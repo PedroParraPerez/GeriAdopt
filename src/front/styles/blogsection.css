@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100&family=Source+Code+Pro:wght@200&family=Vollkorn:ital,wght@1,500&display=swap");
 
+.headerblogsection {
+  border-bottom: #ed8b62 solid 3px;
+  margin-bottom: 2%;
+}
+
 .perrogafasblog {
-  height: 500;
-  width: 1000px;
+  height: auto;
+  width: 70%;
   display: block;
   margin: auto;
   border-radius: 5%;
@@ -11,4 +16,59 @@
 .tituloblog1 {
   font-family: "Vollkorn", serif;
   text-align: center;
+}
+
+.tituloblog2 {
+  font-family: "Vollkorn", serif;
+  text-align: left;
+  padding-left: 5%;
+  padding-top: 0.5%;
+}
+
+.lineablogsection {
+  color: #ed8b62;
+  display: block;
+  margin: auto;
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-style: dashed solid;
+}
+.cardblogsection {
+  text-align: center;
+  border-radius: 5%;
+  background-color: rgba(233, 163, 147, 0.25);
+}
+
+.botonblogsection {
+  background-color: #f2ca72;
+  text-decoration-color: white;
+  margin-bottom: 20%;
+}
+
+.blogtitle {
+  padding-bottom: 10%;
+  padding-top: 10%;
+  font-size: 30px;
+}
+
+.blogtextsection {
+  padding-bottom: 10%;
+  padding-top: 10%;
+  font-size: 20px;
+}
+
+.fotoblogsection {
+  border-radius: 5%;
+}
+
+.botonblogsectionfinal {
+  margin-top: 10%;
+  font-family: "Vollkorn", serif;
+  background-color: #f2ca72;
+  text-decoration-color: white;
+}
+
+.bodyblogsection {
+  margin-top: 2%;
 }
