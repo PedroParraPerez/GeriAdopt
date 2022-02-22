@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
 
-.card {
+.carddogs {
   position: relative;
   display: block;
   width: 15rem;
@@ -8,10 +8,10 @@
   border-radius: 1rem;
   font-family: "Alegreya Sans", sans-serif;
   text-align: center;
-
+  margin-right: 1rem;
 }
 
-.card-body {
+.dogcardsbody {
   margin-top: 3.3rem;
 }
 #cardphoto {
@@ -23,8 +23,9 @@
   width: 10rem;
   height: 10rem;
 }
-.card-text {
-  width: 25ch;
+.textcarddog {
+  text-align: center;
+  width: 90%;
 }
 .IconsAndDescription {
   margin-bottom: 1rem;

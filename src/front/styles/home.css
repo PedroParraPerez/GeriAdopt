@@ -3,6 +3,10 @@
   display: flex;
 }
 
+* {
+  border: black dotted 2px;
+}
+
 .textoHeader {
   font-family: "Alegreya Sans", sans-serif;
   font-size: 50px;
@@ -63,4 +67,44 @@
   font-size: 25px;
   font-weight: bolder;
   text-align: center;
+}
+
+.cardContainer {
+  margin-top: 7rem;
+  position: relative;
+  display: block;
+  background-color: #faf4f7;
+  border-radius: 1rem;
+  font-family: "Alegreya Sans", sans-serif;
+  text-align: center;
+  align-items: center;
+}
+
+.cardBody {
+  margin-top: 5rem;
+}
+
+.cardPic {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  position: absolute;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 10rem;
+  height: 10rem;
+}
+.cardText {
+  text-align: center;
+}
+
+.btnText {
+  background-color: #f8d2c3;
+  color: black;
+  border: none;
+}
+
+.rowQuote {
+  margin-top: 5%;
 }

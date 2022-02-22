@@ -9,13 +9,15 @@ import HeartHeader from "../../img/HeartHeader.png";
 import twoLives from "../../img/twoLives.png";
 import adoption from "../../img/adoption.png";
 import dogWalking from "../../img/dogWalking.png";
+import AdopterHome from "../../img/AdopterHome.jpeg";
+import ProtectoraHome from "../../img/ProtectoraHome.jpg";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
 
   return (
     <>
-      <div className="containe-fluid">
+      <div className="container-fluid">
         <div className="row containerHeader">
           <div className="col-md-1"></div>
           <div className="col-md-5">
@@ -80,6 +82,63 @@ export const Home = () => {
               </p>
             </div>
           </div>
+        </div>
+
+        <div className="row d-flex justify-content-between ">
+          <div className="col-md-1"></div>
+          <div className="col-md-4">
+            <div className="cardContainer">
+              <img
+                src={AdopterHome}
+                className="card-img-top cardPic"
+                alt="perfil adoptante"
+              />
+              <div className="card-body cardBody">
+                <p className="card-text cardText">
+                  En GeriAdopt encuentra a tu peludo ideal y suma un miembro más
+                  a tu familia. Encuentra, enamorate y contacta con la
+                  protectora, asi de simple. ¡Crea tu perfil con nosotros!
+                </p>
+
+                <a href="#" className="btnText">
+                  ¡Quiero Adoptar!
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="cardContainer">
+              <img
+                src={ProtectoraHome}
+                className="card-img-top cardPic"
+                alt="perfil protectora"
+              />
+              <div className="card-body cardBody">
+                <p className="card-text cardText">
+                  En GeriAdopt encuentra a tu peludo ideal y suma un miembro más
+                  a tu familia. Encuentra, enamorate y contacta con la
+                  protectora, asi de simple. ¡Crea tu perfil con nosotros!
+                </p>
+
+                <a href="#" className="btnText">
+                  Quiero registar mi Protectora
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-1"></div>
+        </div>
+
+        <div className="row rowQuote">
+          <div className="col-md-1"></div>
+          <div className="col-md-10">
+            <h4>
+              “Hasta que no hayas amado a un animal, una parte de tu alma
+              permanecerá dormida” <br />
+              -Anatole France
+            </h4>
+          </div>
+          <div className="col-md-1"></div>
         </div>
       </div>
     </>
