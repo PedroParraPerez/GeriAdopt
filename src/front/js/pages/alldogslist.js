@@ -28,7 +28,6 @@ export const AllDogsList = () => {
                 <option value="Femenino">Femenino</option>
               </select>
             </div>
-
             <div className="col-md-2">
               <select
                 class="form-select inputfilter"
@@ -37,9 +36,9 @@ export const AllDogsList = () => {
                 <option selected disabled>
                   Tamaño
                 </option>
-                <option value="Masculino">Pequeño</option>
-                <option value="Femenino">Mediano</option>
-                <option value="Femenino">Grande</option>
+                <option value="Pequeño">Pequeño</option>
+                <option value="Mediano">Mediano</option>
+                <option value="Grande">Grande</option>
               </select>
             </div>
             <div className="col-md-2">
@@ -50,9 +49,9 @@ export const AllDogsList = () => {
                 <option selected disabled>
                   Edad
                 </option>
-                <option value="Masculino">Cachorro</option>
-                <option value="Femenino">Adulto</option>
-                <option value="Femenino">Mayor</option>
+                <option value="Cachorro">Cachorro</option>
+                <option value="Adulto">Adulto</option>
+                <option value="Mayor">Mayor</option>
               </select>
             </div>
             <div className="col-md-2">
