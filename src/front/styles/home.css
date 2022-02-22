@@ -1,7 +1,47 @@
-/*
-    home.css: This website contains selectors only used in home.css
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300&family=Comforter&family=Josefin+Sans:ital,wght@1,500&family=Sansita+Swashed:wght@300&family=Ubuntu:wght@300&display=swap");
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+.containerHeader {
+  display: flex;
+}
+
+.textoHeader {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 50px;
+  font-weight: bolder;
+  justify-items: left;
+}
+
+.buttonHeader {
+  width: 35%;
+  height: 10%;
+  border-radius: 7%;
+  background-color: antiquewhite;
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 25px;
+}
+
+.familyHeader {
+  width: 100%;
+  height: 100%;
+  justify-content: end;
+  margin: 0%;
+  margin-top: -10%;
+  padding: 0%;
+}
+
+.heartHeader {
+  width: 20%;
+  height: 20%;
+  margin-left: 75%;
+}
+
+.middleBar {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background-color: rgb(239, 201, 182);
+  display: flex;
+}
+
+.beneficios {
+  text-align: center;
+}
