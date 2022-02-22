@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&family=Vollkorn:ital,wght@1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100&family=Source+Code+Pro:wght@200&family=Vollkorn:ital,wght@1,500&display=swap");
+.foot {
+  background-color: #686696;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+.colum1foot {
+  padding-left: 3%;
+  padding-bottom: 1%;
+  padding-right: 1%;
+}
+.colum2foot {
+  text-align: left;
+  padding-top: 2%;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+.colum3foot {
+  text-align: center;
+}
+.chapifoot {
+  padding-top: 1%;
+  width: 130px;
+  height: 150px;
+}
+.textofooter {
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Alegreya Sans", sans-serif;
+  margin-right: 15%;
+}
+
+.menufoot {
+  color: white;
+}
+.perreteBingofoot {
+  position: absolute;
+  width: 180px;
+  height: auto;
+  margin-top: -157px;
+  z-index: 2;
+  right: 50px;
+}
+.nombrefoot {
+  color: white;
+  padding-top: 15%;
+  font-family: "Vollkorn", serif;
+}
+.logogerifoot {
+  display: flex;
+}
+
+.iconoigfooter,
+.iconotwfooter,
+.iconofbfooter {
+  height: auto;
+  width: 40px;
+  padding-top: 25%;
+  margin-left: 2%;
+}
+
+.text-white-foot {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+}

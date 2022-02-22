@@ -9,12 +9,25 @@ a {
   text-decoration: none;
   color: black;
 }
+.contPrin {
+  display: flex;
+  justify-content: space-around;
+  width: 15%;
+}
+
+#muevete {
+  display: flex;
+  padding: 0 3%;
+}
+
+#sacameelpadding {
+  padding: 0;
+  margin: 0;
+}
 
 .logoNav {
-  width: 85px;
-  height: 85px;
-  margin-top: -1%;
-  margin-left: 1%;
+  width: 97px;
+  height: 97px;
 }
 
 .navbar-brand {
@@ -25,4 +38,17 @@ a {
 
 .iniciar {
   margin-right: 8%;
+}
+
+.divSeparador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enlaces {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
 }
