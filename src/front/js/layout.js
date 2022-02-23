@@ -2,8 +2,9 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./pages/home";
+import { Home } from "./pages/home.js";
 import { Demo } from "./pages/demo";
+import { QuienesSomos } from "./pages/QuienesSomos.js";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
@@ -25,6 +26,9 @@ const Layout = () => {
           <Switch>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/quienes-somos">
+              <QuienesSomos />
             </Route>
             <Route exact path="/demo">
               <Demo />
