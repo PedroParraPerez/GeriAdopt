@@ -2,10 +2,10 @@
 .containerHeader {
   display: flex;
 }
-
+/*
 * {
   border: black dotted 2px;
-}
+}*/
 
 .textoHeader {
   font-family: "Alegreya Sans", sans-serif;
@@ -89,6 +89,7 @@
   margin-right: auto;
   left: 0;
   right: 0;
+  top: -30%;
   position: absolute;
   border-radius: 50%;
   object-fit: cover;
@@ -97,14 +98,76 @@
 }
 .cardText {
   text-align: center;
+  padding-top: 15%;
 }
 
 .btnText {
   background-color: #f8d2c3;
   color: black;
   border: none;
+  font-weight: bold;
 }
 
-.rowQuote {
+.quote {
+  margin-top: 10%;
+  margin-bottom: -5%;
+  text-align: center;
+}
+
+
+.buttonHomeRegis{
+  background-color: #f8d2c3;
+  border-radius: 15px;
+}
+
+.gotoblog{
+  display: flex;
   margin-top: 5%;
+}
+
+.dogBlogHome{
+  width: 100%;
+  height: auto;
+  border-radius: 10%;
+}
+
+/*
+.blogTitleRow{
+  margin-top: 20%;
+  display: flex;
+}
+*/
+
+
+.blogTitleHome{
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 50px;
+  margin-top: 10%;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.blogcenter{
+  text-align: center;
+}
+
+.textoBlogHomeDiv{
+  margin-top: 3%;
+  text-align: center;
+}
+
+.textoBlogHome{
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 25px;
+}
+
+.buttonBlogHomePosition{
+  text-align: center;
+  margin-top: 10%;
+}
+
+.buttonBlogHome{
+  background-color: #f8d2c3;
+  border-radius: 15px;
+  font-size: 21px;
 }

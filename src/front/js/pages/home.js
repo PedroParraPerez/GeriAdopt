@@ -11,6 +11,7 @@ import adoption from "../../img/adoption.png";
 import dogWalking from "../../img/dogWalking.png";
 import AdopterHome from "../../img/AdopterHome.jpeg";
 import ProtectoraHome from "../../img/ProtectoraHome.jpg";
+import dogbloghome from "../../img/dogbloghome.jpeg"
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -95,14 +96,14 @@ export const Home = () => {
               />
               <div className="card-body cardBody">
                 <p className="card-text cardText">
-                  En GeriAdopt encuentra a tu peludo ideal y suma un miembro más
-                  a tu familia. Encuentra, enamorate y contacta con la
-                  protectora, asi de simple. ¡Crea tu perfil con nosotros!
-                </p>
+                En GeriAdopt encuentra a tu peludo ideal y suma un miembro más a tu familia. <br/>Encuentra, enamorate y contacta con la protectora, asi de simple.
 
+                <br/>¡Crea tu perfil con nosotros!
+                </p>
+                <button className="buttonHomeRegis">
                 <a href="#" className="btnText">
                   ¡Quiero Adoptar!
-                </a>
+                </a></button>
               </div>
             </div>
           </div>
@@ -115,24 +116,48 @@ export const Home = () => {
               />
               <div className="card-body cardBody">
                 <p className="card-text cardText">
-                  En GeriAdopt encuentra a tu peludo ideal y suma un miembro más
-                  a tu familia. Encuentra, enamorate y contacta con la
-                  protectora, asi de simple. ¡Crea tu perfil con nosotros!
+                Si tienes una protectora y quieres dar difusión a tus animalitos rescatados que buscan un hogar, esta es tu oportunidad.
+<br/>¡Registrate como Protectora!
                 </p>
-
-                <a href="#" className="btnText">
+                <button className="buttonHomeRegis"> <a href="#" className="btnText">
                   Quiero registar mi Protectora
-                </a>
+                </a> </button>
               </div>
             </div>
           </div>
           <div className="col-md-1"></div>
+        </div>   
+          
+        <div className="row gotoblog">
+            <div className="col-md-1"></div>
+            <div className="col-md-6">
+              <div className="blogcenter">
+              <img
+              className="dogBlogHome"
+              src={dogbloghome}
+              alt="dog with newspaper pages"
+              />
+              </div>
+            </div>
+            <div className="col-md-4">
+            <h4 className="blogTitleHome">
+              Blog de Noticias
+            </h4>
+            <div className="textoBlogHomeDiv">
+            <p className="textoBlogHome">Entérate de todas las novedades del mundo de la adopción animal en España. <br/>Novedades, eventos, tips y ¡mucho más!</p>
+            </div>
+            <div className="buttonBlogHomePosition">
+              <button className="buttonBlogHome">Accede al Blog</button>
+            </div>
+            </div>
+            <div className="col-md-1"></div>
         </div>
+
 
         <div className="row rowQuote">
           <div className="col-md-1"></div>
           <div className="col-md-10">
-            <h4>
+            <h4 className="quote">
               “Hasta que no hayas amado a un animal, una parte de tu alma
               permanecerá dormida” <br />
               -Anatole France
