@@ -6,14 +6,11 @@ import fotoblog1section from "../../img/fotoblog1section.jpg";
 import fotoblogsection2 from "../../img/fotoblogsection2.jpg";
 import fotoblogsection3 from "../../img/fotoblogsection3.jpg";
 
-import { Navbar } from "../component/navbar.js";
-
 export const BlogSection = () => {
   const { store, actions } = useContext(Context);
 
   return (
     <>
-      <Navbar />
       <div className="container">
         <div className="headerblogsection">
           <h1 className="tituloblog1">Blog de Noticias </h1>

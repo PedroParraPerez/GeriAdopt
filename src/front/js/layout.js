@@ -9,6 +9,8 @@ import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
 import { Footer } from "./component/footer.js";
+import { Navbar } from "./component/navbar";
+import { BlogArt } from "./pages/blogart";
 
 //create your first component
 const Layout = () => {
@@ -20,12 +22,16 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
+          <Navbar />
           <Switch>
             <Route exact path="/">
               <Home />
             </Route>
             <Route exact path="/blogsection">
               <BlogSection />
+            </Route>
+            <Route exact path="/blogart">
+              <BlogArt />
             </Route>
             <Route exact path="/demo">
               <Demo />

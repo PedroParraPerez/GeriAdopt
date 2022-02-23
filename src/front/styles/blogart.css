@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100&family=Source+Code+Pro:wght@200&family=Vollkorn:ital,wght@1,500&display=swap");
+
+.headerblogsection {
+  border-bottom: #ed8b62 solid 3px;
+  margin-bottom: 2%;
+}
+.blogart_tituloblog {
+  font-family: "Vollkorn", serif;
+  text-align: center;
+}
+.blogart_linea {
+  color: #ed8b62;
+  display: block;
+  margin: auto;
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-style: dashed solid;
+}
+.blogart_titulo2 {
+  font-family: "Vollkorn", serif;
+  text-align: left;
+  font-size: 35px;
+  padding-left: 5%;
+}
+.blogart_fotoart {
+  height: auto;
+  width: 50%;
+  display: block;
+  margin: auto;
+  border-radius: 5%;
+}
+.blogart_body {
+  margin-left: 8%;
+  margin-right: 8%;
+}
+.blogart_titulonotica {
+  font-family: "Vollkorn", serif;
+  text-align: center;
+  font-size: 55px;
+}
+
+.blogart_sumario {
+  font-family: "Alegreya Sans", sans-serif;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 3%;
+}
+
+.blogart_parrafo {
+  font-family: "Alegreya Sans", sans-serif;
+  text-align: left;
+  font-size: 25px;
+  margin-bottom: 3%;
+}
+.blogart-botonfinal {
+  align-items: center;
+  text-align: center;
+}
+
+.blogart-botonfinal2 {
+  background-color: #f8d2c3;
+  color: black;
+  border: none;
+  text-decoration-color: white;
+  border-radius: 3%;
+  margin-top: 5%;
+  padding: 1rem 1rem;
+  font-size: 1.5rem;
+}
