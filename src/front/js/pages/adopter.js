@@ -11,46 +11,46 @@ export const Adopter = () => {
   return (
     <>
       <div className="container-fluid">
-        <div className="row adopterprofile">
-          <div className="col-xl-2 imgprofile">
-            <img src={GirlPhoto} alt="profilephoto" className="adopterphoto" />
+        <div className="row Adopter_adopterprofile">
+          <div className="col-xl-2 Adopter_imgprofile">
+            <img src={GirlPhoto} alt="profilephoto" className="Adopter_adopterphoto" />
           </div>
-          <div className="col-xl-4 adopterInfo">
-            <div className="row edit">
+          <div className="col-xl-4 Adopter_adopterInfo">
+            <div className="row Adopter_edit">
               <div className="col-xl-12">
-                <div className="editbutton">
-                  <img src={EditIcon} className="editicon" alt="editIcon" />
+                <div className="Adopter_editbutton">
+                  <img src={EditIcon} className="Adopter_editicon" alt="editIcon" />
                 </div>
               </div>
             </div>
             <div className="row">
-              <div className="col-xl-6 primayinfo">
+              <div className="col-xl-6 Adopter_primayinfo">
                 <p>
                   <b>
-                    <span className="labelprofileinfo">Nombre: </span>Maria
+                    <span className="Adopter_labelprofileinfo">Nombre: </span>Maria
                   </b>
                 </p>
                 <p>
                   <b>
-                    <span className="labelprofileinfo">Apellidos: </span>
+                    <span className="Adopter_labelprofileinfo">Apellidos: </span>
                     Gutierrez Mola
                   </b>
                 </p>
                 <p>
                   <b>
-                    <span className="labelprofileinfo">Ciudad: </span>Madrid
+                    <span className="Adopter_labelprofileinfo">Ciudad: </span>Madrid
                   </b>
                 </p>
               </div>
-              <div className="col-xl-6 secundaryinfo">
+              <div className="col-xl-6 Adopter_secundaryinfo">
                 <p>
                   <b>
-                    <span className="labelprofileinfo">Tel: </span>666554477
+                    <span className="Adopter_labelprofileinfo">Tel: </span>666554477
                   </b>
                 </p>
                 <p>
                   <b>
-                    <span className="labelprofileinfo">Correo: </span>
+                    <span className="Adopter_labelprofileinfo">Correo: </span>
                     maria.guti@gmail.com
                   </b>
                 </p>
@@ -58,9 +58,9 @@ export const Adopter = () => {
             </div>
           </div>
         </div>
-        <div className="row titleFavs">
+        <div className="row Adopter_titleFavs">
           <div className="col-xl-1">
-            <img src={ImgTitleFavs} alt="titlecat" className="ImgTitleFavs" />
+            <img src={ImgTitleFavs} alt="titlecat" className="Adopter_ImgTitleFavs" />
           </div>
           <div className="col-xl-2">
             <h2>
@@ -68,7 +68,7 @@ export const Adopter = () => {
             </h2>
           </div>
         </div>
-        <div className="row adopter_cardlist">
+        <div className="row Adopter_cardlist">
           <Card />
         </div>
       </div>

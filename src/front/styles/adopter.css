@@ -1,44 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
 
-.adopterprofile {
+.Adopter_adopterprofile {
   display: flex;
   justify-content: center;
 }
 
-.imgprofile {
+.Adopter_imgprofile {
   display: flex;
   justify-content: flex-end;
   padding-right: 5rem;
 }
-.adopterphoto {
+.Adopter_adopterphoto {
   width: 15rem;
   height: 15rem;
   border-radius: 50%;
   object-fit: cover;
 }
-.adopterInfo {
+.Adopter_adopterInfo {
   font-family: "Alegreya Sans", sans-serif;
   font-size: large;
   padding: 1rem;
   margin-top: 1rem;
   background-color: #faf4f7;
 }
-.editbutton {
+.Adopter_editbutton {
   width: 100%;
   justify-content: flex-end;
   display: flex;
   padding: 1rem 1rem 0 0;
 }
-.editbutton:hover {
+.Adopter_editbutton:hover {
   cursor: pointer;
 }
-.prymaryinfo {
+.Adopter_prymaryinfo {
   padding-left: 1rem;
 }
-.labelprofileinfo {
+.Adopter_labelprofileinfo {
   color: #e55e2f;
 }
-.titleFavs {
+.Adopter_titleFavs {
   padding-right: 2rem;
   position: relative;
   display: flex;
@@ -47,7 +47,7 @@
   border-bottom: 0.3rem solid orange;
   font-family: "Alegreya Sans", sans-serif;
 }
-.ImgTitleFavs {
+.Adopter_ImgTitleFavs {
   position: absolute;
   width: 81px;
   left: 0%;
@@ -55,7 +55,7 @@
   top: -32.8%;
   z-index: 2;
 }
-.adopter_NavFavs_Img {
+.Adopter_NavFavs_Img {
   top: -4rem;
   margin-right: auto;
   margin-left: auto;
@@ -63,7 +63,7 @@
   right: 0;
   width: 100%;
 }
-.adopter_cardlist {
+.Adopter_cardlist {
   display: flex;
   justify-content: center;
   width: 60%;

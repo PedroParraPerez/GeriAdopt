@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
+
+.detaildog_view{
+    display: flex;
+    justify-content: center;
+}
+
+.detaildog_photos{
+    width: 35rem;
+    height: 35rem;
+}
+/* .detaildog_photos_principalphoto{
+width: 30rem;
+height: 30rem;
+border-radius: 50%;
+object-fit: cover;
+} */
+
+.detaildog_photos_principalphoto {
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+object-fit: cover;
+  }
+  
+.detaildog_photos_principalphoto:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.detaildog_info_title{
+text-align: center;
+font-family: Alegreya Sans;
+font-style: italic;
+font-size: 4rem;
+color: rgba(229, 94, 47, 1);
+}
+.detaildog_info_list{
+font-family: Alegreya Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 1.5rem;
+text-align: left;
+margin-right: 1rem;
+}
+
+.detaildog_info_list_label{
+   color: rgba(229, 94, 47, 1)
+}
+
+
+
+
+
+
+
+

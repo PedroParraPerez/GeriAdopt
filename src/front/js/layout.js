@@ -11,6 +11,7 @@ import { Footer } from "./component/footer.js";
 import { Adopter } from "./pages/adopter";
 import { Navbar } from "./component/navbar";
 import { AllDogsList } from "./pages/alldogslist";
+import { DetailDog } from "./pages/detaildog";
 
 //create your first component
 const Layout = () => {
@@ -35,6 +36,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/demo">
               <Demo />
+            </Route>
+            <Route exact path="/detaildog">
+              <DetailDog />
             </Route>
             <Route exact path="/single/:theid">
               <Single />

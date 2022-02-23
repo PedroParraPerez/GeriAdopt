@@ -10,54 +10,54 @@ import IconHearth from "../../img/IconHearth.png";
 export const Card = () => {
   return (
     <>
-      <div className="card carddogs">
-        <img src={Mojito} id="cardphoto" />
-        <div className="card-body dogcardsbody">
-          <h5 className="card-title">
+      <div className="card Card_carddogs">
+        <img src={Mojito} id="Card_cardphoto" />
+        <div className="card-body Card_dogcardsbody">
+          <h5 className="Card_card-title">
             <b>Mojito</b>
           </h5>
-          <p className="card-text textcarddog">
+          <p className="card-text Card_textcarddog">
             Solo con su nombre se pueden hacer una idea de lo dulce que es...
           </p>
-          <div className="IconsAndDescription">
-            <div className="row IconsCard">
+          <div className="Card_IconsAndDescription">
+            <div className="row Card_IconsCard">
               <div className="col-md-4">
-                <img src={BirthdayIcon} alt="Birthday" className="CaractIcon" />
+                <img src={BirthdayIcon} alt="Birthday" className="Card_CaractIcon" />
               </div>
               <div className="col-md-4">
-                <img src={RazaIcon} alt="breed" className="CaractIcon" />
+                <img src={RazaIcon} alt="breed" className="Card_CaractIcon" />
               </div>
               <div className="col-md-4">
-                <img src={GenderIcon} alt="gender" className="CaractIcon" />
+                <img src={GenderIcon} alt="gender" className="Card_CaractIcon" />
               </div>
             </div>
-            <div className="row Icons_text">
+            <div className="row Card_Icons_text">
               <div className="col-md-4">
-                <span className="iconTexInv">
+                <span className="Card_iconTexInv">
                   <b>Date</b>
                 </span>
               </div>
               <div className="col-md-4">
-                <span className="iconTexInv">
+                <p className="Card_iconTexInv">
                   <b>Breed</b>
-                </span>
+                </p>
               </div>
               <div className="col-md-4">
-                <span className="iconTexInv">
+                <p className="Card_iconTexInv">
                   <b>Gender</b>
-                </span>
+                </p>
               </div>
             </div>
           </div>
-          <a href="#" className="btn">
+          <a href="#" className="Card_btn">
             Conóceme!
           </a>
-          <div className="FavButton">
-            <img src={IconHearth} alt="FavButton" id="hearthbutton" />
+          <div className="Card_FavButton">
+            <img src={IconHearth} alt="FavButton" id="Card_hearth" />
           </div>
-          <span className="location">
-            <img src={IconUbic} className="IconUbic" /> Madrid
-          </span>
+          <p className="location">
+            <img src={IconUbic} className="Card_IconUbic" /> Madrid
+          </p>
         </div>
       </div>
     </>
