@@ -81,7 +81,7 @@
 }
 
 .cardBody {
-  margin-top: 5rem;
+  margin-top: 14rem;
 }
 
 .cardPic {
@@ -99,13 +99,15 @@
 .cardText {
   text-align: center;
   padding-top: 15%;
+  font-size: 20px;
 }
 
 .btnText {
   background-color: #f8d2c3;
   color: black;
   border: none;
-  font-weight: bold;
+  font-size: 1.3rem;
+  font-weight: bolder;
 }
 
 .quote {
@@ -114,21 +116,21 @@
   text-align: center;
 }
 
-
 .buttonHomeRegis{
   background-color: #f8d2c3;
   border-radius: 15px;
+  padding: 1rem 1rem;
 }
 
 .gotoblog{
   display: flex;
-  margin-top: 5%;
+  margin-top: 10%;
 }
 
 .dogBlogHome{
   width: 100%;
   height: auto;
-  border-radius: 10%;
+  border-radius: 3rem;
 }
 
 /*
@@ -138,6 +140,9 @@
 }
 */
 
+a:hover{
+  color: black !important;
+}
 
 .blogTitleHome{
   font-family: "Alegreya Sans", sans-serif;
@@ -168,6 +173,7 @@
 
 .buttonBlogHome{
   background-color: #f8d2c3;
-  border-radius: 15px;
-  font-size: 21px;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem 1rem;
 }

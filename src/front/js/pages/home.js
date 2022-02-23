@@ -120,7 +120,7 @@ export const Home = () => {
 <br/>¡Registrate como Protectora!
                 </p>
                 <button className="buttonHomeRegis"> <a href="#" className="btnText">
-                  Quiero registar mi Protectora
+                  Quiero Registrar mi Protectora
                 </a> </button>
               </div>
             </div>
