@@ -89,17 +89,18 @@
   margin-right: auto;
   left: 0;
   right: 0;
-  top: -30%;
+  top: -47%;
   position: absolute;
   border-radius: 50%;
   object-fit: cover;
-  width: 10rem;
-  height: 10rem;
+  width: 14rem;
+  height: 14rem;
 }
 .cardText {
   text-align: center;
   padding-top: 15%;
   font-size: 20px;
+  margin-bottom: 2rem;
 }
 
 .btnText {
@@ -132,13 +133,6 @@
   height: auto;
   border-radius: 3rem;
 }
-
-/*
-.blogTitleRow{
-  margin-top: 20%;
-  display: flex;
-}
-*/
 
 a:hover{
   color: black !important;
