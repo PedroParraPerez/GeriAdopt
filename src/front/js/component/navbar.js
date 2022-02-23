@@ -31,37 +31,37 @@ export const Navbar = (props) => {
           <ul className="navbar-nav ms-3 enlaces">
             <li className="nav-item">
               <Link to="/">
-                <span classNameName="quienesSomos">Quienes Somos</span>
+                <span className="quienesSomos">Quienes Somos</span>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/demo">
-                <span classNameName="tuMatch">Encuentra tu Match</span>
+                <span className="tuMatch">Encuentra tu Match</span>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/demo">
-                <span classNameName="protectoras">Protectoras</span>
+                <span className="protectoras">Protectoras</span>
               </Link>
             </li>
             <li className="nav-item dropdown">
               <Link to="/demo">
-                <span classNameName="blog">Blog de Noticias</span>
+                <span className="blog">Blog de Noticias</span>
               </Link>
             </li>
             <li className="nav-item dropdown">
               <Link to="/demo">
-                <span classNameName="contacto">Contacto</span>
+                <span className="contacto">Contacto</span>
               </Link>
             </li>
             <li className="nav-item dropdown">
               <Link to="/demo">
-                <span classNameName="iniciar">Iniciar Sesión</span>
+                <span className="iniciar">Iniciar Sesión</span>
               </Link>
             </li>
             <li className="nav-item dropdown">
               <Link to="/demo">
-                <span classNameName="registro">Registrate</span>
+                <span className="registro">Registrate</span>
               </Link>
             </li>
           </ul>

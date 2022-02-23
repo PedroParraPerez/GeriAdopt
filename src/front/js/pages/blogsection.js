@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
+import React from "react";
+
 import perrogafasblog from "../../img/perrogafasblog.jpg";
 import "../../styles/blogsection.css";
 import fotoblog1section from "../../img/fotoblog1section.jpg";
@@ -7,8 +7,6 @@ import fotoblogsection2 from "../../img/fotoblogsection2.jpg";
 import fotoblogsection3 from "../../img/fotoblogsection3.jpg";
 
 export const BlogSection = () => {
-  const { store, actions } = useContext(Context);
-
   return (
     <>
       <div className="container">

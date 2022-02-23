@@ -1,11 +1,9 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
+import React from "react";
+
 import "../../styles/blogart.css";
 import photoblogart from "../../img/fotoblogsection2.jpg";
 
 export const BlogArt = () => {
-  const { store, actions } = useContext(Context);
-
   return (
     <>
       <div className="container-fluid">
