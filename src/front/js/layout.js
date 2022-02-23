@@ -9,6 +9,7 @@ import injectContext from "./store/appContext";
 
 import { Footer } from "./component/footer.js";
 import { Navbar } from "./component/navbar";
+import { PerfilProtectora } from "./pages/PerfilProtectora";
 
 //create your first component
 const Layout = () => {
@@ -30,6 +31,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/single/:theid">
               <Single />
+            </Route>
+            <Route exact path="/perfil-protectora">
+              <PerfilProtectora />
             </Route>
             <Route>
               <h1>Not found!</h1>

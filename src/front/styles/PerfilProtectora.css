@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
+
+.Protectora_Protectoraprofile {
+  display: flex;
+  justify-content: center;
+}
+
+.Protectora_imgprofile {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5rem;
+}
+.Protectora_Protectoraphoto {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.Protectora_ProtectoraInfo {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: large;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #faf4f7;
+}
+.Protectora_editbutton {
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
+  padding: 1rem 1rem 0 0;
+}
+.Protectora_editbutton:hover {
+  cursor: pointer;
+}
+.Protectora_prymaryinfo {
+  padding-left: 1rem;
+}
+.Protectora_labelprofileinfo {
+  color: #e55e2f;
+  font-size: 1.5rem;
+}
+.Protectora_titleFavs {
+  padding-right: 2rem;
+  position: relative;
+  display: flex;
+  padding-left: 3rem;
+  margin-top: 3rem;
+  border-bottom: 0.3rem solid orange;
+  font-family: "Alegreya Sans", sans-serif;
+}
+.Protectora_ImgTitleFavs {
+  position: absolute;
+  width: 81px;
+  left: 0%;
+  height: auto;
+  top: -46.8%;
+  z-index: 2;
+}
+.Protectora_NavFavs_Img {
+  top: -4rem;
+  margin-right: auto;
+  margin-left: auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.Protectora_cardlist {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 12rem;
+}
+
+.titleProte{
+  margin-left: -1rem;
+  font-family: "Alegreya Sans", sans-serif;
+  margin-right: -6rem;
+}

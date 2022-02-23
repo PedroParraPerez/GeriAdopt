@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
 
-.carddogs {
+.cardDogs {
   position: relative;
   display: block;
   width: 15rem;
@@ -11,10 +11,10 @@
   margin-right: 3rem;
 }
 
-.dogcardsbody {
+.dogCardsBody {
   margin-top: 3.3rem;
 }
-#cardphoto {
+.cardPhoto {
   top: -28%;
   left: 17%;
   position: absolute;
@@ -23,29 +23,29 @@
   width: 10rem;
   height: 10rem;
 }
-.textcarddog {
+.textCardDog {
   text-align: center;
   width: 90%;
 }
-.IconsAndDescription {
+.iconsAndDescription {
   margin-bottom: 1rem;
 }
-.IconsCard {
+.iconsCard {
   margin-bottom: 1rem;
 }
-.CaractIcon {
+.caractIcon {
   width: 2rem;
   height: 2rem;
 }
-.IconsDescription {
+.iconsDescription {
   font-size: 0.7rem;
 }
-.btn {
+.button {
   background-color: #f8d2c3;
   color: black;
   border: none;
 }
-.FavButton {
+.favButton {
   top: 70%;
   left: 85%;
   position: absolute;
@@ -60,16 +60,17 @@
   width: 2.9rem;
   height: 2.9rem;
 }
-#hearthbutton {
+
+.heartButton {
   margin-top: 0.4rem;
   width: 2.2rem;
   height: 2.2rem;
 }
-.location {
+.gps {
   margin-top: 1rem;
   display: block;
 }
-.IconUbic {
+.iconUbic {
   width: 0.7rem;
   height: 0.9rem;
 }
