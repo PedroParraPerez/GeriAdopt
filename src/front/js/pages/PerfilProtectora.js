@@ -63,13 +63,13 @@ export const PerfilProtectora = () => {
           </div>
         </div>
         <div className="row Protectora_cardlist">
-          <Card /> <Card /> <Card /> <Card />
+          <CardProtectora /> <CardProtectora /> <CardProtectora /> <CardProtectora />
         </div>
-        <div className="row Protectora_cardlist">
-          <Card /> <Card /> <Card /> <Card />
+        <div className="row Protectora_cardProtectoralist">
+          <CardProtectora /> <CardProtectora /> <CardProtectora /> <CardProtectora />
         </div>
-        <div className="row Protectora_cardlist">
-          <Card /> <Card /> <Card /> <Card />
+        <div className="row Protectora_cardProtectoralist">
+          <CardProtectora /> <CardProtectora /> <CardProtectora /> <CardProtectora />
         </div>
         
       </div>
