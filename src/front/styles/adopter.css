@@ -44,9 +44,10 @@
   display: flex;
   padding-left: 3rem;
   margin-top: 3rem;
-  border-bottom: 0.3rem solid orange;
+  border-bottom: 0.2em solid orange;
   font-family: "Alegreya Sans", sans-serif;
 }
+
 .Adopter_ImgTitleFavs {
   position: absolute;
   width: 81px;

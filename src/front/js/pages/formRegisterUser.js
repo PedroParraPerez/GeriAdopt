@@ -15,67 +15,77 @@ export const FormRegisterUser = () => {
                 <div className="row">
                   <label for="name">Nombre</label>
                   <input
-                    className="formRegisterUser_Input"
-                    name="name"
                     type="text"
+                    class="form-control formRegisterUser_Input"
+                    name="name"
+                    required
                   />
                 </div>
                 <div className="row">
                   <label for="surname">Apellidos</label>
                   <input
-                    className="formRegisterUser_Input"
-                    name="surname"
                     type="text"
+                    class="form-control formRegisterUser_Input"
+                    name="surname"
+                    required
                   />
                 </div>
                 <div className="row">
                   <label for="email">Correo</label>
                   <input
-                    className="formRegisterUser_Input"
-                    name="email"
                     type="email"
+                    class="form-control formRegisterUser_Input"
+                    name="email"
+                    required
                   />
                 </div>
                 <div className="row">
                   <label for="password">Contraseña:</label>
                   <input
-                    className="formRegisterUser_Input"
-                    name="password"
                     type="password"
+                    class="form-control formRegisterUser_Input"
+                    name="password"
+                    required
                   />
                 </div>
                 <div className="row">
                   <label for="passwordrepeat">Confirmar Contraseña</label>
                   <input
-                    className="formRegisterUser_Input"
-                    name="passwordrepeat"
                     type="password"
-                  />
-                </div>
-                <div className="row">
-                  <label for="direction">Dirección:</label>
-                  <input
-                    className="formRegisterUser_Input"
-                    name="direction"
-                    type="text"
+                    class="form-control formRegisterUser_Input"
+                    name="passwordrepeat"
+                    required
                   />
                 </div>
                 <div className="row inputGroupAgeAndCity">
                   <div className="col-xl-6">
                     <label for="age">Edad:</label>
                     <input
-                      className="formRegisterUser_Input inputAgeAndCity"
-                      name="age"
                       type="number"
+                      class="form-control inputAgeAndCity"
+                      name="age"
                     />
                   </div>
                   <div className="col-xl-6">
                     <label for="city">Ciudad:</label>
                     <input
-                      className="formRegisterUser_Input inputAgeAndCity"
-                      name="city"
                       type="text"
+                      class="form-control inputAgeAndCity"
+                      name="city"
                     />
+                  </div>
+                  <div className="row">
+                    <label for="direction">Dirección:</label>
+                    <input
+                      type="text"
+                      class="form-control formRegisterUser_Input"
+                      name="direction"
+                    />
+                  </div>
+                  <div class="col-XL-12 mt-2 d-flex justify-content-end mt-4">
+                    <button class="btn formRegisterUser_button" type="submit">
+                      Submit form
+                    </button>
                   </div>
                 </div>
               </div>

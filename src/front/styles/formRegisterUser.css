@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
+
 .formRegisterUser_title {
   display: flex;
   text-align: center;
@@ -16,8 +18,12 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .inputAgeAndCity {
-  width: 40%;
-}
-.inputGroupAgeAndCity {
   display: flex;
+  justify-content: end;
+}
+.formRegisterUser_button {
+  background-color: #f2a484;
+  font-family: Alegreya Sans;
+  font-size: larger;
+  font-weight: bold;
 }

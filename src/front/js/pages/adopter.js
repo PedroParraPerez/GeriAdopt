@@ -89,8 +89,6 @@ export const Adopter = () => {
           <Card />
           <Card />
           <Card />
-          <Card />
-          <Card />
         </div>
       </div>
     </>
