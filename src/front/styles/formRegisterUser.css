@@ -1,0 +1,23 @@
+.formRegisterUser_title {
+  display: flex;
+  text-align: center;
+  width: 100%;
+}
+.formRegisterUser_GroupInput {
+  width: 80%;
+  display: flex;
+  margin: auto;
+}
+.formRegisterUser_view {
+  border-radius: 10%;
+  padding: 1rem 1rem;
+  margin: 1rem 1rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.inputAgeAndCity {
+  width: 40%;
+}
+.inputGroupAgeAndCity {
+  display: flex;
+}

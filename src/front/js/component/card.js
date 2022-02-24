@@ -12,7 +12,7 @@ export const Card = () => {
     <>
       <div className="card Card_carddogs">
         <img src={Mojito} id="Card_cardphoto" />
-        <div className="card-body Card_dogcardsbody">
+        <div className="Card_dogcardsbody">
           <h5 className="Card_card-title">
             <b>Mojito</b>
           </h5>
@@ -21,37 +21,37 @@ export const Card = () => {
           </p>
           <div className="Card_IconsAndDescription">
             <div className="row Card_IconsCard">
-              <div className="col-md-4">
-                <img src={BirthdayIcon} alt="Birthday" className="Card_CaractIcon" />
-              </div>
-              <div className="col-md-4">
-                <img src={RazaIcon} alt="breed" className="Card_CaractIcon" />
-              </div>
-              <div className="col-md-4">
-                <img src={GenderIcon} alt="gender" className="Card_CaractIcon" />
-              </div>
-            </div>
-            <div className="row Card_Icons_text">
-              <div className="col-md-4">
-                <span className="Card_iconTexInv">
+              <div className="col-xl-4">
+                <img
+                  src={BirthdayIcon}
+                  alt="Birthday"
+                  className="Card_CaractIcon"
+                />
+                <p className="Card_iconTexInv">
                   <b>Date</b>
-                </span>
+                </p>
               </div>
-              <div className="col-md-4">
+              <div className="col-xl-4">
+                <img src={RazaIcon} alt="breed" className="Card_CaractIcon" />
                 <p className="Card_iconTexInv">
                   <b>Breed</b>
                 </p>
               </div>
-              <div className="col-md-4">
+              <div className="col-xl-4">
+                <img
+                  src={GenderIcon}
+                  alt="gender"
+                  className="Card_CaractIcon"
+                />
                 <p className="Card_iconTexInv">
                   <b>Gender</b>
                 </p>
               </div>
             </div>
           </div>
-          <a href="#" className="Card_btn">
+          <button href="#" className="btn Card_btn">
             Conóceme!
-          </a>
+          </button>
           <div className="Card_FavButton">
             <img src={IconHearth} alt="FavButton" id="Card_hearth" />
           </div>

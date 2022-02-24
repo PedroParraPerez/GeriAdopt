@@ -12,6 +12,7 @@ import { Adopter } from "./pages/adopter";
 import { Navbar } from "./component/navbar";
 import { AllDogsList } from "./pages/alldogslist";
 import { DetailDog } from "./pages/detaildog";
+import { FormRegisterUser } from "./pages/formRegisterUser.js";
 
 //create your first component
 const Layout = () => {
@@ -39,6 +40,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/detaildog">
               <DetailDog />
+            </Route>
+            <Route exact path="/formregisteruser">
+              <FormRegisterUser />
             </Route>
             <Route exact path="/single/:theid">
               <Single />
