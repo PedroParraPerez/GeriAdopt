@@ -41,9 +41,16 @@
 }
 
 .botonblogsection {
-  background-color: #f2ca72;
-  text-decoration-color: white;
-  margin-bottom: 20%;
+  background-color: #f8d2c3;
+  color: black;
+  margin-top: 5%;
+  text-align: center;
+  width: 40%;
+  margin-bottom: 3%;
+  font-size: 20px;
+  border: solid black 2px;
+  font-family: "Alegreya Sans", sans-serif;
+  border-radius: 15px;
 }
 
 .blogtitle {
@@ -63,10 +70,15 @@
 }
 
 .botonblogsectionfinal {
-  margin-top: 10%;
-  font-family: "Vollkorn", serif;
-  background-color: #f2ca72;
-  text-decoration-color: white;
+  background-color: #f8d2c3;
+  color: black;
+  margin-top: 5%;
+  width: 100%;
+  margin-bottom: 3%;
+  font-size: 20px;
+  border: solid black 2px;
+  font-family: "Alegreya Sans", sans-serif;
+  border-radius: 15px;
 }
 
 .bodyblogsection {

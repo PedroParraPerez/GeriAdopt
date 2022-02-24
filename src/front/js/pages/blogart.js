@@ -7,7 +7,7 @@ export const BlogArt = () => {
   return (
     <>
       <div className="container-fluid">
-        <div className="blogart_header justify-content-center">
+        <div className="blogart_header justify-content-center headerblogsart">
           <div classname="col-md-1"></div>
           <div className="col-md-10justify-content-center">
             <h2 className="blogart_titulonotica">
@@ -67,7 +67,7 @@ export const BlogArt = () => {
           <div className="col-md-4 justify-content-center blogart-botonfinal ">
             <a
               href="#"
-              className="btn btn-primary justify-content-center blogart-botonfinal2  "
+              className="btn justify-content-center blogart-botonfinal2  "
             >
               Regresar al Blog de Noticias
             </a>

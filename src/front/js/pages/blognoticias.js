@@ -40,12 +40,12 @@ export const BlogNoticias = () => {
                       Conoce los pasos más importantes que debes saber antes de
                       darle la bienvenida a un nuevo miembro de la familia.
                     </p>
-                    <a
+                    <button
                       href="#"
-                      className="btn btn-primary justify-content-center blognoticias-boton"
+                      className="btn   justify-content-center blognoticias-boton"
                     >
                       Leer más
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -73,12 +73,12 @@ export const BlogNoticias = () => {
                       para saber qué tan feliz y qué tanta influencia tienen los
                       animales en las personas.
                     </p>
-                    <a
+                    <button
                       href="#"
-                      className="btn btn-primary justify-content-center blognoticias-boton"
+                      className="btn   justify-content-center blognoticias-boton"
                     >
                       Leer más
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -86,7 +86,7 @@ export const BlogNoticias = () => {
           </div>
           <div className="row">
             <div className="col-md-6"></div>
-            <div className="col-md-6  blognoticias-card2">
+            <div className="col-md-6  blognoticias-card3">
               <div className="row g-0">
                 <div className="col-md-4 blognoticias-cardimg">
                   <img
@@ -105,12 +105,12 @@ export const BlogNoticias = () => {
                       son parte de nuestra familia y que queremos que siempre
                       disfruten con nosotros.
                     </p>
-                    <a
+                    <button
                       href="#"
-                      className="btn btn-primary justify-content-center blognoticias-boton"
+                      className="btn   justify-content-center blognoticias-boton"
                     >
                       Leer más
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -118,7 +118,7 @@ export const BlogNoticias = () => {
           </div>
           <div className="row">
             <div className="col-md-6"></div>
-            <div className="col-md-6  blognoticias-card2">
+            <div className="col-md-6  blognoticias-card4">
               <div className="row g-0">
                 <div className="col-md-4 blognoticias-cardimg">
                   <img
@@ -136,25 +136,25 @@ export const BlogNoticias = () => {
                       Traemos unas recomendaciones en alimentos naturales para
                       mejorar la salud de las cobayas.
                     </p>
-                    <a
+                    <button
                       href="#"
-                      className="btn btn-primary justify-content-center blognoticias-boton"
+                      className="btn   justify-content-center blognoticias-boton"
                     >
                       Leer más
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="row">
-            <div className="col-md-12">
-              <a
+          <div className="row d-flex justify-content-center">
+            <div className="col-md-12 d-flex justify-content-center">
+              <button
                 href="#"
-                className="btn btn-primary justify-content-center blognoticias-botonfinal"
+                className="btn justify-content-center blognoticias-botonfinal"
               >
-                Encuentra más noticias aquí
-              </a>
+                Más Noticias
+              </button>
             </div>
           </div>
         </div>
