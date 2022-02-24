@@ -39,7 +39,7 @@
 }
 
 .middleBarQuienesSomos {
-  margin-top: 6rem;
+  margin-top: 20rem;
   padding-top: 3%;
   padding-bottom: 3%;
   background-color: rgb(239, 201, 182);
@@ -47,7 +47,10 @@
 }
 
 .picQuienesSomosDos {
-  width: 50%;
-  height: auto;
+  top: 170%;
   border-radius: 50%;
+  object-fit: cover;
+  width: 20rem;
+  height: 20rem;
+  position: absolute;
 }

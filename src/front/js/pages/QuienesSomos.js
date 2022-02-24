@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 
 import "../../styles/QuienesSomos.css";
 import quienesSomos from "../../img/quienesSomos.jpg";
-import quienesSomosDosFinal from "../../img/quienesSomosDosFinal.png";
+import quienesSomosDos from "../../img/quienesSomosDos.jpg";
 
 export const QuienesSomos = () => {
   const { store, actions } = useContext(Context);
@@ -51,13 +51,36 @@ export const QuienesSomos = () => {
 
         <div className="row middleBarQuienesSomos">
           <div className="row">
-            <img
-              className="picQuienesSomosDos"
-              src={quienesSomosDosFinal}
-              alt="quienes somos"
-            />
+            <div className="col-md-1"></div>
+            <div className="col-md-4">
+              <div className="">
+                <h4 className="misionTitle">Nuestra Misión</h4>
+                <p className="tex">
+                  Conectar adoptantes con protectoras para incrementar y
+                  fomentar la adopción animal a nivel nacional, de una manera
+                  más accesible
+                </p>
+              </div>
+            </div>
+            <div className="col-md-2">
+              <img
+                className="picQuienesSomosDos"
+                src={quienesSomosDos}
+                alt="quienes somos"
+              />
+            </div>
+            <div className="col-md-4">
+              <div className="">
+                <h4 className="promesaTitle">Nuestra Promesa</h4>
+                <p>
+                  Incrementar la visibilidad del mundo de la adopción animal,
+                  crear consciencia, difundir eventos y aumentar el número de
+                  adopciones
+                </p>
+              </div>
+            </div>
+            <div className="col-md-1"></div>
           </div>
-          <div className="col-md-"></div>
         </div>
       </div>
     </>
