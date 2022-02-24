@@ -5,7 +5,7 @@ import BirthdayIcon from "../../img/BirthdayIcon.png";
 import GenderIcon from "../../img/GenderIcon.png";
 import RazaIcon from "../../img/razaIcon.png";
 import IconUbic from "../../img/IconUbicacion.png";
-import IconHearth from "../../img/IconHearth.png";
+import editIcon from "../../img/editIcon.png";
 
 export const CardProtectora = () => {
   return (
@@ -52,8 +52,13 @@ export const CardProtectora = () => {
           <a href="#" className="btn">
             Conóceme!
           </a>
-          <div className="FavButton">
-            <img src={IconHearth} alt="FavButton" id="hearthbutton" />
+          <div className="editButton">
+            <img
+              src={editIcon}
+              alt="FavButton"
+              id="hearthbutton"
+              id="editPencil"
+            />
           </div>
           <span className="location">
             <img src={IconUbic} className="IconUbic" /> Madrid
