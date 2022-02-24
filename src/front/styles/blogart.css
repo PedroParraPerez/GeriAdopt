@@ -2,7 +2,7 @@
 
 .headerblogart {
   border-bottom: #ed8b62 solid 3px;
-  margin-bottom: 2%;
+  padding-bottom: 2%;
 }
 .blogart_tituloblog {
   font-family: "Vollkorn", serif;
@@ -20,8 +20,8 @@
 .blogart_titulo2 {
   font-family: "Vollkorn", serif;
   text-align: left;
-  font-size: 35px;
-  padding-left: 5%;
+  font-size: 32px;
+  padding-left: 8%;
 }
 .blogart_fotoart {
   height: auto;
@@ -29,6 +29,8 @@
   display: block;
   margin: auto;
   border-radius: 5%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .blogart_body {
   margin-left: 8%;
@@ -37,13 +39,13 @@
 .blogart_titulonotica {
   font-family: "Vollkorn", serif;
   text-align: center;
-  font-size: 55px;
+  font-size: 50px;
 }
 
 .blogart_sumario {
   font-family: "Alegreya Sans", sans-serif;
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
   margin-bottom: 3%;
 }
 

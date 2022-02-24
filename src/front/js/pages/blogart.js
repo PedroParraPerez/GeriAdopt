@@ -7,9 +7,8 @@ export const BlogArt = () => {
   return (
     <>
       <div className="container-fluid">
-        <div className="blogart_header justify-content-center headerblogsart">
-          <div classname="col-md-1"></div>
-          <div className="col-md-10justify-content-center">
+        <div className="row d-flex justify-content-center ">
+          <div className="col-md-10 headerblogart">
             <h2 className="blogart_titulonotica">
               ¿Qué tan feliz te hace una mascota?
             </h2>
@@ -18,9 +17,7 @@ export const BlogArt = () => {
               src={photoblogart}
               alt="photoblogart"
             />
-            <div classname="col-md-1"></div>
           </div>
-          <hr className="blogart_linea"></hr>
         </div>
         <h2 className="blogart_titulo2">Actualidad</h2>
       </div>

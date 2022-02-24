@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100&family=Source+Code+Pro:wght@200&family=Vollkorn:ital,wght@1,500&display=swap");
 
-.blogart_header {
+.headerblogsection {
   border-bottom: #ed8b62 solid 3px;
   margin-bottom: 2%;
 }
@@ -11,6 +11,8 @@
   display: block;
   margin: auto;
   border-radius: 5%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .tituloblog1 {

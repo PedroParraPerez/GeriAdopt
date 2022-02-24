@@ -9,29 +9,25 @@ export const BlogNoticias = () => {
   return (
     <>
       <div className="container-fluid">
-        <div className="col-md-1"></div>
-        <div className="col-md-10 justify-content-center">
-          <h2 className="blognoticias_titulonotica">Todas las Noticias</h2>
-
-          <div className="col-md-1"></div>
-        </div>
-        <div>
-          <hr className="blognoticias_linea"></hr>
+        <div className="row d-flex justify-content-center align-items-center blognoticias_titulonotica1">
+          <div className="col-md-10 d-flex justify-content-center">
+            <h2 className="blognoticias_titulonotica">Todas las Noticias</h2>
+          </div>
         </div>
 
         <div className="blognoticias_body">
           <h2 className="blognoticias_titulo2">Últimas Noticias</h2>
-          <div className="row">
-            <div className="col-md-6 blognoticias-card1">
-              <div className="row g-0">
-                <div className="col-md-4 blognoticias-cardimg">
+          <div className="row mx-1">
+            <div className="col-md-6 py-2 blognoticias-card1">
+              <div className="row">
+                <div className="col-md-6 d-flex justify-content-center align-items-center blognoticias-cardimg">
                   <img
                     src={fotoblog1section}
                     className="img-fluid blognoticias-foto1"
                     alt="perrocámara"
                   />
                 </div>
-                <div className="col-md-8">
+                <div className="col-md-6">
                   <div className="blognoticias-card-body">
                     <h5 className="card-title justify-content-center blognoticias-titulo1">
                       Cinco pasos que debes saber antes de adoptar
@@ -44,7 +40,7 @@ export const BlogNoticias = () => {
                       href="#"
                       className="btn   justify-content-center blognoticias-boton"
                     >
-                      Leer más
+                      Leer Más
                     </button>
                   </div>
                 </div>
@@ -52,11 +48,11 @@ export const BlogNoticias = () => {
             </div>
             <div className="col-md-6"></div>
           </div>
-          <div className="row">
+          <div className="row mx-1">
             <div className="col-md-6"></div>
-            <div className="col-md-6  blognoticias-card2">
-              <div className="row g-0">
-                <div className="col-md-4 blognoticias-cardimg">
+            <div className="col-md-6 py-2 blognoticias-card2">
+              <div className="row">
+                <div className="col-md-4 d-flex justify-content-center align-items-center blognoticias-cardimg">
                   <img
                     src={fotoblogsection2}
                     className="img-fluid blognoticias-foto1"
@@ -77,18 +73,17 @@ export const BlogNoticias = () => {
                       href="#"
                       className="btn   justify-content-center blognoticias-boton"
                     >
-                      Leer más
+                      Leer Más
                     </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="row">
-            <div className="col-md-6"></div>
-            <div className="col-md-6  blognoticias-card3">
-              <div className="row g-0">
-                <div className="col-md-4 blognoticias-cardimg">
+          <div className="row mx-2">
+            <div className="col-md-6 py-2  blognoticias-card3">
+              <div className="row">
+                <div className="col-md-4 d-flex justify-content-center align-items-center blognoticias-cardimg">
                   <img
                     src={fotoblogsection3}
                     className="img-fluid blognoticias-foto1"
@@ -109,18 +104,19 @@ export const BlogNoticias = () => {
                       href="#"
                       className="btn   justify-content-center blognoticias-boton"
                     >
-                      Leer más
+                      Leer Más
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="row">
             <div className="col-md-6"></div>
-            <div className="col-md-6  blognoticias-card4">
-              <div className="row g-0">
-                <div className="col-md-4 blognoticias-cardimg">
+          </div>
+          <div className="row mx-1">
+            <div className="col-md-6"></div>
+            <div className="col-md-6 py-2 blognoticias-card4">
+              <div className="row">
+                <div className="col-md-4 d-flex justify-content-center align-items-center blognoticias-cardimg">
                   <img
                     src={fotoblogsection4}
                     className="img-fluid blognoticias-foto1"
