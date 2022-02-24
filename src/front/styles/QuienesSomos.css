@@ -1,13 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400&family=Comforter&family=Josefin+Sans:ital,wght@1,500&family=Sansita+Swashed:wght@300&family=Ubuntu:wght@300&display=swap");
+
 .picQuienesSomos {
   width: 70%;
   height: auto;
+  margin-top: 5rem;
   border-radius: 10%;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.centerPicQuienesSomos {
+.lineQuienesSomos {
+  width: 90%;
+  border-bottom: 0.2rem solid orange;
+  margin-bottom: 5rem;
+  display: flex;
+  margin: auto;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .titleQuienesSomos {
@@ -18,5 +28,26 @@
   margin-bottom: 4%;
 }
 
+.centerPicQuienesSomos {
+  text-align: center;
+}
+
 .textoQuienesSomos {
+  margin-top: 4%;
+  font-family: "Alegreya Sans", sans-serif;
+  text-align: center;
+}
+
+.middleBarQuienesSomos {
+  margin-top: 6rem;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background-color: rgb(239, 201, 182);
+  display: flex;
+}
+
+.picQuienesSomosDos {
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
 }

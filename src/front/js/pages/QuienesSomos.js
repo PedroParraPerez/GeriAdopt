@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 
 import "../../styles/QuienesSomos.css";
 import quienesSomos from "../../img/quienesSomos.jpg";
+import quienesSomosDosFinal from "../../img/quienesSomosDosFinal.png";
 
 export const QuienesSomos = () => {
   const { store, actions } = useContext(Context);
@@ -13,7 +14,9 @@ export const QuienesSomos = () => {
         <div className="row">
           <div className="col-md-1"></div>
           <div className="col-md-10">
-            <h1 className="titleQuienesSomos">Quienes Somos</h1>
+            <div className="lineQuienesSomos">
+              <h1 className="titleQuienesSomos">Quienes Somos</h1>
+            </div>
           </div>
           <div className="col-md-1"></div>
         </div>
@@ -44,6 +47,17 @@ export const QuienesSomos = () => {
             </h4>
           </div>
           <div className="col-md-1"></div>
+        </div>
+
+        <div className="row middleBarQuienesSomos">
+          <div className="row">
+            <img
+              className="picQuienesSomosDos"
+              src={quienesSomosDosFinal}
+              alt="quienes somos"
+            />
+          </div>
+          <div className="col-md-"></div>
         </div>
       </div>
     </>
