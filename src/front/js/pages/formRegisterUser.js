@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/formRegisterUser.css";
+import FormRegisterUserPhoto from "../../img/form.register.user.photo.png";
 
 export const FormRegisterUser = () => {
   return (
@@ -7,8 +8,15 @@ export const FormRegisterUser = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-xl-5 formRegisterUser_view">
+            <img
+              src={FormRegisterUserPhoto}
+              className="formRegisterUser_Photo"
+              alt="form-photo"
+            />
             <div className="row formRegisterUser_title">
-              <h2>¡Quiero Adoptar!</h2>
+              <div className="col-xl-12">
+                <h2>¡Quiero Adoptar!</h2>
+              </div>
             </div>
             <form>
               <div className="row formRegisterUser_GroupInput">
@@ -57,7 +65,7 @@ export const FormRegisterUser = () => {
                     required
                   />
                 </div>
-                <div className="row inputGroupAgeAndCity">
+                <div className="row">
                   <div className="col-xl-6">
                     <label for="age">Edad:</label>
                     <input
@@ -74,19 +82,19 @@ export const FormRegisterUser = () => {
                       name="city"
                     />
                   </div>
-                  <div className="row">
-                    <label for="direction">Dirección:</label>
-                    <input
-                      type="text"
-                      class="form-control formRegisterUser_Input"
-                      name="direction"
-                    />
-                  </div>
-                  <div class="col-XL-12 mt-2 d-flex justify-content-end mt-4">
-                    <button class="btn formRegisterUser_button" type="submit">
-                      Submit form
-                    </button>
-                  </div>
+                </div>
+                <div className="row">
+                  <label for="direction">Dirección:</label>
+                  <input
+                    type="text"
+                    class="form-control formRegisterUser_Input"
+                    name="direction"
+                  />
+                </div>
+                <div class="col-XL-12 mt-2 d-flex justify-content-end mt-4">
+                  <button class="btn formRegisterUser_button" type="submit">
+                    Submit form
+                  </button>
                 </div>
               </div>
             </form>
