@@ -17,9 +17,10 @@ export const BlogSection = () => {
             src={perrogafasblog}
             alt="perrogafasblog"
           ></img>
+          <h2 className="tituloblog2">Actualidad</h2>
           <hr className="lineablogsection"></hr>
         </div>
-        <h2 className="tituloblog2">Actualidad</h2>
+        
         <div className="container bodyblogsection">
           <div className="row cardsblogsection">
             <div className="col-md-4 box">

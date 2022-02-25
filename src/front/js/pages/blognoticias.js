@@ -16,7 +16,7 @@ export const BlogNoticias = () => {
         </div>
 
         <div className="blognoticias_body">
-          <h2 className="blognoticias_titulo2">Últimas Noticias</h2>
+         
           <div className="row mx-1">
             <div className="col-md-6 py-2 blognoticias-card1">
               <div className="row">
@@ -46,6 +46,7 @@ export const BlogNoticias = () => {
                 </div>
               </div>
             </div>
+           
             <div className="col-md-6"></div>
           </div>
           <div className="row mx-1">

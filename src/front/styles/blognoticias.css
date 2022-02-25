@@ -1,21 +1,22 @@
 .blognoticias_titulonotica {
-  font-family: "Vollkorn", serif;
+  font-family: "Alegreya Sans", sans-serif;
   text-align: center;
-  font-size: 50px;
+  font-size: 55px;
+  margin-bottom: 2%;
 }
 
 .blognoticias_titulonotica1 {
   border-bottom: rgb(242, 138, 102) solid 3px;
-  margin-bottom: 2%;
+  margin-bottom: 6%;
   margin-left: 2%;
   margin-right: 2%;
 }
 .blognoticias_titulo2 {
-  font-family: "Vollkorn", serif;
+  font-family: "Alegreya Sans", sans-serif;
   text-align: left;
   font-size: 35px;
   padding-left: 5%;
-  margin-top: 1%;
+  margin-top: 3%;
 }
 
 .blognoticias-foto1 {
@@ -28,7 +29,7 @@
 }
 
 .blognoticias-titulo1 {
-  font-family: "Vollkorn", serif;
+  font-family: "Alegreya Sans", sans-serif;
   text-align: left;
   font-size: 30px;
   text-align: center;
@@ -65,7 +66,7 @@
 }
 
 .blognoticias-card2 {
-  margin-top: 3%;
+  margin-top: 5%;
   display: flex;
   align-items: center;
   padding-top: 1%;
@@ -75,13 +76,13 @@
 
 .blognoticias-texto2 {
   font-family: "Alegreya Sans", sans-serif;
-  font-size: 22px;
+  font-size: 25px;
   margin-top: 5%;
   text-align: center;
 }
 .blognoticias-texto3 {
   font-family: "Alegreya Sans", sans-serif;
-  font-size: 22px;
+  font-size: 25px;
   margin-top: 5%;
   text-align: center;
 }
@@ -98,7 +99,7 @@
 }
 
 .blognoticias-card3 {
-  margin-top: 3%;
+  margin-top: 5%;
   display: flex;
   align-items: center;
   padding-top: 1%;
@@ -107,7 +108,7 @@
 }
 
 .blognoticias-card4 {
-  margin-top: 3%;
+  margin-top: 5%;
   display: flex;
   align-items: center;
   padding-top: 1%;

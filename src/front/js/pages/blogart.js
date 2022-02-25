@@ -17,9 +17,10 @@ export const BlogArt = () => {
               src={photoblogart}
               alt="photoblogart"
             />
+            <h2 className="blogart_titulo2">Actualidad</h2>
           </div>
         </div>
-        <h2 className="blogart_titulo2">Actualidad</h2>
+        
       </div>
       <div className="blogart_body">
         <div className="row">
