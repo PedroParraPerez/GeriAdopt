@@ -66,3 +66,25 @@
   color: white;
   font-size: 1.2rem;
 }
+
+.footer-circleone{
+ padding-left: 3%;
+ z-index: -1;
+position: absolute;
+margin-bottom: 8%;
+margin-top: 0.5%;
+}
+
+.footer-circletwo{
+ padding-left: 6%;
+ padding-bottom: 0.5%;
+ margin-top: -1%;
+ z-index: -1;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer-circleone, .footer-circletwo {
+    
+    display: none;
+  }
+}

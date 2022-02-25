@@ -16,7 +16,27 @@ export const Footer = () => {
       <br />
       <br />
       <br />
+      <br /> 
+      <div className="row">
+        <div className="col-md-12">
+          <div className="footer-circleone">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+            width="120" height="120" viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="50"
+                    fill="#FFE071" />
+          </svg>
+          </div>
+          <div className="footer-circletwo">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+            width="85" height="85" viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="50"
+                    fill="#FBA0A0" />
+          </svg> 
+          </div>
+        </div>
+      </div>
       <br />
+      <br /> 
       <section className="foot">
         <footer>
           <div className="row colum1foot">
@@ -92,7 +112,10 @@ export const Footer = () => {
         <div>
           <img src={perrete} className="perreteBingofoot" alt="perrete"></img>
         </div>
+        
+        
       </section>
+      
     </>
   );
 };
