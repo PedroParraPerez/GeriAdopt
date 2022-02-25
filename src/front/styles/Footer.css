@@ -72,13 +72,13 @@
  z-index: -1;
 position: absolute;
 margin-bottom: 8%;
-margin-top: 0.5%;
+margin-top: -3%;
 }
 
 .footer-circletwo{
  padding-left: 6%;
  padding-bottom: 0.5%;
- margin-top: -1%;
+ margin-top: -4%;
  z-index: -1;
 }
 

@@ -37,6 +37,8 @@ export const Footer = () => {
       </div>
       <br />
       <br /> 
+      <br />
+      <br /> 
       <section className="foot">
         <footer>
           <div className="row colum1foot">
