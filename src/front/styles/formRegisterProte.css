@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
 
 .formRegisterProte_view {
-  /* background: url("../img/form.register.user.photo.png"); */
   display: block;
   margin: 0 auto;
   border-radius: 10%;
@@ -48,4 +47,21 @@
   font-size: larger;
   font-weight: bold;
   z-index: 1;
+}
+@media only screen and (max-width: 1600px) {
+  .formRegisterProte_Photo {
+    display: none;
+  }
+  .formRegisterProte_view {
+    border-radius: 5%;
+    margin-top: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .formRegisterProte_title {
+    font-weight: bolder;
+    color: black;
+  }
+  .formRegisterProte_GroupInput {
+    color: black;
+  }
 }

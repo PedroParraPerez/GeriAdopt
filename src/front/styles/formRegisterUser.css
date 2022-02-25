@@ -45,7 +45,7 @@
   font-weight: bold;
 }
 
-.inputAgeAndCity {
+.formRegisterUser_inputAgeAndCity {
   display: flex;
   justify-content: end;
   z-index: 1;
@@ -56,4 +56,24 @@
   font-size: larger;
   font-weight: bold;
   z-index: 1;
+}
+@media only screen and (max-width: 1600px) {
+  .formRegisterUser_Photo {
+    display: none;
+  }
+  .formRegisterUser_view {
+    border-radius: 5%;
+    margin-top: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .formRegisterUser_title {
+    font-weight: bolder;
+    color: black;
+  }
+  .formRegisterUser_GroupInput {
+    color: black;
+  }
+  .formRegisterUser_inputAgeAndCity {
+    color: black;
+  }
 }

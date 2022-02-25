@@ -70,7 +70,7 @@ export const FormRegisterUser = () => {
                     <label for="age">Edad:</label>
                     <input
                       type="number"
-                      class="form-control inputAgeAndCity"
+                      class="form-control formRegisterUser_inputAgeAndCity"
                       name="age"
                     />
                   </div>
@@ -78,7 +78,7 @@ export const FormRegisterUser = () => {
                     <label for="city">Ciudad:</label>
                     <input
                       type="text"
-                      class="form-control inputAgeAndCity"
+                      class="form-control formRegisterUser_inputAgeAndCity"
                       name="city"
                     />
                   </div>
@@ -93,7 +93,7 @@ export const FormRegisterUser = () => {
                 </div>
                 <div class="col-XL-12 mt-2 d-flex justify-content-end mt-4">
                   <button class="btn formRegisterUser_button" type="submit">
-                    Submit form
+                    Registrarme
                   </button>
                 </div>
               </div>
