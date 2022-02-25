@@ -10,6 +10,7 @@
   justify-content: flex-end;
   padding-right: 5rem;
 }
+
 .Protectora_Protectoraphoto {
   width: 15rem;
   height: 15rem;
@@ -46,7 +47,7 @@
   display: flex;
   padding-left: 3rem;
   margin-top: 3rem;
-  border-bottom: 0.3rem solid orange;
+  border-bottom: 0.2rem solid orange;
   font-family: "Alegreya Sans", sans-serif;
 }
 .Protectora_ImgTitleFavs {
@@ -73,7 +74,7 @@
   margin-top: 12rem;
 }
 
-.titleProte{
+.titleProte {
   margin-left: -1rem;
   font-family: "Alegreya Sans", sans-serif;
   margin-right: -6rem;
