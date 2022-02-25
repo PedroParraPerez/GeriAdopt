@@ -76,7 +76,7 @@ export const FormRegisterProte = () => {
                 </div>
                 <div class="col-XL-12 mt-2 d-flex justify-content-end mt-4">
                   <button class="btn formRegisterProte_button" type="submit">
-                    Submit form
+                    Registrarme
                   </button>
                 </div>
               </div>
