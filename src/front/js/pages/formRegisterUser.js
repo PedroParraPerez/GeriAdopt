@@ -21,78 +21,78 @@ export const FormRegisterUser = () => {
             <form>
               <div className="row formRegisterUser_GroupInput">
                 <div className="row">
-                  <label for="name">Nombre</label>
+                  <label htmlFor="name">Nombre</label>
                   <input
                     type="text"
-                    class="form-control formRegisterUser_Input"
+                    className="form-control formRegisterUser_Input"
                     name="name"
                     required
                   />
                 </div>
                 <div className="row">
-                  <label for="surname">Apellidos</label>
+                  <label htmlFor="surname">Apellidos</label>
                   <input
                     type="text"
-                    class="form-control formRegisterUser_Input"
+                    className="form-control formRegisterUser_Input"
                     name="surname"
                     required
                   />
                 </div>
                 <div className="row">
-                  <label for="email">Correo</label>
+                  <label htmlFor="email">Correo</label>
                   <input
                     type="email"
-                    class="form-control formRegisterUser_Input"
+                    className="form-control formRegisterUser_Input"
                     name="email"
                     required
                   />
                 </div>
                 <div className="row">
-                  <label for="password">Contraseña:</label>
+                  <label htmlFor="password">Contraseña:</label>
                   <input
                     type="password"
-                    class="form-control formRegisterUser_Input"
+                    className="form-control formRegisterUser_Input"
                     name="password"
                     required
                   />
                 </div>
                 <div className="row">
-                  <label for="passwordrepeat">Confirmar Contraseña</label>
+                  <label htmlFor="passwordrepeat">Confirmar Contraseña</label>
                   <input
                     type="password"
-                    class="form-control formRegisterUser_Input"
+                    className="form-control formRegisterUser_Input"
                     name="passwordrepeat"
                     required
                   />
                 </div>
                 <div className="row">
                   <div className="col-xl-6">
-                    <label for="age">Edad:</label>
+                    <label htmlFor="age">Edad:</label>
                     <input
                       type="number"
-                      class="form-control formRegisterUser_inputAgeAndCity"
+                      className="form-control formRegisterUser_inputAgeAndCity"
                       name="age"
                     />
                   </div>
                   <div className="col-xl-6">
-                    <label for="city">Ciudad:</label>
+                    <label htmlFor="city">Ciudad:</label>
                     <input
                       type="text"
-                      class="form-control formRegisterUser_inputAgeAndCity"
+                      className="form-control formRegisterUser_inputAgeAndCity"
                       name="city"
                     />
                   </div>
                 </div>
                 <div className="row">
-                  <label for="direction">Dirección:</label>
+                  <label htmlFor="direction">Dirección:</label>
                   <input
                     type="text"
-                    class="form-control formRegisterUser_Input"
+                    className="form-control formRegisterUser_Input"
                     name="direction"
                   />
                 </div>
-                <div class="col-XL-12 mt-2 d-flex justify-content-end mt-4">
-                  <button class="btn formRegisterUser_button" type="submit">
+                <div className="col-XL-12 mt-2 d-flex justify-content-end mt-4">
+                  <button className="btn formRegisterUser_button" type="submit">
                     Registrarme
                   </button>
                 </div>

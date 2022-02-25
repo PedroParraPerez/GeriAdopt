@@ -21,61 +21,64 @@ export const FormRegisterProte = () => {
             <form>
               <div className="row formRegisterProte_GroupInput">
                 <div className="row">
-                  <label for="name">Nombre de la protectora:</label>
+                  <label htmlFor="name">Nombre de la protectora:</label>
                   <input
                     type="text"
-                    class="form-control formRegisterProte_Input"
+                    className="form-control formRegisterProte_Input"
                     name="name"
                     required
                   />
                 </div>
                 <div className="row">
-                  <label for="email">Correo</label>
+                  <label htmlFor="email">Correo</label>
                   <input
                     type="email"
-                    class="form-control formRegisterProte_Input"
+                    className="form-control formRegisterProte_Input"
                     name="email"
                     required
                   />
                 </div>
                 <div className="row">
-                  <label for="password">Contraseña:</label>
+                  <label htmlFor="password">Contraseña:</label>
                   <input
                     type="password"
-                    class="form-control formRegisterProte_Input"
+                    className="form-control formRegisterProte_Input"
                     name="password"
                     required
                   />
                 </div>
                 <div className="row">
-                  <label for="passwordrepeat">Confirmar Contraseña</label>
+                  <label htmlFor="passwordrepeat">Confirmar Contraseña</label>
                   <input
                     type="password"
-                    class="form-control formRegisterProte_Input"
+                    className="form-control formRegisterProte_Input"
                     name="passwordrepeat"
                     required
                   />
                 </div>
                 <div className="row">
                   <div className="col-xl-6">
-                    <label for="direction">Dirección:</label>
+                    <label htmlFor="direction">Dirección:</label>
                     <input
                       type="text"
-                      class="form-control formRegisterProte_Input"
+                      className="form-control formRegisterProte_Input"
                       name="direction"
                     />
                   </div>
                   <div className="col-xl-6">
-                    <label for="city">Ciudad:</label>
+                    <label htmlFor="city">Ciudad:</label>
                     <input
                       type="text"
-                      class="form-control inputAgeAndCity"
+                      className="form-control inputAgeAndCity"
                       name="city"
                     />
                   </div>
                 </div>
-                <div class="col-XL-12 mt-2 d-flex justify-content-end mt-4">
-                  <button class="btn formRegisterProte_button" type="submit">
+                <div className="col-XL-12 mt-2 d-flex justify-content-end mt-4">
+                  <button
+                    className="btn formRegisterProte_button"
+                    type="submit"
+                  >
                     Registrarme
                   </button>
                 </div>

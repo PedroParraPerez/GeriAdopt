@@ -17,25 +17,25 @@ export const Login = () => {
             <form>
               <div className="row login_GroupInput">
                 <div className="row">
-                  <label for="email">Correo</label>
+                  <label htmlFor="email">Correo</label>
                   <input
                     type="email"
-                    class="form-control login_Input"
+                    className="form-control login_Input"
                     name="email"
                     required
                   />
                 </div>
                 <div className="row">
-                  <label for="password">Contraseña:</label>
+                  <label htmlFor="password">Contraseña:</label>
                   <input
                     type="password"
-                    class="form-control login_Input"
+                    className="form-control login_Input"
                     name="password"
                     required
                   />
                 </div>
-                <div class="col-XL-12 mt-2 d-flex justify-content-end mt-4">
-                  <button class="btn login_button" type="submit">
+                <div className="col-XL-12 mt-2 d-flex justify-content-end mt-4">
+                  <button className="btn login_button" type="submit">
                     Entrar
                   </button>
                 </div>

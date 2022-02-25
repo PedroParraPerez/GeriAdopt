@@ -15,7 +15,7 @@ export const AllDogsList = () => {
           <div className="row filter">
             <div className="col-md-2">
               <select
-                class="form-select inputfilter"
+                className="form-select inputfilter"
                 aria-label="Default select example"
               >
                 <option selected disabled>
@@ -28,7 +28,7 @@ export const AllDogsList = () => {
             </div>
             <div className="col-md-2">
               <select
-                class="form-select inputfilter"
+                className="form-select inputfilter"
                 aria-label="Default select example"
               >
                 <option selected disabled>
@@ -40,7 +40,7 @@ export const AllDogsList = () => {
             </div>
             <div className="col-md-2">
               <select
-                class="form-select inputfilter"
+                className="form-select inputfilter"
                 aria-label="Default select example"
               >
                 <option selected disabled>
@@ -53,7 +53,7 @@ export const AllDogsList = () => {
             </div>
             <div className="col-md-2">
               <select
-                class="form-select inputfilter"
+                className="form-select inputfilter"
                 aria-label="Default select example"
               >
                 <option selected disabled>
@@ -66,7 +66,7 @@ export const AllDogsList = () => {
             </div>
             <div className="col-md-2">
               <input
-                class="form-control inputfilter"
+                className="form-control inputfilter"
                 type="text"
                 name="Provincia"
                 placeholder="Provincia"
