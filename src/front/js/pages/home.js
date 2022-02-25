@@ -11,7 +11,7 @@ import adoption from "../../img/adoption.png";
 import dogWalking from "../../img/dogWalking.png";
 import AdopterHome from "../../img/AdopterHome.jpeg";
 import ProtectoraHome from "../../img/ProtectoraHome.jpg";
-import dogbloghome from "../../img/dogbloghome.jpeg"
+import dogbloghome from "../../img/dogbloghome.jpeg";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -27,9 +27,6 @@ export const Home = () => {
               Comunidad y suma un miembro a tu familia
             </h2>
             <img className="heartHeader" src={HeartHeader} alt="heart" />
-            <button type="button" className="btn buttonHeader">
-              ¡Encuentra tu Match!
-            </button>
           </div>
           <div className="col-md-5">
             <img
@@ -39,6 +36,15 @@ export const Home = () => {
             />
           </div>
           <div className="col-md-1"></div>
+        </div>
+        <div className="row rowButtHeader">
+          <div className="col-md-1"></div>
+          <div className="col-md-4">
+            <button type="button" className="buttonHeader">
+              <a>¡Encuentra tu Match!</a>
+            </button>
+          </div>
+          <div className="col-md-7"></div>
         </div>
         <div className="row middleBar">
           <div className="row">
@@ -96,14 +102,18 @@ export const Home = () => {
               />
               <div className="card-body cardBody">
                 <p className="card-text cardText">
-                En GeriAdopt encuentra a tu peludo ideal y suma un miembro más a tu familia. <br/>Encuentra, enamorate y contacta con la protectora, asi de simple.
-
-                <br/>¡Crea tu perfil con nosotros!
+                  En GeriAdopt encuentra a tu peludo ideal y suma un miembro más
+                  a tu familia. <br />
+                  Encuentra, enamorate y contacta con la protectora, asi de
+                  simple.
+                  <br />
+                  ¡Crea tu perfil con nosotros!
                 </p>
                 <button className="buttonHomeRegis">
-                <a href="#" className="btnText">
-                  ¡Quiero Adoptar!
-                </a></button>
+                  <a href="#" className="bttnText">
+                    ¡Quiero Adoptar!
+                  </a>
+                </button>
               </div>
             </div>
           </div>
@@ -116,43 +126,49 @@ export const Home = () => {
               />
               <div className="card-body cardBody">
                 <p className="card-text cardText">
-                Si tienes una protectora y quieres dar difusión a tus animalitos rescatados que buscan un hogar, esta es tu oportunidad.
-<br/>¡Registrate como Protectora!
+                  Si tienes una protectora y quieres dar difusión a tus
+                  animalitos rescatados que buscan un hogar, esta es tu
+                  oportunidad.
+                  <br />
+                  ¡Registrate como Protectora!
                 </p>
-                <button className="buttonHomeRegis"> <a href="#" className="btnText">
-                  Quiero Registrar mi Protectora
-                </a> </button>
+                <button className="buttonHomeRegis">
+                  <a href="#" className="bttnText">
+                    Quiero Registrar mi Protectora
+                  </a>
+                </button>
               </div>
             </div>
           </div>
           <div className="col-md-1"></div>
-        </div>   
-          
+        </div>
+
         <div className="row gotoblog">
-            <div className="col-md-1"></div>
-            <div className="col-md-6">
-              <div className="blogcenter">
+          <div className="col-md-1"></div>
+          <div className="col-md-6">
+            <div className="blogcenter">
               <img
-              className="dogBlogHome"
-              src={dogbloghome}
-              alt="dog with newspaper pages"
+                className="dogBlogHome"
+                src={dogbloghome}
+                alt="dog with newspaper pages"
               />
-              </div>
             </div>
-            <div className="col-md-4">
-            <h4 className="blogTitleHome">
-              Blog de Noticias
-            </h4>
+          </div>
+          <div className="col-md-4">
+            <h4 className="blogTitleHome">Blog de Noticias</h4>
             <div className="textoBlogHomeDiv">
-            <p className="textoBlogHome">Entérate de todas las novedades del mundo de la adopción animal en España. <br/>Novedades, eventos, tips y ¡mucho más!</p>
+              <p className="textoBlogHome">
+                Entérate de todas las novedades del mundo de la adopción animal
+                en España. <br />
+                Novedades, eventos, tips y ¡mucho más!
+              </p>
             </div>
             <div className="buttonBlogHomePosition">
               <button className="buttonBlogHome">Accede al Blog</button>
             </div>
-            </div>
-            <div className="col-md-1"></div>
+          </div>
+          <div className="col-md-1"></div>
         </div>
-
 
         <div className="row rowQuote">
           <div className="col-md-1"></div>

@@ -6,6 +6,8 @@
 /*
 * {
   border: black dotted 2px;
+  justify-content: center;
+  align-items: center;
 }*/
 
 .textoHeader {
@@ -16,12 +18,18 @@
 }
 
 .buttonHeader {
-  width: 35%;
-  height: 10%;
-  border-radius: 7%;
-  background-color: antiquewhite;
+  width: 15%;
+  height: auto;
+  top: 65%;
+  position: absolute;
+  border-radius: 1rem;
+  padding: 1rem 1rem;
   font-family: "Alegreya Sans", sans-serif;
-  font-size: 25px;
+  background-color: #f8d2c3;
+  border: solid black 1px;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin-bottom: 4rem;
 }
 
 .familyHeader {
@@ -104,7 +112,7 @@
   margin-bottom: 2rem;
 }
 
-.btnText {
+.bttnText {
   background-color: #f8d2c3;
   color: black;
   border: none;
