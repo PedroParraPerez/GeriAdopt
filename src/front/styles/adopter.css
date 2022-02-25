@@ -32,9 +32,7 @@
 .Adopter_editbutton:hover {
   cursor: pointer;
 }
-.Adopter_prymaryinfo {
-  padding-left: 1rem;
-}
+
 .Adopter_labelprofileinfo {
   color: #e55e2f;
 }
@@ -53,20 +51,18 @@
   width: 81px;
   left: 0%;
   height: auto;
-  top: -32.8%;
+  top: -49.8%;
   z-index: 2;
 }
-.Adopter_NavFavs_Img {
-  top: -4rem;
-  margin-right: auto;
-  margin-left: auto;
-  left: 0;
-  right: 0;
-  width: 100%;
-}
+
 .Adopter_cardlist {
   display: flex;
   justify-content: center;
   width: 60%;
   margin: 0 auto;
+}
+@media only screen and (max-width: 1224px) {
+  .Adopter_ImgTitleFavs {
+    display: none;
+  }
 }

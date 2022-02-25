@@ -8,11 +8,11 @@ export const FormRegisterUser = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-xl-5 formRegisterUser_view">
-            <img
+            {/* <img
               src={FormRegisterUserPhoto}
               className="formRegisterUser_Photo"
               alt="form-photo"
-            />
+            /> */}
             <div className="row formRegisterUser_title">
               <div className="col-xl-12">
                 <h2>¡Quiero Adoptar!</h2>

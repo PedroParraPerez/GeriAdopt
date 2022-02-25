@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
 
 .formRegisterUser_view {
-  /* background: url("../img/form.register.user.photo.png"); */
+  background: url("../img/form.register.user.photo.png");
   display: block;
   margin: 0 auto;
   border-radius: 10%;
   padding: 1rem 1rem;
   width: 35rem;
   z-index: 0;
+
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 .formRegisterUser_Photo {
@@ -57,7 +58,7 @@
   font-weight: bold;
   z-index: 1;
 }
-@media only screen and (max-width: 1600px) {
+/* @media only screen and (max-width: 1600px) {
   .formRegisterUser_Photo {
     display: none;
   }
@@ -76,4 +77,4 @@
   .formRegisterUser_inputAgeAndCity {
     color: black;
   }
-}
+} */

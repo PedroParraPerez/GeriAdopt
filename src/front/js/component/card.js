@@ -11,7 +11,7 @@ export const Card = () => {
   return (
     <>
       <div className="card Card_carddogs">
-        <img src={Mojito} id="Card_cardphoto" />
+        <img src={Mojito} className="Card_cardphoto" />
         <div className="Card_dogcardsbody">
           <h5 className="Card_card-title">
             <b>Mojito</b>
@@ -51,7 +51,7 @@ export const Card = () => {
           </div>
           <button className="btn Card_btn">Conóceme!</button>
           <div className="Card_FavButton">
-            <img src={IconHearth} alt="FavButton" id="Card_hearth" />
+            <img src={IconHearth} alt="FavButton" className="Card_hearth" />
           </div>
           <p className="location">
             <img src={IconUbic} className="Card_IconUbic" /> Madrid
