@@ -1,21 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
 
-.formRegisterUser_view {
-  /* background: url("../img/form.register.user.photo.png"); */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
+
+.login_view {
   display: block;
   margin: 0 auto;
   border-radius: 10%;
   padding: 1rem 1rem;
   width: 35rem;
   z-index: 0;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
-.formRegisterUser_Photo {
+.login_Photo {
   position: absolute;
   margin: 0 auto;
   border-radius: 5%;
   width: 35rem;
-  height: 40rem;
+  height: 20rem;
   z-index: -1;
   top: 32vh;
   margin-right: auto;
@@ -24,17 +24,16 @@
   right: 0;
   object-fit: cover;
   filter: blur(2px);
-  border: 2pt solid black;
 }
-.formRegisterUser_title {
+.login_title {
   font-family: "Alegreya Sans", sans-serif;
   display: flex;
   text-align: center;
   z-index: 1;
   color: white;
-  font-weight: 400;
+  font-weight: bolder;
 }
-.formRegisterUser_GroupInput {
+.login_GroupInput {
   font-family: "Alegreya Sans", sans-serif;
   font-size: large;
   width: 80%;
@@ -44,13 +43,7 @@
   color: white;
   font-weight: bold;
 }
-
-.inputAgeAndCity {
-  display: flex;
-  justify-content: end;
-  z-index: 1;
-}
-.formRegisterUser_button {
+.login_button {
   background-color: #f2a484;
   font-family: Alegreya Sans;
   font-size: larger;

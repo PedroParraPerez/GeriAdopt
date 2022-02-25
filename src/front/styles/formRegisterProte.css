@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
 
-.formRegisterUser_view {
+.formRegisterProte_view {
   /* background: url("../img/form.register.user.photo.png"); */
   display: block;
   margin: 0 auto;
@@ -8,14 +8,13 @@
   padding: 1rem 1rem;
   width: 35rem;
   z-index: 0;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
-.formRegisterUser_Photo {
+.formRegisterProte_Photo {
   position: absolute;
   margin: 0 auto;
   border-radius: 5%;
   width: 35rem;
-  height: 40rem;
+  height: 35rem;
   z-index: -1;
   top: 32vh;
   margin-right: auto;
@@ -23,10 +22,9 @@
   left: 0;
   right: 0;
   object-fit: cover;
-  filter: blur(2px);
-  border: 2pt solid black;
+  filter: blur(3px);
 }
-.formRegisterUser_title {
+.formRegisterProte_title {
   font-family: "Alegreya Sans", sans-serif;
   display: flex;
   text-align: center;
@@ -34,7 +32,7 @@
   color: white;
   font-weight: 400;
 }
-.formRegisterUser_GroupInput {
+.formRegisterProte_GroupInput {
   font-family: "Alegreya Sans", sans-serif;
   font-size: large;
   width: 80%;
@@ -44,13 +42,7 @@
   color: white;
   font-weight: bold;
 }
-
-.inputAgeAndCity {
-  display: flex;
-  justify-content: end;
-  z-index: 1;
-}
-.formRegisterUser_button {
+.formRegisterProte_button {
   background-color: #f2a484;
   font-family: Alegreya Sans;
   font-size: larger;

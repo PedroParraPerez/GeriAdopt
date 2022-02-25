@@ -49,9 +49,7 @@ export const Card = () => {
               </div>
             </div>
           </div>
-          <button href="#" className="btn Card_btn">
-            Conóceme!
-          </button>
+          <button className="btn Card_btn">Conóceme!</button>
           <div className="Card_FavButton">
             <img src={IconHearth} alt="FavButton" id="Card_hearth" />
           </div>

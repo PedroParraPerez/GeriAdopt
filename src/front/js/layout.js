@@ -13,6 +13,8 @@ import { Navbar } from "./component/navbar";
 import { AllDogsList } from "./pages/alldogslist";
 import { DetailDog } from "./pages/detaildog";
 import { FormRegisterUser } from "./pages/formRegisterUser.js";
+import { Login } from "./pages/login";
+import { FormRegisterProte } from "./pages/formRegisterProte";
 
 //create your first component
 const Layout = () => {
@@ -43,6 +45,12 @@ const Layout = () => {
             </Route>
             <Route exact path="/formregisteruser">
               <FormRegisterUser />
+            </Route>
+            <Route exact path="/formregisterprote">
+              <FormRegisterProte />
+            </Route>
+            <Route exact path="/login">
+              <Login />
             </Route>
             <Route exact path="/single/:theid">
               <Single />
