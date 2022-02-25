@@ -8,7 +8,6 @@ export const Login = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-xl-5 login_view">
-            <img src={loginPhoto} className="login_Photo" alt="form-photo" />
             <div className="row login_title">
               <div className="col-xl-12">
                 <h2>INICIAR SESION</h2>

@@ -1,6 +1,5 @@
 import React from "react";
 import "../../styles/formRegisterUser.css";
-import FormRegisterUserPhoto from "../../img/form.register.user.photo.png";
 
 export const FormRegisterUser = () => {
   return (
@@ -8,11 +7,6 @@ export const FormRegisterUser = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-xl-5 formRegisterUser_view">
-            {/* <img
-              src={FormRegisterUserPhoto}
-              className="formRegisterUser_Photo"
-              alt="form-photo"
-            /> */}
             <div className="row formRegisterUser_title">
               <div className="col-xl-12">
                 <h2>¡Quiero Adoptar!</h2>

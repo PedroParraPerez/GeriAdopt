@@ -8,11 +8,6 @@ export const FormRegisterProte = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-xl-5 formRegisterProte_view">
-            <img
-              src={FormRegisterProtePhoto}
-              className="formRegisterProte_Photo"
-              alt="form-photo"
-            />
             <div className="row formRegisterProte_title">
               <div className="col-xl-12">
                 <h2>REGISTRO PROTECTORAS</h2>
