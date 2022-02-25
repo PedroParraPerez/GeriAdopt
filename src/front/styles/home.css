@@ -18,10 +18,11 @@
 }
 
 .buttonHeader {
-  width: 15%;
+  /*width: 15%; hay que quitarlo para no limitar la imagen y que sea responsive
   height: auto;
   top: 65%;
-  position: absolute;
+  position: absolute;*/
+  margin-top: 2rem;
   border-radius: 1rem;
   padding: 1rem 1rem;
   font-family: "Alegreya Sans", sans-serif;
@@ -30,6 +31,7 @@
   font-size: 1.3rem;
   font-weight: bolder;
   margin-bottom: 4rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .familyHeader {
@@ -43,8 +45,7 @@
 
 .heartHeader {
   width: 20%;
-  height: 20%;
-  margin-left: 75%;
+  height: auto;
 }
 
 .middleBar {
@@ -107,7 +108,7 @@
 }
 .cardText {
   text-align: center;
-  padding-top: 15%;
+  margin-top: 5rem;
   font-size: 20px;
   margin-bottom: 2rem;
 }
@@ -130,6 +131,7 @@
   background-color: #f8d2c3;
   border-radius: 15px;
   padding: 1rem 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .gotoblog {
@@ -181,4 +183,5 @@ a:hover {
   border-radius: 1rem;
   font-size: 1.5rem;
   padding: 1rem 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

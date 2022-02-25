@@ -26,6 +26,9 @@ export const Home = () => {
               ¡En GeriAdopt Puedes Encontrar Tu Peludo Ideal! Únete a Nuestra
               Comunidad y suma un miembro a tu familia
             </h2>
+            <button type="button" className="buttonHeader">
+              <a>¡Encuentra tu Match!</a>
+            </button>
             <img className="heartHeader" src={HeartHeader} alt="heart" />
           </div>
           <div className="col-md-5">
@@ -35,16 +38,6 @@ export const Home = () => {
               alt="Family Adopted"
             />
           </div>
-          <div className="col-md-1"></div>
-        </div>
-        <div className="row rowButtHeader">
-          <div className="col-md-1"></div>
-          <div className="col-md-4">
-            <button type="button" className="buttonHeader">
-              <a>¡Encuentra tu Match!</a>
-            </button>
-          </div>
-          <div className="col-md-7"></div>
         </div>
         <div className="row middleBar">
           <div className="row">
