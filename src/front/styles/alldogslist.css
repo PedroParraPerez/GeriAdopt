@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
 
-.filter {
+.Alldogslist_filter {
   display: flex;
   margin: 0 auto;
   width: 80%;
@@ -9,7 +9,7 @@
   box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
   border-radius: 1rem;
 }
-.inputfilter {
+.Alldogslist_inputfilter {
   font-family: "Alegreya Sans", sans-serif;
   display: flex;
   margin: auto;
@@ -21,11 +21,11 @@
   border: none;
   padding-left: 7%;
 }
-.filterbuttons {
+.Alldogslist_filterbuttons {
   display: flex;
   justify-content: center;
 }
-.filterbuttonsubmit {
+.Alldogslist_filterbuttonsubmit {
   font-family: "Alegreya Sans", sans-serif;
   font-weight: bold;
   background-color: rgba(248, 151, 111, 0.81);
@@ -38,7 +38,7 @@
   border: none;
 }
 
-.FilterButtonReset {
+.Alldogslist_FilterButtonReset {
   font-family: "Alegreya Sans", sans-serif;
   font-weight: bolder;
   color: #fffbfb;
@@ -49,4 +49,11 @@
   margin-top: 1rem;
   border-radius: 5px;
   border: none;
+}
+
+.Alldoglist_cardlist {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  margin: 0 auto;
 }

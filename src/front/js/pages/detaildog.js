@@ -23,35 +23,33 @@ export const DetailDog = () => {
             <div>
               <ul>
                 <li className="detaildog_info_list">
-                  <span className="detaildog_info_list_label">F.nac:</span>{" "}
+                  <span className="detaildog_info_list_label">F.nac: </span>
                   25/12/2016
                 </li>
                 <li className="detaildog_info_list">
-                  <span className="detaildog_info_list_label">Raza:</span>{" "}
+                  <span className="detaildog_info_list_label">Raza: </span>
                   Beagle
                 </li>
                 <li className="detaildog_info_list">
-                  <span className="detaildog_info_list_label">Genero:</span>{" "}
+                  <span className="detaildog_info_list_label">Genero: </span>
                   Masculino
                 </li>
                 <li className="detaildog_info_list">
-                  <span className="detaildog_info_list_label">Tamaño:</span>{" "}
+                  <span className="detaildog_info_list_label">Tamaño: </span>
                   Mediano
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">
-                    Esterilizado:
-                  </span>{" "}
+                    Esterilizado:{" "}
+                  </span>
                   Si
                 </li>
                 <li className="detaildog_info_list">
-                  <span className="detaildog_info_list_label">CCAA:</span>{" "}
+                  <span className="detaildog_info_list_label">CCAA: </span>
                   Madrid
                 </li>
                 <li className="detaildog_info_list">
-                  <span className="detaildog_info_list_label">
-                    Protectora:{" "}
-                  </span>{" "}
+                  <span className="detaildog_info_list_label">Protectora:</span>
                   Apadrina un perro
                 </li>
                 <li className="detaildog_info_list">
@@ -60,14 +58,14 @@ export const DetailDog = () => {
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">
-                    Correo de contacto:{" "}
+                    Correo de contacto:
                   </span>
                   apadrina@unperro.com
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">
                     Teléfono de contacto:
-                  </span>{" "}
+                  </span>
                   654-76-87-98
                 </li>
                 <p className="detaildog_info_list">

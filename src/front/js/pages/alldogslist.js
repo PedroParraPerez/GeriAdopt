@@ -12,10 +12,10 @@ export const AllDogsList = () => {
     <>
       <div className="container-fluid">
         <form>
-          <div className="row filter">
+          <div className="row Alldogslist_filter">
             <div className="col-md-2">
               <select
-                className="form-select inputfilter"
+                className="form-select Alldogslist_inputfilter"
                 aria-label="Default select example"
               >
                 <option selected disabled>
@@ -28,7 +28,7 @@ export const AllDogsList = () => {
             </div>
             <div className="col-md-2">
               <select
-                className="form-select inputfilter"
+                className="form-select Alldogslist_inputfilter"
                 aria-label="Default select example"
               >
                 <option selected disabled>
@@ -40,7 +40,7 @@ export const AllDogsList = () => {
             </div>
             <div className="col-md-2">
               <select
-                className="form-select inputfilter"
+                className="form-select Alldogslist_inputfilter"
                 aria-label="Default select example"
               >
                 <option selected disabled>
@@ -53,7 +53,7 @@ export const AllDogsList = () => {
             </div>
             <div className="col-md-2">
               <select
-                className="form-select inputfilter"
+                className="form-select Alldogslist_inputfilter"
                 aria-label="Default select example"
               >
                 <option selected disabled>
@@ -66,29 +66,37 @@ export const AllDogsList = () => {
             </div>
             <div className="col-md-2">
               <input
-                className="form-control inputfilter"
+                className="form-control Alldogslist_inputfilter"
                 type="text"
                 name="Provincia"
                 placeholder="Provincia"
               />
             </div>
-            <div className="col-md-2 filterbuttons">
-              <button type="Submit" className="filterbuttonsubmit">
+            <div className="col-md-2 Alldogslist_filterbuttons">
+              <button type="Submit" className="Alldogslist_filterbuttonsubmit">
                 Buscar
               </button>
-              <button type="Reset" className="FilterButtonReset">
+              <button type="Reset" className="Alldogslist_FilterButtonReset">
                 X
               </button>
             </div>
           </div>
         </form>
-      </div>
-      <div className="cardList">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+
+        <div className=" row Alldoglist_cardlist">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
       </div>
     </>
   );
