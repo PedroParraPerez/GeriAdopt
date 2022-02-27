@@ -83,3 +83,25 @@
   font-size: 1.5rem;
   text-align: center;
 }
+
+.adoptedDog {
+  width: 70%;
+  height: auto;
+  margin-top: 5rem;
+  border-radius: 10%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.centerDogAdopted {
+  text-align: center;
+}
+
+.heartsSides {
+  margin-top: 15rem;
+  width: 10vmax;
+  height: 10vmax;
+}
+
+.centerHeartsSides {
+  text-align: center;
+}

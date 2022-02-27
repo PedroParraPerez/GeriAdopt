@@ -4,6 +4,8 @@ import { Context } from "../store/appContext";
 import "../../styles/QuienesSomos.css";
 import quienesSomos from "../../img/quienesSomos.jpg";
 import quienesSomosDos from "../../img/quienesSomosDos.jpg";
+import dogadoptedQSomos from "../../img/dogadoptedQSomos.jpg";
+import hearts from "../../img/hearts.png";
 
 export const QuienesSomos = () => {
   const { store, actions } = useContext(Context);
@@ -76,6 +78,38 @@ export const QuienesSomos = () => {
               </p>
             </div>
           </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-1"></div>
+          <div className="col-md-2">
+            <div className="centerHeartsSides">
+              <img
+                className="heartsSides"
+                src={hearts}
+                alt="hearts to the sides"
+              />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="centerDogAdopted">
+              <img
+                className="adoptedDog"
+                src={dogadoptedQSomos}
+                alt="dog that was adopted"
+              />
+            </div>
+          </div>
+          <div className="col-md-2">
+            <div className="centerHeartsSides">
+              <img
+                className="heartsSides"
+                src={hearts}
+                alt="hearts to the sides"
+              />
+            </div>
+          </div>
+          <div className="col-md-1"></div>
         </div>
       </div>
     </>
