@@ -73,7 +73,7 @@ export const QuienesSomos = () => {
               <h4 className="proTitle">Nuestra Promesa</h4>
               <p className="proText">
                 Incrementar la visibilidad del mundo de la adopción animal,
-                crear consciencia, difundir eventos y aumentar el número de
+                crear conciencia, difundir eventos y aumentar el número de
                 adopciones
               </p>
             </div>
@@ -98,6 +98,8 @@ export const QuienesSomos = () => {
                 src={dogadoptedQSomos}
                 alt="dog that was adopted"
               />
+              <h4 className="dudasSuge">¿Tienes dudas o sugerencias?</h4>
+              <button className="contactQuienesSomos">Contáctanos</button>
             </div>
           </div>
           <div className="col-md-2">
