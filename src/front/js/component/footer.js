@@ -50,7 +50,7 @@ export const Footer = () => {
       <section className="footer-foot">
         <footer>
           <div className="row foot-colum1">
-            <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <div className="col-lg-6">
               <div className="foot-logogeri">
                 <img src={logo} className="foot-chapi" alt="GeriAdopt"></img>
                 <h3 className="foot-nombre">GeriAdopt</h3>
@@ -67,7 +67,7 @@ export const Footer = () => {
               </p>
             </div>
 
-            <div className="col-lg-3 col-md-6 mb-4 mb-md-0 foot-colum2">
+            <div className="col-lg-3 foot-colum2">
               <ul className="list-unstyled mb-0">
                 <li>
                   <span href="#!" className="text-white-foot">
@@ -98,7 +98,7 @@ export const Footer = () => {
               </ul>
             </div>
 
-            <div className="col-lg-3 col-md-6 mb-4 mb-md-0 foot-colum3">
+            <div className="col-lg-3 foot-colum3">
               <div className="iconosfooter"></div>
               <img
                 src={instagram}
