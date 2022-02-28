@@ -5,9 +5,9 @@ import BirthdayIcon from "../../img/BirthdayIcon.png";
 import GenderIcon from "../../img/GenderIcon.png";
 import RazaIcon from "../../img/razaIcon.png";
 import IconUbic from "../../img/IconUbicacion.png";
-import IconHearth from "../../img/IconHearth.png";
+import editIcon from "../../img/editIcon.png";
 
-export const Card = () => {
+export const CardProtectora = () => {
   return (
     <>
       <div className="card Card_carddogs">
@@ -50,8 +50,8 @@ export const Card = () => {
             </div>
           </div>
           <button className="btn Card_btn">Conóceme!</button>
-          <div className="Card_FavButton">
-            <img src={IconHearth} alt="FavButton" className="Card_hearth" />
+          <div className="editButton">
+            <img src={editIcon} alt="FavButton" id="editPencil" />
           </div>
           <p className="location">
             <img src={IconUbic} className="Card_IconUbic" /> Madrid

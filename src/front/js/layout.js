@@ -2,12 +2,15 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./pages/home";
+import { Home } from "./pages/home.js";
 import { Demo } from "./pages/demo";
+import { QuienesSomos } from "./pages/QuienesSomos.js";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
 import { Footer } from "./component/footer.js";
+import { Navbar } from "./component/navbar";
+import { PerfilProtectora } from "./pages/PerfilProtectora";
 
 //create your first component
 const Layout = () => {
@@ -19,15 +22,22 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
+          <Navbar />
           <Switch>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/quienes-somos">
+              <QuienesSomos />
             </Route>
             <Route exact path="/demo">
               <Demo />
             </Route>
             <Route exact path="/single/:theid">
               <Single />
+            </Route>
+            <Route exact path="/perfil-protectora">
+              <PerfilProtectora />
             </Route>
             <Route>
               <h1>Not found!</h1>
