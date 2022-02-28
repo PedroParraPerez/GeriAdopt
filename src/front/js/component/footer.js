@@ -17,15 +17,45 @@ export const Footer = () => {
       <br />
       <br />
       <br />
-      <section className="foot">
+      <div className="row">
+        <div className="col-md-12">
+          <div className="footer-circleone">
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="120"
+              height="120"
+              viewBox="0 0 120 120"
+            >
+              <circle cx="60" cy="60" r="50" fill="#FFE071" />
+            </svg>
+          </div>
+          <div className="footer-circletwo">
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="85"
+              height="85"
+              viewBox="0 0 120 120"
+            >
+              <circle cx="60" cy="60" r="50" fill="#FBA0A0" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <section className="footer-foot">
         <footer>
-          <div className="row colum1foot">
-            <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
-              <div className="logogerifoot">
-                <img src={logo} className="chapifoot" alt="GeriAdopt"></img>
-                <h3 className="nombrefoot">GeriAdopt</h3>
+          <div className="row foot-colum1">
+            <div className="col-lg-6">
+              <div className="foot-logogeri">
+                <img src={logo} className="foot-chapi" alt="GeriAdopt"></img>
+                <h3 className="foot-nombre">GeriAdopt</h3>
               </div>
-              <p className="textofooter">
+              <p className="footer-texto">
                 <b>
                   Con el fin de ofrecer a nuestros animales un hogar acorde a
                   sus necesidades y caracteristicas hemos trabajado en este
@@ -37,38 +67,38 @@ export const Footer = () => {
               </p>
             </div>
 
-            <div className="col-lg-3 col-md-6 mb-4 mb-md-0 colum2foot">
+            <div className="col-lg-3 foot-colum2">
               <ul className="list-unstyled mb-0">
                 <li>
-                  <a href="#!" className="text-white-foot">
+                  <span href="#!" className="text-white-foot">
                     Aviso legal
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#!" className="text-white-foot">
+                  <span href="#!" className="text-white-foot">
                     Política de Privacidad
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#!" className="text-white-foot">
+                  <span href="#!" className="text-white-foot">
                     {" "}
                     Política de cookies
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#!" className="text-white-foot">
+                  <span href="#!" className="text-white-foot">
                     Protección de datos
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#!" className="text-white-foot">
+                  <span href="#!" className="text-white-foot">
                     Contacto
-                  </a>
+                  </span>
                 </li>
               </ul>
             </div>
 
-            <div className="col-lg-3 col-md-6 mb-4 mb-md-0 colum3foot">
+            <div className="col-lg-3 foot-colum3">
               <div className="iconosfooter"></div>
               <img
                 src={instagram}
@@ -90,7 +120,7 @@ export const Footer = () => {
           </div>
         </footer>
         <div>
-          <img src={perrete} className="perreteBingofoot" alt="perrete"></img>
+          <img src={perrete} className="foot-perreteBingo" alt="perrete"></img>
         </div>
       </section>
     </>

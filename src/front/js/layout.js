@@ -2,7 +2,8 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./pages/home.js";
+import { Home } from "./pages/home";
+import { BlogSection } from "./pages/blogsection.js";
 import { Demo } from "./pages/demo";
 import { QuienesSomos } from "./pages/QuienesSomos.js";
 import { Single } from "./pages/single";
@@ -10,6 +11,8 @@ import injectContext from "./store/appContext";
 
 import { Footer } from "./component/footer.js";
 import { Navbar } from "./component/navbar";
+import { BlogArt } from "./pages/blogart.js";
+import { BlogNoticias } from "./pages/blognoticias.js";
 import { PerfilProtectora } from "./pages/PerfilProtectora";
 
 //create your first component
@@ -26,6 +29,15 @@ const Layout = () => {
           <Switch>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/blogsection">
+              <BlogSection />
+            </Route>
+            <Route exact path="/blogart">
+              <BlogArt />
+            </Route>
+            <Route exact path="/blognoticias">
+              <BlogNoticias />
             </Route>
             <Route exact path="/quienes-somos">
               <QuienesSomos />
