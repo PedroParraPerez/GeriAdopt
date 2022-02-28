@@ -17,7 +17,7 @@ import { DetailDog } from "./pages/detaildog";
 import { FormRegisterUser } from "./pages/formRegisterUser.js";
 import { Login } from "./pages/login";
 import { FormRegisterProte } from "./pages/formRegisterProte";
-import { Navbar } from "./component/navbar";
+
 import { BlogArt } from "./pages/blogart.js";
 import { BlogNoticias } from "./pages/blognoticias.js";
 import { PerfilProtectora } from "./pages/PerfilProtectora";
