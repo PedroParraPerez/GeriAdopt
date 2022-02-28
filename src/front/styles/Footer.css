@@ -1,41 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&family=Vollkorn:ital,wght@1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100&family=Source+Code+Pro:wght@200&family=Vollkorn:ital,wght@1,500&display=swap");
-.foot {
+.footer-foot {
   background-color: #686696;
   display: flex;
   position: relative;
   z-index: 1;
 }
-.colum1foot {
+.foot-colum1 {
   padding-left: 3%;
   padding-bottom: 1%;
   padding-right: 1%;
 }
-.colum2foot {
+.foot-colum2 {
   text-align: left;
   padding-top: 2%;
   font-family: "Alegreya Sans", sans-serif;
 }
 
-.colum3foot {
+.foot-colum3 {
   text-align: center;
 }
-.chapifoot {
+.foot-chapi {
   padding-top: 1%;
   width: 130px;
   height: 150px;
 }
-.textofooter {
+.footer-texto {
   color: white;
   font-size: 1.2rem;
   font-family: "Alegreya Sans", sans-serif;
   margin-right: 15%;
 }
 
-.menufoot {
-  color: white;
-}
-.perreteBingofoot {
+.foot-perreteBingo {
   position: absolute;
   width: 180px;
   height: auto;
@@ -43,12 +40,12 @@
   z-index: 2;
   right: 50px;
 }
-.nombrefoot {
+.foot-nombre {
   color: white;
   padding-top: 15%;
   font-family: "Vollkorn", serif;
 }
-.logogerifoot {
+.foot-logogeri {
   display: flex;
 }
 
@@ -67,24 +64,24 @@
   font-size: 1.2rem;
 }
 
-.footer-circleone{
- padding-left: 3%;
- z-index: -1;
-position: absolute;
-margin-bottom: 8%;
-margin-top: -3%;
+.footer-circleone {
+  padding-left: 3%;
+  z-index: -1;
+  position: absolute;
+  margin-bottom: 8%;
+  margin-top: -3%;
 }
 
-.footer-circletwo{
- padding-left: 6%;
- padding-bottom: 0.5%;
- margin-top: -4%;
- z-index: -1;
+.footer-circletwo {
+  padding-left: 6%;
+  padding-bottom: 0.5%;
+  margin-top: -4%;
+  z-index: -1;
 }
 
 @media only screen and (max-width: 600px) {
-  .footer-circleone, .footer-circletwo {
-    
+  .footer-circleone,
+  .footer-circletwo {
     display: none;
   }
 }
