@@ -14,9 +14,15 @@ export const Navbar = (props) => {
           alt="Responsive image"
         />
 
-        <a className="navbar-brand" id="sacameelpadding" href="#">
-          GeriAdopt
-        </a>
+        <Link to="/">
+          <span
+            className="navbarBrand spanNavbarLink"
+            id="sacameelpadding"
+            href="#"
+          >
+            GeriAdopt
+          </span>
+        </Link>
 
         <button
           type="button"
@@ -30,38 +36,38 @@ export const Navbar = (props) => {
         <div id="MenuNavegacion" className="collapse navbar-collapse">
           <ul className="navbar-nav ms-3 enlaces">
             <li className="nav-item">
-              <Link to="/">
-                <span className="quienesSomos">Quienes Somos</span>
+              <Link to="/quienes-somos">
+                <span className="spanNavbarLink">Quienes Somos</span>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/demo">
-                <span className="tuMatch">Encuentra tu Match</span>
+                <span className="spanNavbarLink">Encuentra tu Match</span>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/demo">
-                <span className="protectoras">Protectoras</span>
+                <span className="spanNavbarLink">Protectoras</span>
               </Link>
             </li>
             <li className="nav-item dropdown">
               <Link to="/demo">
-                <span className="blog">Blog de Noticias</span>
+                <span className="spanNavbarLink">Blog de Noticias</span>
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <Link to="/demo">
-                <span className="contacto">Contacto</span>
+              <Link to="/contacto">
+                <span className="spanNavbarLink">Contacto</span>
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <Link to="/demo">
-                <span className="iniciar">Iniciar Sesión</span>
+              <Link to="/iniciar-sesion">
+                <span className="spanNavbarLink">Iniciar Sesión</span>
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <Link to="/demo">
-                <span className="registro">Registrate</span>
+              <Link to="/registrate">
+                <span className="spanNavbarLink">Registrate</span>
               </Link>
             </li>
           </ul>
@@ -77,24 +83,29 @@ export const Navbar = (props) => {
       <div className="row">
         <div className="col-md-12">
           <div className="navbar-circleone">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-            width="120" height="120" viewBox="0 0 120 120">
-            <circle cx="60" cy="60" r="50"
-                    fill="#FBA0A0" />
-          </svg>
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="120"
+              height="120"
+              viewBox="0 0 120 120"
+            >
+              <circle cx="60" cy="60" r="50" fill="#FBA0A0" />
+            </svg>
           </div>
           <div className="navbar-circletwo">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-            width="85" height="85" viewBox="0 0 120 120">
-            <circle cx="60" cy="60" r="50"
-                    fill=" #FFE071" />
-          </svg> 
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="85"
+              height="85"
+              viewBox="0 0 120 120"
+            >
+              <circle cx="60" cy="60" r="50" fill=" #FFE071" />
+            </svg>
           </div>
         </div>
       </div>
-
-
-
     </>
   );
 };

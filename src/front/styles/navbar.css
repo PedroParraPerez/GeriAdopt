@@ -5,10 +5,12 @@ nav {
   background-color: rgb(245, 184, 159);
 }
 
-a {
+a,
+.spanNavbarLink {
   text-decoration: none;
   color: black;
 }
+
 .contPrin {
   display: flex;
   justify-content: space-around;
@@ -30,7 +32,7 @@ a {
   height: 97px;
 }
 
-.navbar-brand {
+.navbarBrand {
   font-family: "Sansita Swashed", cursive;
   font-size: larger;
   font-weight: bolder;
