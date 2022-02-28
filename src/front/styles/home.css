@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400&family=Comforter&family=Josefin+Sans:ital,wght@1,500&family=Sansita+Swashed:wght@300&family=Ubuntu:wght@300&display=swap");
+
+.containerHeader {
+  display: flex;
+}
+/*
+* {
+  border: black dotted 2px;
+  justify-content: center;
+  align-items: center;
+}*/
+
+.textoHeader {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 50px;
+  font-weight: bolder;
+  justify-items: left;
+}
+
+.buttonHeader {
+  /*width: 15%; hay que quitarlo para no limitar la imagen y que sea responsive
+  height: auto;
+  top: 65%;
+  position: absolute;*/
+  margin-top: 2rem;
+  border-radius: 1rem;
+  padding: 1rem 1rem;
+  font-family: "Alegreya Sans", sans-serif;
+  background-color: #f8d2c3;
+  border: solid black 1px;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin-bottom: 4rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.familyHeader {
+  width: 100%;
+  height: auto;
+  justify-content: end;
+  margin: 0%;
+  margin-top: -10%;
+  padding: 0%;
+}
+
+.heartHeader {
+  width: 20%;
+  height: auto;
+}
+
+.middleBarHeader {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background-color: rgb(239, 201, 182);
+  display: flex;
+}
+
+.benefitsHeader {
+  font-family: "Alegreya Sans", 400 sans-serif;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.divIconTextHeader {
+  text-align: center;
+}
+
+.middleBarIconHeader {
+  width: 25%;
+  height: 10%;
+  margin: 0 auto;
+}
+
+.textmiddleBarHeader {
+  margin-top: 5%;
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 25px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.cardContainerHome {
+  margin-top: 7rem;
+  position: relative;
+  display: block;
+  background-color: #faf4f7;
+  border-radius: 1rem;
+  font-family: "Alegreya Sans", sans-serif;
+  text-align: center;
+  align-items: center;
+}
+
+.cardBodyHome {
+  margin-top: 14rem;
+}
+
+.cardPicHome {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: -47%;
+  position: absolute;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 14rem;
+  height: 14rem;
+}
+.cardTextHome {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+
+.quoteHome {
+  margin-top: 10%;
+  margin-bottom: -5%;
+  text-align: center;
+}
+
+.buttonHomeRegis {
+  background-color: #f8d2c3;
+  border-radius: 15px;
+  padding: 1rem 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #f8d2c3;
+  color: black;
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+
+.gotoblogHome {
+  display: flex;
+  margin-top: 10%;
+}
+
+.dogBlogHome {
+  width: 100%;
+  height: auto;
+  border-radius: 3rem;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*
+a:hover {
+  color: black !important;
+}
+*/
+.blogTitleHome {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 50px;
+  margin-top: 10%;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.blogcenterHome {
+  text-align: center;
+}
+
+.textoBlogHomeDiv {
+  margin-top: 3%;
+  text-align: center;
+}
+
+.textoBlogHome {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 25px;
+}
+
+.buttonBlogHomePosition {
+  text-align: center;
+  margin-top: 10%;
+}
+
+.buttonBlogHome {
+  background-color: #f8d2c3;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

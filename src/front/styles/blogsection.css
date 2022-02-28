@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100&family=Source+Code+Pro:wght@200&family=Vollkorn:ital,wght@1,500&display=swap");
+
+.headerblogsection {
+  border-bottom: #ed8b62 solid 3px;
+  
+}
+
+.perrogafasblog {
+  height: auto;
+  width: 70%;
+  display: block;
+  margin: auto;
+  border-radius: 5%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 2%;
+}
+
+.tituloblog1 {
+  font-family: "Alegreya Sans", sans-serif;
+  text-align: center;
+  font-size: 50px;
+}
+
+.tituloblog2 {
+  font-family: "Alegreya Sans", sans-serif;
+  text-align: left;
+  padding-left: 1%;
+  padding-top: 0.5%;
+}
+
+.lineablogsection {
+  color: #ed8b62;
+  display: block;
+  margin: auto;
+ 
+  margin-left: 5%;
+  margin-right: 5%;
+  border-style: dashed solid;
+}
+.cardblogsection {
+  text-align: center;
+  border-radius: 5%;
+  background-color: rgba(233, 163, 147, 0.25);
+}
+
+.botonblogsection {
+  background-color: #f8d2c3;
+  color: black;
+  margin-top: 5%;
+  text-align: center;
+  width: 40%;
+  margin-bottom: 3%;
+  font-size: 20px;
+  border: solid black 2px;
+  font-family: "Alegreya Sans", sans-serif;
+  border-radius: 15px;
+}
+
+.blogtitle {
+  padding-bottom: 10%;
+  padding-top: 10%;
+  font-size: 30px;
+}
+
+.blogtextsection {
+  padding-bottom: 10%;
+  padding-top: 10%;
+  font-size: 20px;
+}
+
+.fotoblogsection {
+  border-radius: 5%;
+}
+
+.botonblogsectionfinal {
+  background-color: #f8d2c3;
+  color: black;
+  margin-top: 5%;
+  width: 100%;
+  margin-bottom: 3%;
+  font-size: 20px;
+  border: solid black 2px;
+  font-family: "Alegreya Sans", sans-serif;
+  border-radius: 15px;
+}
+
+.bodyblogsection {
+  margin-top: 2%;
+}
