@@ -40,30 +40,30 @@ export const Footer = () => {
             <div className="col-lg-3 col-md-6 mb-4 mb-md-0 colum2foot">
               <ul className="list-unstyled mb-0">
                 <li>
-                  <a href="#!" className="text-white-foot">
+                  <span href="#!" className="text-white-foot">
                     Aviso legal
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#!" className="text-white-foot">
+                  <span href="#!" className="text-white-foot">
                     Política de Privacidad
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#!" className="text-white-foot">
+                  <span href="#!" className="text-white-foot">
                     {" "}
                     Política de cookies
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#!" className="text-white-foot">
+                  <span href="#!" className="text-white-foot">
                     Protección de datos
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#!" className="text-white-foot">
+                  <span href="#!" className="text-white-foot">
                     Contacto
-                  </a>
+                  </span>
                 </li>
               </ul>
             </div>

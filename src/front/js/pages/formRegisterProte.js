@@ -1,6 +1,5 @@
 import React from "react";
 import "../../styles/formRegisterProte.css";
-import FormRegisterProtePhoto from "../../img/form.register.user.photo.png";
 
 export const FormRegisterProte = () => {
   return (
