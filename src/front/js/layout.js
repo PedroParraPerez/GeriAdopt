@@ -10,6 +10,13 @@ import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
 import { Footer } from "./component/footer.js";
+import { Adopter } from "./pages/adopter";
+import { Navbar } from "./component/navbar";
+import { AllDogsList } from "./pages/alldogslist";
+import { DetailDog } from "./pages/detaildog";
+import { FormRegisterUser } from "./pages/formRegisterUser.js";
+import { Login } from "./pages/login";
+import { FormRegisterProte } from "./pages/formRegisterProte";
 import { Navbar } from "./component/navbar";
 import { BlogArt } from "./pages/blogart.js";
 import { BlogNoticias } from "./pages/blognoticias.js";
@@ -30,6 +37,12 @@ const Layout = () => {
             <Route exact path="/">
               <Home />
             </Route>
+            <Route exact path="/adopter">
+              <Adopter />
+            </Route>
+            <Route exact path="/alldogslist">
+              <AllDogsList />
+            </Route>
             <Route exact path="/blogsection">
               <BlogSection />
             </Route>
@@ -44,6 +57,18 @@ const Layout = () => {
             </Route>
             <Route exact path="/demo">
               <Demo />
+            </Route>
+            <Route exact path="/detaildog">
+              <DetailDog />
+            </Route>
+            <Route exact path="/formregisteruser">
+              <FormRegisterUser />
+            </Route>
+            <Route exact path="/formregisterprote">
+              <FormRegisterProte />
+            </Route>
+            <Route exact path="/login">
+              <Login />
             </Route>
             <Route exact path="/single/:theid">
               <Single />
