@@ -113,14 +113,6 @@
   margin-bottom: 2rem;
 }
 
-.bttnText {
-  background-color: #f8d2c3;
-  color: black;
-  border: none;
-  font-size: 1.3rem;
-  font-weight: bolder;
-}
-
 .quote {
   margin-top: 10%;
   margin-bottom: -5%;
@@ -132,6 +124,10 @@
   border-radius: 15px;
   padding: 1rem 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #f8d2c3;
+  color: black;
+  font-size: 1.4rem;
+  font-weight: bolder;
 }
 
 .gotoblog {
@@ -146,11 +142,11 @@
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
+/*
 a:hover {
   color: black !important;
 }
-
+*/
 .blogTitleHome {
   font-family: "Alegreya Sans", sans-serif;
   font-size: 50px;

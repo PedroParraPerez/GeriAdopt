@@ -27,7 +27,7 @@ export const Home = () => {
               Comunidad y suma un miembro a tu familia
             </h2>
             <button type="button" className="buttonHeader">
-              <a>¡Encuentra tu Match!</a>
+              ¡Encuentra tu Match!
             </button>
             <img className="heartHeader" src={HeartHeader} alt="heart" />
           </div>
@@ -102,11 +102,7 @@ export const Home = () => {
                   <br />
                   ¡Crea tu perfil con nosotros!
                 </p>
-                <button className="buttonHomeRegis">
-                  <a href="#" className="bttnText">
-                    ¡Quiero Adoptar!
-                  </a>
-                </button>
+                <button className="buttonHomeRegis">¡Quiero Adoptar!</button>
               </div>
             </div>
           </div>
@@ -126,9 +122,7 @@ export const Home = () => {
                   ¡Registrate como Protectora!
                 </p>
                 <button className="buttonHomeRegis">
-                  <a href="#" className="bttnText">
-                    Quiero Registrar mi Protectora
-                  </a>
+                  Quiero Registrar mi Protectora
                 </button>
               </div>
             </div>
