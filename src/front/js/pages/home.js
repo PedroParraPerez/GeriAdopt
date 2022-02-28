@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 
 import "../../styles/home.css";
-import { Navbar } from "../component/navbar.js";
-import { Footer } from "../component/footer.js";
+
 import FamilyAdopted from "../../img/FamilyAdopted.png";
 import HeartHeader from "../../img/HeartHeader.png";
 import twoLives from "../../img/twoLives.png";
@@ -39,44 +38,44 @@ export const Home = () => {
             />
           </div>
         </div>
-        <div className="row middleBar">
+        <div className="row middleBarHeader">
           <div className="row">
-            <h3 className="benefits">Beneficios de Adoptar un Animal</h3>
+            <h3 className="benefitsHeader">Beneficios de Adoptar un Animal</h3>
           </div>
           <div className="col-md-4">
-            <div className="divIconText">
+            <div className="divIconTextHeader">
               <img
-                className="middleBarIcon"
+                className="middleBarIconHeader"
                 src={twoLives}
                 alt="salvas dos vidas"
               />
-              <p className="textmiddleBar">
+              <p className="textmiddleBarHeader">
                 Salvas dos vidas, la del animal que adoptas y la del nuevo
                 rescatado
               </p>
             </div>
           </div>
           <div className="col-md-4">
-            <div className="divIconText">
+            <div className="divIconTextHeader">
               <img
-                className="middleBarIcon"
+                className="middleBarIconHeader"
                 src={adoption}
                 alt="amor de adopción"
               />
-              <p className="textmiddleBar">
+              <p className="textmiddleBarHeader">
                 Los animales rescatados son muy agradecidos y notarás su amor al
                 adoptar
               </p>
             </div>
           </div>
           <div className="col-md-4">
-            <div className="divIconText">
+            <div className="divIconTextHeader">
               <img
-                className="middleBarIcon"
+                className="middleBarIconHeader"
                 src={dogWalking}
                 alt="paseando el perro"
               />
-              <p className="textmiddleBar">
+              <p className="textmiddleBarHeader">
                 Caminar a diario con tu perro te permitira tener una vida más
                 activa y sana
               </p>
@@ -87,14 +86,14 @@ export const Home = () => {
         <div className="row d-flex justify-content-between ">
           <div className="col-md-1"></div>
           <div className="col-md-4">
-            <div className="cardContainer">
+            <div className="cardContainerHome">
               <img
                 src={AdopterHome}
-                className="card-img-top cardPic"
+                className="card-img-top cardPicHome"
                 alt="perfil adoptante"
               />
-              <div className="card-body cardBody">
-                <p className="card-text cardText">
+              <div className="card-body cardBodyHome">
+                <p className="card-text cardTextHome">
                   En GeriAdopt encuentra a tu peludo ideal y suma un miembro más
                   a tu familia. <br />
                   Encuentra, enamorate y contacta con la protectora, asi de
@@ -107,14 +106,14 @@ export const Home = () => {
             </div>
           </div>
           <div className="col-md-4">
-            <div className="cardContainer">
+            <div className="cardContainerHome">
               <img
                 src={ProtectoraHome}
-                className="card-img-top cardPic"
+                className="card-img-top cardPicHome"
                 alt="perfil protectora"
               />
-              <div className="card-body cardBody">
-                <p className="card-text cardText">
+              <div className="card-body cardBodyHome">
+                <p className="card-text cardTextHome">
                   Si tienes una protectora y quieres dar difusión a tus
                   animalitos rescatados que buscan un hogar, esta es tu
                   oportunidad.
@@ -130,10 +129,10 @@ export const Home = () => {
           <div className="col-md-1"></div>
         </div>
 
-        <div className="row gotoblog">
+        <div className="row gotoblogHome">
           <div className="col-md-1"></div>
           <div className="col-md-6">
-            <div className="blogcenter">
+            <div className="blogcenterHome">
               <img
                 className="dogBlogHome"
                 src={dogbloghome}
@@ -157,10 +156,10 @@ export const Home = () => {
           <div className="col-md-1"></div>
         </div>
 
-        <div className="row rowQuote">
+        <div className="row">
           <div className="col-md-1"></div>
           <div className="col-md-10">
-            <h4 className="quote">
+            <h4 className="quoteHome">
               “Hasta que no hayas amado a un animal, una parte de tu alma
               permanecerá dormida” <br />
               -Anatole France

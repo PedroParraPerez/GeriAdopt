@@ -48,30 +48,30 @@
   height: auto;
 }
 
-.middleBar {
+.middleBarHeader {
   padding-top: 3%;
   padding-bottom: 3%;
   background-color: rgb(239, 201, 182);
   display: flex;
 }
 
-.benefits {
+.benefitsHeader {
   font-family: "Alegreya Sans", 400 sans-serif;
   text-align: center;
   margin-bottom: 2%;
 }
 
-.divIconText {
+.divIconTextHeader {
   text-align: center;
 }
 
-.middleBarIcon {
+.middleBarIconHeader {
   width: 25%;
   height: 10%;
   margin: 0 auto;
 }
 
-.textmiddleBar {
+.textmiddleBarHeader {
   margin-top: 5%;
   font-family: "Alegreya Sans", sans-serif;
   font-size: 25px;
@@ -79,7 +79,7 @@
   text-align: center;
 }
 
-.cardContainer {
+.cardContainerHome {
   margin-top: 7rem;
   position: relative;
   display: block;
@@ -90,11 +90,11 @@
   align-items: center;
 }
 
-.cardBody {
+.cardBodyHome {
   margin-top: 14rem;
 }
 
-.cardPic {
+.cardPicHome {
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -106,14 +106,14 @@
   width: 14rem;
   height: 14rem;
 }
-.cardText {
+.cardTextHome {
   text-align: center;
   margin-top: 5rem;
   font-size: 20px;
   margin-bottom: 2rem;
 }
 
-.quote {
+.quoteHome {
   margin-top: 10%;
   margin-bottom: -5%;
   text-align: center;
@@ -130,7 +130,7 @@
   font-weight: bolder;
 }
 
-.gotoblog {
+.gotoblogHome {
   display: flex;
   margin-top: 10%;
 }
@@ -155,7 +155,7 @@ a:hover {
   text-align: center;
 }
 
-.blogcenter {
+.blogcenterHome {
   text-align: center;
 }
 

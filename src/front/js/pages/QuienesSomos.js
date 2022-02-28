@@ -83,18 +83,18 @@ export const QuienesSomos = () => {
         <div className="row">
           <div className="col-md-1"></div>
           <div className="col-md-2">
-            <div className="centerHeartsSides">
+            <div className="centerDogAdoptedQuienesSomos">
               <img
-                className="heartsSides"
+                className="heartsSidesQuienesSomos"
                 src={hearts}
                 alt="hearts to the sides"
               />
             </div>
           </div>
           <div className="col-md-6">
-            <div className="centerDogAdopted">
+            <div className="centerDogAdoptedQuienesSomos">
               <img
-                className="adoptedDog"
+                className="adoptedDogQuienesSomos"
                 src={dogadoptedQSomos}
                 alt="dog that was adopted"
               />
@@ -103,9 +103,9 @@ export const QuienesSomos = () => {
             </div>
           </div>
           <div className="col-md-2">
-            <div className="centerHeartsSides">
+            <div className="centerHeartsSidesQuienesSomos">
               <img
-                className="heartsSides"
+                className="heartsSidesQuienesSomos"
                 src={hearts}
                 alt="hearts to the sides"
               />
