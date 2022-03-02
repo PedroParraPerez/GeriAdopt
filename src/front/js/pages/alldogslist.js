@@ -85,17 +85,6 @@ export const AllDogsList = () => {
 
         <div className=" row Alldoglist_cardlist">
           <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
         </div>
       </div>
     </>

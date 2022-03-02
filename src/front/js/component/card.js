@@ -17,7 +17,7 @@ export const Card = () => {
 
   const getAllAnimal = async () => {
     const response = await fetch(
-      "https://3001-sromk-proyectofinalpl-qv3kwxco2lj.ws-eu34xl.gitpod.io/api/animal"
+      "https://3001-sromk-proyectofinalpl-c4dcbkugfnn.ws-eu34xl.gitpod.io/api/animal"
     );
     const data = await response.json();
     setAnimalsforuser(data.results);
