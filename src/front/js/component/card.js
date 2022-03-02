@@ -9,7 +9,7 @@ import IconUbic from "../../img/IconUbicacion.png";
 import IconHearth from "../../img/IconHearth.png";
 
 export const Card = () => {
-  const [animals, setAnimals] = useState([]);
+  const [animalsforuser, setAnimalsforuser] = useState([]);
 
   useEffect(() => {
     getAllAnimal();
@@ -20,12 +20,12 @@ export const Card = () => {
       "https://3001-sromk-proyectofinalpl-qv3kwxco2lj.ws-eu34xl.gitpod.io/api/animal"
     );
     const data = await response.json();
-    setAnimals(data.results);
+    setAnimalsforuser(data.results);
   };
 
   return (
     <>
-      {animals.map((animal) => {
+      {animalsforuser.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
             <img src={Mojito} className="Card_cardphoto" />
