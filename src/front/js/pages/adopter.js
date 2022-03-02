@@ -87,14 +87,6 @@ export const Adopter = () => {
         </div>
         <div className="row Adopter_cardlist">
           <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
         </div>
       </div>
     </>

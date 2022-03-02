@@ -2,23 +2,15 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-# class User(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     email = db.Column(db.String(120), unique=True, nullable=False)
-#     password = db.Column(db.String(80), unique=False, nullable=False)
-#     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
+
+
 
 #     def __repr__(self):
 #         return '<User %r>' % self.username
 
-#     def serialize(self):
-#         return {
-#             "id": self.id,
-#             "email": self.email,
-#             # do not serialize the password, its a security breach
-#         }
 
 
+# Many to Many likes
 likes = db.Table('likes',
     db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
     db.Column('animal_id', db.Integer, db.ForeignKey('animal.id'), primary_key=True)
@@ -49,7 +41,8 @@ class User(db.Model):
             'age':self.age,
             'city':self.city,
             'address':self.address,
-            'tlf':self.tlf
+            'tlf':self.tlf,
+            'likes': list(map(lambda animal: animal.serialize(), self.likes))
         }
 
 
@@ -60,10 +53,13 @@ class Animal(db.Model):
     gender = db.Column(db.String(120), unique=False, nullable=False)
     race = db.Column(db.String(120), unique=False, nullable=False)
     size = db.Column(db.String(120), unique=False, nullable=False)
-    age = db.Column(db.String(120), unique=False, nullable=False)
+    age = db.Column(db.Integer, unique=False, nullable=False)
+    city = db.Column(db.String(120), unique=False, nullable=False)
+    description = db.Column(db.String(240), unique=False, nullable=False)
+    short_description = db.Column(db.String(80), unique=False, nullable=False)
     city = db.Column(db.String(120), unique=False, nullable=False)
     shelter_id = db.Column(db.Integer, db.ForeignKey('shelter.id'), nullable=True)
-# Establecemos la relacion OnToMany crando la columna en Animal e indicandole la id de la protectora con el ForignKeY. Pongo que nullable = true para que sea mas facil de ver en la practica de los ejemplos
+    # Establecemos la relacion OnToMany crando la columna en Animal e indicandole la id de la protectora con el ForignKeY. Pongo que nullable = true para que sea mas facil de ver en la practica de los ejemplos
 
 
     
@@ -78,6 +74,10 @@ class Animal(db.Model):
             'size':self.size,
             'age':self.age,
             'city':self.city,
+            'description':self.description,
+            'short_description':self.short_description,
+            'shelter_id':self.shelter_id
+
         }
 
         
@@ -101,21 +101,6 @@ class Shelter(db.Model):
             'address':self.address,
             'tlf':self.tlf
         }
-
-# class Person(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     name = db.Column(db.String(50), nullable=False)
-#     addresses = db.relationship('Address', backref='person', lazy=True)
-#     shelters = db.relationship('Shelter', backref='animal', lazy=True)
-
-# class Address(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     email = db.Column(db.String(120), nullable=False)
-#     person_id = db.Column(db.Integer, db.ForeignKey('person.id'), nullable=False)
-
-
-
-#     animal_id = db.Column(db.Integer, db.ForeignKey('animal.animalid'), nullable=False)
 
 
 
