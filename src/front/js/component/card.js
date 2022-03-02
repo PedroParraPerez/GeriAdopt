@@ -7,17 +7,24 @@ import GenderIcon from "../../img/GenderIcon.png";
 import RazaIcon from "../../img/razaIcon.png";
 import IconUbic from "../../img/IconUbicacion.png";
 import IconHearth from "../../img/IconHearth.png";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Card = () => {
   const [animalsforuser, setAnimalsforuser] = useState([]);
+  const {store, actions} = useContext(Context);
+
+
 
   useEffect(() => {
     getAllAnimal();
   }, []);
 
+
+
   const getAllAnimal = async () => {
     const response = await fetch(
-      "https://3001-sromk-proyectofinalpl-c4dcbkugfnn.ws-eu34xl.gitpod.io/api/animal"
+     store.URLAPIDOGS + "animal"
     );
     const data = await response.json();
     setAnimalsforuser(data.results);
@@ -70,7 +77,9 @@ export const Card = () => {
                   </div>
                 </div>
               </div>
+              <Link to={"/detailanimal/" + animal.id}>
               <button className="btn Card_btn">Conóceme!</button>
+              </Link>
               <div className="Card_FavButton">
                 <img src={IconHearth} alt="FavButton" className="Card_hearth" />
               </div>

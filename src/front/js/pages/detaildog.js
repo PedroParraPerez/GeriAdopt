@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import Mojito from "../../img/Mojito.jpg";
 import "../../styles/detaildog.css";
+import { Context } from "../store/appContext";
 
 export const DetailDog = () => {
+
+  const id = useParams().id;
+  const {store, actions} = useContext(Context)
+  const [detailanimal, setDetailanimal] = useState({})
+
+
+  useEffect(() => {
+    getDetailOfOneAnimal();
+  }, []);
+
+  const getDetailOfOneAnimal = async () => {
+    const response = await fetch(
+      store.URLAPIDOGS + "detailanimal/" + id
+    );
+    const data = await response.json();
+    setDetailanimal(data.results);
+  };
+
   return (
     <>
       <div className="container-fluid">
@@ -17,26 +37,26 @@ export const DetailDog = () => {
           <div className="col-xxl-6">
             <div>
               <h2 className="detaildog_info_title">
-                <strong>Mojito</strong>
+                <strong>{detailanimal.name}</strong>
               </h2>
             </div>
             <div>
               <ul>
                 <li className="detaildog_info_list">
-                  <span className="detaildog_info_list_label">F.nac: </span>
-                  25/12/2016
+                  <span className="detaildog_info_list_label">Edad: </span>
+                  {detailanimal.age} años
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Raza: </span>
-                  Beagle
+                  {detailanimal.race}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Genero: </span>
-                  Masculino
+                  {detailanimal.gender}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Tamaño: </span>
-                  Mediano
+                  {detailanimal.size}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">
@@ -45,8 +65,8 @@ export const DetailDog = () => {
                   Si
                 </li>
                 <li className="detaildog_info_list">
-                  <span className="detaildog_info_list_label">CCAA: </span>
-                  Madrid
+                  <span className="detaildog_info_list_label">Ciudad: </span>
+                  {detailanimal.city}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Protectora:</span>

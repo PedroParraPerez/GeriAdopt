@@ -13,7 +13,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			URLAPIDOGS: "https://3001-sromk-proyectofinalpl-e3drlwscy4w.ws-eu34xl.gitpod.io/api/"
 		},
 		actions: {
 			// Use getActions to call a function within a fuction

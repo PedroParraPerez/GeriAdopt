@@ -13,4 +13,8 @@ def get_all_dogs():
     animals = Animal.query.all()
     return jsonify({'results': list(map(lambda animal: animal.serialize(), animals))}),200
 
-  
+
+@api.route('/detailanimal/<int:id>')
+ def get_animal_by_id(<int:id>):
+    animal = Animal.query.get(id)
+    return jsonify({'results': list(map(lambda detailanimal: animal.serialize(), animal))}),200
