@@ -12,7 +12,7 @@ export const CardProtectora = () => {
 
   const getAllAnimalsShelter = async () => {
     const response = await fetch(
-      "https://3001-sromk-proyectofinalpl-qv3kwxco2lj.ws-eu34xl.gitpod.io/api/animal"
+      "https://3001-sromk-proyectofinalpl-5ka0wt5sgeg.ws-eu34xl.gitpod.io/api/animal"
     );
     const data = await response.json();
     setAnimalsforshelter(data.results);

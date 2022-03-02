@@ -84,13 +84,7 @@ export const PerfilProtectora = () => {
           </div>
         </div>
         <div className="row Protectora_cardlist">
-          <CardProtectora /> <CardProtectora /> <CardProtectora />
-        </div>
-        <div className="row Protectora_cardlist">
-          <CardProtectora /> <CardProtectora /> <CardProtectora />
-        </div>
-        <div className="row Protectora_cardlist">
-          <CardProtectora /> <CardProtectora /> <CardProtectora />
+          <CardProtectora />
         </div>
       </div>
     </>
