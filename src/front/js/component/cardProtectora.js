@@ -9,22 +9,11 @@ import editIcon from "../../img/editIcon.png";
 import { Context } from "../store/appContext";
 
 export const CardProtectora = () => {
-  const [animalsforshelter, setAnimalsforshelter] = useState([]);
   const { store, actions } = useContext(Context);
-
-  const getAllAnimalsShelter = async () => {
-    const response = await fetch(store.URLAPIDOGS + "animal");
-    const data = await response.json();
-    setAnimalsforshelter(data.results);
-  };
-
-  useEffect(() => {
-    getAllAnimalsShelter();
-  }, []);
 
   return (
     <>
-      {animalsforshelter.map((animal) => {
+      {store.allAnimals.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
             <img src={Mojito} className="Card_cardphoto" />

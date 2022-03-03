@@ -12,27 +12,11 @@ import { Context } from "../store/appContext";
 
 export const Card = () => {
   const [animalsforuser, setAnimalsforuser] = useState([]);
-  const {store, actions} = useContext(Context);
-
-
-
-  useEffect(() => {
-    getAllAnimal();
-  }, []);
-
-
-
-  const getAllAnimal = async () => {
-    const response = await fetch(
-     store.URLAPIDOGS + "animal"
-    );
-    const data = await response.json();
-    setAnimalsforuser(data.results);
-  };
+  const { store, actions } = useContext(Context);
 
   return (
     <>
-      {animalsforuser.map((animal) => {
+      {store.allAnimals.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
             <img src={Mojito} className="Card_cardphoto" />
@@ -78,7 +62,7 @@ export const Card = () => {
                 </div>
               </div>
               <Link to={"/detailanimal/" + animal.id}>
-              <button className="btn Card_btn">Conóceme!</button>
+                <button className="btn Card_btn">Conóceme!</button>
               </Link>
               <div className="Card_FavButton">
                 <img src={IconHearth} alt="FavButton" className="Card_hearth" />
