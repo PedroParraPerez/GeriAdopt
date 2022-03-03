@@ -7,6 +7,7 @@ import RazaIcon from "../../img/razaIcon.png";
 import IconUbic from "../../img/IconUbicacion.png";
 import editIcon from "../../img/editIcon.png";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 export const CardProtectora = () => {
   const { store, actions } = useContext(Context);
@@ -22,8 +23,7 @@ export const CardProtectora = () => {
                 <b>{animal.name}</b>
               </h5>
               <p className="card-text Card_textcarddog">
-                Solo con su nombre se pueden hacer una idea de lo dulce que
-                es...
+                {animal.short_description}
               </p>
               <div className="Card_IconsAndDescription">
                 <div className="row Card_IconsCard">
@@ -34,7 +34,7 @@ export const CardProtectora = () => {
                       className="Card_CaractIcon"
                     />
                     <p className="Card_iconTexInv">
-                      <b>Date</b>
+                      <b>{animal.age} años</b>
                     </p>
                   </div>
                   <div className="col-xl-4">
@@ -44,7 +44,7 @@ export const CardProtectora = () => {
                       className="Card_CaractIcon"
                     />
                     <p className="Card_iconTexInv">
-                      <b>Breed</b>
+                      <b>{animal.race}</b>
                     </p>
                   </div>
                   <div className="col-xl-4">
@@ -54,17 +54,19 @@ export const CardProtectora = () => {
                       className="Card_CaractIcon"
                     />
                     <p className="Card_iconTexInv">
-                      <b>Gender</b>
+                      <b>{animal.gender}</b>
                     </p>
                   </div>
                 </div>
               </div>
-              <button className="btn Card_btn">Conóceme!</button>
+              <Link to={"/detailanimal/" + animal.name}>
+                <button className="btn Card_btn">Conóceme!</button>
+              </Link>
               <div className="editButton">
                 <img src={editIcon} alt="FavButton" id="editPencil" />
               </div>
               <p className="location">
-                <img src={IconUbic} className="Card_IconUbic" /> Madrid
+                <img src={IconUbic} className="Card_IconUbic" /> {animal.city}
               </p>
             </div>
           </div>

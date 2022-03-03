@@ -61,7 +61,7 @@ export const Card = () => {
                   </div>
                 </div>
               </div>
-              <Link to={"/detailanimal/" + animal.id}>
+              <Link to={"/detailanimal/" + animal.name}>
                 <button className="btn Card_btn">Conóceme!</button>
               </Link>
               <div className="Card_FavButton">
