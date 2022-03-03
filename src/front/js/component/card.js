@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Card = () => {
-  const [animalsforuser, setAnimalsforuser] = useState([]);
   const { store, actions } = useContext(Context);
 
   return (
@@ -61,7 +60,7 @@ export const Card = () => {
                   </div>
                 </div>
               </div>
-              <Link to={"/detailanimal/" + animal.name}>
+              <Link to={"/detailanimal/" + animal.id}>
                 <button className="btn Card_btn">Conóceme!</button>
               </Link>
               <div className="Card_FavButton">
