@@ -14,7 +14,7 @@ def get_all_dogs():
     return jsonify({'results': list(map(lambda animal: animal.serialize(), animals))}),200
 
 
-@api.route('/detailanimal/<int:id>')
- def get_animal_by_id(<int:id>):
+@api.route('/detailanimal/<int:id>', methods=['GET'])
+def get_animal_by_id(id):
     animal = Animal.query.get(id)
-    return jsonify({'results': list(map(lambda detailanimal: animal.serialize(), animal))}),200
+    return jsonify({'results': animal.serialize()}),200

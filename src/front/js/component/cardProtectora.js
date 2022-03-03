@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Mojito from "../../img/Mojito.jpg";
 import "../../styles/Card.css";
 import BirthdayIcon from "../../img/BirthdayIcon.png";
@@ -6,14 +6,14 @@ import GenderIcon from "../../img/GenderIcon.png";
 import RazaIcon from "../../img/razaIcon.png";
 import IconUbic from "../../img/IconUbicacion.png";
 import editIcon from "../../img/editIcon.png";
+import { Context } from "../store/appContext";
 
 export const CardProtectora = () => {
   const [animalsforshelter, setAnimalsforshelter] = useState([]);
+  const { store, actions } = useContext(Context);
 
   const getAllAnimalsShelter = async () => {
-    const response = await fetch(
-      "https://3001-sromk-proyectofinalpl-5ka0wt5sgeg.ws-eu34xl.gitpod.io/api/animal"
-    );
+    const response = await fetch(store.URLAPIDOGS + "animal");
     const data = await response.json();
     setAnimalsforshelter(data.results);
   };

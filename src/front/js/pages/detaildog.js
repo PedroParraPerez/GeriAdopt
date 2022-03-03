@@ -5,20 +5,16 @@ import "../../styles/detaildog.css";
 import { Context } from "../store/appContext";
 
 export const DetailDog = () => {
-
   const id = useParams().id;
-  const {store, actions} = useContext(Context)
-  const [detailanimal, setDetailanimal] = useState({})
-
+  const { store, actions } = useContext(Context);
+  const [detailanimal, setDetailanimal] = useState({});
 
   useEffect(() => {
     getDetailOfOneAnimal();
   }, []);
 
   const getDetailOfOneAnimal = async () => {
-    const response = await fetch(
-      store.URLAPIDOGS + "detailanimal/" + id
-    );
+    const response = await fetch(store.URLAPIDOGS + "detailanimal/" + id);
     const data = await response.json();
     setDetailanimal(data.results);
   };
