@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 
 import "../../styles/home.css";
@@ -14,6 +14,13 @@ import dogbloghome from "../../img/dogbloghome.jpeg";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
+  // const [isLogged, setIsLogged] = useState(false);
+
+  // useEffect(() => {
+  //   if (localStorage.getItem("token")) {
+  //     setIsLogged(true);
+  //   }
+  // });
 
   return (
     <>
@@ -28,6 +35,15 @@ export const Home = () => {
             <button type="button" className="buttonHeader">
               ¡Encuentra tu Match!
             </button>
+            {/* {isLogged ? (
+              <button type="button" className="buttonHeader">
+                Mi cuenta
+              </button>
+            ) : (
+              <button type="button" className="buttonHeader">
+                Inicie sesion
+              </button>
+            )} */}
             <img className="heartHeader" src={HeartHeader} alt="heart" />
           </div>
           <div className="col-md-5">

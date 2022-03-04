@@ -28,7 +28,14 @@ class User(db.Model):
     address = db.Column(db.String(120), unique=False, nullable=False)
     tlf = db.Column(db.Integer, unique=False, nullable=False)
     likes = db.relationship('Animal', secondary=likes, lazy='subquery', backref=db.backref('this user likes these animals', lazy=True))
-   
+    
+
+    # def __repr__(self):
+    #     return '<User> %r %s', (self.id, self.username)
+
+    # def __repr__(self):
+    #     return f'<User> {self.id} {self.username}'
+
     # Si quiero que en cada usuario tenga una columna que me permita ver todos los favs que tiene, tengo que introducir esta columna.
 
 
