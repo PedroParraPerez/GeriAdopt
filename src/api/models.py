@@ -1,9 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 
+
 db = SQLAlchemy()
-
-
-
 
 #     def __repr__(self):
 #         return '<User %r>' % self.username

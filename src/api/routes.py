@@ -2,16 +2,15 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from flask_jwt_extended import JWTManager, create_access_token, get_jwt_identity, jwt_required
+from flask_jwt_extended import create_access_token
+from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import jwt_required
+
 from api.models import db, User, Animal, Shelter
 from api.utils import generate_sitemap, APIException
 from werkzeug.security import generate_password_hash, check_password_hash
 
 api = Blueprint('api', __name__)
-
-
-api.config["JWT_SECRET_KEY"] = ""
-jwt = JWTManager(api)
 
 
 @api.route('/login', methods=['POST'])
@@ -38,10 +37,10 @@ def login():
 def signUp():
 
     name, surname, email, password, age, city, address, tlf = request.json.get('name', None),
-        request.json.get('surname', None), request.json.get('email', None), 
-        request.json.get('password', None), request.json.get('age', None),
-        request.json.get('city', None), request.json.get('address', None),
-        request.json.get('tlf', None)
+    request.json.get('surname', None), request.json.get('email', None), 
+    request.json.get('password', None), request.json.get('age', None),
+    request.json.get('city', None), request.json.get('address', None),
+    request.json.get('tlf', None)
 
     if not (name and surname and email and password and age and city and address and tlf):
         return jsonify({'message': 'Data not provided'}), 400
@@ -59,12 +58,12 @@ def signUp():
         return jsonify({'message': str(err)}), 500
 
 
-# @jwt_required # Authorization: Bearer <token> => si no viene 401
-# @api.route('/user', methods=['GET'])
-# def getUserInfo():
+@jwt_required # Authorization: Bearer <token> => si no viene 401
+@api.route('/user', methods=['GET'])
+def getUserInfo():
 
-#     userId = get_jwt_identity()
-#     user = User.query.filter_by(id=userId)
+    userId = get_jwt_identity()
+    user = User.query.filter_by(id=userId)
 
 
 
