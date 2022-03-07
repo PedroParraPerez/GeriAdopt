@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       URLAPIDOGS:
-        "https://3001-sromk-proyectofinalpl-mjr019271rt.ws-eu34xl.gitpod.io/api/",
+        "https://3001-sromk-proyectofinalpl-ln7euy3fj6n.ws-eu34xl.gitpod.io/api/",
       allAnimals: [],
       detailAnimal: [],
     },
