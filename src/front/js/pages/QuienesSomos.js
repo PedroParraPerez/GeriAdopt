@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-
+import { Link } from "react-router-dom";
 import "../../styles/QuienesSomos.css";
 import quienesSomos from "../../img/quienesSomos.jpg";
 import quienesSomosDos from "../../img/quienesSomosDos.jpg";
@@ -99,7 +99,9 @@ export const QuienesSomos = () => {
                 alt="dog that was adopted"
               />
               <h4 className="dudasSuge">¿Tienes dudas o sugerencias?</h4>
-              <button className="contactQuienesSomos">Contáctanos</button>
+              <Link to="/formContact">
+                <button className="contactQuienesSomos">Contáctanos</button>
+              </Link>
             </div>
           </div>
           <div className="col-md-2">

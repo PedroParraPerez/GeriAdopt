@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 import "../../styles/home.css";
 
@@ -25,9 +26,11 @@ export const Home = () => {
               ¡En GeriAdopt Puedes Encontrar Tu Peludo Ideal! Únete a Nuestra
               Comunidad y suma un miembro a tu familia
             </h2>
-            <button type="button" className="buttonHeader">
-              ¡Encuentra tu Match!
-            </button>
+            <Link to="/alldogslist">
+              <button type="button" className="buttonHeader">
+                ¡Encuentra tu Match!
+              </button>
+            </Link>
             <img className="heartHeader" src={HeartHeader} alt="heart" />
           </div>
           <div className="col-md-5">
@@ -101,7 +104,9 @@ export const Home = () => {
                   <br />
                   ¡Crea tu perfil con nosotros!
                 </p>
-                <button className="buttonHomeRegis">¡Quiero Adoptar!</button>
+                <Link to="/formregisteruser">
+                  <button className="buttonHomeRegis">¡Quiero Adoptar!</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -120,9 +125,11 @@ export const Home = () => {
                   <br />
                   ¡Registrate como Protectora!
                 </p>
-                <button className="buttonHomeRegis">
-                  Quiero Registrar mi Protectora
-                </button>
+                <Link to="/formregisterprote">
+                  <button className="buttonHomeRegis">
+                    Quiero Registrar mi Protectora
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -150,7 +157,11 @@ export const Home = () => {
               </p>
             </div>
             <div className="buttonBlogHomePosition">
-              <button className="buttonBlogHome">Accede al Blog</button>
+              <Link to="/blogsection">
+                <button href="#anchor" className="buttonBlogHome">
+                  Accede al Blog
+                </button>
+              </Link>
             </div>
           </div>
           <div className="col-md-1"></div>
