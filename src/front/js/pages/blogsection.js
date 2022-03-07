@@ -20,7 +20,7 @@ export const BlogSection = () => {
           <h2 className="tituloblog2">Actualidad</h2>
           <hr className="lineablogsection"></hr>
         </div>
-        
+
         <div className="container bodyblogsection">
           <div className="row cardsblogsection">
             <div className="col-md-4 box">
@@ -39,9 +39,9 @@ export const BlogSection = () => {
                     darle la bienvenida a un nuevo miembro de la familia y así
                     estés preparado.
                   </p>
-                  <a href="#" className="btn  botonblogsection">
+                  <button href="#" className="btn  botonblogsection">
                     Leer más
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -61,9 +61,9 @@ export const BlogSection = () => {
                     para saber qué tan feliz y qué tanta influencia tienen los
                     animales en las personas.
                   </p>
-                  <a href="#" className="btn  botonblogsection">
+                  <button href="#" className="btn  botonblogsection">
                     Leer más
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -83,18 +83,18 @@ export const BlogSection = () => {
                     son parte de nuestra familia y que queremos que siempre
                     disfruten con nosotros.
                   </p>
-                  <a href="#" className="btn  botonblogsection">
+                  <button href="#" className="btn  botonblogsection">
                     Leer más
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
           <div className="row d-flex justify-content-center">
             <div className="col-md-3 d-flex justify-content-center">
-              <a href="#" className="btn  botonblogsectionfinal">
+              <button href="#" className="btn  botonblogsectionfinal">
                 Más Noticias
-              </a>
+              </button>
             </div>
           </div>
         </div>
