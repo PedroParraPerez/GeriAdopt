@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import perrogafasblog from "../../img/perrogafasblog.jpg";
 import "../../styles/blogsection.css";
 import fotoblog1section from "../../img/fotoblog1section.jpg";
@@ -61,9 +61,9 @@ export const BlogSection = () => {
                     para saber qué tan feliz y qué tanta influencia tienen los
                     animales en las personas.
                   </p>
-                  <button href="#" className="btn  botonblogsection">
-                    Leer más
-                  </button>
+                  <Link to="/blogart">
+                    <button className="botonblogsection">Leer más</button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -92,9 +92,9 @@ export const BlogSection = () => {
           </div>
           <div className="row d-flex justify-content-center">
             <div className="col-md-3 d-flex justify-content-center">
-              <button href="#" className="btn  botonblogsectionfinal">
-                Más Noticias
-              </button>
+              <Link to="/blognoticias">
+                <button className=" botonblogsectionfinal">Más Noticias</button>
+              </Link>
             </div>
           </div>
         </div>

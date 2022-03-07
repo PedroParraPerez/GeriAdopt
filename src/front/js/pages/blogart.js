@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import "../../styles/blogart.css";
 import photoblogart from "../../img/fotoblogsection2.jpg";
 
@@ -62,12 +62,11 @@ export const BlogArt = () => {
         <div className="row justify-content-center">
           <div className="col-md-4"></div>
           <div className="col-md-4 justify-content-center blogart-botonfinal ">
-            <button
-              href="#"
-              className="btn justify-content-center blogart-botonfinal2  "
-            >
-              Regresar al Blog de Noticias
-            </button>
+            <Link to="/blogsection">
+              <button className=" justify-content-center blogart-botonfinal2  ">
+                Regresar al Blog de Noticias
+              </button>
+            </Link>
           </div>
           <div className="col-md-4"></div>
         </div>

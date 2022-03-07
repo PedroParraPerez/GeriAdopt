@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../styles/blognoticias.css";
 import fotoblog1section from "../../img/fotoblog1section.jpg";
 import fotoblogsection2 from "../../img/fotoblogsection2.jpg";
@@ -16,7 +17,6 @@ export const BlogNoticias = () => {
         </div>
 
         <div className="blognoticias_body">
-         
           <div className="row mx-1">
             <div className="col-md-6 py-2 blognoticias-card1">
               <div className="row">
@@ -36,17 +36,14 @@ export const BlogNoticias = () => {
                       Conoce los pasos más importantes que debes saber antes de
                       darle la bienvenida a un nuevo miembro de la familia.
                     </p>
-                    <button
-                      href="#"
-                      className="btn   justify-content-center blognoticias-boton"
-                    >
+                    <button className="  justify-content-center blognoticias-boton">
                       Leer Más
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-           
+
             <div className="col-md-6"></div>
           </div>
           <div className="row mx-1">
@@ -70,12 +67,11 @@ export const BlogNoticias = () => {
                       para saber qué tan feliz y qué tanta influencia tienen los
                       animales en las personas.
                     </p>
-                    <button
-                      href="#"
-                      className="btn   justify-content-center blognoticias-boton"
-                    >
-                      Leer Más
-                    </button>
+                    <Link to="/blogart">
+                      <button className="  justify-content-center blognoticias-boton">
+                        Leer Más
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
