@@ -3,27 +3,27 @@ data = {
     "Animal": [
         {
             "id": 1,
-            "name":"Mojito",
+            "name":"Raily",
             "species": "Perro",
             "gender": "M",
-            "race": "Beagle",
+            "race": "Mestizo PPP",
             "size": "Mediano",
-            "age": 2,
+            "age": 7,
             "city": "Madrid",
-            "description":"Solo con el nombre se pueden hacer una idea de lo dulce que es. Es un animal que le encantan las caricias y el contacto humano. Su relación con otro tipo de animales tambien es excelente, siempre buscando divertirse jugando.",
-            "short_description": "Solo con el nombre se pueden hacer una idea de lo dulce que es."
+            "description":"Raily es un perro cariñoso y juguetón, es tranquilo y noble. Necesita una familia que le de una oportunidad de tener una buena vida los años que le quedan. y es mejor que no haya otro perro en el domicilio. Solo personas con licencia PPP (o que puedan obtenerla). se entrega, con chip, vacunas, desparasitación, esterilización y seguro de RC. ",
+            "short_description": "Raily es un perro cariñoso y juguetón, es tranquilo y noble."
         },
         {
             "id": 2,
-            "name":"Mojito",
-            "species": "Perro",
-            "gender": "M",
-            "race": "Beagle",
+            "name":"Ginger",
+            "species": "Gato",
+            "gender": "F",
+            "race": "Europeo",
             "size": "Mediano",
-            "age": 2,
+            "age": 5,
             "city": "Madrid",
-            "description":"Solo con el nombre se pueden hacer una idea de lo dulce que es. Es un animal que le encantan las caricias y el contacto humano. Su relación con otro tipo de animales tambien es excelente, siempre buscando divertirse jugando.",
-            "short_description": "Solo con el nombre se pueden hacer una idea de lo dulce que es."
+            "description":"Ginger es super cariñosa, hermana de Donovan. Se busca adopcion sola o conjunta con Donovan.",
+            "short_description": "Ginger es super cariñosa, hermana de Donovan."
         }
         ]
 }

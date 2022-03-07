@@ -51,7 +51,7 @@ export const Navbar = (props) => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/demo">
+              <Link to="/allshelters">
                 <span className="spanNavbarLink">Protectoras</span>
               </Link>
             </li>

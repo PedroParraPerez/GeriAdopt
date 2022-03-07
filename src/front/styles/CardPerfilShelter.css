@@ -1,0 +1,32 @@
+container-fluid {
+  display: flex;
+}
+
+.shelter_shelterInfo {
+  display: flex;
+  align-items: center;
+
+  background-color: rgba(233, 163, 147, 0.27);
+  border-radius: 25px;
+
+  width: 40%;
+  height: 20%;
+  font-family: "Alegreya Sans", sans-serif;
+  text-align: center;
+}
+
+.cardperfilshelter-boton {
+  align-items: center;
+  margin-top: 3%;
+  text-align: center;
+  margin-left: 25%;
+  width: 55%;
+
+  font-size: 20px;
+  border: solid black 2px;
+
+  font-family: "Alegreya Sans", sans-serif;
+
+  background-color: #f8d2c3;
+  border-radius: 15px;
+}

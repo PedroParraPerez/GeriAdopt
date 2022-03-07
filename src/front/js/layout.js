@@ -14,6 +14,7 @@ import { Adopter } from "./pages/adopter";
 import { Navbar } from "./component/navbar";
 import { AllDogsList } from "./pages/alldogslist";
 import { DetailDog } from "./pages/detaildog";
+import { ShelterAnimals } from "./pages/shelterAnimals.js";
 import { AllShelterList } from "./pages/allShelters.js";
 import { FormRegisterUser } from "./pages/formRegisterUser.js";
 import { Login } from "./pages/login";
@@ -79,6 +80,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/perfil-protectora">
               <PerfilProtectora />
+            </Route>
+            <Route exact path="/shelteranimals">
+              <ShelterAnimals />
             </Route>
             <Route>
               <h1>Not found!</h1>
