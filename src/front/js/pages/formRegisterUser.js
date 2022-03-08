@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import "../../styles/formRegisterUser.css";
+import { Context } from "../store/appContext.js";
 
 export const FormRegisterUser = () => {
+  const [formregister, setFormregister] = useState({});
+  const { store, actions } = useContext(Context);
+
   return (
     <>
       <div className="container-fluid">
@@ -17,6 +21,12 @@ export const FormRegisterUser = () => {
                 <div className="row">
                   <label htmlFor="name">Nombre</label>
                   <input
+                    onChange={(event) => {
+                      setFormregister({
+                        ...formregister,
+                        [event.target.name]: event.target.value,
+                      });
+                    }}
                     type="text"
                     className="form-control formRegisterUser_Input"
                     name="name"
@@ -26,6 +36,12 @@ export const FormRegisterUser = () => {
                 <div className="row">
                   <label htmlFor="surname">Apellidos</label>
                   <input
+                    onChange={(event) => {
+                      setFormregister({
+                        ...formregister,
+                        [event.target.name]: event.target.value,
+                      });
+                    }}
                     type="text"
                     className="form-control formRegisterUser_Input"
                     name="surname"
@@ -35,6 +51,12 @@ export const FormRegisterUser = () => {
                 <div className="row">
                   <label htmlFor="email">Correo</label>
                   <input
+                    onChange={(event) => {
+                      setFormregister({
+                        ...formregister,
+                        [event.target.name]: event.target.value,
+                      });
+                    }}
                     type="email"
                     className="form-control formRegisterUser_Input"
                     name="email"
@@ -44,6 +66,12 @@ export const FormRegisterUser = () => {
                 <div className="row">
                   <label htmlFor="password">Contraseña:</label>
                   <input
+                    onChange={(event) => {
+                      setFormregister({
+                        ...formregister,
+                        [event.target.name]: event.target.value,
+                      });
+                    }}
                     type="password"
                     className="form-control formRegisterUser_Input"
                     name="password"
@@ -53,6 +81,12 @@ export const FormRegisterUser = () => {
                 <div className="row">
                   <label htmlFor="passwordrepeat">Confirmar Contraseña</label>
                   <input
+                    onChange={(event) => {
+                      setFormregister({
+                        ...formregister,
+                        [event.target.name]: event.target.value,
+                      });
+                    }}
                     type="password"
                     className="form-control formRegisterUser_Input"
                     name="passwordrepeat"
@@ -63,6 +97,12 @@ export const FormRegisterUser = () => {
                   <div className="col-xl-6">
                     <label htmlFor="age">Edad:</label>
                     <input
+                      onChange={(event) => {
+                        setFormregister({
+                          ...formregister,
+                          [event.target.name]: parseInt(event.target.value),
+                        });
+                      }}
                       type="number"
                       className="form-control formRegisterUser_inputAgeAndCity"
                       name="age"
@@ -71,6 +111,12 @@ export const FormRegisterUser = () => {
                   <div className="col-xl-6">
                     <label htmlFor="city">Ciudad:</label>
                     <input
+                      onChange={(event) => {
+                        setFormregister({
+                          ...formregister,
+                          [event.target.name]: event.target.value,
+                        });
+                      }}
                       type="text"
                       className="form-control formRegisterUser_inputAgeAndCity"
                       name="city"
@@ -78,15 +124,31 @@ export const FormRegisterUser = () => {
                   </div>
                 </div>
                 <div className="row">
-                  <label htmlFor="direction">Dirección:</label>
+                  <label htmlFor="address">Dirección:</label>
                   <input
+                    onChange={(event) => {
+                      setFormregister({
+                        ...formregister,
+                        [event.target.name]: event.target.value,
+                      });
+                    }}
                     type="text"
                     className="form-control formRegisterUser_Input"
-                    name="direction"
+                    name="address"
                   />
                 </div>
                 <div className="col-XL-12 mt-2 d-flex justify-content-end mt-4">
-                  <button className="btn formRegisterUser_button" type="submit">
+                  <button
+                    onClick={(event) => {
+                      event.preventDefault();
+                      if (
+                        formregister.password == formregister.passwordrepeat
+                      ) {
+                        actions.register(formregister);
+                      }
+                    }}
+                    className="btn formRegisterUser_button"
+                  >
                     Registrarme
                   </button>
                 </div>

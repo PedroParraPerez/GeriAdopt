@@ -35,26 +35,31 @@ def login():
 
 @api.route('/signup', methods=["POST"])
 def signUp():
+    print(request.get_json())
 
-    name, surname, email, password, age, city, address, tlf = request.json.get('name', None),
-    request.json.get('surname', None), request.json.get('email', None), 
-    request.json.get('password', None), request.json.get('age', None),
-    request.json.get('city', None), request.json.get('address', None),
-    request.json.get('tlf', None)
+    name = request.json.get('name', None)
+    surname = request.json.get('surname', None)
+    email = request.json.get('email', None)
+    password = request.json.get('password', None)
+    passwordrepeat = request.json.get('passwordrepeat', None)
+    age = request.json.get('age', None)
+    city = request.json.get('city', None)
+    address = request.json.get('address', None)
 
-    if not (name and surname and email and password and age and city and address and tlf):
+    if not (name and surname and email and password and age and city and address and passwordrepeat):
         return jsonify({'message': 'Data not provided'}), 400
 
-    passe = generate_password_hash(password)
-    user = User(name=name, surname=surname, email=email, password=passe, age=age, city=city, address=address, tlf=tlf)
+    hash_password = generate_password_hash(password)
+    user = User(name=name, surname=surname, email=email, password=hash_password, age=age, city=city, address=address)
     try:
 
         db.session.add(user)
-        userCreated = db.session.commit()
-        token = create_access_token(identity=userCreated.id)
+        db.session.commit()
+        token = create_access_token(identity=user.id)
         return jsonify({'token': token}), 201
 
     except Exception as err:
+        print(str(err))
         return jsonify({'message': str(err)}), 500
 
 
@@ -63,7 +68,7 @@ def signUp():
 def getUserInfo():
 
     userId = get_jwt_identity()
-    user = User.query.filter_by(id=userId)
+    user = User.query.get(userId)
 
 
 

@@ -20,11 +20,10 @@ class User(db.Model):
     name = db.Column(db.String(120), unique=False, nullable=False)
     surname = db.Column(db.String(120), unique=False, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(80), unique=False, nullable=False)
+    password = db.Column(db.String(240), unique=False, nullable=False)
     age = db.Column(db.Integer, unique=False, nullable=False)
     city = db.Column(db.String(120), unique=False, nullable=False)
     address = db.Column(db.String(120), unique=False, nullable=False)
-    tlf = db.Column(db.Integer, unique=False, nullable=False)
     likes = db.relationship('Animal', secondary=likes, lazy='subquery', backref=db.backref('this user likes these animals', lazy=True))
     
 

@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+
 import "../../styles/formRegisterProte.css";
 
 export const FormRegisterProte = () => {
+  const [formregister, setFormregister] = useState({});
+
   return (
     <>
       <div className="container-fluid">
@@ -17,6 +20,12 @@ export const FormRegisterProte = () => {
                 <div className="row">
                   <label htmlFor="name">Nombre de la protectora:</label>
                   <input
+                    onChange={(event) => {
+                      setFormregister({
+                        ...formregister,
+                        [event.target.name]: event.target.value,
+                      });
+                    }}
                     type="text"
                     className="form-control formRegisterProte_Input"
                     name="name"
@@ -26,6 +35,12 @@ export const FormRegisterProte = () => {
                 <div className="row">
                   <label htmlFor="email">Correo</label>
                   <input
+                    onChange={(event) => {
+                      setFormregister({
+                        ...formregister,
+                        [event.target.name]: event.target.value,
+                      });
+                    }}
                     type="email"
                     className="form-control formRegisterProte_Input"
                     name="email"
@@ -35,6 +50,12 @@ export const FormRegisterProte = () => {
                 <div className="row">
                   <label htmlFor="password">Contraseña:</label>
                   <input
+                    onChange={(event) => {
+                      setFormregister({
+                        ...formregister,
+                        [event.target.name]: event.target.value,
+                      });
+                    }}
                     type="password"
                     className="form-control formRegisterProte_Input"
                     name="password"
@@ -54,6 +75,12 @@ export const FormRegisterProte = () => {
                   <div className="col-xl-6">
                     <label htmlFor="direction">Dirección:</label>
                     <input
+                      onChange={(event) => {
+                        setFormregister({
+                          ...formregister,
+                          [event.target.name]: event.target.value,
+                        });
+                      }}
                       type="text"
                       className="form-control formRegisterProte_Input"
                       name="direction"
@@ -62,6 +89,12 @@ export const FormRegisterProte = () => {
                   <div className="col-xl-6">
                     <label htmlFor="city">Ciudad:</label>
                     <input
+                      onChange={(event) => {
+                        setFormregister({
+                          ...formregister,
+                          [event.target.name]: event.target.value,
+                        });
+                      }}
                       type="text"
                       className="form-control inputAgeAndCity"
                       name="city"
