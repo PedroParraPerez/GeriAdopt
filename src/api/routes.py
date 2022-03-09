@@ -66,13 +66,17 @@ def signUp():
         return jsonify({'message': str(err)}), 500
 
 
-@jwt_required # Authorization: Bearer <token> => si no viene 401
+ # Authorization: Bearer <token> => si no viene 401
 @api.route('/user', methods=['GET'])
+@jwt_required()
 def getUserInfo():
 
     userId = get_jwt_identity()
     user = User.query.get(userId)
-
+    if user:
+        return jsonify({"validate": True})
+    else:
+        return jsonify({"validate": False})
 
 
 @api.route('/animal', methods=['GET'])

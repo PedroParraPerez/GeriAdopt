@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-
 import { Home } from "./pages/home";
 import { BlogSection } from "./pages/blogsection.js";
 import { Demo } from "./pages/demo";
@@ -38,7 +37,9 @@ const Layout = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
+
             <Route path="/perfil-member" element={<Adopter />} />
+
             <Route path="/perfil-shelter" element={<FormRegisterProte />} />
             <Route path="/alldogslist" element={<AllDogsList />} />
             <Route path="/blogsection" element={<BlogSection />} />
@@ -51,10 +52,7 @@ const Layout = () => {
             <Route path="/formregisterprote" element={<FormRegisterProte />} />
             <Route path="/shelteranimals" element={<ShelterAnimals />} />
             <Route path="/shelteranimals" element={<ShelterAnimals />} />
-            {/* 
-            <Route>
-              <h1>Not found!</h1>
-            </Route> */}
+            <Route path="*" element={<h1>Not found</h1>}></Route>
           </Routes>
           <Footer />
         </ScrollToTop>
