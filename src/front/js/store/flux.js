@@ -2,9 +2,10 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       URLAPIDOGS:
-        "https://3001-sromk-proyectofinalpl-fr4jd3t653a.ws-eu34.gitpod.io/api/",
+        "https://3001-sromk-proyectofinalpl-jawiotnf7ic.ws-eu34.gitpod.io/api/",
       allAnimals: [],
       detailAnimal: [],
+      logedUser: [],
     },
     actions: {
       getAllAnimal: async () => {
@@ -29,7 +30,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         const data = await response.json();
         console.log(data); // informacion del usuario que inicio sesion
       },
-      login: async (username, password) => {
+      login: async (email, password) => {
         const response = await fetch(getStore().URLAPIDOGS + "login", {
           method: "POST",
           headers: {
@@ -37,12 +38,13 @@ const getState = ({ getStore, getActions, setStore }) => {
             Accept: "application/json",
           },
           body: JSON.stringify({
-            username: username,
+            email: email,
             password: password,
           }),
         });
         const data = await response.json();
         localStorage.setItem("token", data.token);
+        setStore({ logedUser: data.token });
       },
       register: async (user) => {
         const response = await fetch(getStore().URLAPIDOGS + "signup", {
@@ -55,7 +57,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
         const data = await response.json();
         localStorage.setItem("token", data.token);
-        console.log(data);
+        setStore({ logedUser: data.token });
       },
     },
   };

@@ -3,15 +3,17 @@ import { Link } from "react-router-dom";
 import "../../../front/styles/navbar.css";
 import Logo_GeriAdopt_2 from "../../img/Logo_GeriAdopt_2.png";
 import PropTypes from "prop-types";
+import { Context } from "../store/appContext";
 
 export const Navbar = (props) => {
   const [isLogged, setIsLogged] = useState(false);
+  const { store, actions } = useContext(Context);
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setIsLogged(true);
     }
-  });
+  }, [store.logedUser]);
   return (
     <>
       <nav className="navbar navbar-expand-md navbar-light" id="muevete">

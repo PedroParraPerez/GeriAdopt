@@ -45,8 +45,8 @@ class User(db.Model):
             'age':self.age,
             'city':self.city,
             'address':self.address,
-            'tlf':self.tlf,
-            'likes': list(map(lambda animal: animal.serialize(), self.likes))
+            # 'tlf':self.tlf,
+            # 'likes': list(map(lambda animal: animal.serialize(), self.likes))
         }
 
 

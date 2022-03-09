@@ -16,26 +16,27 @@ api = Blueprint('api', __name__)
 @api.route('/login', methods=['POST'])
 def login():
     
-    username, password = request.json.get('username', None), request.json.get('password', None)
-    if not (username and password):
-        return jsonify({'message': 'Data not provided'}), 400
+    email, password = request.json.get('email', None), request.json.get('password', None)
     
+    if not (email and password):
+        return jsonify({'message': 'Data not provided'}), 400
+
     # traer de mi base de datos un usuario por su email
-    user = User.query.filter_by(email=username)
-    if not user:
-        return jsonify({'message': 'Username is not valid'}), 404
+    user = User.query.filter_by(email=email).one_or_none()
+    if not email:
+        return jsonify({'message': 'Email is not valid'}), 404
 
     # comprobar si la contraseña es correcta
-    if not check_password_hash(password, user.password):
+    if not check_password_hash(user.password, password):
         return jsonify({'message': 'Your pass doesn"t match'}), 500
 
-    token = create_access_token(identity=user.id)
-    return jsonify({'token': token}), 200
+    token = create_access_token(identity=user.serialize())
+    return jsonify({'token':token}), 200
 
 
 @api.route('/signup', methods=["POST"])
 def signUp():
-    print(request.get_json())
+
 
     name = request.json.get('name', None)
     surname = request.json.get('surname', None)
