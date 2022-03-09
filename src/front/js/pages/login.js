@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "../../styles/login.css";
 import { Context } from "../store/appContext";
@@ -9,7 +9,7 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // let navigate = useNavigate();
+  const navigate = useNavigate();
 
   // useEffect(() => {
   //   navigate("/");

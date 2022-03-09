@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams } from "react-router-dom";
+
 import Mojito from "../../img/Mojito.jpg";
 import "../../styles/detaildog.css";
 import { Context } from "../store/appContext";

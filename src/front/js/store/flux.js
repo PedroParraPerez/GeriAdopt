@@ -5,7 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         "https://3001-sromk-proyectofinalpl-jawiotnf7ic.ws-eu34.gitpod.io/api/",
       allAnimals: [],
       detailAnimal: [],
-      logedUser: [],
+      logedUser: false, //No indica si hay ALGUN usuario conectado
     },
     actions: {
       getAllAnimal: async () => {
@@ -42,9 +42,11 @@ const getState = ({ getStore, getActions, setStore }) => {
             password: password,
           }),
         });
-        const data = await response.json();
-        localStorage.setItem("token", data.token);
-        setStore({ logedUser: data.token });
+        if (response.status == 200) {
+          const data = await response.json();
+          localStorage.setItem("token", data.token);
+          setStore({ logedUser: true });
+        }
       },
       register: async (user) => {
         const response = await fetch(getStore().URLAPIDOGS + "signup", {
@@ -55,9 +57,11 @@ const getState = ({ getStore, getActions, setStore }) => {
           },
           body: JSON.stringify(user),
         });
-        const data = await response.json();
-        localStorage.setItem("token", data.token);
-        setStore({ logedUser: data.token });
+        if (response.status == 201) {
+          const data = await response.json();
+          localStorage.setItem("token", data.token);
+          setStore({ logedUser: data.token });
+        }
       },
     },
   };

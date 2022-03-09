@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./pages/home";
@@ -35,59 +35,27 @@ const Layout = () => {
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Navbar />
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/adopter">
-              <Adopter />
-            </Route>
-            <Route exact path="/alldogslist">
-              <AllDogsList />
-            </Route>
-            <Route exact path="/blogsection">
-              <BlogSection />
-            </Route>
-            <Route exact path="/blogart">
-              <BlogArt />
-            </Route>
-            <Route exact path="/blognoticias">
-              <BlogNoticias />
-            </Route>
-            <Route exact path="/quienes-somos">
-              <QuienesSomos />
-            </Route>
-            <Route exact path="/demo">
-              <Demo />
-            </Route>
-            <Route exact path="/detailanimal/:id">
-              <DetailDog />
-            </Route>
-            <Route exact path="/allshelters">
-              <AllShelterList />
-            </Route>
-            <Route exact path="/formregisteruser">
-              <FormRegisterUser />
-            </Route>
-            <Route exact path="/formregisterprote">
-              <FormRegisterProte />
-            </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/single/:theid">
-              <Single />
-            </Route>
-            <Route exact path="/perfil-protectora">
-              <PerfilProtectora />
-            </Route>
-            <Route exact path="/shelteranimals">
-              <ShelterAnimals />
-            </Route>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/perfil-member" element={<Adopter />} />
+            <Route path="/perfil-shelter" element={<FormRegisterProte />} />
+            <Route path="/alldogslist" element={<AllDogsList />} />
+            <Route path="/blogsection" element={<BlogSection />} />
+            <Route path="/blogart" element={<BlogArt />} />
+            <Route path="/blognoticias" element={<BlogNoticias />} />
+            <Route path="/quienes-somos" element={<QuienesSomos />} />
+            <Route path="/detailanimal/:id" element={<DetailDog />} />
+            <Route path="/allshelters" element={<AllShelterList />} />
+            <Route path="/formregisteruser" element={<FormRegisterUser />} />
+            <Route path="/formregisterprote" element={<FormRegisterProte />} />
+            <Route path="/shelteranimals" element={<ShelterAnimals />} />
+            <Route path="/shelteranimals" element={<ShelterAnimals />} />
+            {/* 
             <Route>
               <h1>Not found!</h1>
-            </Route>
-          </Switch>
+            </Route> */}
+          </Routes>
           <Footer />
         </ScrollToTop>
       </BrowserRouter>

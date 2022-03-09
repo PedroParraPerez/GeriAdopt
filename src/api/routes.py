@@ -31,6 +31,8 @@ def login():
         return jsonify({'message': 'Your pass doesn"t match'}), 500
 
     token = create_access_token(identity=user.serialize())
+
+    
     return jsonify({'token':token}), 200
 
 
