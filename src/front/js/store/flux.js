@@ -42,10 +42,13 @@ const getState = ({ getStore, getActions, setStore }) => {
             password: password,
           }),
         });
+
         if (response.status == 200) {
           const data = await response.json();
           localStorage.setItem("token", data.token);
           setStore({ logedUser: true });
+        } else {
+          alert("Contraseña o usuario incorrectos");
         }
       },
       register: async (user) => {
@@ -61,6 +64,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           const data = await response.json();
           localStorage.setItem("token", data.token);
           setStore({ logedUser: data.token });
+        } else {
+          alert("Ya hay un usuario registrado con ese email");
         }
       },
     },

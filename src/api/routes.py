@@ -30,7 +30,7 @@ def login():
     if not check_password_hash(user.password, password):
         return jsonify({'message': 'Your pass doesn"t match'}), 500
 
-    token = create_access_token(identity=user.serialize())
+    token = create_access_token(identity=user.id)
 
     
     return jsonify({'token':token}), 200
