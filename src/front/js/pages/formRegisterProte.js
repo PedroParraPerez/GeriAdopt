@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import "../../styles/formRegisterProte.css";
+import { Context } from "../store/appContext";
 
 export const FormRegisterProte = () => {
-  const [formregister, setFormregister] = useState({});
+  const [formregisterShelter, setFormregisterShelter] = useState({});
+  const { store, actions } = useContext(Context);
 
   return (
     <>
@@ -21,8 +23,8 @@ export const FormRegisterProte = () => {
                   <label htmlFor="name">Nombre de la protectora:</label>
                   <input
                     onChange={(event) => {
-                      setFormregister({
-                        ...formregister,
+                      setFormregisterShelter({
+                        ...formregisterShelter,
                         [event.target.name]: event.target.value,
                       });
                     }}
@@ -36,8 +38,8 @@ export const FormRegisterProte = () => {
                   <label htmlFor="email">Correo</label>
                   <input
                     onChange={(event) => {
-                      setFormregister({
-                        ...formregister,
+                      setFormregisterShelter({
+                        ...formregisterShelter,
                         [event.target.name]: event.target.value,
                       });
                     }}
@@ -51,8 +53,8 @@ export const FormRegisterProte = () => {
                   <label htmlFor="password">Contraseña:</label>
                   <input
                     onChange={(event) => {
-                      setFormregister({
-                        ...formregister,
+                      setFormregisterShelter({
+                        ...formregisterShelter,
                         [event.target.name]: event.target.value,
                       });
                     }}
@@ -76,8 +78,8 @@ export const FormRegisterProte = () => {
                     <label htmlFor="direction">Dirección:</label>
                     <input
                       onChange={(event) => {
-                        setFormregister({
-                          ...formregister,
+                        setFormregisterShelter({
+                          ...formregisterShelter,
                           [event.target.name]: event.target.value,
                         });
                       }}
@@ -90,8 +92,8 @@ export const FormRegisterProte = () => {
                     <label htmlFor="city">Ciudad:</label>
                     <input
                       onChange={(event) => {
-                        setFormregister({
-                          ...formregister,
+                        setFormregisterShelter({
+                          ...formregisterShelter,
                           [event.target.name]: event.target.value,
                         });
                       }}
@@ -103,6 +105,15 @@ export const FormRegisterProte = () => {
                 </div>
                 <div className="col-XL-12 mt-2 d-flex justify-content-end mt-4">
                   <button
+                    onClick={(event) => {
+                      event.preventDefault();
+                      if (
+                        formregisterShelter.password ==
+                        formregisterShelter.passwordrepeat
+                      ) {
+                        actions.registerShelter(formregisterShelter);
+                      }
+                    }}
                     className="btn formRegisterProte_button"
                     type="submit"
                   >

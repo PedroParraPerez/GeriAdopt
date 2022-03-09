@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       URLAPIDOGS:
-        "https://3001-sromk-proyectofinalpl-1pnuab8lyt1.ws-eu34.gitpod.io/api/",
+        "https://3001-sromk-proyectofinalpl-95m4x6l0iuk.ws-eu34.gitpod.io/api/",
       allAnimals: [],
       detailAnimal: [],
       logedUser: false, //No indica si hay ALGUN usuario conectado
@@ -22,6 +22,16 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       getUserInformation: async () => {
         const response = await fetch(getStore().URLAPIDOGS + "user", {
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        const data = await response.json();
+        console.log(data); // informacion del usuario que inicio sesion
+      },
+      getShelterInformation: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "shelter", {
           headers: {
             Accept: "application/json",
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -66,6 +76,23 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({ logedUser: data.token });
         } else {
           alert("Ya hay un usuario registrado con ese email");
+        }
+      },
+      registerShelter: async (shelter) => {
+        const response = await fetch(getStore().URLAPIDOGS + "signupshelter", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(shelter),
+        });
+        if (response.status == 201) {
+          const data = await response.json();
+          localStorage.setItem("token", data.token);
+          setStore({ logedUser: data.token });
+        } else {
+          alert("EL FETCH NO FUNCIONA");
         }
       },
     },

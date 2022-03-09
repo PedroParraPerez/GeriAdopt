@@ -37,7 +37,7 @@ def login():
 
 
 @api.route('/signup', methods=["POST"])
-def signUp():
+def signUpUser():
 
 
     name = request.json.get('name', None)
@@ -65,6 +65,33 @@ def signUp():
         print(str(err))
         return jsonify({'message': str(err)}), 500
 
+@api.route('/signupshelter', methods=["POST"])
+def signUpShelter():
+
+
+    name = request.json.get('name', None)
+    email = request.json.get('email', None)
+    password = request.json.get('password', None)
+    passwordrepeat = request.json.get('passwordrepeat', None)
+    city = request.json.get('city', None)
+    address = request.json.get('address', None)
+
+    if not (name and email and password and city and address and passwordrepeat):
+        return jsonify({'message': 'Data not provided'}), 400
+
+    hash_password = generate_password_hash(password)
+    shelter = Shelter(name=name, email=email, password=hash_password, city=city, address=address)
+    try:
+
+        db.session.add(shelter)
+        db.session.commit()
+        token = create_access_token(identity=shelter.id)
+        return jsonify({'token': token}), 201
+
+    except Exception as err:
+        print(str(err))
+        return jsonify({'message': str(err)}), 500
+
 
  # Authorization: Bearer <token> => si no viene 401
 @api.route('/user', methods=['GET'])
@@ -74,6 +101,17 @@ def getUserInfo():
     userId = get_jwt_identity()
     user = User.query.get(userId)
     if user:
+        return jsonify({"validate": True})
+    else:
+        return jsonify({"validate": False})
+
+@api.route('/shelter', methods=['GET'])
+@jwt_required()
+def getShelterInfo():
+
+    shelterId = get_jwt_identity()
+    shelter = Shelter.query.get(shelterId)
+    if shelter:
         return jsonify({"validate": True})
     else:
         return jsonify({"validate": False})
