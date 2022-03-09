@@ -144,7 +144,7 @@ export const FormRegisterUser = () => {
                       if (
                         formregister.password == formregister.passwordrepeat
                       ) {
-                        actions.register(formregister);
+                        actions.registerUser(formregister);
                       }
                     }}
                     className="btn formRegisterUser_button"

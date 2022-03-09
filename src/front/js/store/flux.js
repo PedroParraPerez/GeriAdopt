@@ -51,7 +51,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           alert("Contraseña o usuario incorrectos");
         }
       },
-      register: async (user) => {
+      registerUser: async (user) => {
         const response = await fetch(getStore().URLAPIDOGS + "signup", {
           method: "POST",
           headers: {
