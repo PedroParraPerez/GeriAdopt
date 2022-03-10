@@ -7,7 +7,7 @@ import EditIcon from "../../img/editIcon.png";
 import ImgTitleFavs from "../../img/imagetitlefavs.png";
 import { useNavigate } from "react-router-dom";
 
-export const Adopter = () => {
+export const PerfilAdopter = () => {
   const { store, actions } = useContext(Context);
   let navigate = useNavigate();
 

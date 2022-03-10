@@ -6,7 +6,7 @@ import { BlogSection } from "./pages/blogsection.js";
 import { QuienesSomos } from "./pages/QuienesSomos.js";
 import injectContext, { Context } from "./store/appContext";
 import { Footer } from "./component/footer.js";
-import { Adopter } from "./pages/adopter";
+import { PerfilAdopter } from "./pages/PerfilAdopter";
 import { Navbar } from "./component/navbar";
 import { AllDogsList } from "./pages/alldogslist";
 import { DetailDog } from "./pages/detaildog";
@@ -37,7 +37,9 @@ const Layout = () => {
             <Route path="/login" element={<Login />} />
             <Route
               path="/profile"
-              element={store.isShelter ? <PerfilProtectora /> : <Adopter />}
+              element={
+                store.isShelter ? <PerfilProtectora /> : <PerfilAdopter />
+              }
             />
             <Route path="/alldogslist" element={<AllDogsList />} />
             <Route path="/blogsection" element={<BlogSection />} />
