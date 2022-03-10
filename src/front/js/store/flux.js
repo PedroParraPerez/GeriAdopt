@@ -6,6 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       allAnimals: [],
       detailAnimal: [],
       logedUser: false, //No indica si hay ALGUN usuario conectado
+      isShelter: false,
     },
     actions: {
       getAllAnimal: async () => {
@@ -20,27 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         const data = await response.json();
         setStore({ detailAnimal: data.results });
       },
-      getUserInformation: async () => {
-        const response = await fetch(getStore().URLAPIDOGS + "user", {
-          headers: {
-            Accept: "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
-        const data = await response.json();
-        console.log(data); // informacion del usuario que inicio sesion
-      },
-      getShelterInformation: async () => {
-        const response = await fetch(getStore().URLAPIDOGS + "shelter", {
-          headers: {
-            Accept: "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
-        const data = await response.json();
-        console.log(data); // informacion del usuario que inicio sesion
-      },
-      login: async (email, password) => {
+      login: async (email, password, type) => {
         const response = await fetch(getStore().URLAPIDOGS + "login", {
           method: "POST",
           headers: {
@@ -50,13 +31,14 @@ const getState = ({ getStore, getActions, setStore }) => {
           body: JSON.stringify({
             email: email,
             password: password,
+            type: type,
           }),
         });
-
+        console.log(type);
         if (response.status == 200) {
           const data = await response.json();
           localStorage.setItem("token", data.token);
-          setStore({ logedUser: true });
+          setStore({ logedUser: true, isShelter: data.type });
         } else {
           alert("Contraseña o usuario incorrectos");
         }
@@ -93,8 +75,28 @@ const getState = ({ getStore, getActions, setStore }) => {
           localStorage.setItem("token", data.token);
           setStore({ logedUser: data.token });
         } else {
-          alert("EL FETCH NO FUNCIONA");
+          alert("Ya hay una protectora registrada con ese email");
         }
+      },
+      getUserInformation: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "user", {
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        const data = await response.json();
+        console.log(data); // informacion del usuario que inicio sesion
+      },
+      getShelterInformation: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "shelter", {
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        const data = await response.json();
+        console.log(data); // informacion del usuario que inicio sesion
       },
     },
   };

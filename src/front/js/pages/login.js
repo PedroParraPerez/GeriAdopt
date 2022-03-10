@@ -8,6 +8,7 @@ export const Login = () => {
   const { store, actions } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [type, setType] = useState(false);
 
   // const navigate = useNavigate();
 
@@ -50,11 +51,22 @@ export const Login = () => {
                     required
                   />
                 </div>
+                <div className="row">
+                  <label htmlFor="password">¿Eres protectora?:</label>
+                  <input
+                    onChange={(event) => {
+                      setType(event.target.value);
+                    }}
+                    type="checkbox"
+                    className=""
+                    name="type"
+                  />
+                </div>
                 <div className="col-XL-12 mt-2 d-flex justify-content-end mt-4">
                   <button
                     onClick={(event) => {
                       event.preventDefault();
-                      actions.login(email, password);
+                      actions.login(email, password, type);
                     }}
                     className="btn login_button"
                   >

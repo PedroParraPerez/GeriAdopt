@@ -45,6 +45,7 @@ class User(db.Model):
             'age':self.age,
             'city':self.city,
             'address':self.address,
+            
             # 'tlf':self.tlf,
             # 'likes': list(map(lambda animal: animal.serialize(), self.likes))
         }
@@ -81,7 +82,6 @@ class Animal(db.Model):
             'description':self.description,
             'short_description':self.short_description,
             'shelter_id':self.shelter_id
-
         }
 
         

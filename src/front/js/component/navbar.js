@@ -69,7 +69,7 @@ export const Navbar = (props) => {
             </li>
             <li className="nav-item dropdown">
               {isLogged ? (
-                <Link to="/perfil-member">
+                <Link to="/profile">
                   <span className="spanNavbarLink">Mi cuenta</span>
                 </Link>
               ) : (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 import "../../styles/PerfilProtectora.css";
 
@@ -6,8 +6,28 @@ import { CardProtectora } from "../component/cardProtectora.js";
 import SOSPeludos from "../../img/sospeludos.jpeg";
 import EditIcon from "../../img/editIcon.png";
 import ImgTitleFavs from "../../img/imagetitlefavs.png";
+import { Context } from "../store/appContext";
+import { useNavigate } from "react-router-dom";
 
 export const PerfilProtectora = () => {
+  const { store, actions } = useContext(Context);
+  let navigate = useNavigate();
+
+  const [validate, setValidate] = useState();
+
+  useEffect(() => {
+    validateToken();
+  }, []);
+
+  const validateToken = async () => {
+    const response = await fetch(store.URLAPIDOGS + "shelter", {
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    response.ok ? setValidate(response.ok) : navigate("/login");
+  };
   return (
     <>
       <div className="container-fluid">
