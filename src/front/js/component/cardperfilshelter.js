@@ -22,7 +22,7 @@ export const CardPerfilShelter = () => {
                   className="shelterLogo"
                 />
               </div>
-              <div className="col-xl-4 shelter_shelterInfo">
+              <div className="col-xl-10 shelter_shelterInfo">
                 <div className="row shelter_edit">
                   <div className="col-xl-12"></div>
                 </div>
@@ -76,7 +76,6 @@ export const CardPerfilShelter = () => {
         );
       })
     );
-    console.log("en el componenete", store.allShelters);
   }, [store.allShelters]);
   return <>{cardshelter}</>;
 };

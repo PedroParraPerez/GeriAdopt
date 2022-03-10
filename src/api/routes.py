@@ -100,6 +100,33 @@ def signUpShelter():
         print(str(err))
         return jsonify({'message': str(err)}), 500
 
+@api.route('/registeranimal', methods=["POST"])
+def registerAnimal():
+
+    name = request.json.get('name', None)
+    species = request.json.get('species', None)
+    gender = request.json.get('gender', None)
+    race = request.json.get('race', None)
+    size = request.json.get('size', None)
+    age = request.json.get('age', None)
+    short_description = request.json.get('short_description', None)
+    description = request.json.get('description', None)
+
+    if not (name and species and gender and race and size and age and short_description and description):
+        return jsonify({'message': 'Data not provided'}), 400
+    
+    
+    animal = Animal(name=name, species=species, gender=gender, race=race, size=size, age=age, short_description=short_description, description=description)
+    try:
+
+        db.session.add(animal)
+        db.session.commit()
+        return jsonify({'results':animal.serialize()}), 200
+
+    except Exception as err:
+        print(str(err))
+        return jsonify({'message': str(err)}), 500
+
 
 # Authorization: Bearer <token> => si no viene 401
 @api.route('/user', methods=['GET'])
@@ -139,3 +166,10 @@ def get_all_shelters():
 def get_animal_by_id(id):
     animal = Animal.query.get(id)
     return jsonify({'results': animal.serialize()}),200
+
+
+
+
+
+
+

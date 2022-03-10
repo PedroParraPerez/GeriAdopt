@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import Mojito from "../../img/Mojito.jpg";
 import "../../styles/Card.css";
@@ -12,10 +12,12 @@ import { Context } from "../store/appContext";
 
 export const Card = () => {
   const { store, actions } = useContext(Context);
+  const [animal, setAnimal] = useState();
 
-  return (
-    <>
-      {store.allAnimals.map((animal) => {
+  useEffect(() => {
+    console.log(store.animalcreated);
+    setAnimal(
+      store.allAnimals.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
             <img src={Mojito} className="Card_cardphoto" />
@@ -72,7 +74,8 @@ export const Card = () => {
             </div>
           </div>
         );
-      })}
-    </>
-  );
+      })
+    );
+  }, [store.animalcreated]);
+  return <>{animal}</>;
 };

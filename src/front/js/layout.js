@@ -19,6 +19,7 @@ import { BlogArt } from "./pages/blogart.js";
 import { BlogNoticias } from "./pages/blognoticias.js";
 import { PerfilProtectora } from "./pages/PerfilProtectora";
 import { useContext } from "react";
+import { FormRegisterAnimal } from "./pages/formRegisterAnimal";
 
 //create your first component
 const Layout = () => {
@@ -38,8 +39,7 @@ const Layout = () => {
             <Route
               path="/profile"
               element={
-                // store.isShelter ? <PerfilProtectora /> :
-                <PerfilAdopter />
+                store.isShelter ? <PerfilProtectora /> : <PerfilAdopter />
               }
             />
             <Route path="/alldogslist" element={<AllDogsList />} />
@@ -51,6 +51,10 @@ const Layout = () => {
             <Route path="/allshelters" element={<AllShelterList />} />
             <Route path="/formregisteruser" element={<FormRegisterUser />} />
             <Route path="/formregisterprote" element={<FormRegisterProte />} />
+            <Route
+              path="/formregisteranimal"
+              element={<FormRegisterAnimal />}
+            />
             <Route path="/shelteranimals" element={<ShelterAnimals />} />
             <Route path="/shelteranimals" element={<ShelterAnimals />} />
             <Route path="*" element={<h1>Not found</h1>}></Route>

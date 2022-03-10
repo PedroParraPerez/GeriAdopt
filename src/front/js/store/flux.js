@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       URLAPIDOGS:
-        "https://3001-sromk-proyectofinalpl-trwe44w0qq3.ws-eu34.gitpod.io/api/",
+        "https://3001-sromk-proyectofinalpl-regj7butz7v.ws-eu34.gitpod.io/api/",
       allAnimals: [],
       allShelters: [],
       detailAnimal: [],
@@ -10,6 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       isShelter: false, //false = Adopter ; true = Shelter
       detailUser: [],
       currentMember: [], //MAPEO DE LA VARIBLE EN EL PERFIL DE PERFIL
+      animalcreated: [],
     },
     actions: {
       getAllAnimal: async () => {
@@ -69,7 +70,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
       registerShelter: async (shelter) => {
-        console.log("Esta ejecutando el fetch");
         const response = await fetch(getStore().URLAPIDOGS + "signupshelter", {
           method: "POST",
           headers: {
@@ -87,6 +87,26 @@ const getState = ({ getStore, getActions, setStore }) => {
           alert("Ya hay una protectora registrada con ese email");
         }
       },
+      registerAnimal: async (animal) => {
+        const response = await fetch(getStore().URLAPIDOGS + "registeranimal", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(animal),
+        });
+
+        if (response.status == 200) {
+          const data = await response.json();
+
+          setStore({ animalcreated: data.results });
+          alert("animal creado");
+        } else {
+          alert("Ya hay una protectora registrada con ese email");
+        }
+      },
+      //Validacion de usuario con Token
       getUserInformation: async () => {
         const response = await fetch(getStore().URLAPIDOGS + "user", {
           headers: {
@@ -98,7 +118,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ detailUser: data });
         console.log(data); // informacion del usuario que inicio sesion
       },
-
+      //Validacion de protectora con Token
       getShelterInformation: async () => {
         const response = await fetch(getStore().URLAPIDOGS + "shelter", {
           headers: {
@@ -107,10 +127,10 @@ const getState = ({ getStore, getActions, setStore }) => {
           },
         });
         const data = await response.json();
-        console.log(data); // informacion del usuario que inicio sesion
+        console.log(data); // informacion de la protectora que inicio sesion
       },
     },
   };
 };
-//localStorage.getItem("token");
+
 export default getState;

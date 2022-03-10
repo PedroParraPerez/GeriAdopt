@@ -52,7 +52,7 @@ export const DetailDog = () => {
                   <span className="detaildog_info_list_label">
                     Esterilizado:{" "}
                   </span>
-                  Si
+                  NO MAPEADO
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Ciudad: </span>
@@ -60,23 +60,23 @@ export const DetailDog = () => {
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Protectora:</span>
-                  Apadrina un perro
+                  NO MAPEADO
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Ubicación: </span>
-                  Calle Edison, nº 3; (Madrid)
+                  NO MAPEADO
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">
                     Correo de contacto:
                   </span>
-                  apadrina@unperro.com
+                  NO MAPEADO (Correo de la prote)
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">
                     Teléfono de contacto:
                   </span>
-                  654-76-87-98
+                  NO MAPEADO
                 </li>
                 <p className="detaildog_info_list">
                   <span className="detaildog_info_list_label">

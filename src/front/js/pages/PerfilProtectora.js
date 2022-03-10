@@ -7,7 +7,7 @@ import SOSPeludos from "../../img/sospeludos.jpeg";
 import EditIcon from "../../img/editIcon.png";
 import ImgTitleFavs from "../../img/imagetitlefavs.png";
 import { Context } from "../store/appContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const PerfilProtectora = () => {
   const { store, actions } = useContext(Context);
@@ -97,10 +97,15 @@ export const PerfilProtectora = () => {
               className="Protectora_ImgTitleFavs"
             />
           </div>
-          <div className="col-xl-2">
+          <div className="col-xl-1">
             <h2 className="titleProte">
-              <b>SOS Peludos España</b>
+              <b>Animales</b>
             </h2>
+          </div>
+          <div className="col-xl-1">
+            <Link to="/formregisteranimal">
+              <button className="PerfilProtectora_addNewAnimal">+</button>
+            </Link>
           </div>
         </div>
         <div className="row Protectora_cardlist">

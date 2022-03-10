@@ -59,10 +59,10 @@ class Animal(db.Model):
     race = db.Column(db.String(120), unique=False, nullable=False)
     size = db.Column(db.String(120), unique=False, nullable=False)
     age = db.Column(db.Integer, unique=False, nullable=False)
-    city = db.Column(db.String(120), unique=False, nullable=False)
+
     description = db.Column(db.String(240), unique=False, nullable=False)
     short_description = db.Column(db.String(80), unique=False, nullable=False)
-    city = db.Column(db.String(120), unique=False, nullable=False)
+    
     shelter_id = db.Column(db.Integer, db.ForeignKey('shelter.id'), nullable=True)
     # Establecemos la relacion OnToMany crando la columna en Animal e indicandole la id de la protectora con el ForignKeY. Pongo que nullable = true para que sea mas facil de ver en la practica de los ejemplos
 
@@ -78,7 +78,6 @@ class Animal(db.Model):
             'race':self.race,
             'size':self.size,
             'age':self.age,
-            'city':self.city,
             'description':self.description,
             'short_description':self.short_description,
             'shelter_id':self.shelter_id
