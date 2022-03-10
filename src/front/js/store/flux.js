@@ -99,7 +99,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         if (response.status == 200) {
           const data = await response.json();
-
           setStore({ animalcreated: data.results });
           alert("animal creado");
         } else {
