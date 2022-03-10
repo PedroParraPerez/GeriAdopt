@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       allAnimals: [],
       detailAnimal: [],
       logedUser: false, //No indica si hay ALGUN usuario conectado
-      isShelter: false,
+      isShelter: false, //false = Adopter ; true = Shelter
     },
     actions: {
       getAllAnimal: async () => {
@@ -34,7 +34,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             type: type,
           }),
         });
-        console.log(type);
         if (response.status == 200) {
           const data = await response.json();
           localStorage.setItem("token", data.token);

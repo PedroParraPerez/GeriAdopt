@@ -27,10 +27,10 @@ def login():
     user = None
     if type:
         # shelter
-        user = Shelter.filter_by(email=email).one_or_none()
+        user = Shelter.query.filter_by(email=email).one_or_none()
     else:
         # adopter
-        user = User.filter_by(email=email).one_or_none()
+        user = User.query.filter_by(email=email).one_or_none()
        
 
     if not user:

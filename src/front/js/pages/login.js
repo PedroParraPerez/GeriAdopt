@@ -9,7 +9,7 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [checked, setChecked] = useState(false);
+  const [type, setType] = useState(false);
   // const navigate = useNavigate();
 
   // useEffect(() => {
@@ -55,9 +55,9 @@ export const Login = () => {
                   <label htmlFor="password">¿Eres protectora?:</label>
                   <input
                     onChange={(event) => {
-                      setChecked(!checked);
+                      setType(!type);
                     }}
-                    defaultChecked={checked}
+                    defaultChecked={type}
                     type="checkbox"
                     className=""
                     name="type"
@@ -67,7 +67,7 @@ export const Login = () => {
                   <button
                     onClick={(event) => {
                       event.preventDefault();
-                      actions.login(email, password, checked);
+                      actions.login(email, password, type);
                     }}
                     className="btn login_button"
                   >
