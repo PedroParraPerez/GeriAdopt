@@ -38,7 +38,8 @@ const Layout = () => {
             <Route
               path="/profile"
               element={
-                store.isShelter ? <PerfilProtectora /> : <PerfilAdopter />
+                // store.isShelter ? <PerfilProtectora /> :
+                <PerfilAdopter />
               }
             />
             <Route path="/alldogslist" element={<AllDogsList />} />

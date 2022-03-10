@@ -4,15 +4,23 @@ const getState = ({ getStore, getActions, setStore }) => {
       URLAPIDOGS:
         "https://3001-sromk-proyectofinalpl-trwe44w0qq3.ws-eu34.gitpod.io/api/",
       allAnimals: [],
+      allShelters: [],
       detailAnimal: [],
       logedUser: false, //No indica si hay ALGUN usuario conectado
       isShelter: false, //false = Adopter ; true = Shelter
+      detailUser: [],
+      currentMember: [], //MAPEO DE LA VARIBLE EN EL PERFIL DE PERFIL
     },
     actions: {
       getAllAnimal: async () => {
         const response = await fetch(getStore().URLAPIDOGS + "animal");
         const data = await response.json();
         setStore({ allAnimals: data.results });
+      },
+      getAllShelters: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "shelters");
+        const data = await response.json();
+        setStore({ allShelters: [...data.results] });
       },
       getDetailOfOneAnimal: async (id) => {
         const response = await fetch(
@@ -38,6 +46,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           const data = await response.json();
           localStorage.setItem("token", data.token);
           setStore({ logedUser: true, isShelter: data.type });
+          setStore({ currentMember: [data.user] });
         } else {
           alert("Contraseña o usuario incorrectos");
         }
@@ -69,10 +78,11 @@ const getState = ({ getStore, getActions, setStore }) => {
           },
           body: JSON.stringify(shelter),
         });
+
         if (response.status == 201) {
           const data = await response.json();
           localStorage.setItem("token", data.token);
-          setStore({ logedUser: data.token });
+          setStore({ logedUser: data.token, isShelter: true });
         } else {
           alert("Ya hay una protectora registrada con ese email");
         }
@@ -85,8 +95,10 @@ const getState = ({ getStore, getActions, setStore }) => {
           },
         });
         const data = await response.json();
+        setStore({ detailUser: data });
         console.log(data); // informacion del usuario que inicio sesion
       },
+
       getShelterInformation: async () => {
         const response = await fetch(getStore().URLAPIDOGS + "shelter", {
           headers: {

@@ -43,7 +43,7 @@ def login():
     token = create_access_token(identity=user.id)
 
     
-    return jsonify({'token':token, 'type': type}), 200
+    return jsonify({'token':token, 'type': type, 'user':user.serialize()}), 200
 
 
 @api.route('/signup', methods=["POST"])
@@ -130,7 +130,10 @@ def get_all_dogs():
     animals = Animal.query.all()
     return jsonify({'results': list(map(lambda animal: animal.serialize(), animals))}),200
 
-
+@api.route('/shelters', methods=['GET'])
+def get_all_shelters():
+    shelters = Shelter.query.all()
+    return jsonify({'results': list(map(lambda shelter: shelter.serialize(), shelters))}),200
 
 @api.route('/detailanimal/<int:id>', methods=['GET'])
 def get_animal_by_id(id):
