@@ -67,6 +67,12 @@ export const FormRegisterProte = () => {
                 <div className="row">
                   <label htmlFor="passwordrepeat">Confirmar Contraseña</label>
                   <input
+                    onChange={(event) => {
+                      setFormregisterShelter({
+                        ...formregisterShelter,
+                        [event.target.name]: event.target.value,
+                      });
+                    }}
                     type="password"
                     className="form-control formRegisterProte_Input"
                     name="passwordrepeat"
@@ -85,7 +91,7 @@ export const FormRegisterProte = () => {
                       }}
                       type="text"
                       className="form-control formRegisterProte_Input"
-                      name="direction"
+                      name="address"
                     />
                   </div>
                   <div className="col-xl-6">

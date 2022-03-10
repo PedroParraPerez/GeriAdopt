@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       URLAPIDOGS:
-        "https://3001-sromk-proyectofinalpl-95m4x6l0iuk.ws-eu34.gitpod.io/api/",
+        "https://3001-sromk-proyectofinalpl-trwe44w0qq3.ws-eu34.gitpod.io/api/",
       allAnimals: [],
       detailAnimal: [],
       logedUser: false, //No indica si hay ALGUN usuario conectado
@@ -79,6 +79,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
       registerShelter: async (shelter) => {
+        console.log("Esta ejecutando el fetch");
         const response = await fetch(getStore().URLAPIDOGS + "signupshelter", {
           method: "POST",
           headers: {

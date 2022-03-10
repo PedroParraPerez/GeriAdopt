@@ -89,10 +89,9 @@ class Shelter(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(80), unique=False, nullable=False)
+    password = db.Column(db.String(240), unique=False, nullable=False)
     city = db.Column(db.String(120), unique=False, nullable=False)
     address = db.Column(db.String(120), unique=False, nullable=False)
-    tlf = db.Column(db.Integer, unique=False, nullable=False)
     animals = db.relationship('Animal', backref='shelter', lazy=True)
     # Mandamos la informacion de la ID de la protectora atraves de la relationship indicandole la table a la que se la mandamos "Animal"
 
@@ -103,7 +102,7 @@ class Shelter(db.Model):
             'email':self.email,
             'city':self.city,
             'address':self.address,
-            'tlf':self.tlf
+            
         }
 
 

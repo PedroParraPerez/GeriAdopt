@@ -39,7 +39,6 @@ def login():
 @api.route('/signup', methods=["POST"])
 def signUpUser():
 
-
     name = request.json.get('name', None)
     surname = request.json.get('surname', None)
     email = request.json.get('email', None)
@@ -68,7 +67,6 @@ def signUpUser():
 @api.route('/signupshelter', methods=["POST"])
 def signUpShelter():
 
-
     name = request.json.get('name', None)
     email = request.json.get('email', None)
     password = request.json.get('password', None)
@@ -76,9 +74,9 @@ def signUpShelter():
     city = request.json.get('city', None)
     address = request.json.get('address', None)
 
-    if not (name and email and password and city and address and passwordrepeat):
+    if not (name and email and password and passwordrepeat and city and address):
         return jsonify({'message': 'Data not provided'}), 400
-
+    
     hash_password = generate_password_hash(password)
     shelter = Shelter(name=name, email=email, password=hash_password, city=city, address=address)
     try:
@@ -93,7 +91,7 @@ def signUpShelter():
         return jsonify({'message': str(err)}), 500
 
 
- # Authorization: Bearer <token> => si no viene 401
+# Authorization: Bearer <token> => si no viene 401
 @api.route('/user', methods=['GET'])
 @jwt_required()
 def getUserInfo():
