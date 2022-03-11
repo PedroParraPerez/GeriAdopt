@@ -1,0 +1,63 @@
+@import url("https://s1.eestatic.com/2020/10/19/curiosidades/mascotas/mascotas-alimentacion-perros_529458667_162988307_1024x576.jpg");
+
+.formRegisterUser_view {
+  background: url("https://images-ext-1.discordapp.net/external/CxbtcORJQTOohL0pmtvdjw85x7HD2nEOkcjEmEUnBKk/https/wallpaperaccess.com/full/5172232.jpg?width=400&height=267");
+  background-size: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10%;
+  padding: 1rem 1rem;
+  width: 35rem;
+  z-index: 0;
+
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+.formRegisterUser_Photo {
+  position: absolute;
+  margin: 0 auto;
+  border-radius: 5%;
+  width: 35rem;
+  height: 40rem;
+  z-index: -1;
+  top: 32vh;
+  margin-right: auto;
+  margin-left: auto;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+  filter: blur(2px);
+  border: 2pt solid black;
+}
+.formRegisterUser_title {
+  font-family: "Alegreya Sans", sans-serif;
+  display: flex;
+  text-align: center;
+  z-index: 1;
+  color: white;
+  font-weight: 400;
+  text-shadow: 2px 1px black;
+}
+.formRegisterUser_GroupInput {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: large;
+  width: 80%;
+  display: flex;
+  margin: auto;
+  z-index: 1;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 1px black;
+}
+
+.formRegisterUser_inputAgeAndCity {
+  display: flex;
+  justify-content: end;
+  z-index: 1;
+}
+.formRegisterUser_button {
+  background-color: #f2a484;
+  font-family: Alegreya Sans;
+  font-size: larger;
+  font-weight: bold;
+  z-index: 1;
+}
