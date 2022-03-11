@@ -1,23 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
 
-.Protectora_Protectoraprofile {
+.shelter_shelterprofile {
   display: flex;
   justify-content: center;
 }
 
-.Protectora_imgprofile {
+.shelter_imgprofile {
   display: flex;
   justify-content: flex-end;
   padding-right: 5rem;
 }
 
-.Protectora_Protectoraphoto {
+.shelterLogo {
   width: 15rem;
   height: 15rem;
   border-radius: 50%;
   object-fit: cover;
 }
-.Protectora_ProtectoraInfo {
+.shelter_shelterInfo {
   font-family: "Alegreya Sans", sans-serif;
   font-size: large;
   padding: 1rem;
@@ -25,23 +25,15 @@
   margin-bottom: 1rem;
   background-color: #faf4f7;
 }
-.Protectora_editbutton {
-  width: 100%;
-  justify-content: flex-end;
-  display: flex;
-  padding: 1rem 1rem 0 0;
-}
-.Protectora_editbutton:hover {
-  cursor: pointer;
-}
-.Protectora_prymaryinfo {
+
+.shelter_prymaryinfo {
   padding-left: 1rem;
 }
-.Protectora_labelprofileinfo {
+.shelter_labelprofileinfo {
   color: #e55e2f;
   font-size: 1.5rem;
 }
-.Protectora_titleFavs {
+.shelter_titleFavs {
   padding-right: 2rem;
   position: relative;
   display: flex;
@@ -50,7 +42,7 @@
   border-bottom: 0.2rem solid orange;
   font-family: "Alegreya Sans", sans-serif;
 }
-.Protectora_ImgTitleFavs {
+.shelter_ImgTitleFavs {
   position: absolute;
   width: 81px;
   left: 0%;
@@ -58,7 +50,7 @@
   top: -46.8%;
   z-index: 2;
 }
-.Protectora_NavFavs_Img {
+.shelter_NavFavs_Img {
   top: -4rem;
   margin-right: auto;
   margin-left: auto;
@@ -66,7 +58,7 @@
   right: 0;
   width: 100%;
 }
-.Protectora_cardlist {
+.shelter_cardlist {
   display: flex;
   justify-content: center;
   width: 60%;
@@ -74,32 +66,14 @@
   margin-top: 12rem;
 }
 
-.titleProte {
+.titleShelter {
   margin-left: -1rem;
   font-family: "Alegreya Sans", sans-serif;
   margin-right: -6rem;
 }
 
 @media only screen and (max-width: 1224px) {
-  .Protectora_ImgTitleFavs {
+  .shelter_ImgTitleFavs {
     display: none;
   }
-}
-.PerfilProtectora_addNewAnimal {
-  background-color: #f8d2c3;
-  border-radius: 15px;
-  padding: 1rem 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: #f8d2c3;
-  color: black;
-  font-size: 1.4rem;
-  font-weight: bolder;
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-
-  justify-content: center;
-  vertical-align: middle;
-  padding-top: 0;
-  font-size: 2rem;
 }

@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
+
 import "../../styles/login.css";
+import { Context } from "../store/appContext";
 
 export const Login = () => {
+  const { store, actions } = useContext(Context);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [type, setType] = useState(false);
+  // const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   navigate("/");
+  // }, [store.logedUser]);
   return (
     <>
       <div className="container-fluid">
@@ -17,6 +30,9 @@ export const Login = () => {
                 <div className="row">
                   <label htmlFor="email">Correo</label>
                   <input
+                    onChange={(event) => {
+                      setEmail(event.target.value);
+                    }}
                     type="email"
                     className="form-control login_Input"
                     name="email"
@@ -26,14 +42,35 @@ export const Login = () => {
                 <div className="row">
                   <label htmlFor="password">Contraseña:</label>
                   <input
+                    onChange={(event) => {
+                      setPassword(event.target.value);
+                    }}
                     type="password"
                     className="form-control login_Input"
                     name="password"
                     required
                   />
                 </div>
+                <div className="row">
+                  <label htmlFor="password">¿Eres protectora?:</label>
+                  <input
+                    onChange={(event) => {
+                      setType(!type);
+                    }}
+                    defaultChecked={type}
+                    type="checkbox"
+                    className=""
+                    name="type"
+                  />
+                </div>
                 <div className="col-XL-12 mt-2 d-flex justify-content-end mt-4">
-                  <button className="btn login_button" type="submit">
+                  <button
+                    onClick={(event) => {
+                      event.preventDefault();
+                      actions.login(email, password, type);
+                    }}
+                    className="btn login_button"
+                  >
                     Entrar
                   </button>
                 </div>

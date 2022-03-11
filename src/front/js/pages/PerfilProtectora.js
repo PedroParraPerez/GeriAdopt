@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 import "../../styles/PerfilProtectora.css";
 
@@ -6,8 +6,32 @@ import { CardProtectora } from "../component/cardProtectora.js";
 import SOSPeludos from "../../img/sospeludos.jpeg";
 import EditIcon from "../../img/editIcon.png";
 import ImgTitleFavs from "../../img/imagetitlefavs.png";
+import { Context } from "../store/appContext";
+import { Link, useNavigate } from "react-router-dom";
 
 export const PerfilProtectora = () => {
+  const { store, actions } = useContext(Context);
+  let navigate = useNavigate();
+
+  const [validate, setValidate] = useState();
+
+  console.log(
+    "isshelter en perfil protectora",
+    localStorage.getItem("isShelter")
+  );
+  useEffect(() => {
+    validateToken();
+  }, []);
+
+  const validateToken = async () => {
+    const response = await fetch(store.URLAPIDOGS + "shelter", {
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    response.ok ? setValidate(response.ok) : navigate("/login");
+  };
   return (
     <>
       <div className="container-fluid">
@@ -77,10 +101,15 @@ export const PerfilProtectora = () => {
               className="Protectora_ImgTitleFavs"
             />
           </div>
-          <div className="col-xl-2">
+          <div className="col-xl-1">
             <h2 className="titleProte">
-              <b>SOS Peludos España</b>
+              <b>Animales</b>
             </h2>
+          </div>
+          <div className="col-xl-1">
+            <Link to="/formregisteranimal">
+              <button className="PerfilProtectora_addNewAnimal">+</button>
+            </Link>
           </div>
         </div>
         <div className="row Protectora_cardlist">

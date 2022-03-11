@@ -1,31 +1,23 @@
 import React, { useContext, useEffect, useState } from "react";
 
-import Mojito from "../../img/Mojito.jpg";
+import Mojito from "../../img/raily.jpeg";
 import "../../styles/Card.css";
 import BirthdayIcon from "../../img/BirthdayIcon.png";
 import GenderIcon from "../../img/GenderIcon.png";
 import RazaIcon from "../../img/razaIcon.png";
 import IconUbic from "../../img/IconUbicacion.png";
 import IconHearth from "../../img/IconHearth.png";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Card = () => {
-  const [animalsforuser, setAnimalsforuser] = useState([]);
+  const { store, actions } = useContext(Context);
+  const [animal, setAnimal] = useState();
 
   useEffect(() => {
-    getAllAnimal();
-  }, []);
-
-  const getAllAnimal = async () => {
-    const response = await fetch(
-      "https://3001-sromk-proyectofinalpl-c4dcbkugfnn.ws-eu34xl.gitpod.io/api/animal"
-    );
-    const data = await response.json();
-    setAnimalsforuser(data.results);
-  };
-
-  return (
-    <>
-      {animalsforuser.map((animal) => {
+    console.log(store.animalcreated);
+    setAnimal(
+      store.allAnimals.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
             <img src={Mojito} className="Card_cardphoto" />
@@ -70,7 +62,9 @@ export const Card = () => {
                   </div>
                 </div>
               </div>
-              <button className="btn Card_btn">Conóceme!</button>
+              <Link to={"/detailanimal/" + animal.id}>
+                <button className="btn Card_btn">Conóceme!</button>
+              </Link>
               <div className="Card_FavButton">
                 <img src={IconHearth} alt="FavButton" className="Card_hearth" />
               </div>
@@ -80,7 +74,8 @@ export const Card = () => {
             </div>
           </div>
         );
-      })}
-    </>
-  );
+      })
+    );
+  }, [store.animalcreated]);
+  return <>{animal}</>;
 };

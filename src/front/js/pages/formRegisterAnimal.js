@@ -3,8 +3,8 @@ import React, { useState, useContext } from "react";
 import "../../styles/formRegisterProte.css";
 import { Context } from "../store/appContext";
 
-export const FormRegisterProte = () => {
-  const [formregisterShelter, setFormregisterShelter] = useState({});
+export const FormRegisterAnimal = () => {
+  const [formregisterAnimal, setFormregisterAnimal] = useState({});
   const { store, actions } = useContext(Context);
 
   return (
@@ -14,17 +14,17 @@ export const FormRegisterProte = () => {
           <div className="col-xl-5 formRegisterProte_view">
             <div className="row formRegisterProte_title">
               <div className="col-xl-12">
-                <h2>REGISTRO PROTECTORAS</h2>
+                <h2>REGISTRO DE ANIMALES</h2>
               </div>
             </div>
             <form>
               <div className="row formRegisterProte_GroupInput">
                 <div className="row">
-                  <label htmlFor="name">Nombre de la protectora:</label>
+                  <label htmlFor="name">Nombre:</label>
                   <input
                     onChange={(event) => {
-                      setFormregisterShelter({
-                        ...formregisterShelter,
+                      setFormregisterAnimal({
+                        ...formregisterAnimal,
                         [event.target.name]: event.target.value,
                       });
                     }}
@@ -35,77 +35,109 @@ export const FormRegisterProte = () => {
                   />
                 </div>
                 <div className="row">
-                  <label htmlFor="email">Correo</label>
+                  <label htmlFor="species">Especie:</label>
                   <input
                     onChange={(event) => {
-                      setFormregisterShelter({
-                        ...formregisterShelter,
+                      setFormregisterAnimal({
+                        ...formregisterAnimal,
                         [event.target.name]: event.target.value,
                       });
                     }}
-                    type="email"
+                    type="text"
                     className="form-control formRegisterProte_Input"
-                    name="email"
+                    name="species"
                     required
                   />
                 </div>
                 <div className="row">
-                  <label htmlFor="password">Contraseña:</label>
+                  <label htmlFor="race">Raza:</label>
                   <input
                     onChange={(event) => {
-                      setFormregisterShelter({
-                        ...formregisterShelter,
+                      setFormregisterAnimal({
+                        ...formregisterAnimal,
                         [event.target.name]: event.target.value,
                       });
                     }}
-                    type="password"
+                    type="text"
                     className="form-control formRegisterProte_Input"
-                    name="password"
+                    name="race"
                     required
                   />
                 </div>
                 <div className="row">
-                  <label htmlFor="passwordrepeat">Confirmar Contraseña</label>
+                  <label htmlFor="gender">Genero (M o F):</label>
                   <input
                     onChange={(event) => {
-                      setFormregisterShelter({
-                        ...formregisterShelter,
+                      setFormregisterAnimal({
+                        ...formregisterAnimal,
                         [event.target.name]: event.target.value,
                       });
                     }}
-                    type="password"
+                    type="text"
                     className="form-control formRegisterProte_Input"
-                    name="passwordrepeat"
+                    name="gender"
                     required
                   />
                 </div>
                 <div className="row">
                   <div className="col-xl-6">
-                    <label htmlFor="direction">Dirección:</label>
+                    <label htmlFor="size">
+                      Tamaño (Pequeño, Mediano y Grande):
+                    </label>
                     <input
                       onChange={(event) => {
-                        setFormregisterShelter({
-                          ...formregisterShelter,
+                        setFormregisterAnimal({
+                          ...formregisterAnimal,
                           [event.target.name]: event.target.value,
                         });
                       }}
                       type="text"
                       className="form-control formRegisterProte_Input"
-                      name="address"
+                      name="size"
                     />
                   </div>
                   <div className="col-xl-6">
-                    <label htmlFor="city">Ciudad:</label>
+                    <label htmlFor="age">Edad:</label>
                     <input
                       onChange={(event) => {
-                        setFormregisterShelter({
-                          ...formregisterShelter,
+                        setFormregisterAnimal({
+                          ...formregisterAnimal,
+                          [event.target.name]: event.target.value,
+                        });
+                      }}
+                      type="number"
+                      className="form-control inputAgeAndCity"
+                      name="age"
+                    />
+                  </div>
+                  <div className="col-xl-6">
+                    <label htmlFor="short_description">
+                      Descripcion corta:
+                    </label>
+                    <input
+                      onChange={(event) => {
+                        setFormregisterAnimal({
+                          ...formregisterAnimal,
                           [event.target.name]: event.target.value,
                         });
                       }}
                       type="text"
                       className="form-control inputAgeAndCity"
-                      name="city"
+                      name="short_description"
+                    />
+                  </div>
+                  <div className="col-xl-6">
+                    <label htmlFor="description">Descripcion:</label>
+                    <input
+                      onChange={(event) => {
+                        setFormregisterAnimal({
+                          ...formregisterAnimal,
+                          [event.target.name]: event.target.value,
+                        });
+                      }}
+                      type="textarea"
+                      className="form-control inputAgeAndCity"
+                      name="description"
                     />
                   </div>
                 </div>
@@ -114,10 +146,10 @@ export const FormRegisterProte = () => {
                     onClick={(event) => {
                       event.preventDefault();
                       if (
-                        formregisterShelter.password ==
-                        formregisterShelter.passwordrepeat
+                        formregisterAnimal.password ==
+                        formregisterAnimal.passwordrepeat
                       ) {
-                        actions.registerShelter(formregisterShelter);
+                        actions.registerAnimal(formregisterAnimal);
                       }
                     }}
                     className="btn formRegisterProte_button"

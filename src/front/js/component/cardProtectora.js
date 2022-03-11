@@ -1,30 +1,20 @@
-import React, { useEffect, useState } from "react";
-import Mojito from "../../img/Mojito.jpg";
+import React, { useContext, useEffect, useState } from "react";
+import Mojito from "../../img/raily.jpeg";
 import "../../styles/Card.css";
 import BirthdayIcon from "../../img/BirthdayIcon.png";
 import GenderIcon from "../../img/GenderIcon.png";
 import RazaIcon from "../../img/razaIcon.png";
 import IconUbic from "../../img/IconUbicacion.png";
 import editIcon from "../../img/editIcon.png";
+import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 export const CardProtectora = () => {
-  const [animalsforshelter, setAnimalsforshelter] = useState([]);
-
-  const getAllAnimalsShelter = async () => {
-    const response = await fetch(
-      "https://3001-sromk-proyectofinalpl-5ka0wt5sgeg.ws-eu34xl.gitpod.io/api/animal"
-    );
-    const data = await response.json();
-    setAnimalsforshelter(data.results);
-  };
-
-  useEffect(() => {
-    getAllAnimalsShelter();
-  }, []);
+  const { store, actions } = useContext(Context);
 
   return (
     <>
-      {animalsforshelter.map((animal) => {
+      {store.allAnimals.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
             <img src={Mojito} className="Card_cardphoto" />
@@ -33,8 +23,7 @@ export const CardProtectora = () => {
                 <b>{animal.name}</b>
               </h5>
               <p className="card-text Card_textcarddog">
-                Solo con su nombre se pueden hacer una idea de lo dulce que
-                es...
+                {animal.short_description}
               </p>
               <div className="Card_IconsAndDescription">
                 <div className="row Card_IconsCard">
@@ -45,7 +34,7 @@ export const CardProtectora = () => {
                       className="Card_CaractIcon"
                     />
                     <p className="Card_iconTexInv">
-                      <b>Date</b>
+                      <b>{animal.age} años</b>
                     </p>
                   </div>
                   <div className="col-xl-4">
@@ -55,7 +44,7 @@ export const CardProtectora = () => {
                       className="Card_CaractIcon"
                     />
                     <p className="Card_iconTexInv">
-                      <b>Breed</b>
+                      <b>{animal.race}</b>
                     </p>
                   </div>
                   <div className="col-xl-4">
@@ -65,17 +54,19 @@ export const CardProtectora = () => {
                       className="Card_CaractIcon"
                     />
                     <p className="Card_iconTexInv">
-                      <b>Gender</b>
+                      <b>{animal.gender}</b>
                     </p>
                   </div>
                 </div>
               </div>
-              <button className="btn Card_btn">Conóceme!</button>
+              <Link to={"/detailanimal/" + animal.name}>
+                <button className="btn Card_btn">Conóceme!</button>
+              </Link>
               <div className="editButton">
                 <img src={editIcon} alt="FavButton" id="editPencil" />
               </div>
               <p className="location">
-                <img src={IconUbic} className="Card_IconUbic" /> Madrid
+                <img src={IconUbic} className="Card_IconUbic" /> {animal.city}
               </p>
             </div>
           </div>

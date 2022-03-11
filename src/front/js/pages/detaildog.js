@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 import Mojito from "../../img/Mojito.jpg";
 import "../../styles/detaildog.css";
+import { Context } from "../store/appContext";
 
 export const DetailDog = () => {
+  const id = useParams().id;
+  const { store, actions } = useContext(Context);
+
+  useEffect(() => {
+    actions.getDetailOfOneAnimal(id);
+  }, []);
+
   return (
     <>
       <div className="container-fluid">
@@ -17,65 +27,62 @@ export const DetailDog = () => {
           <div className="col-xxl-6">
             <div>
               <h2 className="detaildog_info_title">
-                <strong>Mojito</strong>
+                <strong>{store.detailAnimal.name}</strong>
               </h2>
             </div>
             <div>
               <ul>
                 <li className="detaildog_info_list">
-                  <span className="detaildog_info_list_label">F.nac: </span>
-                  25/12/2016
+                  <span className="detaildog_info_list_label">Edad: </span>
+                  {store.detailAnimal.age} años
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Raza: </span>
-                  Beagle
+                  {store.detailAnimal.race}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Genero: </span>
-                  Masculino
+                  {store.detailAnimal.gender}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Tamaño: </span>
-                  Mediano
+                  {store.detailAnimal.size}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">
                     Esterilizado:{" "}
                   </span>
-                  Si
+                  NO MAPEADO
                 </li>
                 <li className="detaildog_info_list">
-                  <span className="detaildog_info_list_label">CCAA: </span>
-                  Madrid
+                  <span className="detaildog_info_list_label">Ciudad: </span>
+                  {store.detailAnimal.city}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Protectora:</span>
-                  Apadrina un perro
+                  NO MAPEADO
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Ubicación: </span>
-                  Calle Edison, nº 3; (Madrid)
+                  NO MAPEADO
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">
                     Correo de contacto:
                   </span>
-                  apadrina@unperro.com
+                  NO MAPEADO (Correo de la prote)
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">
                     Teléfono de contacto:
                   </span>
-                  654-76-87-98
+                  NO MAPEADO
                 </li>
                 <p className="detaildog_info_list">
                   <span className="detaildog_info_list_label">
                     Descripcion:{" "}
                   </span>
-                  Solo con el nombre se pueden hacer una idea de lo dulce que
-                  es. Es un animal que le encantan las caricias y el contacto
-                  humano. Su relación con otro tipo de animales tambien es
-                  excelente, siempre buscando divertirse jugando.
+                  {store.detailAnimal.description}
                 </p>
               </ul>
             </div>
