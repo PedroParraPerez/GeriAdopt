@@ -56,7 +56,7 @@ export const PerfilAdopter = () => {
                   <p>
                     <b>
                       <span className="Adopter_labelprofileinfo">Nombre: </span>
-                      Hola
+                      María
                     </b>
                   </p>
                   <p>
