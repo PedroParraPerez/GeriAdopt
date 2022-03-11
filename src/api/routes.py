@@ -17,9 +17,7 @@ api = Blueprint('api', __name__)
 def login():
     
     email, password, type = request.json.get('email', None), request.json.get('password', None), request.json.get('type', None)
-    print(email)
-    print(password)
-    print(type)
+
     if not (email and password):
         return jsonify({'message': 'Data not provided'}), 400
 

@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       URLAPIDOGS:
-        "https://3001-sromk-proyectofinalpl-regj7butz7v.ws-eu34.gitpod.io/api/",
+        "https://3001-sromk-proyectofinalpl-fne4f6f8sur.ws-eu34.gitpod.io/api/",
       allAnimals: [],
       allShelters: [],
       detailAnimal: [],
@@ -10,7 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       isShelter: false, //false = Adopter ; true = Shelter
       detailUser: [],
       currentMember: [], //MAPEO DE LA VARIBLE EN EL PERFIL DE PERFIL
-      animalcreated: [],
+      animalcreated: false,
     },
     actions: {
       getAllAnimal: async () => {
@@ -46,7 +46,9 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (response.status == 200) {
           const data = await response.json();
           localStorage.setItem("token", data.token);
-          setStore({ logedUser: true, isShelter: data.type });
+          setStore({ isShelter: data.type });
+          localStorage.setItem("isShelter", getStore().isShelter);
+          setStore({ logedUser: true });
           setStore({ currentMember: [data.user] });
         } else {
           alert("Contraseña o usuario incorrectos");
@@ -99,7 +101,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         if (response.status == 200) {
           const data = await response.json();
-          setStore({ animalcreated: data.results });
+          setStore({ animalcreated: !animalcreated });
           alert("animal creado");
         } else {
           alert("Ya hay una protectora registrada con ese email");

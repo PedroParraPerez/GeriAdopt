@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./pages/home";
@@ -27,6 +27,15 @@ const Layout = () => {
   // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
   const basename = process.env.BASENAME || "";
   const { store, actions } = useContext(Context);
+  const [validation, setValidation] = useState(false);
+
+  console.log("isshelter layaout", localStorage.getItem("isShelter"));
+
+  // useEffect(() => {
+  //   localStorage.getItem("isShelter")
+  //     ? setValidation(!validation)
+  //     : setValidation(false);
+  // }, [localStorage.getItem("isShelter")]);
 
   return (
     <div>
@@ -39,7 +48,11 @@ const Layout = () => {
             <Route
               path="/profile"
               element={
-                store.isShelter ? <PerfilProtectora /> : <PerfilAdopter />
+                localStorage.getItem("isShelter") == true ? (
+                  <PerfilProtectora />
+                ) : (
+                  <PerfilAdopter />
+                )
               }
             />
             <Route path="/alldogslist" element={<AllDogsList />} />
