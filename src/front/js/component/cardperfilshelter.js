@@ -43,7 +43,7 @@ export const CardPerfilShelter = () => {
                           Ciudad:{" "}
                         </span>
                         <br></br>
-                        Madrid
+                        {shelter.city}
                       </b>
                     </p>
                   </div>
@@ -54,7 +54,7 @@ export const CardPerfilShelter = () => {
                           Teléfono:{" "}
                         </span>
                         <br></br>
-                        666554477
+                        {shelter.telephone}
                       </b>
                     </p>
                     <p>
@@ -62,7 +62,7 @@ export const CardPerfilShelter = () => {
                         <span className="shelter_labelprofileinfo">
                           Correo:{" "}
                         </span>
-                        sospeludos.es@gmail.com
+                        {shelter.email}
                       </b>
                     </p>
                   </div>

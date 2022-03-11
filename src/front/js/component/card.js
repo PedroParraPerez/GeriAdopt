@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 
-import Mojito from "../../img/Mojito.jpg";
+import Mojito from "../../img/raily.jpeg";
 import "../../styles/Card.css";
 import BirthdayIcon from "../../img/BirthdayIcon.png";
 import GenderIcon from "../../img/GenderIcon.png";

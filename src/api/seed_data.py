@@ -73,5 +73,39 @@ data = {
             "description":"Mojito es un perro jugueton, que le encantan los niños y jugar con su pelota. Es muy bueno con otros animales. ",
             "short_description": "Mojito es un perro jugueton y cariñoso."
         }
+        ],
+        "Shelter": [
+        {
+            "id": 1,
+            "name":"SOS Peludos",
+            "address": "Madrid",
+            "city": "Madrid",
+            "password": "1234",
+            "email": "sospeludos.es@gmail.com",
+        },
+        {
+            "id": 2,
+            "name":"La Estrella Animal",
+            "address": "Madrid",
+            "city": "Madrid",
+            "password": "1234",
+            "email": "laestrellaanimal@gmail.com",
+        },
+        {
+            "id": 3,
+            "name":"Animal Rescue España",
+            "address": "Madrid",
+            "city": "Madrid",
+            "password": "1234",
+            "email": "animalrescueespaña@gmail.com",
+        },
+        {
+            "id": 4,
+            "name":"AGAR (Asociación Amigos de los gatos del Retiro)",
+            "address": "Madrid",
+            "city": "Madrid",
+            "password": "1234",
+            "email": "agar@gmail.com",
+        },
         ]
 }
