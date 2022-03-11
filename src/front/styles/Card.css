@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
+
+.Card_carddogs {
+  position: relative;
+  display: block;
+  width: 16rem;
+  margin-top: 8rem;
+  background-color: #faf4f7;
+  border-radius: 1rem;
+  font-family: "Alegreya Sans", sans-serif;
+  text-align: center;
+  margin-right: 2rem;
+}
+
+.Card_dogcardsbody {
+  margin-top: 5rem;
+  width: 100%;
+}
+.Card_cardphoto {
+  position: absolute;
+  top: -24%;
+  margin-right: auto;
+  margin-left: auto;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 10rem;
+  height: 10rem;
+}
+.Card_textcarddog {
+  width: 100%;
+}
+.Card_IconsAndDescription {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.Card_IconsCard {
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.Card_CaractIcon {
+  width: 3em;
+  height: 3em;
+}
+
+.Card_iconTexInv {
+  font-size: 1em;
+  width: 100%;
+  font-family: "Alegreya Sans", sans-serif;
+}
+.Card_btn {
+  background-color: #f8d2c3;
+  color: black;
+  border: none;
+}
+
+.Card_location {
+  margin-top: 1rem;
+  display: block;
+}
+.Card_IconUbic {
+  width: 0.7rem;
+  height: 0.9rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .Card_cardphoto {
+    display: relative;
+  }
+  .Card_CaractIcon {
+    display: none;
+  }
+  .Card_iconTexInv {
+    display: none;
+  }
+  .Card_card-title {
+    padding-top: 2rem;
+  }
+}
+
+.editButton {
+  top: 70%;
+  left: 85%;
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgb(238, 167, 101) 50%,
+    rgb(221, 107, 107) 100%
+  );
+  width: 2.9rem;
+  height: 2.9rem;
+}
+.Card_FavButton {
+  position: absolute;
+  top: 70%;
+  left: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  background: rgb(255, 0, 0);
+  background: linear-gradient(
+    360deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 127, 127, 1) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  border-radius: 50%;
+}
+.Card_hearth {
+  width: 2.3rem;
+  height: 2.3rem;
+}
+
+#editPencil {
+  margin-top: 0.4rem;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+.Card_location {
+  margin-top: 1rem;
+  display: block;
+}
+.Card_IconUbic {
+  width: 0.7rem;
+  height: 0.9rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .Card_cardphoto {
+    display: relative;
+  }
+  .Card_CaractIcon {
+    display: none;
+  }
+  .Card_iconTexInv {
+    display: none;
+  }
+  .Card_card-title {
+    padding-top: 2rem;
+  }
+}

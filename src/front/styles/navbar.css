@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100&family=Comforter&family=Josefin+Sans:ital,wght@1,500&family=Sansita+Swashed:wght@300&family=Ubuntu:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100&family=Comforter&family=Josefin+Sans:ital,wght@1,500&family=Sansita+Swashed:wght@300&family=Ubuntu:wght@300&display=swap");
+
+nav {
+  background-color: rgb(245, 184, 159);
+}
+
+a,
+.spanNavbarLink {
+  text-decoration: none;
+  color: black;
+}
+
+.contPrin {
+  display: flex;
+  justify-content: space-around;
+  width: 15%;
+}
+
+#muevete {
+  display: flex;
+  padding: 0 3%;
+}
+
+#sacameelpadding {
+  padding: 0;
+  margin: 0;
+}
+
+.logoNav {
+  width: 97px;
+  height: 97px;
+}
+
+.navbarBrand {
+  font-family: "Sansita Swashed", cursive;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.iniciar {
+  margin-right: 8%;
+}
+
+.divSeparador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enlaces {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+
+.navbar-circleone{
+  padding-left:  91%;
+  z-index: -1;
+ position: absolute;
+ 
+ margin-top:0.5%;
+ }
+ 
+ .navbar-circletwo{
+  padding-left: 89%;
+  padding-top: 7%;
+
+  margin-top: -4%;
+  z-index: -1;
+ }
+ 
+ @media only screen and (max-width: 600px) {
+   .navbar-circleone, .navbar-circletwo {
+     
+     display: none;
+   }
+ }

@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
+
+.shelter_shelterprofile {
+  display: flex;
+  justify-content: center;
+}
+
+.shelter_imgprofile {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5rem;
+}
+
+.shelterLogo {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.shelter_shelterInfo {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: large;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #faf4f7;
+}
+
+.shelter_prymaryinfo {
+  padding-left: 1rem;
+}
+.shelter_labelprofileinfo {
+  color: #e55e2f;
+  font-size: 1.5rem;
+}
+.shelter_titleFavs {
+  padding-right: 2rem;
+  position: relative;
+  display: flex;
+  padding-left: 3rem;
+  margin-top: 3rem;
+  border-bottom: 0.2rem solid orange;
+  font-family: "Alegreya Sans", sans-serif;
+}
+.shelter_ImgTitleFavs {
+  position: absolute;
+  width: 81px;
+  left: 0%;
+  height: auto;
+  top: -46.8%;
+  z-index: 2;
+}
+.shelter_NavFavs_Img {
+  top: -4rem;
+  margin-right: auto;
+  margin-left: auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.shelter_cardlist {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 12rem;
+}
+
+.titleShelter {
+  margin-left: -1rem;
+  font-family: "Alegreya Sans", sans-serif;
+  margin-right: -6rem;
+}
+
+@media only screen and (max-width: 1224px) {
+  .shelter_ImgTitleFavs {
+    display: none;
+  }
+}
