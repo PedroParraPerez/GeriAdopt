@@ -62,6 +62,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       logout: () => {
         localStorage.removeItem("token");
         localStorage.removeItem("isShelter");
+        window.location.reload(false);
       },
       // Registro de adoptante
       registerUser: async (user) => {
@@ -113,8 +114,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         if (response.status == 200) {
           const data = await response.json();
-          setStore({ animalcreated: !animalcreated });
+          // setStore({ animalcreated: !animalcreated });
           alert("animal creado");
+          window.location.reload(false);
         } else {
           alert("Ya hay una protectora registrada con ese email");
         }

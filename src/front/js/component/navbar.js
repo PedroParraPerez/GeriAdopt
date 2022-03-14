@@ -73,11 +73,11 @@ export const Navbar = (props) => {
                 <>
                   {" "}
                   <Link to="/profile">
-                    <span className="spanNavbarLink">Mi cuenta </span>
+                    <p className="spanNavbarLink">Mi cuenta </p>
                   </Link>
-                  <span onClick={actions.logout} className="spanNavbarLink">
+                  <p onClick={actions.logout} className="spanNavbarLink">
                     Cerrar Sesión
-                  </span>
+                  </p>
                 </>
               ) : (
                 <>
