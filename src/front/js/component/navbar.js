@@ -6,14 +6,15 @@ import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 
 export const Navbar = (props) => {
-  const [isLogged, setIsLogged] = useState(false);
+  // const [isLogged, setIsLogged] = useState(false);
   const { store, actions } = useContext(Context);
 
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setIsLogged(true);
-    }
-  }, [store.logedUser]);
+  // useEffect(() => {
+  //   if (localStorage.getItem("token")) {
+  //     setIsLogged(true);
+  //   }
+  // }, [store.logedUser]);
+
   return (
     <>
       <nav className="navbar navbar-expand-md navbar-light" id="muevete">
@@ -68,10 +69,16 @@ export const Navbar = (props) => {
               </Link>
             </li>
             <li className="nav-item dropdown">
-              {isLogged ? (
-                <Link to="/profile">
-                  <span className="spanNavbarLink">Mi cuenta</span>
-                </Link>
+              {localStorage.getItem("token") ? (
+                <>
+                  {" "}
+                  <Link to="/profile">
+                    <span className="spanNavbarLink">Mi cuenta </span>
+                  </Link>
+                  <span onClick={actions.logout} className="spanNavbarLink">
+                    Cerrar Sesión
+                  </span>
+                </>
               ) : (
                 <>
                   <Link to="/login">

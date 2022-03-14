@@ -45,22 +45,18 @@ const Layout = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            {/* <Route
-              path="/profile"
-              element={
-                localStorage.getItem("isShelter") ? (
-                  <PerfilProtectora />
-                ) : (
-                  <PerfilAdopter />
-                )
-              }
-            /> */}
 
-            {localStorage.getItem("isShelter") ? (
+            {store.isShelter === true ? (
               <Route path="/profile" element={<PerfilProtectora />} />
             ) : (
               <Route path="/profile" element={<PerfilAdopter />} />
             )}
+
+            {/* {localStorage.getItem(`isShelter`) === true ? (
+              <Route path="/profile" element={<PerfilProtectora />} />
+            ) : (
+              <Route path="/profile" element={<PerfilAdopter />} />
+            )} */}
 
             <Route path="/alldogslist" element={<AllDogsList />} />
             <Route path="/blogsection" element={<BlogSection />} />
