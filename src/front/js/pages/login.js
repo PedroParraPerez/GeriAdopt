@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "../../styles/login.css";
 import { Context } from "../store/appContext";
@@ -10,11 +10,16 @@ export const Login = () => {
   const [password, setPassword] = useState("");
 
   const [type, setType] = useState(false);
-  // const navigate = useNavigate();
+  const [logged, setLogged] = useState(false);
 
-  // useEffect(() => {
-  //   navigate("/");
-  // }, [store.logedUser]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (logged) {
+      navigate("/profile");
+    }
+  }, [logged]);
+
   return (
     <>
       <div className="container-fluid">
@@ -65,9 +70,13 @@ export const Login = () => {
                 </div>
                 <div className="col-XL-12 mt-2 d-flex justify-content-end mt-4">
                   <button
-                    onClick={(event) => {
+                    onClick={async (event) => {
                       event.preventDefault();
-                      actions.login(email, password, type);
+
+                      let results = await actions.login(email, password, type);
+                      if (results == true) {
+                        setLogged(true);
+                      }
                     }}
                     className="btn login_button"
                   >

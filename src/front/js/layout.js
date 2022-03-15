@@ -29,13 +29,23 @@ const Layout = () => {
   const { store, actions } = useContext(Context);
   const [validation, setValidation] = useState(false);
 
-  console.log("isshelter layaout", localStorage.getItem("isShelter"));
+  console.log("isshelter layout", localStorage.getItem("isShelter"));
 
   // useEffect(() => {
   //   localStorage.getItem("isShelter")
   //     ? setValidation(!validation)
   //     : setValidation(false);
   // }, [localStorage.getItem("isShelter")]);
+
+  useEffect(() => {
+    setValidation(JSON.parse(localStorage.getItem("isShelter")));
+    console.log(
+      localStorage.getItem("isShelter"),
+      typeof JSON.parse(localStorage.getItem("isShelter")),
+      "@",
+      JSON.parse(localStorage.getItem("isShelter")) == true
+    );
+  });
 
   return (
     <div>
@@ -46,17 +56,17 @@ const Layout = () => {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
 
-            {store.isShelter === true ? (
+            {/*{store.isShelter === true ? (
+              <Route path="/profile" element={<PerfilProtectora />} />
+            ) : (
+              <Route path="/profile" element={<PerfilAdopter />} />
+            )}*/}
+
+            {validation === true ? (
               <Route path="/profile" element={<PerfilProtectora />} />
             ) : (
               <Route path="/profile" element={<PerfilAdopter />} />
             )}
-
-            {/* {localStorage.getItem(`isShelter`) === true ? (
-              <Route path="/profile" element={<PerfilProtectora />} />
-            ) : (
-              <Route path="/profile" element={<PerfilAdopter />} />
-            )} */}
 
             <Route path="/alldogslist" element={<AllDogsList />} />
             <Route path="/blogsection" element={<BlogSection />} />

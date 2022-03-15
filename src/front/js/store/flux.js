@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       URLAPIDOGS:
-        "https://3001-sromk-proyectofinalpl-d5lhvda28gf.ws-eu34.gitpod.io/api/",
+        "https://3001-sromk-proyectofinalpl-y7v6nmqqfym.ws-eu34.gitpod.io/api/",
       allAnimals: [],
       allShelters: [],
       detailAnimal: [],
@@ -50,12 +50,16 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (response.status == 200) {
           const data = await response.json();
           localStorage.setItem("token", data.token);
-          setStore({ isShelter: data.type });
+          setStore({
+            isShelter: data.type,
+            logedUser: true,
+            currentMember: [data.user],
+          });
           localStorage.setItem("isShelter", getStore().isShelter);
-          setStore({ logedUser: true });
-          setStore({ currentMember: [data.user] });
+          return true;
         } else {
           alert("Contraseña o usuario incorrectos");
+          return false;
         }
       },
       // Desconexion de la cuenta
