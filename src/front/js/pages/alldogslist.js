@@ -21,9 +21,18 @@ export const AllDogsList = () => {
                 <option selected disabled>
                   Especie
                 </option>
-                <option value="Masculino">Perros</option>
-                <option value="Femenino">Gatos</option>
-                <option value="Femenino">Otros...</option>
+                <option
+                  className="alldoglist_dropdown_filter"
+                  value="Masculino"
+                >
+                  Perros
+                </option>
+                <option className="alldoglist_dropdown_filter" value="Femenino">
+                  Gatos
+                </option>
+                <option className="alldoglist_dropdown_filter" value="Femenino">
+                  Otros...
+                </option>
               </select>
             </div>
             <div className="col-md-2">
@@ -34,8 +43,15 @@ export const AllDogsList = () => {
                 <option selected disabled>
                   Genero
                 </option>
-                <option value="Masculino">Masculino</option>
-                <option value="Femenino">Femenino</option>
+                <option
+                  className="alldoglist_dropdown_filter"
+                  value="Masculino"
+                >
+                  Masculino
+                </option>
+                <option className="alldoglist_dropdown_filter" value="Femenino">
+                  Femenino
+                </option>
               </select>
             </div>
             <div className="col-md-2">
@@ -46,9 +62,15 @@ export const AllDogsList = () => {
                 <option selected disabled>
                   Tamaño
                 </option>
-                <option value="Pequeño">Pequeño</option>
-                <option value="Mediano">Mediano</option>
-                <option value="Grande">Grande</option>
+                <option className="alldoglist_dropdown_filter" value="Pequeño">
+                  Pequeño
+                </option>
+                <option className="alldoglist_dropdown_filter" value="Mediano">
+                  Mediano
+                </option>
+                <option className="alldoglist_dropdown_filter" value="Grande">
+                  Grande
+                </option>
               </select>
             </div>
             <div className="col-md-2">
@@ -59,9 +81,15 @@ export const AllDogsList = () => {
                 <option selected disabled>
                   Edad
                 </option>
-                <option value="Cachorro">Cachorro</option>
-                <option value="Adulto">Adulto</option>
-                <option value="Mayor">Mayor</option>
+                <option className="alldoglist_dropdown_filter" value="Cachorro">
+                  Cachorro
+                </option>
+                <option className="alldoglist_dropdown_filter" value="Adulto">
+                  Adulto
+                </option>
+                <option className="alldoglist_dropdown_filter" value="Mayor">
+                  Mayor
+                </option>
               </select>
             </div>
             <div className="col-md-2">
