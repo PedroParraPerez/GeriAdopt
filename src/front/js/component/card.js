@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 
-import Mojito from "../../img/raily.jpeg";
+import Raily from "../../img/raily.jpeg";
 import "../../styles/Card.css";
 import BirthdayIcon from "../../img/BirthdayIcon.png";
 import GenderIcon from "../../img/GenderIcon.png";
@@ -20,7 +20,7 @@ export const Card = () => {
       store.allAnimals.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
-            <img src={Mojito} className="Card_cardphoto" />
+            <img src={Raily} className="Card_cardphoto" />
             <div className="Card_dogcardsbody">
               <h5 className="Card_card-title">
                 <b>{animal.name}</b>

@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       URLAPIDOGS:
-        "https://3001-sromk-proyectofinalpl-y7v6nmqqfym.ws-eu34.gitpod.io/api/",
+        "https://3001-sromk-proyectofinalpl-28653816wdz.ws-eu34.gitpod.io/api/",
       allAnimals: [],
       allShelters: [],
       detailAnimal: [],
@@ -49,12 +49,12 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
         if (response.status == 200) {
           const data = await response.json();
-          localStorage.setItem("token", data.token);
           setStore({
             isShelter: data.type,
             logedUser: true,
             currentMember: [data.user],
           });
+          localStorage.setItem("token", data.token);
           localStorage.setItem("isShelter", getStore().isShelter);
           return true;
         } else {
@@ -64,8 +64,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       // Desconexion de la cuenta
       logout: () => {
-        localStorage.removeItem("token");
-        localStorage.removeItem("isShelter");
+        localStorage.removeItem("token", "isShelter");
         window.location.reload(false);
       },
       // Registro de adoptante
