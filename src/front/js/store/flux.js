@@ -64,7 +64,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       // Desconexion de la cuenta
       logout: () => {
-        localStorage.removeItem("token", "isShelter");
+        localStorage.removeItem("token");
+        localStorage.removeItem("isShelter");
         window.location.reload(false);
       },
       // Registro de adoptante
@@ -79,7 +80,13 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
         if (response.status == 201) {
           const data = await response.json();
+          setStore({
+            isShelter: false,
+            logedUser: true,
+            currentMember: [data.user],
+          });
           localStorage.setItem("token", data.token);
+          localStorage.setItem("isShelter", getStore().isShelter);
           setStore({ logedUser: data.token });
         } else {
           alert("Ya hay un usuario registrado con ese email");
@@ -98,8 +105,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         if (response.status == 201) {
           const data = await response.json();
+          setStore({
+            isShelter: true,
+            logedUser: true,
+          });
           localStorage.setItem("token", data.token);
-          setStore({ logedUser: data.token, isShelter: true });
+          localStorage.setItem("isShelter", getStore().isShelter);
         } else {
           alert("Ya hay una protectora registrada con ese email");
         }
