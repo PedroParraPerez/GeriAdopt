@@ -6,7 +6,6 @@ const getState = ({ getStore, getActions, setStore }) => {
       allAnimals: [],
       allShelters: [],
       detailAnimal: [],
-      // logedUser: false, //No indica si hay ALGUN usuario conectado
       isShelter: false, //false = Adopter ; true = Shelter
       detailUser: [],
       AdopterInfo: [], //MAPEO DE LA VARIBLE EN EL PERFIL DE PERFIL
@@ -50,12 +49,10 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (response.status == 200) {
           const data = await response.json();
           setStore({
-            isShelter: data.type,
-            logedUser: true,
             currentMember: [data.user],
           });
           localStorage.setItem("token", data.token);
-          localStorage.setItem("isShelter", getStore().isShelter);
+          localStorage.setItem("isShelter", data.type);
           return true;
         } else {
           alert("Contraseña o usuario incorrectos");
@@ -81,15 +78,14 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (response.status == 201) {
           const data = await response.json();
           setStore({
-            isShelter: false,
-            logedUser: true,
             currentMember: [data.user],
           });
           localStorage.setItem("token", data.token);
-          localStorage.setItem("isShelter", getStore().isShelter);
-          setStore({ logedUser: data.token });
+          localStorage.setItem("isShelter", false);
+          return true;
         } else {
           alert("Ya hay un usuario registrado con ese email");
+          return false;
         }
       },
       // Registro de protectora
@@ -105,12 +101,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         if (response.status == 201) {
           const data = await response.json();
-          setStore({
-            isShelter: true,
-            logedUser: true,
-          });
           localStorage.setItem("token", data.token);
-          localStorage.setItem("isShelter", getStore().isShelter);
+          localStorage.setItem("isShelter", true);
+          window.location.reload(false);
         } else {
           alert("Ya hay una protectora registrada con ese email");
         }

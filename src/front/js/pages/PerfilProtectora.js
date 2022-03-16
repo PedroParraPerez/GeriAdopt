@@ -15,10 +15,6 @@ export const PerfilProtectora = () => {
 
   const [validate, setValidate] = useState();
 
-  console.log(
-    "isshelter en perfil protectora",
-    localStorage.getItem("isShelter")
-  );
   useEffect(() => {
     validateToken();
   }, []);

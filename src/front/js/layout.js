@@ -4,7 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./pages/home";
 import { BlogSection } from "./pages/blogsection.js";
 import { QuienesSomos } from "./pages/QuienesSomos.js";
-import injectContext, { Context } from "./store/appContext";
+import injectContext from "./store/appContext";
 import { Footer } from "./component/footer.js";
 import { PerfilAdopter } from "./pages/PerfilAdopter";
 import { Navbar } from "./component/navbar";
@@ -18,18 +18,13 @@ import { FormRegisterProte } from "./pages/formRegisterProte";
 import { BlogArt } from "./pages/blogart.js";
 import { BlogNoticias } from "./pages/blognoticias.js";
 import { PerfilProtectora } from "./pages/PerfilProtectora";
-import { useContext } from "react";
+
 import { FormRegisterAnimal } from "./pages/formRegisterAnimal";
 
-//create your first component
 const Layout = () => {
-  //the basename is used when your project is published in a subdirectory and not in the root of the domain
-  // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
   const basename = process.env.BASENAME || "";
-  const { store, actions } = useContext(Context);
-  const [validation, setValidation] = useState(false);
 
-  console.log("isshelter layout", localStorage.getItem("isShelter"));
+  const [validation, setValidation] = useState(false);
 
   // useEffect(() => {
   //   localStorage.getItem("isShelter")
