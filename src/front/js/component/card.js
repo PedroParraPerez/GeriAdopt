@@ -65,7 +65,12 @@ export const Card = () => {
               <Link to={"/detailanimal/" + animal.id}>
                 <button className="btn Card_btn">Conóceme!</button>
               </Link>
-              <div className="Card_FavButton">
+              <div
+                onClick={() => {
+                  actions.favanimal(animal.id);
+                }}
+                className="Card_FavButton"
+              >
                 <img src={IconHearth} alt="FavButton" className="Card_hearth" />
               </div>
               <p className="location">

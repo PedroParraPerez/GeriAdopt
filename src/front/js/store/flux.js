@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       URLAPIDOGS:
-        "https://3001-sromk-proyectofinalpl-28653816wdz.ws-eu34.gitpod.io/api/",
+        "https://3001-sromk-proyectofinalpl-3l24yedv65r.ws-eu38.gitpod.io/api/",
       allAnimals: [],
       allShelters: [],
       detailAnimal: [],
@@ -115,6 +115,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
           body: JSON.stringify(animal),
         });
@@ -124,6 +125,26 @@ const getState = ({ getStore, getActions, setStore }) => {
           // setStore({ animalcreated: !animalcreated });
           alert("animal creado");
           window.location.reload(false);
+        } else {
+          alert("Ya hay una protectora registrada con ese email");
+        }
+      },
+
+      favanimal: async (animalId) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "favanimal/" + animalId,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
+
+        if (response.status == 200) {
+          const data = await response.json();
         } else {
           alert("Ya hay una protectora registrada con ese email");
         }

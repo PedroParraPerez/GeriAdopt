@@ -68,7 +68,7 @@ data = {
             "short_description": "Mojito es un perro jugueton y cariñoso."
         }
         ],
-        "Shelter": [
+    "Shelter": [
         {
             "id": 1,
             "name":"SOS Peludos",

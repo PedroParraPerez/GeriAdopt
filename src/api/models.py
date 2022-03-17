@@ -24,7 +24,7 @@ class User(db.Model):
     age = db.Column(db.Integer, unique=False, nullable=False)
     city = db.Column(db.String(120), unique=False, nullable=False)
     address = db.Column(db.String(120), unique=False, nullable=False)
-    likes = db.relationship('Animal', secondary=likes, lazy='subquery', backref=db.backref('this user likes these animals', lazy=True))
+    animals = db.relationship('Animal', secondary=likes, lazy='subquery', backref=db.backref('this user likes these animals', lazy=True))
     
 
     # def __repr__(self):
@@ -66,9 +66,6 @@ class Animal(db.Model):
     shelter_id = db.Column(db.Integer, db.ForeignKey('shelter.id'), nullable=True)
     # Establecemos la relacion OnToMany crando la columna en Animal e indicandole la id de la protectora con el ForignKeY. Pongo que nullable = true para que sea mas facil de ver en la practica de los ejemplos
 
-
-    
-     
     def serialize(self):
         return {
             'id':self.id,

@@ -99,8 +99,11 @@ def signUpShelter():
         return jsonify({'message': str(err)}), 500
 
 @api.route('/registeranimal', methods=["POST"])
+@jwt_required()
 def registerAnimal():
 
+    id = get_jwt_identity()
+    shelter = Shelter.query.get(id)
     name = request.json.get('name', None)
     species = request.json.get('species', None)
     gender = request.json.get('gender', None)
@@ -114,10 +117,11 @@ def registerAnimal():
         return jsonify({'message': 'Data not provided'}), 400
     
     
-    animal = Animal(name=name, species=species, gender=gender, race=race, size=size, age=age, short_description=short_description, description=description)
+    animal = Animal(name=name, species=species, gender=gender, race=race, size=size, age=age, short_description=short_description, description=description, shelter_id=shelter.id)
     try:
 
         db.session.add(animal)
+        shelter.animals.append(animal)
         db.session.commit()
         return jsonify({'results':animal.serialize()}), 200
 
@@ -165,6 +169,23 @@ def get_animal_by_id(id):
     animal = Animal.query.get(id)
     return jsonify({'results': animal.serialize()}),200
 
+
+@api.route('/favanimal/<int:animal_id>', methods=['POST'])
+@jwt_required()
+def fav_animal(animal_id):
+
+    id = get_jwt_identity()
+    adopter = User.query.get(id)
+    animal = Animal.query.get(animal_id)
+    if animal not in adopter.animals:
+        adopter.animals.append(animal)
+        db.session.add(animal)
+        db.session.commit()
+    else:
+        adopter.animals.remove(animal)
+        db.session.commit()
+
+    return jsonify({'asd': "asd"}),200
 
 
 
