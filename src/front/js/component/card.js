@@ -15,7 +15,6 @@ export const Card = () => {
   const [animal, setAnimal] = useState();
 
   useEffect(() => {
-    console.log(store.animalcreated);
     setAnimal(
       store.allAnimals.map((animal) => {
         return (

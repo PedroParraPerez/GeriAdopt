@@ -3,37 +3,17 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       URLAPIDOGS:
         "https://3001-sromk-proyectofinalpl-0un9uljpvhf.ws-eu38.gitpod.io/api/",
-      allAnimals: [],
-      allShelters: [],
-      detailAnimal: [],
+      allAnimals: [], //Todos los animales
+      allShelters: [], //Todas las protectoras
+      detailAnimal: [], //Info de 1 solo animal
       isShelter: false, //false = Adopter ; true = Shelter
-      detailUser: [],
-      AdopterInfo: [], //MAPEO DE LA VARIBLE EN EL PERFIL DE PERFIL
-      animalcreated: false,
-      favlist: [],
+      validationToken: [], //validacion del token
+      animalcreated: false, // variable de control para la creacion de animales
+      favlist: [], // Info de la lista de favoritos de un adoptante
     },
     actions: {
-      // Obtener un listado de TODOS los animales
-      getAllAnimal: async () => {
-        const response = await fetch(getStore().URLAPIDOGS + "animal");
-        const data = await response.json();
-        setStore({ allAnimals: data.results });
-      },
-      // Obtener un listado de TODAS las protectoras
-      getAllShelters: async () => {
-        const response = await fetch(getStore().URLAPIDOGS + "shelters");
-        const data = await response.json();
-        setStore({ allShelters: [...data.results] });
-      },
-      // Obtener toda la información de un solo animal
-      getDetailOfOneAnimal: async (id) => {
-        const response = await fetch(
-          getStore().URLAPIDOGS + "detailanimal/".concat(id)
-        );
-        const data = await response.json();
-        setStore({ detailAnimal: data.results });
-      },
-      // Iniciar sesión
+      //.....................Login, LogOut RegisterUser, RegisterShelter, RegisterAnimal ........................................    //
+
       login: async (email, password, type) => {
         const response = await fetch(getStore().URLAPIDOGS + "login", {
           method: "POST",
@@ -60,13 +40,13 @@ const getState = ({ getStore, getActions, setStore }) => {
           return false;
         }
       },
-      // Desconexion de la cuenta
+
       logout: () => {
         localStorage.removeItem("token");
         localStorage.removeItem("isShelter");
         window.location.reload(false);
       },
-      // Registro de adoptante
+
       registerUser: async (user) => {
         const response = await fetch(getStore().URLAPIDOGS + "signup", {
           method: "POST",
@@ -89,7 +69,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           return false;
         }
       },
-      // Registro de protectora
+
       registerShelter: async (shelter) => {
         const response = await fetch(getStore().URLAPIDOGS + "signupshelter", {
           method: "POST",
@@ -109,7 +89,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           alert("Ya hay una protectora registrada con ese email");
         }
       },
-      // Creación de animal
+
       registerAnimal: async (animal) => {
         const response = await fetch(getStore().URLAPIDOGS + "registeranimal", {
           method: "POST",
@@ -130,6 +110,31 @@ const getState = ({ getStore, getActions, setStore }) => {
           alert("Ya hay una protectora registrada con ese email");
         }
       },
+
+      // ................... Obtener info de: TODOS los animales, UN SOLO animal,  TODAS las protectora.............................
+
+      getAllAnimal: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "animal");
+        const data = await response.json();
+        setStore({ allAnimals: data.results });
+      },
+
+      getAllShelters: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "shelters");
+        const data = await response.json();
+        setStore({ allShelters: [...data.results] });
+      },
+
+      getDetailOfOneAnimal: async (id) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "detailanimal/".concat(id)
+        );
+        const data = await response.json();
+        setStore({ detailAnimal: data.results });
+      },
+
+      // ................Añadir(y quitar) a favoritos, Obtener TODOS los favoritos de 1 adopter ..............................
+
       saveFavAnimal: async (animalId) => {
         const response = await fetch(
           getStore().URLAPIDOGS + "favanimal/" + animalId,
@@ -156,12 +161,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         if (response.ok) {
           const data = await response.json();
-          console.log("AQUI ESTA DATA" + data);
-          setStore({ favlist: data.results });
+          console.log("AQUI ESTA DATA " + data);
+          setStore({ favlist: data });
           console.log(getStore().favlist);
         }
       },
-      //Validacion de usuario con Token
+
+      //............................ Validacion de token con la informacion de la protectora y adoptante....................................
+
+      //Validacion de adopter con Token
       getUserInformation: async () => {
         const response = await fetch(getStore().URLAPIDOGS + "user", {
           headers: {
@@ -169,9 +177,12 @@ const getState = ({ getStore, getActions, setStore }) => {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         });
-        const data = await response.json();
-        setStore({ AdopterInfo: data });
-        console.log(data); // informacion del usuario que inicio sesion
+
+        if (response.ok) {
+          const data = await response.json();
+          setStore({ validationToken: data });
+          console.log(data); // informacion del usuario que inicio sesion
+        }
       },
       //Validacion de protectora con Token
       getShelterInformation: async () => {
@@ -181,8 +192,11 @@ const getState = ({ getStore, getActions, setStore }) => {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         });
-        const data = await response.json();
-        console.log(data); // informacion de la protectora que inicio sesion
+        if (response.ok) {
+          const data = await response.json();
+          setStore({ validationToken: data });
+          console.log(data); // informacion del usuario que inicio sesion
+        }
       },
     },
   };
