@@ -80,6 +80,6 @@ export const FavList = () => {
         );
       })
     );
-  }, [store.animalcreated]);
+  }, [store.favlist]);
   return <>{animal}</>;
 };
