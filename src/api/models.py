@@ -16,6 +16,7 @@ likes = db.Table('likes',
 
 
 class User(db.Model):
+    __tablename__: "useranimal"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)
     surname = db.Column(db.String(120), unique=False, nullable=False)
@@ -24,14 +25,14 @@ class User(db.Model):
     age = db.Column(db.Integer, unique=False, nullable=False)
     city = db.Column(db.String(120), unique=False, nullable=False)
     address = db.Column(db.String(120), unique=False, nullable=False)
-    animals = db.relationship('Animal', secondary=likes, lazy='subquery', backref=db.backref('this user likes these animals', lazy=True))
+    animalsfav = db.relationship('Animal', secondary=likes, lazy='subquery', backref=db.backref('this user likes these animals', lazy=True))
     
 
     # def __repr__(self):
     #     return '<User> %r %s', (self.id, self.username)
 
-    # def __repr__(self):
-    #     return f'<User> {self.id} {self.username}'
+    def __repr__(self):
+        return f'<User> {self.id} {self.name}'
 
     # Si quiero que en cada usuario tenga una columna que me permita ver todos los favs que tiene, tengo que introducir esta columna.
 
@@ -45,9 +46,9 @@ class User(db.Model):
             'age':self.age,
             'city':self.city,
             'address':self.address,
-            
             # 'tlf':self.tlf,
-            # 'likes': list(map(lambda animal: animal.serialize(), self.likes))
+            # 'likes': list(map(lambda animal: animalsfav.serialize(), self.likes))
+            'likes': [favorite.serialize() for favorite in self.animalsfav]
         }
 
 

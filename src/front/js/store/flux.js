@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       URLAPIDOGS:
-        "https://3001-sromk-proyectofinalpl-3l24yedv65r.ws-eu38.gitpod.io/api/",
+        "https://3001-sromk-proyectofinalpl-0un9uljpvhf.ws-eu38.gitpod.io/api/",
       allAnimals: [],
       allShelters: [],
       detailAnimal: [],
@@ -10,6 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       detailUser: [],
       AdopterInfo: [], //MAPEO DE LA VARIBLE EN EL PERFIL DE PERFIL
       animalcreated: false,
+      favlist: [],
     },
     actions: {
       // Obtener un listado de TODOS los animales
@@ -129,8 +130,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           alert("Ya hay una protectora registrada con ese email");
         }
       },
-
-      favanimal: async (animalId) => {
+      saveFavAnimal: async (animalId) => {
         const response = await fetch(
           getStore().URLAPIDOGS + "favanimal/" + animalId,
           {
@@ -144,9 +144,21 @@ const getState = ({ getStore, getActions, setStore }) => {
         );
 
         if (response.status == 200) {
-          const data = await response.json();
+          alert("Añadido a me gusta");
         } else {
-          alert("Ya hay una protectora registrada con ese email");
+          alert("Algo ha fallado");
+        }
+      },
+      getfavlist: async (id) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "user/" + id + "/favlist"
+        );
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log("AQUI ESTA DATA" + data);
+          setStore({ favlist: data.results });
+          console.log(getStore().favlist);
         }
       },
       //Validacion de usuario con Token

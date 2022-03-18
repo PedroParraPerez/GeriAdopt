@@ -1,4 +1,20 @@
+from werkzeug.security import generate_password_hash
+
+
 data = {
+    "User":[
+          {
+            "id":1,
+            "name":"Ana",
+            "surname": "holi",
+            "email":"a",
+            "password":generate_password_hash("asd", method='pbkdf2:sha256'),
+            "age": 25,
+            "city": "madrid",
+            "address": "madrid",
+
+        }
+    ],
 
     "Animal": [
         {

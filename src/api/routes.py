@@ -164,6 +164,8 @@ def get_all_shelters():
     shelters = Shelter.query.all()
     return jsonify({'results': list(map(lambda shelter: shelter.serialize(), shelters))}),200
 
+
+
 @api.route('/detailanimal/<int:id>', methods=['GET'])
 def get_animal_by_id(id):
     animal = Animal.query.get(id)
@@ -176,19 +178,44 @@ def fav_animal(animal_id):
 
     id = get_jwt_identity()
     adopter = User.query.get(id)
+    
     animal = Animal.query.get(animal_id)
-    if animal not in adopter.animals:
-        adopter.animals.append(animal)
+    if animal not in adopter.animalsfav:
+        adopter.animalsfav.append(animal)
         db.session.add(animal)
         db.session.commit()
     else:
-        adopter.animals.remove(animal)
+        adopter.animalsfav.remove(animal)
         db.session.commit()
 
     return jsonify({'asd': "asd"}),200
 
 
 
+@api.route('/user/<int:id>/favlist', methods=['GET'])
+# @jwt_required()
+def get_fav_list(id):
+    # user_id = get_jwt_identity()
+    userfavs = User.query.get(id)
+    
+    # if userfavs:
+    #     return jsonify(list(map(lambda favs:User.seralize(), userfavs.animalsfav))), 200
+    
+    print("userfavs", userfavs)
 
 
+    if userfavs:
+        user_favorites = userfavs.animalsfav
+        all_favorites = [favorite.serialize() for favorite in user_favorites] # serializame por cada favorito, en user_favorites
+        print("ALL FAVORITES", all_favorites)
+        return jsonify(all_favorites), 200
+   
+    return jsonify({'error': 'No favourite animals'}),404
+
+
+
+# @api.route('/allusers', methods=['GET'])
+# def get_all_users():
+#     users = User.query.get(1)
+#     return jsonify({'results': users.serialize()}),200
 

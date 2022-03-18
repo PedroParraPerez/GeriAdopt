@@ -6,6 +6,7 @@ import GirlPhoto from "../../img/girlphoto.jpg";
 import EditIcon from "../../img/editIcon.png";
 import ImgTitleFavs from "../../img/imagetitlefavs.png";
 import { useNavigate } from "react-router-dom";
+import { FavList } from "../component/favList";
 
 export const PerfilAdopter = () => {
   const { store, actions } = useContext(Context);
@@ -45,6 +46,9 @@ export const PerfilAdopter = () => {
                   <div className="Adopter_editbutton">
                     <img
                       src={EditIcon}
+                      onClick={() => {
+                        actions.getfavlist(1);
+                      }}
                       className="Adopter_editicon"
                       alt="editIcon"
                     />
@@ -106,7 +110,7 @@ export const PerfilAdopter = () => {
             </div>
           </div>
           <div className="row Adopter_cardlist">
-            <Card />
+            <FavList />
           </div>
         </div>
       ) : (

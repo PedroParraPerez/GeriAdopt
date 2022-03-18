@@ -10,14 +10,13 @@ import IconHearth from "../../img/IconHearth.png";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Card = () => {
+export const FavList = () => {
   const { store, actions } = useContext(Context);
   const [animal, setAnimal] = useState();
 
   useEffect(() => {
-    console.log(store.animalcreated);
     setAnimal(
-      store.allAnimals.map((animal) => {
+      store.favlist.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
             <img src={Raily} className="Card_cardphoto" />
@@ -67,7 +66,7 @@ export const Card = () => {
               </Link>
               <div
                 onClick={() => {
-                  actions.saveFavAnimal(animal.id);
+                  actions.favanimal(animal.id);
                 }}
                 className="Card_FavButton"
               >

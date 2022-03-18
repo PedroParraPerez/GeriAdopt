@@ -34,12 +34,6 @@ const Layout = () => {
 
   useEffect(() => {
     setValidation(JSON.parse(localStorage.getItem("isShelter")));
-    console.log(
-      localStorage.getItem("isShelter"),
-      typeof JSON.parse(localStorage.getItem("isShelter")),
-      "@",
-      JSON.parse(localStorage.getItem("isShelter")) == true
-    );
   });
 
   return (
