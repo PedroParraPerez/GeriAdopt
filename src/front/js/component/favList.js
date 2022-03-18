@@ -12,10 +12,10 @@ import { Context } from "../store/appContext";
 
 export const FavList = () => {
   const { store, actions } = useContext(Context);
-  const [animal, setAnimal] = useState();
+  const [renderfavlist, setRenderfavlist] = useState();
 
   useEffect(() => {
-    setAnimal(
+    setRenderfavlist(
       store.favlist.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
@@ -81,5 +81,5 @@ export const FavList = () => {
       })
     );
   }, [store.favlist]);
-  return <>{animal}</>;
+  return <>{renderfavlist}</>;
 };
