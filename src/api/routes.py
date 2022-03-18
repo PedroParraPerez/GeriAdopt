@@ -130,7 +130,7 @@ def registerAnimal():
         print(str(err))
         return jsonify({'message': str(err)}), 500
 
-# .........................OBTENER (GET) INFO DE LA API
+# .........................OBTENER (GET) INFO DE LA API.....................................
 @api.route('/allanimals', methods=['GET'])
 def get_all_dogs():
     animals = Animal.query.all()
@@ -147,7 +147,7 @@ def get_animal_by_id(id):
     animal = Animal.query.get(id)
     return jsonify({'results': animal.serialize()}),200
 
-# ...................RUTAS RELACIONADAS CON FAVORITOS MANYTOMANY.................
+# ...................RUTAS RELACIONADAS CON FAVORITOS MANYTOMANY...................................
 
 
 @api.route('/favanimal/<int:animal_id>', methods=['POST'])
