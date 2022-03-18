@@ -46,8 +46,6 @@ class User(db.Model):
             'age':self.age,
             'city':self.city,
             'address':self.address,
-            # 'tlf':self.tlf,
-            # 'likes': list(map(lambda animal: animalsfav.serialize(), self.likes))
             'likes': [favorite.serialize() for favorite in self.animalsfav]
         }
 

@@ -48,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       registerUser: async (user) => {
-        const response = await fetch(getStore().URLAPIDOGS + "signup", {
+        const response = await fetch(getStore().URLAPIDOGS + "signupadopter", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -114,13 +114,13 @@ const getState = ({ getStore, getActions, setStore }) => {
       // ................... Obtener info de: TODOS los animales, UN SOLO animal,  TODAS las protectora.............................
 
       getAllAnimal: async () => {
-        const response = await fetch(getStore().URLAPIDOGS + "animal");
+        const response = await fetch(getStore().URLAPIDOGS + "allanimals");
         const data = await response.json();
         setStore({ allAnimals: data.results });
       },
 
       getAllShelters: async () => {
-        const response = await fetch(getStore().URLAPIDOGS + "shelters");
+        const response = await fetch(getStore().URLAPIDOGS + "allshelters");
         const data = await response.json();
         setStore({ allShelters: [...data.results] });
       },
@@ -158,12 +158,9 @@ const getState = ({ getStore, getActions, setStore }) => {
         const response = await fetch(
           getStore().URLAPIDOGS + "user/" + id + "/favlist"
         );
-
         if (response.ok) {
           const data = await response.json();
-          console.log("AQUI ESTA DATA " + data);
           setStore({ favlist: data });
-          console.log(getStore().favlist);
         }
       },
 
@@ -181,7 +178,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (response.ok) {
           const data = await response.json();
           setStore({ validationToken: data });
-          console.log(data); // informacion del usuario que inicio sesion
         }
       },
       //Validacion de protectora con Token
@@ -195,7 +191,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (response.ok) {
           const data = await response.json();
           setStore({ validationToken: data });
-          console.log(data); // informacion del usuario que inicio sesion
         }
       },
     },

@@ -66,7 +66,7 @@ export const FavList = () => {
               </Link>
               <div
                 onClick={() => {
-                  actions.favanimal(animal.id);
+                  actions.saveFavAnimal(animal.id);
                 }}
                 className="Card_FavButton"
               >

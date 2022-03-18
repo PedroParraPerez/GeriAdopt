@@ -12,6 +12,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 api = Blueprint('api', __name__)
 
+# ...................LOGIN, REGISTERADOPTER, REGISTERSHELTER, REGISTERANIMAL.................
 
 @api.route('/login', methods=['POST'])
 def login():
@@ -44,8 +45,8 @@ def login():
     return jsonify({'token':token, 'type': type, 'user':user.serialize()}), 200
 
 
-@api.route('/signup', methods=["POST"])
-def signUpUser():
+@api.route('/signupadopter', methods=["POST"])
+def signUpAdopter():
 
     name = request.json.get('name', None)
     surname = request.json.get('surname', None)
@@ -129,41 +130,16 @@ def registerAnimal():
         print(str(err))
         return jsonify({'message': str(err)}), 500
 
-
-# Authorization: Bearer <token> => si no viene 401
-@api.route('/user', methods=['GET'])
-@jwt_required()
-def getUserInfo():
-
-    userId = get_jwt_identity()
-    user = User.query.get(userId)
-    if user:
-        return jsonify({"validate": True})
-    else:
-        return jsonify({"validate": False})
-
-@api.route('/shelter', methods=['GET'])
-@jwt_required()
-def getShelterInfo():
-
-    shelterId = get_jwt_identity()
-    shelter = Shelter.query.get(shelterId)
-    if shelter:
-        return jsonify({"validate": True})
-    else:
-        return jsonify({"validate": False})
-
-
-@api.route('/animal', methods=['GET'])
+# .........................OBTENER (GET) INFO DE LA API
+@api.route('/allanimals', methods=['GET'])
 def get_all_dogs():
     animals = Animal.query.all()
     return jsonify({'results': list(map(lambda animal: animal.serialize(), animals))}),200
 
-@api.route('/shelters', methods=['GET'])
+@api.route('/allshelters', methods=['GET'])
 def get_all_shelters():
     shelters = Shelter.query.all()
     return jsonify({'results': list(map(lambda shelter: shelter.serialize(), shelters))}),200
-
 
 
 @api.route('/detailanimal/<int:id>', methods=['GET'])
@@ -171,10 +147,12 @@ def get_animal_by_id(id):
     animal = Animal.query.get(id)
     return jsonify({'results': animal.serialize()}),200
 
+# ...................RUTAS RELACIONADAS CON FAVORITOS MANYTOMANY.................
+
 
 @api.route('/favanimal/<int:animal_id>', methods=['POST'])
 @jwt_required()
-def fav_animal(animal_id):
+def save_fav_animal(animal_id):
 
     id = get_jwt_identity()
     adopter = User.query.get(id)
@@ -213,9 +191,37 @@ def get_fav_list(id):
     return jsonify({'error': 'No favourite animals'}),404
 
 
+# .....................VALIDACION DE TOKEN PARA ADOPTER AND SHELTER...............................
 
-# @api.route('/allusers', methods=['GET'])
-# def get_all_users():
-#     users = User.query.get(1)
-#     return jsonify({'results': users.serialize()}),200
+
+# Authorization: Bearer <token> => si no viene 401
+@api.route('/user', methods=['GET'])
+@jwt_required()
+def getUserInfo():
+
+    userId = get_jwt_identity()
+    user = User.query.get(userId)
+    if user:
+        return jsonify({"validate": True})
+    else:
+        return jsonify({"validate": False})
+
+@api.route('/shelter', methods=['GET'])
+@jwt_required()
+def getShelterInfo():
+
+    shelterId = get_jwt_identity()
+    shelter = Shelter.query.get(shelterId)
+    if shelter:
+        return jsonify({"validate": True})
+    else:
+        return jsonify({"validate": False})
+
+# .......................Rutas de control para ver la info en la API...............................
+
+
+@api.route('/allusers', methods=['GET'])
+def get_all_users():
+    users = User.query.all()
+    return jsonify({'results': list(map(lambda user: user.serialize(), users))}),200
 
