@@ -25,6 +25,7 @@ class User(db.Model):
     age = db.Column(db.Integer, unique=False, nullable=False)
     city = db.Column(db.String(120), unique=False, nullable=False)
     address = db.Column(db.String(120), unique=False, nullable=False)
+    image = db.Column(db.String(240), unique=False, nullable=True)
     animalsfav = db.relationship('Animal', secondary=likes, lazy='subquery', backref=db.backref('this user likes these animals', lazy=True))
     
 
@@ -46,6 +47,7 @@ class User(db.Model):
             'age':self.age,
             'city':self.city,
             'address':self.address,
+            'image':self.image,
             'likes': [favorite.serialize() for favorite in self.animalsfav]
         }
 
@@ -58,9 +60,9 @@ class Animal(db.Model):
     race = db.Column(db.String(120), unique=False, nullable=False)
     size = db.Column(db.String(120), unique=False, nullable=False)
     age = db.Column(db.Integer, unique=False, nullable=False)
-
     description = db.Column(db.String(240), unique=False, nullable=False)
     short_description = db.Column(db.String(80), unique=False, nullable=False)
+    image = db.Column(db.String(240), unique=False, nullable=True)
     
     shelter_id = db.Column(db.Integer, db.ForeignKey('shelter.id'), nullable=True)
     # Establecemos la relacion OnToMany crando la columna en Animal e indicandole la id de la protectora con el ForignKeY. Pongo que nullable = true para que sea mas facil de ver en la practica de los ejemplos
@@ -76,7 +78,8 @@ class Animal(db.Model):
             'age':self.age,
             'description':self.description,
             'short_description':self.short_description,
-            'shelter_id':self.shelter_id
+            'image':self.image,
+            'shelter_id':self.shelter_id,
         }
 
         
@@ -88,6 +91,7 @@ class Shelter(db.Model):
     password = db.Column(db.String(240), unique=False, nullable=False)
     city = db.Column(db.String(120), unique=False, nullable=False)
     address = db.Column(db.String(120), unique=False, nullable=False)
+    image = db.Column(db.String(240), unique=False, nullable=True)
     animals = db.relationship('Animal', backref='shelter', lazy=True)
     # Mandamos la informacion de la ID de la protectora atraves de la relationship indicandole la table a la que se la mandamos "Animal"
 
@@ -98,6 +102,7 @@ class Shelter(db.Model):
             'email':self.email,
             'city':self.city,
             'address':self.address,
+            'image':self.image,
         }
 
 

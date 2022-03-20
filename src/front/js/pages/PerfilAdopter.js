@@ -7,7 +7,7 @@ import EditIcon from "../../img/editIcon.png";
 import ImgTitleFavs from "../../img/imagetitlefavs.png";
 import { useNavigate } from "react-router-dom";
 import { FavList } from "../component/favList";
-import { AdopterInfo } from "../component/adopterinfo";
+import { InfoAdopter } from "../component/InfoAdopter";
 
 export const PerfilAdopter = () => {
   const { store, actions } = useContext(Context);
@@ -37,7 +37,7 @@ export const PerfilAdopter = () => {
     <>
       {validate ? (
         <div className="container-fluid">
-          <AdopterInfo />
+          <InfoAdopter />
           <div className="row Adopter_cardlist">
             <FavList />
           </div>

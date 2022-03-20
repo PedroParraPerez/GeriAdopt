@@ -5,15 +5,40 @@ data = {
     "User":[
           {
             "id":1,
-            "name":"Ana",
-            "surname": "holi",
-            "email":"a",
-            "password":generate_password_hash("1234", method='pbkdf2:sha256'),
-            "age": 25,
-            "city": "madrid",
-            "address": "madrid",
+            "name":"Pedro",
+            "surname": "Parra",
+            "email":"pedro@gmail.com",
+            "password":generate_password_hash("123", method='pbkdf2:sha256'),
+            "age": 27,
+            "city": "Madrid",
+            "address": "Madrid",
+            "image": "https://res.cloudinary.com/dqhlna24b/image/upload/v1647742936/FOTO_P_segrzg.jpg",
 
-        }
+        },
+        {
+            "id":2,
+            "name":"Sofia",
+            "surname": "Romero",
+            "email":"sofia@gmail.com",
+            "password":generate_password_hash("123", method='pbkdf2:sha256'),
+            "age": 34,
+            "city": "Madrid",
+            "address": "Madrid",
+            "image": "https://res.cloudinary.com/dqhlna24b/image/upload/v1647743289/foto_sofia_qurdw5.jpg",
+
+        },
+        {
+            "id":3,
+            "name":"Orealba",
+            "surname": "Soriano",
+            "email":"orealba@gmail.com",
+            "password":generate_password_hash("123", method='pbkdf2:sha256'),
+            "age": 30,
+            "city": "Barcelona",
+            "address": "Barcelona",
+            "image": "https://res.cloudinary.com/dqhlna24b/image/upload/v1647743473/foto_ore_zxeisy.jpg",
+
+        },
     ],
 
     "Animal": [

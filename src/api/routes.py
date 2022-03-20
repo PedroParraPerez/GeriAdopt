@@ -156,6 +156,14 @@ def get_adopter_info():
     adopter = User.query.get(id)
     return jsonify({'results': adopter.serialize()}),200
 
+@api.route('/shelterinfo', methods=['GET'])
+@jwt_required()
+def get_shelter_info():
+    id = get_jwt_identity()
+
+    shelter = Shelter.query.get(id)
+    return jsonify({'results': shelter.serialize()}),200
+
 # ...................RUTAS RELACIONADAS CON FAVORITOS MANYTOMANY...................................
 
 

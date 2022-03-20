@@ -12,6 +12,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       favlist: [], // Info de la lista de favoritos de un adoptante
       controlfav: undefined,
       adopterInfo: [],
+      shelterInfo: [],
     },
     actions: {
       //.....................Login, LogOut RegisterUser, RegisterShelter, RegisterAnimal ........................................    //
@@ -146,6 +147,17 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
         const data = await response.json();
         setStore({ adopterInfo: data.results });
+      },
+      getShelterInfo: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "shelterinfo", {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        const data = await response.json();
+        setStore({ shelterInfo: data.results });
       },
 
       // ................Añadir(y quitar) a favoritos, Obtener TODOS los favoritos de 1 adopter ..............................

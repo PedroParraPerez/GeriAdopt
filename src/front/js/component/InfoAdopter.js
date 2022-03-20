@@ -6,7 +6,7 @@ import GirlPhoto from "../../img/girlphoto.jpg";
 import EditIcon from "../../img/editIcon.png";
 import ImgTitleFavs from "../../img/imagetitlefavs.png";
 
-export const AdopterInfo = () => {
+export const InfoAdopter = () => {
   const { store, actions } = useContext(Context);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export const AdopterInfo = () => {
         <div className="row Adopter_adopterprofile">
           <div className="col-xl-2 Adopter_imgprofile">
             <img
-              src={GirlPhoto}
+              src={store.adopterInfo.image}
               alt="profilephoto"
               className="Adopter_adopterphoto"
             />
