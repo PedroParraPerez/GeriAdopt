@@ -28,6 +28,10 @@ export const PerfilAdopter = () => {
     response.ok ? setValidate(response.ok) : navigate("/login");
   };
 
+  useEffect(() => {
+    actions.getfavlist();
+  }, [store.controlfav]);
+
   return (
     <>
       {validate ? (
@@ -46,9 +50,6 @@ export const PerfilAdopter = () => {
                   <div className="Adopter_editbutton">
                     <img
                       src={EditIcon}
-                      onClick={() => {
-                        actions.getfavlist();
-                      }}
                       className="Adopter_editicon"
                       alt="editIcon"
                     />
