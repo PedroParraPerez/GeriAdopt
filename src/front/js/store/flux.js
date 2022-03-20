@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       URLAPIDOGS:
-        "https://3001-sromk-proyectofinalpl-0un9uljpvhf.ws-eu38.gitpod.io/api/",
+        "https://3001-sromk-proyectofinalpl-w200me8eqyg.ws-eu38.gitpod.io/api/",
       allAnimals: [], //Todos los animales
       allShelters: [], //Todas las protectoras
       detailAnimal: [], //Info de 1 solo animal
@@ -154,10 +154,12 @@ const getState = ({ getStore, getActions, setStore }) => {
           alert("Algo ha fallado");
         }
       },
-      getfavlist: async (id) => {
-        const response = await fetch(
-          getStore().URLAPIDOGS + "user/" + id + "/favlist"
-        );
+      getfavlist: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "user/favlist", {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
         if (response.ok) {
           const data = await response.json();
           setStore({ favlist: data });

@@ -47,7 +47,7 @@ export const PerfilAdopter = () => {
                     <img
                       src={EditIcon}
                       onClick={() => {
-                        actions.getfavlist(1);
+                        actions.getfavlist();
                       }}
                       className="Adopter_editicon"
                       alt="editIcon"

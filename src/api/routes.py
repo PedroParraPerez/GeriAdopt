@@ -170,16 +170,15 @@ def save_fav_animal(animal_id):
 
 
 
-@api.route('/user/<int:id>/favlist', methods=['GET'])
-# @jwt_required()
-def get_fav_list(id):
-    # user_id = get_jwt_identity()
+@api.route('/user/favlist', methods=['GET'])
+@jwt_required()
+def get_fav_list():
+    id = get_jwt_identity()
+    print("AAAAAAAAAAAAAAAAAAAAA", id)
     userfavs = User.query.get(id)
     
-    # if userfavs:
-    #     return jsonify(list(map(lambda favs:User.seralize(), userfavs.animalsfav))), 200
+   
     
-    print("userfavs", userfavs)
 
 
     if userfavs:

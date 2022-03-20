@@ -8,7 +8,7 @@ data = {
             "name":"Ana",
             "surname": "holi",
             "email":"a",
-            "password":generate_password_hash("asd", method='pbkdf2:sha256'),
+            "password":generate_password_hash("1234", method='pbkdf2:sha256'),
             "age": 25,
             "city": "madrid",
             "address": "madrid",
@@ -90,7 +90,7 @@ data = {
             "name":"SOS Peludos",
             "address": "Madrid",
             "city": "Madrid",
-            "password": "1234",
+            "password":generate_password_hash("1234", method='pbkdf2:sha256'),
             "email": "sospeludos.es@gmail.com",
         },
         {
@@ -98,7 +98,7 @@ data = {
             "name":"La Estrella Animal",
             "address": "Madrid",
             "city": "Madrid",
-            "password": "1234",
+            "password":generate_password_hash("1234", method='pbkdf2:sha256'),
             "email": "laestrellaanimal@gmail.com",
         },
         {
@@ -106,7 +106,7 @@ data = {
             "name":"Animal Rescue España",
             "address": "Madrid",
             "city": "Madrid",
-            "password": "1234",
+            "password":generate_password_hash("1234", method='pbkdf2:sha256'),
             "email": "animalrescueespaña@gmail.com",
         },
         {
@@ -114,7 +114,7 @@ data = {
             "name":"AGAR (Asociación Amigos de los gatos del Retiro)",
             "address": "Madrid",
             "city": "Madrid",
-            "password": "1234",
+            "password":generate_password_hash("1234", method='pbkdf2:sha256'),
             "email": "agar@gmail.com",
         },
         ]
