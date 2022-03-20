@@ -11,6 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       animalcreated: false, // variable de control para la creacion de animales
       favlist: [], // Info de la lista de favoritos de un adoptante
       controlfav: undefined,
+      adopterInfo: [],
     },
     actions: {
       //.....................Login, LogOut RegisterUser, RegisterShelter, RegisterAnimal ........................................    //
@@ -132,6 +133,19 @@ const getState = ({ getStore, getActions, setStore }) => {
         );
         const data = await response.json();
         setStore({ detailAnimal: data.results });
+      },
+      //..................................Obtener info de individual de ADOPTANTE Y PROTECTORA para perfil
+
+      getAdopterInfo: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "adopterinfo", {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        const data = await response.json();
+        setStore({ adopterInfo: data.results });
       },
 
       // ................Añadir(y quitar) a favoritos, Obtener TODOS los favoritos de 1 adopter ..............................

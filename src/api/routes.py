@@ -147,6 +147,15 @@ def get_animal_by_id(id):
     animal = Animal.query.get(id)
     return jsonify({'results': animal.serialize()}),200
 
+
+@api.route('/adopterinfo', methods=['GET'])
+@jwt_required()
+def get_adopter_info():
+    id = get_jwt_identity()
+
+    adopter = User.query.get(id)
+    return jsonify({'results': adopter.serialize()}),200
+
 # ...................RUTAS RELACIONADAS CON FAVORITOS MANYTOMANY...................................
 
 
@@ -174,17 +183,11 @@ def save_fav_animal(animal_id):
 @jwt_required()
 def get_fav_list():
     id = get_jwt_identity()
-    print("AAAAAAAAAAAAAAAAAAAAA", id)
     userfavs = User.query.get(id)
-    
-   
-    
-
 
     if userfavs:
         user_favorites = userfavs.animalsfav
         all_favorites = [favorite.serialize() for favorite in user_favorites] # serializame por cada favorito, en user_favorites
-        print("ALL FAVORITES", all_favorites)
         return jsonify(all_favorites), 200
    
     return jsonify({'error': 'No favourite animals'}),404
