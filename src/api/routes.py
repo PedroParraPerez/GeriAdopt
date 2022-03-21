@@ -205,9 +205,9 @@ def get_fav_list():
 
 
 # Authorization: Bearer <token> => si no viene 401
-@api.route('/user', methods=['GET'])
+@api.route('/nouser', methods=['GET'])
 @jwt_required()
-def getUserInfo():
+def validateNoToken():
 
     userId = get_jwt_identity()
     user = User.query.get(userId)
@@ -226,6 +226,17 @@ def getShelterInfo():
         return jsonify({"validate": True})
     else:
         return jsonify({"validate": False})
+
+@api.route('/user', methods=['GET'])
+@jwt_required()
+def validateToken():
+
+    userId = get_jwt_identity()
+    user = User.query.get(userId)
+    if user:
+        return jsonify({"validate": False})
+    else:
+        return jsonify({"validate": True})
 
 # .......................Rutas de control para ver la info en la API...............................
 

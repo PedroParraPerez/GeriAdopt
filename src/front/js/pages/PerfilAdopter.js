@@ -12,11 +12,11 @@ export const PerfilAdopter = () => {
   const [validate, setValidate] = useState();
 
   useEffect(() => {
-    validateToken();
+    validateNoToken();
   }, []);
 
-  const validateToken = async () => {
-    const response = await fetch(store.URLAPIDOGS + "user", {
+  const validateNoToken = async () => {
+    const response = await fetch(store.URLAPIDOGS + "nouser", {
       headers: {
         Accept: "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -39,7 +39,7 @@ export const PerfilAdopter = () => {
           </div>
         </div>
       ) : (
-        navigate("/login")
+        <span></span>
       )}
     </>
   );
