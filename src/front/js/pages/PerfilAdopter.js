@@ -39,7 +39,7 @@ export const PerfilAdopter = () => {
           </div>
         </div>
       ) : (
-        <span></span>
+        ""
       )}
     </>
   );

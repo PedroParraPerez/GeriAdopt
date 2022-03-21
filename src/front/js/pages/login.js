@@ -15,28 +15,23 @@ export const Login = () => {
 
   const navigate = useNavigate();
 
-  /*useEffect(() => {
-    if (logged) {
-      navigate("/profile");
-    }
-  }, [logged]);*/
-  useEffect(() => {
-    validateToken();
-  }, []);
+  // useEffect(() => {
+  //   validateToken();
+  // }, []);
 
-  const validateToken = async () => {
-    const response = await fetch(store.URLAPIDOGS + "user", {
-      headers: {
-        Accept: "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    });
-    response.ok ? setValidate(response.ok) : navigate("/profile");
-  };
+  // const validateToken = async () => {
+  //   const response = await fetch(store.URLAPIDOGS + "user", {
+  //     headers: {
+  //       Accept: "application/json",
+  //       Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //     },
+  //   });
+  //   localStorage.token ? setValidate(true) : navigate("/profile");
+  // };
 
   return (
     <>
-      {validate ? (
+      {!localStorage.getItem("token") ? (
         <div className="container-fluid">
           <div className="row">
             <div className="col-xl-5 login_view">
@@ -108,7 +103,7 @@ export const Login = () => {
           </div>
         </div>
       ) : (
-        ""
+        navigate("/profile")
       )}
     </>
   );

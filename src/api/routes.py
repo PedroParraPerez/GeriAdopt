@@ -12,6 +12,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 api = Blueprint('api', __name__)
 
+
+
 # ...................LOGIN, REGISTERADOPTER, REGISTERSHELTER, REGISTERANIMAL.................
 
 @api.route('/login', methods=['POST'])
@@ -216,6 +218,20 @@ def validateNoToken():
     else:
         return jsonify({"validate": False})
 
+
+
+
+@api.route('/user', methods=['GET'])
+@jwt_required()
+def validateToken():
+
+    userId = get_jwt_identity()
+    user = User.query.get(userId)
+    if user:
+        return jsonify({"validate": True})
+    else:
+        return jsonify({"validate": False})
+
 @api.route('/shelter', methods=['GET'])
 @jwt_required()
 def getShelterInfo():
@@ -227,16 +243,7 @@ def getShelterInfo():
     else:
         return jsonify({"validate": False})
 
-@api.route('/user', methods=['GET'])
-@jwt_required()
-def validateToken():
 
-    userId = get_jwt_identity()
-    user = User.query.get(userId)
-    if user:
-        return jsonify({"validate": False})
-    else:
-        return jsonify({"validate": True})
 
 # .......................Rutas de control para ver la info en la API...............................
 
