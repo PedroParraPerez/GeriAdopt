@@ -1,26 +1,20 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 
-import { Context } from "../store/appContext";
+import "../../styles/shelterAnimals.css";
+
+import { Card } from "../component/card.js";
 import SOSPeludos from "../../img/sospeludos.jpeg";
-import EditIcon from "../../img/editIcon.png";
 import ImgTitleFavs from "../../img/imagetitlefavs.png";
-import { Link } from "react-router-dom";
-import { CardProtectora } from "./cardProtectora";
+import { CardPerfilShelter } from "../component/cardperfilshelter";
 
-export const InfoShelter = () => {
-  const { store, actions } = useContext(Context);
-
-  useEffect(() => {
-    actions.getShelterInfo();
-  }, []);
-
+export const LandingShelter = () => {
   return (
     <>
       <div className="container-fluid">
         <div className="row Protectora_Protectoraprofile">
           <div className="col-xl-2 Protectora_imgprofile">
             <img
-              src={SOSPeludos}
+              src={<p>insertar imagen</p>}
               alt="profilephoto"
               className="Protectora_Protectoraphoto"
             />
@@ -28,13 +22,7 @@ export const InfoShelter = () => {
           <div className="col-xl-4 Protectora_ProtectoraInfo">
             <div className="row Protectora_edit">
               <div className="col-xl-12">
-                <div className="Protectora_editbutton">
-                  <img
-                    src={EditIcon}
-                    className="Protectora_editicon"
-                    alt="editIcon"
-                  />
-                </div>
+                <div className="Protectora_editbutton"></div>
               </div>
             </div>
             <div className="row">
@@ -44,7 +32,7 @@ export const InfoShelter = () => {
                     <span className="Protectora_labelprofileinfo">
                       Nombre:{" "}
                     </span>
-                    {store.shelterInfo.name}
+                    NO MAPEADO
                   </b>
                 </p>
                 <p>
@@ -52,7 +40,7 @@ export const InfoShelter = () => {
                     <span className="Protectora_labelprofileinfo">
                       Ciudad:{" "}
                     </span>
-                    {store.shelterInfo.city}
+                    NO MAPEADO
                   </b>
                 </p>
               </div>
@@ -62,7 +50,7 @@ export const InfoShelter = () => {
                     <span className="Protectora_labelprofileinfo">
                       Correo:{" "}
                     </span>
-                    {store.shelterInfo.email}
+                    NO MAPEADO
                   </b>
                 </p>
                 <p>
@@ -70,12 +58,29 @@ export const InfoShelter = () => {
                     <span className="Protectora_labelprofileinfo">
                       Direción:{" "}
                     </span>
-                    {store.shelterInfo.address}
+                    NO MAPEADO
                   </b>
                 </p>
               </div>
             </div>
           </div>
+        </div>
+        <div className="row shelter_titleFavs">
+          <div className="col-xl-1">
+            <img
+              src={ImgTitleFavs}
+              alt="titlecat"
+              className="shelter_ImgTitleFavs"
+            />
+          </div>
+          <div className="col-xl-2">
+            <h2 className="titleShelter">
+              <b>Nuestros animales</b>
+            </h2>
+          </div>
+        </div>
+        <div className="row shelter_cardlist">
+          <h2>AÑADIR LAS CARDS DE ESTA PROTECTORA</h2>
         </div>
       </div>
     </>

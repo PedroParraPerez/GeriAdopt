@@ -1,10 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import "../../styles/adopter.css";
 import { Context } from "../store/appContext";
-import { Card } from "../component/card.js";
-import GirlPhoto from "../../img/girlphoto.jpg";
-import EditIcon from "../../img/editIcon.png";
-import ImgTitleFavs from "../../img/imagetitlefavs.png";
 import { useNavigate } from "react-router-dom";
 import { FavList } from "../component/favList";
 import { InfoAdopter } from "../component/InfoAdopter";

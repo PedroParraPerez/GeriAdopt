@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 
-import Raily from "../../img/raily.jpeg";
+import Mojito from "../../img/Mojito.jpg";
 import "../../styles/Card.css";
 import BirthdayIcon from "../../img/BirthdayIcon.png";
 import GenderIcon from "../../img/GenderIcon.png";
@@ -20,7 +20,7 @@ export const Card = () => {
         return (
           <div key={animal.id} className="card Card_carddogs">
             <img
-              src={!animal.image ? Raily : animal.image}
+              src={!animal.image ? Mojito : animal.image}
               className="Card_cardphoto"
             />
             <div className="Card_dogcardsbody">

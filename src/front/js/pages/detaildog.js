@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import Mojito from "../../img/Mojito.jpg";
+
 import "../../styles/detaildog.css";
 import { Context } from "../store/appContext";
 
@@ -19,7 +20,9 @@ export const DetailDog = () => {
         <div className="row detaildog_view">
           <div className="col-xxl-6 d-flex justify-content-center align-items-center ">
             <img
-              src={Mojito}
+              src={
+                !store.detailAnimal.image ? Mojito : store.detailAnimal.image
+              }
               className="detaildog_photos_principalphoto"
               alt="dog-photo"
             />

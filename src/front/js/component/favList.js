@@ -19,7 +19,10 @@ export const FavList = () => {
       store.favlist.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
-            <img src={Raily} className="Card_cardphoto" />
+            <img
+              src={!animal.image ? Mojito : animal.image}
+              className="Card_cardphoto"
+            />
             <div className="Card_dogcardsbody">
               <h5 className="Card_card-title">
                 <b>{animal.name}</b>

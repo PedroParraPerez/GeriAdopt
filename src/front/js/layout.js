@@ -10,7 +10,7 @@ import { PerfilAdopter } from "./pages/PerfilAdopter";
 import { Navbar } from "./component/navbar";
 import { AllDogsList } from "./pages/alldogslist";
 import { DetailDog } from "./pages/detaildog";
-import { ShelterAnimals } from "./pages/shelterAnimals.js";
+import { LandingShelter } from "./pages/landingShelter.js";
 import { AllShelterList } from "./pages/allShelters.js";
 import { FormRegisterUser } from "./pages/formRegisterUser.js";
 import { Login } from "./pages/login";
@@ -24,14 +24,8 @@ import { FormRegisterAnimal } from "./pages/formRegisterAnimal";
 const Layout = () => {
   const basename = process.env.BASENAME || "";
 
+  // Validación para mostrar page perfil adoptante o de protectora
   const [validation, setValidation] = useState(false);
-
-  // useEffect(() => {
-  //   localStorage.getItem("isShelter")
-  //     ? setValidation(!validation)
-  //     : setValidation(false);
-  // }, [localStorage.getItem("isShelter")]);
-
   useEffect(() => {
     setValidation(JSON.parse(localStorage.getItem("isShelter")));
   });
@@ -44,19 +38,11 @@ const Layout = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-
-            {/*{store.isShelter === true ? (
-              <Route path="/profile" element={<PerfilProtectora />} />
-            ) : (
-              <Route path="/profile" element={<PerfilAdopter />} />
-            )}*/}
-
             {validation === true ? (
               <Route path="/profile" element={<PerfilProtectora />} />
             ) : (
               <Route path="/profile" element={<PerfilAdopter />} />
             )}
-
             <Route path="/alldogslist" element={<AllDogsList />} />
             <Route path="/blogsection" element={<BlogSection />} />
             <Route path="/blogart" element={<BlogArt />} />
@@ -70,8 +56,7 @@ const Layout = () => {
               path="/formregisteranimal"
               element={<FormRegisterAnimal />}
             />
-            <Route path="/shelteranimals" element={<ShelterAnimals />} />
-            <Route path="/shelteranimals" element={<ShelterAnimals />} />
+            <Route path="/landingshelter" element={<LandingShelter />} />
             <Route path="*" element={<h1>Not found</h1>}></Route>
           </Routes>
           <Footer />
