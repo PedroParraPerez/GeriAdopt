@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import "../../styles/adopter.css";
+import "../../styles/PerfilAdopter.css";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { FavList } from "../component/favList";
 import { InfoAdopter } from "../component/InfoAdopter";
+import { MiniTitle } from "../component/minititle";
 
 export const PerfilAdopter = () => {
   const { store, actions } = useContext(Context);
@@ -34,6 +35,7 @@ export const PerfilAdopter = () => {
       {validate ? (
         <div className="container-fluid">
           <InfoAdopter />
+          <MiniTitle title="Mis favoritos" />
           <div className="row Adopter_cardlist">
             <FavList />
           </div>

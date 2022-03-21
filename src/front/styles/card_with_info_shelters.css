@@ -29,6 +29,13 @@
   margin-top: 1rem;
   align-items: center;
 }
+.placebottom {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 .cardWithInfo_button {
   background-color: white;
   color: black;
@@ -36,6 +43,8 @@
   border: 1px solid black;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-family: "Alegreya Sans", sans-serif;
+  background-color: #f09977;
 }
 .cardWithInfo_labelprofileinfo {
   font-family: "Alegreya Sans", sans-serif;

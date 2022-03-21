@@ -1,0 +1,22 @@
+@media only screen and (max-width: 1224px) {
+  .Adopter_ImgTitleFavs {
+    display: none;
+  }
+}
+.Adopter_ImgTitleFavs {
+  position: absolute;
+  width: 81px;
+  left: 0%;
+  height: auto;
+  top: -49.8%;
+  z-index: 2;
+}
+.Adopter_titleFavs {
+  padding-right: 2rem;
+  position: relative;
+  display: flex;
+  padding-left: 3rem;
+  margin-top: 3rem;
+  border-bottom: 0.2em solid orange;
+  font-family: "Alegreya Sans", sans-serif;
+}

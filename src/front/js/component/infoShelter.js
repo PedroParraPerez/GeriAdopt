@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-
+import ProfileImgGeneric from "../../img/profile_image_generic.jpg";
 import { Context } from "../store/appContext";
 import SOSPeludos from "../../img/sospeludos.jpeg";
 import EditIcon from "../../img/editIcon.png";
@@ -20,8 +20,11 @@ export const InfoShelter = () => {
         <div className="row Protectora_Protectoraprofile">
           <div className="col-xl-2 Protectora_imgprofile">
             <img
-              src={SOSPeludos}
-              alt="profilephoto"
+              src={
+                store.shelterInfo.image
+                  ? store.shelterInfo.image
+                  : ProfileImgGeneric
+              }
               className="Protectora_Protectoraphoto"
             />
           </div>

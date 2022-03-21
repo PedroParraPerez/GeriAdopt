@@ -55,15 +55,15 @@ export const CardShelter = () => {
                   </span>
                   <span>
                     <b>
-                      <span className="cardWithInfo_labelprofileinfo">
+                      <p className="cardWithInfo_labelprofileinfo">
                         Correo: {shelter.email}
-                      </span>
+                      </p>
                     </b>
                   </span>
                 </div>
               </div>
               <div className="row">
-                <div className="col-md-12">
+                <div className="col-md-12 placebottom">
                   <Link to="/landingshelter">
                     <button className=" btn cardWithInfo_button">
                       Ver nuestros animales

@@ -2,9 +2,7 @@ import React, { useContext, useEffect } from "react";
 
 import { Context } from "../store/appContext";
 
-import GirlPhoto from "../../img/girlphoto.jpg";
 import EditIcon from "../../img/editIcon.png";
-import ImgTitleFavs from "../../img/imagetitlefavs.png";
 
 export const InfoAdopter = () => {
   const { store, actions } = useContext(Context);
@@ -68,20 +66,6 @@ export const InfoAdopter = () => {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="row Adopter_titleFavs">
-          <div className="col-xl-1">
-            <img
-              src={ImgTitleFavs}
-              alt="titlecat"
-              className="Adopter_ImgTitleFavs"
-            />
-          </div>
-          <div className="col-xl-2">
-            <h2>
-              <b>Mis Favoritos</b>
-            </h2>
           </div>
         </div>
       </div>
