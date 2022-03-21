@@ -3,28 +3,28 @@ import React from "react";
 import "../../styles/allShelters.css";
 import SOSPeludos from "../../img/sospeludos.jpeg";
 import ImgTitleFavs from "../../img/imagetitlefavs.png";
-import { CardPerfilShelter } from "../component/cardperfilshelter";
+import { CardShelter } from "../component/card_with_info_shelters";
 
 export const AllShelterList = () => {
   return (
     <>
       <div className="container-fluid">
-        <div className="row shelter_titleFavs">
+        <div className="row allshelters__shelter_titleFavs">
           <div className="col-xl-1">
             <img
               src={ImgTitleFavs}
               alt="titlecat"
-              className="shelter_ImgTitleFavs"
+              className="allshelters__ImgTitleFavs"
             />
           </div>
           <div className="col-xl-2">
-            <h2 className="titleShelter">
+            <h2 className="allshelters_titleShelter">
               <b>Protectoras</b>
             </h2>
           </div>
         </div>
-        <div className="row shelter_cardlist">
-          <CardPerfilShelter />
+        <div className="row shelter_cardlist d-block">
+          <CardShelter />
         </div>
       </div>
     </>

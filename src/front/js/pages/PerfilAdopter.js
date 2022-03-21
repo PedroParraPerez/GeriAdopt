@@ -8,7 +8,7 @@ import { InfoAdopter } from "../component/InfoAdopter";
 export const PerfilAdopter = () => {
   const { store, actions } = useContext(Context);
   let navigate = useNavigate();
-  const [member, setMember] = useState([]);
+
   const [validate, setValidate] = useState();
 
   useEffect(() => {
