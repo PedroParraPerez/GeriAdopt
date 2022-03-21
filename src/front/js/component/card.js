@@ -19,7 +19,10 @@ export const Card = () => {
       store.allAnimals.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
-            <img src={Raily} className="Card_cardphoto" />
+            <img
+              src={!animal.image ? Raily : animal.image}
+              className="Card_cardphoto"
+            />
             <div className="Card_dogcardsbody">
               <h5 className="Card_card-title">
                 <b>{animal.name}</b>
@@ -73,7 +76,7 @@ export const Card = () => {
                 <img src={IconHearth} alt="FavButton" className="Card_hearth" />
               </div>
               <p className="location">
-                <img src={IconUbic} className="Card_IconUbic" /> {animal.city}
+                <img src={IconUbic} className="Card_IconUbic" />
               </p>
             </div>
           </div>

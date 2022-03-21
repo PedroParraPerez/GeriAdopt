@@ -17,7 +17,7 @@ export const CardPerfilShelter = () => {
             <div className="row shelter_shelterprofile1">
               <div className="col-xl-2 shelter_imgprofile">
                 <img
-                  src={SOSPeludos}
+                  src={shelter.image}
                   alt="profilephoto"
                   className="shelterLogo"
                 />
