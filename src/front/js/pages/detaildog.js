@@ -46,7 +46,7 @@ export const DetailDog = () => {
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Genero: </span>
-                  {store.detailAnimal.gender}
+                  {store.detailAnimal.gender == "H" ? "Hembra" : "Macho"}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Tamaño: </span>
