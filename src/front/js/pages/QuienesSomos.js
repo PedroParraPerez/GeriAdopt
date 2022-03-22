@@ -123,14 +123,15 @@ export const QuienesSomos = () => {
               de no moverse <br />
               (ya que los primero 3 años de su vida vivió encerrado en una jaula
               sin salir de allí). <br />
-              Chappie es un superviviente, un perro resiliente y valiente que
-              salió adelante en pocos meses, gracias a sus ganas de vivir y la
-              ayuda de la protectora que lo rescató y de su casa de acogida. Él
-              decidió que todavía tenía mucho por vivir y descubrir en los años
-              que le quedan. Y como es un perro especial que ha tocado nuestros
-              corazones, decidimos darle el protagonismo que se merece por su
-              historia, dándole el honor de ser no solamente el logo, sino el
-              motor de nuestro proyecto. <br />
+              Chappie es un superviviente, un perro resiliente y valiente que en
+              pocos meses, gracias a sus ganas de vivir <br />y la ayuda de la
+              protectora que lo rescató y de su casa de acogida, salió adelante.
+              <br />
+              Él decidió que todavía tenía mucho por vivir y descubrir en los
+              años que le quedan. Y como es un perro especial que ha tocado
+              nuestros corazones, decidimos darle el protagonismo que se merece
+              por su historia tan inspiradora, dándole el honor de ser no
+              solamente el logo, sino el motor de nuestro proyecto. <br />
             </h4>
             <h3 className="textoChappieDos">
               Por todos esos animales ahí afuera que luchan día tras día contra
