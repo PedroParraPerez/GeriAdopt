@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400&family=Comforter&family=Josefin+Sans:ital,wght@1,500&family=Sansita+Swashed:wght@300&family=Ubuntu:wght@300&display=swap");
+
+.titleContact {
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: bold;
+}
+
+.btnContact {
+  margin: 3rem;
+  margin-left: 86rem;
+  width: 8rem;
+  border-radius: 1rem;
+  padding: 1rem 1rem;
+  font-family: "Alegreya Sans", sans-serif;
+  background-color: #f5c0ab;
+  border: solid black 1px;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

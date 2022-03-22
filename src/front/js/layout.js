@@ -13,6 +13,7 @@ import { DetailDog } from "./pages/detaildog";
 import { LandingShelter } from "./pages/landingShelter.js";
 import { AllShelterList } from "./pages/allShelters.js";
 import { FormRegisterUser } from "./pages/formRegisterUser.js";
+import { ContactUs } from "./pages/contactus.js";
 import { Login } from "./pages/login";
 import { FormRegisterProte } from "./pages/formRegisterProte";
 import { BlogArt } from "./pages/blogart.js";
@@ -52,6 +53,7 @@ const Layout = () => {
             <Route path="/allshelters" element={<AllShelterList />} />
             <Route path="/formregisteruser" element={<FormRegisterUser />} />
             <Route path="/formregisterprote" element={<FormRegisterProte />} />
+            <Route path="/contactus" element={<ContactUs />} />
             <Route
               path="/formregisteranimal"
               element={<FormRegisterAnimal />}

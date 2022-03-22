@@ -6,6 +6,8 @@ import quienesSomos from "../../img/quienesSomos.jpg";
 import quienesSomosDos from "../../img/quienesSomosDos.jpg";
 import dogadoptedQSomos from "../../img/dogadoptedQSomos.jpg";
 import hearts from "../../img/hearts.png";
+import equipoGeriAdopt from "../../img/equipoGeriAdopt.jpg";
+import picCircleQuienesSomos from "../../img/picCircleQuienesSomos.jpg";
 
 export const QuienesSomos = () => {
   const { store, actions } = useContext(Context);
@@ -29,7 +31,7 @@ export const QuienesSomos = () => {
             <div className="centerPicQuienesSomos">
               <img
                 className="picQuienesSomos"
-                src={quienesSomos}
+                src={equipoGeriAdopt}
                 alt="quienes somos"
               />
             </div>
@@ -43,9 +45,10 @@ export const QuienesSomos = () => {
             <h4 className="textoQuienesSomos">
               Somos un grupo de programadores que amamos a los animales,
               conscientes de la realidad actual que afecta al bienestar animal.
+              <br />
               Buscamos crear una plataforma que sea un medio atractivo para la
-              difusión de animales en adopción, que se encuentran esperando una
-              familia en protectoras de España.
+              difusión de animales en adopción, <br />
+              que se encuentran esperando una familia en protectoras de España.
             </h4>
           </div>
           <div className="col-md-1"></div>
@@ -64,7 +67,7 @@ export const QuienesSomos = () => {
           <div className="col-md-2 d-flex justify-content-center">
             <img
               className="picQuienesSomosDos"
-              src={quienesSomosDos}
+              src={picCircleQuienesSomos}
               alt="quienes somos"
             />
           </div>
@@ -99,7 +102,7 @@ export const QuienesSomos = () => {
                 alt="dog that was adopted"
               />
               <h4 className="dudasSuge">¿Tienes dudas o sugerencias?</h4>
-              <Link to="/formContact">
+              <Link to="/contactus">
                 <button className="contactQuienesSomos">Contáctanos</button>
               </Link>
             </div>

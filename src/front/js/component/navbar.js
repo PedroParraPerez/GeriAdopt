@@ -57,7 +57,7 @@ export const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <Link to="/contacto">
+              <Link to="/contactus">
                 <span className="spanNavbarLink">Contacto</span>
               </Link>
             </li>
