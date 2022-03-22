@@ -112,6 +112,8 @@ data = {
             "password":generate_password_hash("1234", method='pbkdf2:sha256'),
             "email": "sospeludos.es@gmail.com",
             "image": "https://res.cloudinary.com/dqhlna24b/image/upload/v1647862285/logo_prote_sos_peludo_rxyq6a.jpg",
+            "tlf": "666234365",
+
         },
         {
             "id": 2,
@@ -121,6 +123,8 @@ data = {
             "password":generate_password_hash("1234", method='pbkdf2:sha256'),
             "email": "laestrellaanimal@gmail.com",
             "image": "https://res.cloudinary.com/dqhlna24b/image/upload/v1647862075/logo_prote_estrella_animal_v21pjs.jpg",
+            "tlf": "666239865",
+
         },
         {
             "id": 3,
@@ -130,6 +134,8 @@ data = {
             "password":generate_password_hash("1234", method='pbkdf2:sha256'),
             "email": "animalrescueespaña@gmail.com",
             "image": "https://res.cloudinary.com/dqhlna24b/image/upload/v1647862075/logo_prote_animal_rescue_o55qra.png",
+            "tlf": "666124365",
+
         },
         {
             "id": 4,
@@ -139,6 +145,8 @@ data = {
             "password":generate_password_hash("1234", method='pbkdf2:sha256'),
             "email": "agar@gmail.com",
             "image": "https://res.cloudinary.com/dqhlna24b/image/upload/v1647862075/logo_prote_AGAR_wqck0n.png",
+            "tlf": "666564365",
+
         },
         ]
 }

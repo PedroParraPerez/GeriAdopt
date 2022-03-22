@@ -48,7 +48,7 @@ export const CardShelter = () => {
                   <span>
                     <b>
                       <span className="cardWithInfo_labelprofileinfo">
-                        Teléfono: {shelter.telephone}
+                        Teléfono: {shelter.tlf}
                       </span>
                       <br />
                     </b>

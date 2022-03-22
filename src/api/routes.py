@@ -58,6 +58,7 @@ def signUpAdopter():
     age = request.json.get('age', None)
     city = request.json.get('city', None)
     address = request.json.get('address', None)
+    
 
     if not (name and surname and email and password and age and city and address and passwordrepeat):
         return jsonify({'message': 'Data not provided'}), 400
@@ -84,12 +85,13 @@ def signUpShelter():
     passwordrepeat = request.json.get('passwordrepeat', None)
     city = request.json.get('city', None)
     address = request.json.get('address', None)
+    tlf = request.json.get('tlf', None)
 
     if not (name and email and password and passwordrepeat and city and address):
         return jsonify({'message': 'Data not provided'}), 400
     
     hash_password = generate_password_hash(password)
-    shelter = Shelter(name=name, email=email, password=hash_password, city=city, address=address)
+    shelter = Shelter(name=name, email=email, password=hash_password, city=city, address=address, tlf=tlf)
     try:
 
         db.session.add(shelter)
@@ -203,6 +205,32 @@ def get_fav_list():
     return jsonify({'error': 'No favourite animals'}),404
 
 
+# ............................FilterBar............................................................
+@api.route('/filteranimals', methods=['POST'])
+def filter_animals():
+
+   
+
+    species = request.json.get('species', None)
+    gender = request.json.get('gender', None)
+    size = request.json.get('size', None)
+    age = request.json.get('age', None)
+    city = request.json.get('city', None)
+    min_age = 0
+
+    if age == "cachorro":
+        age = 1
+    elif age == "adulto":
+        age = 7
+        min_age = 1
+    elif age == "mayor":
+        age = 1000
+        min_age = 7
+    animals = Animal.query.filter( Animal.species == species, Animal.gender == gender, Animal.size == size, Animal.age <= age, Animal.age > min_age)
+    
+    return jsonify({'results': list(map(lambda animal: animal.serialize(), animals))}), 200
+
+
 # .....................VALIDACION DE TOKEN PARA ADOPTER AND SHELTER...............................
 
 
@@ -253,28 +281,3 @@ def get_all_users():
     users = User.query.all()
     return jsonify({'results': list(map(lambda user: user.serialize(), users))}),200
 
-
-
-@api.route('/filteranimals', methods=['POST'])
-def filter_animals():
-
-   
-
-    species = request.json.get('species', None)
-    gender = request.json.get('gender', None)
-    size = request.json.get('size', None)
-    age = request.json.get('age', None)
-    city = request.json.get('city', None)
-    min_age = 0
-
-    if age == "cachorro":
-        age = 1
-    elif age == "adulto":
-        age = 7
-        min_age = 1
-    elif age == "mayor":
-        age = 1000
-        min_age = 7
-    animals = Animal.query.filter( Animal.species == species, Animal.gender == gender, Animal.size == size, Animal.age <= age, Animal.age > min_age)
-    
-    return jsonify({'results': list(map(lambda animal: animal.serialize(), animals))}), 200

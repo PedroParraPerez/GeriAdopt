@@ -92,6 +92,7 @@ class Shelter(db.Model):
     city = db.Column(db.String(120), unique=False, nullable=False)
     address = db.Column(db.String(120), unique=False, nullable=False)
     image = db.Column(db.String(240), unique=False, nullable=True)
+    tlf = db.Column(db.String(240), unique=False, nullable=True)
     animals = db.relationship('Animal', backref='shelter', lazy=True)
     # Mandamos la informacion de la ID de la protectora atraves de la relationship indicandole la table a la que se la mandamos "Animal"
 
@@ -103,6 +104,8 @@ class Shelter(db.Model):
             'city':self.city,
             'address':self.address,
             'image':self.image,
+            'tlf':self.tlf,
+            # 'animals':Animal.query.get(self.animals).serialize()
         }
 
 

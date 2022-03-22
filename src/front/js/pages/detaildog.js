@@ -62,7 +62,9 @@ export const DetailDog = () => {
                 </li>
                 <br />
                 <li className="detaildog_info_list">
-                  <span className="detaildog_info_list_label">Protectora:</span>
+                  <span className="detaildog_info_list_label">
+                    Protectora:{" "}
+                  </span>
                   {store.detailAnimal.shelter
                     ? store.detailAnimal.shelter.name
                     : ""}
@@ -81,7 +83,7 @@ export const DetailDog = () => {
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">
-                    Correo de contacto:
+                    Correo de contacto:{" "}
                   </span>
                   {store.detailAnimal.shelter
                     ? store.detailAnimal.shelter.email
@@ -89,9 +91,11 @@ export const DetailDog = () => {
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">
-                    Teléfono de contacto:
+                    Teléfono de contacto:{" "}
                   </span>
-                  NO MAPEADO
+                  {store.detailAnimal.shelter
+                    ? store.detailAnimal.shelter.tlf
+                    : ""}
                 </li>
               </ul>
             </div>

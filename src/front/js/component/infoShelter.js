@@ -71,6 +71,14 @@ export const InfoShelter = () => {
                 <p>
                   <b>
                     <span className="Protectora_labelprofileinfo">
+                      Teléfono:{" "}
+                    </span>
+                    {store.shelterInfo.tlf}
+                  </b>
+                </p>
+                <p>
+                  <b>
+                    <span className="Protectora_labelprofileinfo">
                       Direción:{" "}
                     </span>
                     {store.shelterInfo.address}
