@@ -118,9 +118,7 @@ export const FormRegisterAnimal = () => {
                 </div>
                 <div className="row">
                   <div className="col-xl-6">
-                    <label htmlFor="size">
-                      Tamaño (Pequeño, Mediano y Grande):
-                    </label>
+                    <label htmlFor="size">Tamaño:</label>
                     <select
                       onChange={(e) => {
                         setFormregisterAnimal({
@@ -154,18 +152,6 @@ export const FormRegisterAnimal = () => {
                         Grande
                       </option>
                     </select>
-                    {/* 
-                    <input
-                      onChange={(event) => {
-                        setFormregisterAnimal({
-                          ...formregisterAnimal,
-                          [event.target.name]: event.target.value,
-                        });
-                      }}
-                      type="text"
-                      className="form-control formRegisterProte_Input"
-                      name="size"
-                    /> */}
                   </div>
                   <div className="col-xl-6">
                     <label htmlFor="age">Edad:</label>
@@ -198,7 +184,7 @@ export const FormRegisterAnimal = () => {
                     />
                   </div>
                   <div className="col-xl-6">
-                    <label htmlFor="description">Descripcion:</label>
+                    <label htmlFor="description">Descripcion larga:</label>
                     <input
                       onChange={(event) => {
                         setFormregisterAnimal({
