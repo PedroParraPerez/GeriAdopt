@@ -36,18 +36,39 @@ export const FormRegisterAnimal = () => {
                 </div>
                 <div className="row">
                   <label htmlFor="species">Especie:</label>
-                  <input
-                    onChange={(event) => {
+                  <select
+                    onChange={(e) => {
                       setFormregisterAnimal({
                         ...formregisterAnimal,
-                        [event.target.name]: event.target.value,
+                        species: e.target.value,
                       });
                     }}
-                    type="text"
-                    className="form-control formRegisterProte_Input"
+                    className="form-select formRegisterAnimal_Input"
+                    aria-label="Default select example"
                     name="species"
-                    required
-                  />
+                  >
+                    <option selected disabled>
+                      Especie
+                    </option>
+                    <option
+                      className="alldoglist_dropdown_filter"
+                      value="Perro"
+                    >
+                      Perro
+                    </option>
+                    <option
+                      className="formRegisterAnimal_dropdown_filter"
+                      value="Gato"
+                    >
+                      Gatos
+                    </option>
+                    <option
+                      className="formRegisterAnimal_dropdown_filter"
+                      value="Otro"
+                    >
+                      Otros...
+                    </option>
+                  </select>
                 </div>
                 <div className="row">
                   <label htmlFor="race">Raza:</label>
@@ -66,24 +87,74 @@ export const FormRegisterAnimal = () => {
                 </div>
                 <div className="row">
                   <label htmlFor="gender">Genero (M o F):</label>
-                  <input
-                    onChange={(event) => {
+                  <select
+                    onChange={(e) => {
                       setFormregisterAnimal({
                         ...formregisterAnimal,
-                        [event.target.name]: event.target.value,
+                        gender: e.target.value,
                       });
                     }}
-                    type="text"
-                    className="form-control formRegisterProte_Input"
+                    className="form-select formRegisterAnimal_Input"
+                    aria-label="Default select example"
                     name="gender"
-                    required
-                  />
+                    requiered
+                  >
+                    <option selected disabled>
+                      Genero
+                    </option>
+                    <option
+                      className="formRegisterAnimal_dropdown_value"
+                      value="M"
+                    >
+                      Masculino
+                    </option>
+                    <option
+                      className="formRegisterAnimal_dropdown_value"
+                      value="F"
+                    >
+                      Femenino
+                    </option>
+                  </select>
                 </div>
                 <div className="row">
                   <div className="col-xl-6">
                     <label htmlFor="size">
                       Tamaño (Pequeño, Mediano y Grande):
                     </label>
+                    <select
+                      onChange={(e) => {
+                        setFormregisterAnimal({
+                          ...formregisterAnimal,
+                          size: e.target.value,
+                        });
+                      }}
+                      className="form-select formRegisterAnimal_input_value"
+                      aria-label="Default select example"
+                      name="size"
+                    >
+                      <option selected disabled>
+                        Tamaño
+                      </option>
+                      <option
+                        className="formRegisterAnimal_dropdown_value"
+                        value="Pequeno"
+                      >
+                        Pequeño
+                      </option>
+                      <option
+                        className="formRegisterAnimal_dropdown_value"
+                        value="Mediano"
+                      >
+                        Mediano
+                      </option>
+                      <option
+                        className="formRegisterAnimal_dropdown_value"
+                        value="Grande"
+                      >
+                        Grande
+                      </option>
+                    </select>
+                    {/* 
                     <input
                       onChange={(event) => {
                         setFormregisterAnimal({
@@ -94,7 +165,7 @@ export const FormRegisterAnimal = () => {
                       type="text"
                       className="form-control formRegisterProte_Input"
                       name="size"
-                    />
+                    /> */}
                   </div>
                   <div className="col-xl-6">
                     <label htmlFor="age">Edad:</label>
@@ -155,7 +226,7 @@ export const FormRegisterAnimal = () => {
                     className="btn formRegisterProte_button"
                     type="submit"
                   >
-                    Registrarme
+                    Crear Animal
                   </button>
                 </div>
               </div>

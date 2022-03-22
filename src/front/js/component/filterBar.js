@@ -27,12 +27,12 @@ export const FilterBar = () => {
                 Especie
               </option>
               <option className="alldoglist_dropdown_filter" value="Perro">
-                Perros
+                Perro
               </option>
               <option className="alldoglist_dropdown_filter" value="Gato">
                 Gatos
               </option>
-              <option className="alldoglist_dropdown_filter" value="Otros">
+              <option className="alldoglist_dropdown_filter" value="Otro">
                 Otros...
               </option>
             </select>

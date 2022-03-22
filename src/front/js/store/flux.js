@@ -111,7 +111,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           alert("animal creado");
           window.location.reload(false);
         } else {
-          alert("Ya hay una protectora registrada con ese email");
+          alert("Falta un campo por especificar");
         }
       },
 
