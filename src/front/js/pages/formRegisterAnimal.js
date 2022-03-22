@@ -106,13 +106,13 @@ export const FormRegisterAnimal = () => {
                       className="formRegisterAnimal_dropdown_value"
                       value="M"
                     >
-                      Masculino
+                      Macho
                     </option>
                     <option
                       className="formRegisterAnimal_dropdown_value"
-                      value="F"
+                      value="H"
                     >
-                      Femenino
+                      Hembra
                     </option>
                   </select>
                 </div>

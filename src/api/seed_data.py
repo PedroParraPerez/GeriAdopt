@@ -58,7 +58,7 @@ data = {
             "id": 2,
             "name":"Ginger",
             "species": "Gato",
-            "gender": "F",
+            "gender": "H",
             "race": "Europeo",
             "size": "Mediano",
             "age": 5,

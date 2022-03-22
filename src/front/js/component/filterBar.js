@@ -49,10 +49,10 @@ export const FilterBar = () => {
                 Genero
               </option>
               <option className="alldoglist_dropdown_filter" value="M">
-                Masculino
+                Macho
               </option>
-              <option className="alldoglist_dropdown_filter" value="F">
-                Femenino
+              <option className="alldoglist_dropdown_filter" value="H">
+                Hembra
               </option>
             </select>
           </div>
