@@ -63,7 +63,9 @@ export const DetailDog = () => {
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Protectora:</span>
-                  NO MAPEADO
+                  {store.detailAnimal.shelter
+                    ? store.detailAnimal.shelter.name
+                    : ""}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Ubicación: </span>

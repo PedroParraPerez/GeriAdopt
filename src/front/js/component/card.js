@@ -12,11 +12,10 @@ import { Context } from "../store/appContext";
 
 export const Card = () => {
   const { store, actions } = useContext(Context);
-  const [animal, setAnimal] = useState();
 
-  useEffect(() => {
-    setAnimal(
-      store.allAnimals.map((animal) => {
+  return (
+    <>
+      {store.allAnimals.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
             <img
@@ -81,8 +80,7 @@ export const Card = () => {
             </div>
           </div>
         );
-      })
-    );
-  }, [store.animalcreated]);
-  return <>{animal}</>;
+      })}
+    </>
+  );
 };

@@ -79,7 +79,7 @@ class Animal(db.Model):
             'description':self.description,
             'short_description':self.short_description,
             'image':self.image,
-            'shelter_id':self.shelter_id,
+            'shelter':Shelter.query.get(self.shelter_id).serialize()
         }
 
         

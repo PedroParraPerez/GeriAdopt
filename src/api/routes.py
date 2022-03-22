@@ -253,3 +253,28 @@ def get_all_users():
     users = User.query.all()
     return jsonify({'results': list(map(lambda user: user.serialize(), users))}),200
 
+
+
+@api.route('/filteranimals', methods=['POST'])
+def filter_animals():
+
+   
+
+    species = request.json.get('species', None)
+    gender = request.json.get('gender', None)
+    size = request.json.get('size', None)
+    age = request.json.get('age', None)
+    city = request.json.get('city', None)
+    min_age = 0
+
+    if age == "cachorro":
+        age = 3
+    elif age == "adulto":
+        age = 7
+        min_age = 3
+    elif age == "mayor":
+        age = 1000
+        min_age = 7
+    animals = Animal.query.filter( Animal.species == species, Animal.gender == gender, Animal.size == size, Animal.age <= age, Animal.age > min_age)
+    
+    return jsonify({'results': list(map(lambda animal: animal.serialize(), animals))}), 200
