@@ -120,7 +120,12 @@ export const FilterBar = () => {
             >
               Buscar
             </button>
-            <button type="Reset" className="Alldogslist_FilterButtonReset">
+            <button
+              onClick={() => {
+                actions.getAllAnimal();
+              }}
+              className="Alldogslist_FilterButtonReset"
+            >
               X
             </button>
           </div>

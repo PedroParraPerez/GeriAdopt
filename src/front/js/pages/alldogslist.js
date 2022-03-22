@@ -4,10 +4,6 @@ import { Card } from "../component/card.js";
 import { FilterBar } from "../component/filterBar.js";
 
 export const AllDogsList = () => {
-  const HundleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <>
       <div className="container-fluid">
