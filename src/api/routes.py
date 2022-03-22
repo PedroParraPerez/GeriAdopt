@@ -166,6 +166,7 @@ def get_shelter_info():
     id = get_jwt_identity()
 
     shelter = Shelter.query.get(id)
+    # print(shelter.name, shelter.email, shelter.city, shelter.animals)
     return jsonify({'results': shelter.serialize()}),200
 
 # ...................RUTAS RELACIONADAS CON FAVORITOS MANYTOMANY...................................

@@ -105,7 +105,8 @@ class Shelter(db.Model):
             'address':self.address,
             'image':self.image,
             'tlf':self.tlf,
-            # 'animals':Animal.query.get(self.animals).serialize()
+            # 'animals':list(map(lambda animal: animal.serialize(), self.animals))
+            # 'animals': [animal.serialize() for animal in self.animals]
         }
 
 
