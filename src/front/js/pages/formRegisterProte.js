@@ -93,6 +93,18 @@ export const FormRegisterProte = () => {
                       className="form-control formRegisterProte_Input"
                       name="address"
                     />
+                    <label htmlFor="tlf">Teléfono:</label>
+                    <input
+                      onChange={(event) => {
+                        setFormregisterShelter({
+                          ...formregisterShelter,
+                          [event.target.name]: event.target.value,
+                        });
+                      }}
+                      type="text"
+                      className="form-control formRegisterProte_Input"
+                      name="tlf"
+                    />
                   </div>
                   <div className="col-xl-6">
                     <label htmlFor="city">Ciudad:</label>
