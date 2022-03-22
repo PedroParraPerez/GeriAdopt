@@ -37,7 +37,8 @@ export const DetailDog = () => {
               <ul>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Edad: </span>
-                  {store.detailAnimal.age} años
+                  {store.detailAnimal.age}{" "}
+                  {store.detailAnimal.age <= 1 ? "año" : "años"}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Raza: </span>

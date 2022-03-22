@@ -38,7 +38,9 @@ export const Card = () => {
                       className="Card_CaractIcon"
                     />
                     <p className="Card_iconTexInv">
-                      <b>{animal.age} años</b>
+                      <b>
+                        {animal.age} {animal.age <= 1 ? "año" : "años"}
+                      </b>
                     </p>
                   </div>
                   <div className="col-xl-4">
