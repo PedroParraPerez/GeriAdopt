@@ -268,10 +268,10 @@ def filter_animals():
     min_age = 0
 
     if age == "cachorro":
-        age = 3
+        age = 1
     elif age == "adulto":
         age = 7
-        min_age = 3
+        min_age = 1
     elif age == "mayor":
         age = 1000
         min_age = 7
