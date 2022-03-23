@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
+
+.wrap {
+  width: 15rem;
+  padding-top: 1%;
+  border-radius: 5px;
+  box-shadow: 3px 3px green;
+  text-decoration: underline;
+  border: solid 2px rgb(141, 185, 141);
+  color: rgb(0, 59, 0);
+  background-color: rgb(75, 189, 75);
+  margin-bottom: 2rem;
+  position: fixed;
+  top: 20%;
+  left: 80%;
+  /* visibility: hidden; */
+}
