@@ -14,7 +14,7 @@ export const CardProtectora = () => {
 
   return (
     <>
-      {store.allAnimals.map((animal) => {
+      {store.animalsInMyShelter.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
             <img src={Mojito} className="Card_cardphoto" />
@@ -59,7 +59,7 @@ export const CardProtectora = () => {
                   </div>
                 </div>
               </div>
-              <Link to={"/detailanimal/" + animal.name}>
+              <Link to={"/detailanimal/" + animal.id}>
                 <button className="btn Card_btn">Conóceme!</button>
               </Link>
               <div className="editButton">

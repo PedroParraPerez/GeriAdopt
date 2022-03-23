@@ -23,7 +23,6 @@ const injectContext = (PassedComponent) => {
     useEffect(() => {
       state.actions.getAllAnimal();
       state.actions.getAllShelters();
-      state.actions.getAnimalsinmyshelter();
     }, []);
 
     return (

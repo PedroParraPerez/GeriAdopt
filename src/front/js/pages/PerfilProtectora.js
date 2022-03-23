@@ -17,6 +17,7 @@ export const PerfilProtectora = () => {
 
   useEffect(() => {
     validateToken();
+    actions.getAnimalsOfMyShelter();
   }, []);
 
   const validateToken = async () => {
@@ -51,7 +52,9 @@ export const PerfilProtectora = () => {
             </Link>
           </div>
         </div>
-        <div className="row Protectora_cardlist"></div>
+        <div className="row Protectora_cardlist">
+          <CardProtectora />
+        </div>
       </div>
     </>
   );
