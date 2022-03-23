@@ -68,14 +68,23 @@ export const Card = () => {
               <Link to={"/detailanimal/" + animal.id}>
                 <button className="btn Card_btn">Conóceme!</button>
               </Link>
-              <div
-                onClick={() => {
-                  actions.saveFavAnimal(animal.id);
-                }}
-                className="Card_FavButton"
-              >
-                <img src={IconHearth} alt="FavButton" className="Card_hearth" />
-              </div>
+              {localStorage.getItem("isShelter") ? (
+                <div
+                  onClick={() => {
+                    actions.saveFavAnimal(animal.id);
+                  }}
+                  className="Card_FavButton"
+                >
+                  <img
+                    src={IconHearth}
+                    alt="FavButton"
+                    className="Card_hearth"
+                  />
+                </div>
+              ) : (
+                ""
+              )}
+
               <p className="location">
                 <img src={IconUbic} className="Card_IconUbic" />
               </p>
