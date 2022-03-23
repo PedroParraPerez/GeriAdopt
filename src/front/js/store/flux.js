@@ -114,6 +114,22 @@ const getState = ({ getStore, getActions, setStore }) => {
           alert("Falta un campo por especificar");
         }
       },
+      // ...............................EDITAR DETERMINADOS VALORES DE LAS BASES DE DATOS............................................................
+
+      editInfoAdopter: async (info) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "editinfoadpoter",
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            body: JSON.stringify(info),
+          }
+        );
+      },
 
       // ................... Obtener info de: TODOS los animales, UN SOLO animal,  TODAS las protectora.............................
 

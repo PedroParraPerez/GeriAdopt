@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 
 import EditIcon from "../../img/editIcon.png";
+import { Link } from "react-router-dom";
 
 export const InfoAdopter = () => {
   const { store, actions } = useContext(Context);
@@ -26,11 +27,13 @@ export const InfoAdopter = () => {
             <div className="row Adopter_edit">
               <div className="col-xl-12">
                 <div className="Adopter_editbutton">
-                  <img
-                    src={EditIcon}
-                    className="Adopter_editicon"
-                    alt="editIcon"
-                  />
+                  <Link to="/formeditinfoadopter">
+                    <img
+                      src={EditIcon}
+                      className="Adopter_editicon"
+                      alt="editIcon"
+                    />
+                  </Link>
                 </div>
               </div>
             </div>

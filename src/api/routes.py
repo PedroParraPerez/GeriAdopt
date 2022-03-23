@@ -169,8 +169,39 @@ def get_shelter_info():
     # print(shelter.name, shelter.email, shelter.city, shelter.animals)
     return jsonify({'results': shelter.serialize()}),200
 
-# ...................RUTAS RELACIONADAS CON FAVORITOS MANYTOMANY...................................
 
+# ....................EDITAR INFORMACION EN DETERMINADOS CAMBIOS DE LAS BD.........................................
+# @api.route('/editinfoadpoter', methods=['PUT'])
+# @jwt_required()
+# def edit_info_adopter():
+#     id = get_jwt_identity()
+#     adopter = User.query.get(id)
+
+#     name = request.json.get('name', None)
+#     surname = request.json.get('surname', None)
+#     email = request.json.get('email', None)
+#     password = request.json.get('password', None)
+#     passwordrepeat = request.json.get('passwordrepeat', None)
+#     age = request.json.get('age', None)
+#     city = request.json.get('city', None)
+#     address = request.json.get('address', None)
+
+#     hash_password = generate_password_hash(password)
+#     adopter = User(name=name, surname=surname, email=email, password=hash_password, age=age, city=city, address=address)
+#     try:
+
+#         db.session.add(adopter)
+#         db.session.commit()
+        
+#         print(adopter.name, adopter.surname, adopter.email, adopter.password, adopter.age)
+#         return jsonify({'results': adopter.serialize()}), 201
+
+
+
+
+
+
+# ...................RUTAS RELACIONADAS CON FAVORITOS MANYTOMANY...................................
 
 @api.route('/favanimal/<int:animal_id>', methods=['POST'])
 @jwt_required()
