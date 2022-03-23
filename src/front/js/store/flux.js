@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       URLAPIDOGS:
-        "https://3001-sromk-proyectofinalpl-sl64royrnt0.ws-eu38.gitpod.io/api/",
+        "https://3001-sromk-proyectofinalpl-7knmvc49oca.ws-eu38.gitpod.io/api/",
       allAnimals: [], //Todos los animales
       allShelters: [], //Todas las protectoras
       detailAnimal: [], //Info de 1 solo animal
@@ -130,7 +130,19 @@ const getState = ({ getStore, getActions, setStore }) => {
           }
         );
       },
-
+      getAnimalsinmyshelter: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "profile/animal", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        const data = await response.json();
+        console.log("@@@@@@" + data.results);
+        // setStore({ allAnimals: data.results });
+      },
       // ................... Obtener info de: TODOS los animales, UN SOLO animal,  TODAS las protectora.............................
 
       getAllAnimal: async () => {

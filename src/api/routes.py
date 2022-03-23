@@ -138,6 +138,7 @@ def registerAnimal():
 @api.route('/allanimals', methods=['GET'])
 def get_all_dogs():
     animals = Animal.query.all()
+    
     return jsonify({'results': list(map(lambda animal: animal.serialize(), animals))}),200
 
 @api.route('/allshelters', methods=['GET'])
@@ -169,33 +170,52 @@ def get_shelter_info():
     # print(shelter.name, shelter.email, shelter.city, shelter.animals)
     return jsonify({'results': shelter.serialize()}),200
 
+# un GET de profile/animal prtegida por token
+# 
+@api.route('/profile/animal', methods=['GET'])
+@jwt_required()
+def animals_in_my_shelter():
+    print("ESTOY DENTRO")
+    id = get_jwt_identity()
+    animals = Animal.query.filter(Animal.shelter_id == id)
+    print(animals)
+
+    return ({'results':[animal.serialize() for animal in animals]})
+
+
+
+
 
 # ....................EDITAR INFORMACION EN DETERMINADOS CAMBIOS DE LAS BD.........................................
-# @api.route('/editinfoadpoter', methods=['PUT'])
-# @jwt_required()
-# def edit_info_adopter():
-#     id = get_jwt_identity()
-#     adopter = User.query.get(id)
 
-#     name = request.json.get('name', None)
-#     surname = request.json.get('surname', None)
-#     email = request.json.get('email', None)
-#     password = request.json.get('password', None)
-#     passwordrepeat = request.json.get('passwordrepeat', None)
-#     age = request.json.get('age', None)
-#     city = request.json.get('city', None)
-#     address = request.json.get('address', None)
+@api.route('/editinfoadpoter', methods=['PUT'])
+@jwt_required()
+def edit_info_adopter():
+    id = get_jwt_identity()
+    adopterId = User.query.get(id)
+    
+    name = request.json.get('name', None)
+    adopterId.surname = request.json.get('surname', None)
+    email = request.json.get('email', None)
+    password = request.json.get('password', None)
+    passwordrepeat = request.json.get('passwordrepeat', None)
+    age = request.json.get('age', None)
+    city = request.json.get('city', None)
+    address = request.json.get('address', None)
+    
+    hash_password = generate_password_hash(password)
+    adopter = User()
+    try:
 
-#     hash_password = generate_password_hash(password)
-#     adopter = User(name=name, surname=surname, email=email, password=hash_password, age=age, city=city, address=address)
-#     try:
-
-#         db.session.add(adopter)
-#         db.session.commit()
+        db.session.add(adopter)
+        db.session.commit()
         
-#         print(adopter.name, adopter.surname, adopter.email, adopter.password, adopter.age)
-#         return jsonify({'results': adopter.serialize()}), 201
-
+        
+        return jsonify({'results': adopter.serialize()}),201
+        
+    except Exception as err:
+        print(str(err))
+        return jsonify({'message': str(err)}), 500
 
 
 

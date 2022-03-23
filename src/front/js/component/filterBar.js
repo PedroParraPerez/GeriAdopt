@@ -7,10 +7,6 @@ export const FilterBar = () => {
   const [filter, setFilter] = useState({});
   const { store, actions } = useContext(Context);
 
-  const hundleSubmit = () => {
-    actions.filteranimals(filter);
-  };
-
   return (
     <>
       <div className="container-fluid">
@@ -114,7 +110,7 @@ export const FilterBar = () => {
           <div className="col-md-2 Alldogslist_filterbuttons">
             <button
               onClick={() => {
-                hundleSubmit();
+                actions.filteranimals(filter);
               }}
               className="Alldogslist_filterbuttonsubmit"
             >
