@@ -9,6 +9,7 @@ import IconUbic from "../../img/IconUbicacion.png";
 import IconHearth from "../../img/IconHearth.png";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { DeleteToFavoritesPoster } from "./deleteToFavoritesPoster";
 
 export const Card = () => {
   const { store, actions } = useContext(Context);
@@ -19,7 +20,7 @@ export const Card = () => {
       {mes == true ? (
         <AddToFavoritesPoster />
       ) : mes == false ? (
-        "Eliminado de favoritos"
+        <DeleteToFavoritesPoster />
       ) : (
         ""
       )}
