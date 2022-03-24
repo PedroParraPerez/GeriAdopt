@@ -15,6 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       shelterInfo: [],
       filteranimals: [],
       animalsInMyShelter: [],
+      isloged: false,
     },
     actions: {
       //.....................Login, LogOut RegisterUser, RegisterShelter, RegisterAnimal ........................................    //
@@ -37,6 +38,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({
             currentMember: [data.user],
           });
+          setStore({ isloged: true });
+
           localStorage.setItem("token", data.token);
           localStorage.setItem("isShelter", data.type);
           return true;
@@ -49,7 +52,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       logout: () => {
         localStorage.removeItem("token");
         localStorage.removeItem("isShelter");
-        window.location.reload(false);
+        setStore({ isloged: false });
       },
 
       registerUser: async (user) => {
@@ -68,6 +71,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
           localStorage.setItem("token", data.token);
           localStorage.setItem("isShelter", false);
+          setStore({ isloged: true });
           return true;
         } else {
           alert("Ya hay un usuario registrado con ese email");
@@ -89,7 +93,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           const data = await response.json();
           localStorage.setItem("token", data.token);
           localStorage.setItem("isShelter", true);
-          window.location.reload(false);
+          setStore({ isloged: true });
         } else {
           alert("Ya hay una protectora registrada con ese email");
         }
@@ -110,7 +114,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           const data = await response.json();
           setStore({ animalcreated: Math.random() });
           alert("animal creado");
-          window.location.reload(false);
         } else {
           alert("Falta un campo por especificar");
         }
@@ -131,19 +134,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           }
         );
       },
-      getAnimalsOfMyShelter: async () => {
-        const response = await fetch(getStore().URLAPIDOGS + "profile/animal", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
-        const data = await response.json();
 
-        setStore({ animalsInMyShelter: data.results });
-      },
       // ................... Obtener info de: TODOS los animales, UN SOLO animal,  TODAS las protectora.............................
 
       getAllAnimal: async () => {
@@ -164,6 +155,20 @@ const getState = ({ getStore, getActions, setStore }) => {
         );
         const data = await response.json();
         setStore({ detailAnimal: data.results });
+      },
+
+      getAnimalsOfMyShelter: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "profile/animal", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        const data = await response.json();
+
+        setStore({ animalsInMyShelter: data.results });
       },
       //..................................Obtener info de individual de ADOPTANTE Y PROTECTORA para perfil
 

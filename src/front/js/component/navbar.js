@@ -62,7 +62,7 @@ export const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item dropdown">
-              {localStorage.getItem("token") ? (
+              {store.isloged ? (
                 <>
                   {" "}
                   <Link to="/profile">
