@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../../../front/styles/navbar.css";
 import Logo_GeriAdopt_2 from "../../img/Logo_GeriAdopt_2.png";
 import { Context } from "../store/appContext";
-import { AddToFavoritesPoster } from "./addToFavoritesPoster.js";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
@@ -121,7 +120,6 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-      <AddToFavoritesPoster />
     </>
   );
 };

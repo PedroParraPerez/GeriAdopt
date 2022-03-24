@@ -10,7 +10,6 @@ const getState = ({ getStore, getActions, setStore }) => {
       validationToken: [], //validacion del token
       animalcreated: false, // variable de control para la creacion de animales
       favlist: [], // Info de la lista de favoritos de un adoptante
-      controlfav: undefined,
       adopterInfo: [],
       shelterInfo: [],
       filteranimals: [],
@@ -215,11 +214,9 @@ const getState = ({ getStore, getActions, setStore }) => {
         );
 
         if (response.status == 200) {
-          alert("Añadido a me gusta");
-          setStore({ controlfav: Math.random() });
-          console.log(getStore().controlfav);
-        } else {
-          alert("Nose ha podido añadir a me gusta");
+          getActions().getfavlist();
+          const blabla = await response.json();
+          return blabla.response;
         }
       },
       getfavlist: async () => {

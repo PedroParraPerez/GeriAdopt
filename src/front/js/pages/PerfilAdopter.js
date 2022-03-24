@@ -26,10 +26,6 @@ export const PerfilAdopter = () => {
     response.ok ? setValidate(response.ok) : navigate("/login");
   };
 
-  useEffect(() => {
-    actions.getfavlist();
-  }, [store.controlfav]);
-
   return (
     <>
       {validate ? (

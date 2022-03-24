@@ -7,16 +7,16 @@ import GenderIcon from "../../img/GenderIcon.png";
 import RazaIcon from "../../img/razaIcon.png";
 import IconUbic from "../../img/IconUbicacion.png";
 import IconHearth from "../../img/IconHearth.png";
+import Mojito from "../../img/Mojito.jpg";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const FavList = () => {
   const { store, actions } = useContext(Context);
-  const [renderfavlist, setRenderfavlist] = useState();
 
-  useEffect(() => {
-    setRenderfavlist(
-      store.favlist.map((animal) => {
+  return (
+    <>
+      {store.favlist.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
             <img
@@ -81,8 +81,7 @@ export const FavList = () => {
             </div>
           </div>
         );
-      })
-    );
-  }, [store.favlist]);
-  return <>{renderfavlist}</>;
+      })}
+    </>
+  );
 };

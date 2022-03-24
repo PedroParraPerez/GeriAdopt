@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-
+import { AddToFavoritesPoster } from "../component/addToFavoritesPoster";
 import Mojito from "../../img/Mojito.jpg";
 import "../../styles/Card.css";
 import BirthdayIcon from "../../img/BirthdayIcon.png";
@@ -12,9 +12,17 @@ import { Context } from "../store/appContext";
 
 export const Card = () => {
   const { store, actions } = useContext(Context);
+  const [mes, setMes] = useState(null);
 
   return (
     <>
+      {mes == true ? (
+        <AddToFavoritesPoster />
+      ) : mes == false ? (
+        "Eliminado de favoritos"
+      ) : (
+        ""
+      )}
       {store.allAnimals.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
@@ -70,8 +78,13 @@ export const Card = () => {
               </Link>
               {localStorage.getItem("isAdopter") ? (
                 <div
-                  onClick={() => {
-                    actions.saveFavAnimal(animal.id);
+                  onClick={async () => {
+                    let response = await actions.saveFavAnimal(animal.id);
+                    setMes(response);
+
+                    setTimeout(() => {
+                      setMes(null);
+                    }, 4000);
                   }}
                   className="Card_FavButton"
                 >

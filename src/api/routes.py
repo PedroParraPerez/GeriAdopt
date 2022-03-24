@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify, url_for, Blueprint
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
-
+import datetime
 from api.models import db, User, Animal, Shelter
 from api.utils import generate_sitemap, APIException
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -41,7 +41,7 @@ def login():
     if not check_password_hash(user.password, password):
         return jsonify({'message': 'Your pass doesn"t match'}), 500
 
-    token = create_access_token(identity=user.id)
+    token = create_access_token(identity=user.id, expires_delta = datetime.timedelta(minutes=60))
 
     
     return jsonify({'token':token, 'type': type, 'user':user.serialize()}), 200
@@ -69,7 +69,7 @@ def signUpAdopter():
 
         db.session.add(user)
         db.session.commit()
-        token = create_access_token(identity=user.id)
+        token = create_access_token(identity=user.id, expires_delta = datetime.timedelta(minutes=60))
         return jsonify({'token': token}), 201
 
     except Exception as err:
@@ -96,7 +96,7 @@ def signUpShelter():
 
         db.session.add(shelter)
         db.session.commit()
-        token = create_access_token(identity=shelter.id)
+        token = create_access_token(identity=shelter.id, expires_delta = datetime.timedelta(minutes=60))
         return jsonify({'token': token}), 201
 
     except Exception as err:
@@ -175,11 +175,10 @@ def get_shelter_info():
 @api.route('/profile/animal', methods=['GET'])
 @jwt_required()
 def animals_in_my_shelter():
-    print("ESTOY DENTRO")
+    
     id = get_jwt_identity()
     animals = Animal.query.filter(Animal.shelter_id == id)
-    print(animals)
-
+    
     return ({'results':[animal.serialize() for animal in animals]})
 
 
@@ -202,17 +201,12 @@ def edit_info_adopter():
     city = request.json.get('city', None)
     address = request.json.get('address', None)
     
-    print("AAAAAAAAAAAAAAAAAAAA", name)
-    print(surname)
-    print(password)
-    print(age)
-    print(city)
-    print(address)
+
 
     if password != None:
         hash_password = generate_password_hash(password)
 
-        print(hash_password)
+        
    
 
     if  (name or surname or email or hash_password or age or city or address ):
@@ -255,11 +249,13 @@ def save_fav_animal(animal_id):
         adopter.animalsfav.append(animal)
         db.session.add(animal)
         db.session.commit()
+        return jsonify({'response': True}),200
     else:
         adopter.animalsfav.remove(animal)
         db.session.commit()
+        return jsonify({'response': False}),200
 
-    return jsonify({'asd': "asd"}),200
+    
 
 
 
