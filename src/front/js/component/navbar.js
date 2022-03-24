@@ -62,15 +62,17 @@ export const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item dropdown">
-              {store.isloged ? (
+              {localStorage.getItem("token") ? (
                 <>
                   {" "}
                   <Link to="/profile">
                     <p className="spanNavbarLink">Mi cuenta </p>
                   </Link>
-                  <p onClick={actions.logout} className="spanNavbarLink">
-                    Cerrar Sesión
-                  </p>
+                  <Link to="/">
+                    <p onClick={actions.logout} className="spanNavbarLink">
+                      Cerrar Sesión
+                    </p>
+                  </Link>
                 </>
               ) : (
                 <>
