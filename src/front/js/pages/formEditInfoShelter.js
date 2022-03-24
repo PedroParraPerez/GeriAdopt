@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../../styles/formRegisterUser.css";
 import { Context } from "../store/appContext.js";
 
-export const FormEditInfoAdopter = () => {
+export const FormEditInfoShelter = () => {
   const [info, setInfo] = useState({});
   const { store, actions } = useContext(Context);
 
@@ -14,13 +14,13 @@ export const FormEditInfoAdopter = () => {
           <div className="col-xl-5 formRegisterUser_view">
             <div className="row formRegisterUser_title">
               <div className="col-xl-12">
-                <h2>EDITAR INFORMACION DE ADOPTANTE</h2>
+                <h2>EDITAR INFORMACION DE PROTECTORA</h2>
               </div>
             </div>
             <form>
               <div className="row formRegisterUser_GroupInput">
                 <div className="row">
-                  <label htmlFor="name">Nombre</label>
+                  <label htmlFor="name">Nombre de la Protectora</label>
                   <input
                     onChange={(event) => {
                       setInfo({
@@ -31,21 +31,6 @@ export const FormEditInfoAdopter = () => {
                     type="text"
                     className="form-control formRegisterUser_Input"
                     name="name"
-                    required
-                  />
-                </div>
-                <div className="row">
-                  <label htmlFor="surname">Apellidos</label>
-                  <input
-                    onChange={(event) => {
-                      setInfo({
-                        ...info,
-                        [event.target.name]: event.target.value,
-                      });
-                    }}
-                    type="text"
-                    className="form-control formRegisterUser_Input"
-                    name="surname"
                     required
                   />
                 </div>
@@ -96,17 +81,17 @@ export const FormEditInfoAdopter = () => {
                 </div>
                 <div className="row">
                   <div className="col-xl-6">
-                    <label htmlFor="age">Edad:</label>
+                    <label htmlFor="age">Dirección:</label>
                     <input
                       onChange={(event) => {
                         setInfo({
                           ...info,
-                          [event.target.name]: parseInt(event.target.value),
+                          [event.target.name]: event.target.value,
                         });
                       }}
                       type="number"
                       className="form-control formRegisterUser_inputAgeAndCity"
-                      name="age"
+                      name="address"
                     />
                   </div>
                   <div className="col-xl-6">
@@ -125,7 +110,7 @@ export const FormEditInfoAdopter = () => {
                   </div>
                 </div>
                 <div className="row">
-                  <label htmlFor="address">Dirección:</label>
+                  <label htmlFor="address">Télefono:</label>
                   <input
                     onChange={(event) => {
                       setInfo({
@@ -135,7 +120,7 @@ export const FormEditInfoAdopter = () => {
                     }}
                     type="text"
                     className="form-control formRegisterUser_Input"
-                    name="address"
+                    name="tlf"
                   />
                 </div>
                 <div className="col-XL-12 mt-2 d-flex justify-content-end mt-4">
@@ -147,7 +132,7 @@ export const FormEditInfoAdopter = () => {
                   <button
                     onClick={(event) => {
                       event.preventDefault();
-                      actions.editInfoAdopter(info);
+                      actions.editInfoShelter(info);
                       console.log(info);
                     }}
                     className="btn formRegisterUser_button"

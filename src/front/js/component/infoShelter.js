@@ -31,11 +31,13 @@ export const InfoShelter = () => {
             <div className="row Protectora_edit">
               <div className="col-xl-12">
                 <div className="Protectora_editbutton">
-                  <img
-                    src={EditIcon}
-                    className="Protectora_editicon"
-                    alt="editIcon"
-                  />
+                  <Link to="/formeditinfoshelter">
+                    <img
+                      src={EditIcon}
+                      className="Protectora_editicon"
+                      alt="editIcon"
+                    />
+                  </Link>
                 </div>
               </div>
             </div>

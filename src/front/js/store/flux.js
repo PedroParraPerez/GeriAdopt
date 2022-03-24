@@ -137,6 +137,20 @@ const getState = ({ getStore, getActions, setStore }) => {
           }
         );
       },
+      editInfoShelter: async (info) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "editinfoshelter",
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            body: JSON.stringify(info),
+          }
+        );
+      },
 
       // ................... Obtener info de: TODOS los animales, UN SOLO animal,  TODAS las protectora.............................
 
@@ -231,6 +245,23 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
+      // .................................Barra de filtrado .........................................................
+
+      filteranimals: async (filter) => {
+        const response = await fetch(getStore().URLAPIDOGS + "filteranimals", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(filter),
+        });
+        if (response.ok) {
+          const data = await response.json();
+          setStore({ allAnimals: data.results });
+        }
+      },
+
       //............................ Validacion de token con la informacion de la protectora y adoptante....................................
 
       //Validacion de adopter con Token
@@ -258,20 +289,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (response.ok) {
           const data = await response.json();
           setStore({ validationToken: data });
-        }
-      },
-      filteranimals: async (filter) => {
-        const response = await fetch(getStore().URLAPIDOGS + "filteranimals", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(filter),
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setStore({ allAnimals: data.results });
         }
       },
     },

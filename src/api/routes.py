@@ -201,13 +201,8 @@ def edit_info_adopter():
     city = request.json.get('city', None)
     address = request.json.get('address', None)
     
-
-
     if password != None:
-        hash_password = generate_password_hash(password)
-
-        
-   
+        hash_password = generate_password_hash(password)   
 
     if  (name or surname or email or hash_password or age or city or address ):
             if name != None:
@@ -227,6 +222,42 @@ def edit_info_adopter():
             
             db.session.commit()
             
+            return jsonify({'results': adopterId.serialize()}),201
+
+@api.route('/editinfoshelter', methods=['PUT'])
+@jwt_required()
+def edit_info_shelter():
+    id = get_jwt_identity()
+    adopterId = Shelter.query.get(id)
+    
+    name = request.json.get('name', None)
+    surname = request.json.get('surname', None)
+    email = request.json.get('email', None)
+    password = request.json.get('password', None)
+    age = request.json.get('age', None)
+    city = request.json.get('city', None)
+    address = request.json.get('address', None)
+    
+    if password != None:
+        hash_password = generate_password_hash(password)   
+
+    if  (name or surname or email or hash_password or age or city or address ):
+            if name != None:
+                adopterId.name = name
+            if surname != None:  
+                adopterId.surname = surname
+            if email != None:
+                adopterId.email = email
+            if password != None:
+                adopterId.password = hash_password
+            if age !=None:
+                adopterId.age = age
+            if city != None:
+                adopterId.city = city
+            if address != None:
+                adopterId.address = address
+            
+            db.session.commit()
             
             return jsonify({'results': adopterId.serialize()}),201
         
