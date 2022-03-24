@@ -42,6 +42,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
           localStorage.setItem("token", data.token);
           localStorage.setItem("isShelter", data.type);
+          if (data.type == false) {
+            localStorage.setItem("isAdopter", true);
+          }
           return true;
         } else {
           alert("Contraseña o usuario incorrectos");
@@ -52,6 +55,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       logout: () => {
         localStorage.removeItem("token");
         localStorage.removeItem("isShelter");
+        localStorage.removeItem("isAdopter");
         setStore({ isloged: false });
       },
 

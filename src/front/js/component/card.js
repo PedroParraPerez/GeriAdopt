@@ -68,7 +68,7 @@ export const Card = () => {
               <Link to={"/detailanimal/" + animal.id}>
                 <button className="btn Card_btn">Conóceme!</button>
               </Link>
-              {localStorage.getItem("isShelter") ? (
+              {localStorage.getItem("isAdopter") ? (
                 <div
                   onClick={() => {
                     actions.saveFavAnimal(animal.id);

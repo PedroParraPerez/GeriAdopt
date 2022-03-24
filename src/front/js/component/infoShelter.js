@@ -1,11 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import ProfileImgGeneric from "../../img/profile_image_generic.jpg";
 import { Context } from "../store/appContext";
-import SOSPeludos from "../../img/sospeludos.jpeg";
+
 import EditIcon from "../../img/editIcon.png";
-import ImgTitleFavs from "../../img/imagetitlefavs.png";
+
 import { Link } from "react-router-dom";
-import { CardProtectora } from "./cardProtectora";
 
 export const InfoShelter = () => {
   const { store, actions } = useContext(Context);
