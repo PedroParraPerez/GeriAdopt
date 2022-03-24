@@ -15,20 +15,6 @@ export const Login = () => {
 
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   validateToken();
-  // }, []);
-
-  // const validateToken = async () => {
-  //   const response = await fetch(store.URLAPIDOGS + "user", {
-  //     headers: {
-  //       Accept: "application/json",
-  //       Authorization: `Bearer ${localStorage.getItem("token")}`,
-  //     },
-  //   });
-  //   localStorage.token ? setValidate(true) : navigate("/profile");
-  // };
-
   return (
     <>
       {!localStorage.getItem("token") ? (

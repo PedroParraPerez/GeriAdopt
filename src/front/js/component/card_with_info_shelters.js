@@ -5,11 +5,10 @@ import { Link } from "react-router-dom";
 import "../../styles/card_with_info_shelters.css";
 export const CardShelter = () => {
   const { store, actions } = useContext(Context);
-  const [cardshelter, setCardshelter] = useState([]);
 
-  useEffect(() => {
-    setCardshelter(
-      store.allShelters.map((shelter) => {
+  return (
+    <>
+      {store.allShelters.map((shelter) => {
         return (
           <div
             key={shelter.id.toString()}
@@ -74,8 +73,8 @@ export const CardShelter = () => {
             </div>
           </div>
         );
-      })
-    );
-  }, [store.allShelters]);
-  return <>{cardshelter}</>;
+      })}
+      ;
+    </>
+  );
 };

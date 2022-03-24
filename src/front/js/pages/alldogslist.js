@@ -6,6 +6,7 @@ import { Context } from "../store/appContext.js";
 
 export const AllDogsList = () => {
   const { store, actions } = useContext(Context);
+
   useEffect(() => {
     actions.getAllAnimal();
   }, []);
