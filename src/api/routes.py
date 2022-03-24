@@ -195,28 +195,48 @@ def edit_info_adopter():
     adopterId = User.query.get(id)
     
     name = request.json.get('name', None)
-    adopterId.surname = request.json.get('surname', None)
+    surname = request.json.get('surname', None)
     email = request.json.get('email', None)
     password = request.json.get('password', None)
-    passwordrepeat = request.json.get('passwordrepeat', None)
     age = request.json.get('age', None)
     city = request.json.get('city', None)
     address = request.json.get('address', None)
     
-    hash_password = generate_password_hash(password)
-    adopter = User()
-    try:
+    print("AAAAAAAAAAAAAAAAAAAA", name)
+    print(surname)
+    print(password)
+    print(age)
+    print(city)
+    print(address)
 
-        db.session.add(adopter)
-        db.session.commit()
-        
-        
-        return jsonify({'results': adopter.serialize()}),201
-        
-    except Exception as err:
-        print(str(err))
-        return jsonify({'message': str(err)}), 500
+    if password != None:
+        hash_password = generate_password_hash(password)
 
+        print(hash_password)
+   
+
+    if  (name or surname or email or hash_password or age or city or address ):
+            if name != None:
+                adopterId.name = name
+            if surname != None:  
+                adopterId.surname = surname
+            if email != None:
+                adopterId.email = email
+            if password != None:
+                adopterId.password = hash_password
+            if age !=None:
+                adopterId.age = age
+            if city != None:
+                adopterId.city = city
+            if address != None:
+                adopterId.address = address
+            
+            db.session.commit()
+            
+            
+            return jsonify({'results': adopterId.serialize()}),201
+        
+        
 
 
 

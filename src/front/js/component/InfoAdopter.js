@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import ProfileImgGeneric from "../../img/profile_image_generic.jpg";
 
 import { Context } from "../store/appContext";
 
@@ -18,7 +19,11 @@ export const InfoAdopter = () => {
         <div className="row Adopter_adopterprofile">
           <div className="col-xl-2 Adopter_imgprofile">
             <img
-              src={store.adopterInfo.image}
+              src={
+                store.adopterInfo.image
+                  ? store.adopterInfo.image
+                  : ProfileImgGeneric
+              }
               alt="profilephoto"
               className="Adopter_adopterphoto"
             />
