@@ -147,8 +147,12 @@ export const FormEditInfoAdopter = () => {
                   <button
                     onClick={(event) => {
                       event.preventDefault();
-                      actions.editInfoAdopter(info);
-                      console.log(info);
+                      if (info.password == info.passwordrepeat) {
+                        actions.editInfoAdopter(info);
+                        console.log(info);
+                      } else {
+                        alert("La contraseña no coincide con la repetición");
+                      }
                     }}
                     className="btn formRegisterUser_button"
                   >
