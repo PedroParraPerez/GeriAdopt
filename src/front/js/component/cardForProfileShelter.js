@@ -7,7 +7,10 @@ import RazaIcon from "../../img/razaIcon.png";
 import IconUbic from "../../img/IconUbicacion.png";
 import editIcon from "../../img/editIcon.png";
 import { Context } from "../store/appContext";
+import "../../styles/buttonEditAnimal.css";
+
 import { Link } from "react-router-dom";
+import { ButtonEditAnimal } from "./buttonEditAnimal";
 
 export const CardProtectora = () => {
   const { store, actions } = useContext(Context);
@@ -66,9 +69,22 @@ export const CardProtectora = () => {
                 <button className="btn Card_btn">Conóceme!</button>
               </Link>
               <div className="editButton">
-                <Link to={"/formeditanimal/" + animal.id}>
-                  <img src={editIcon} alt="FavButton" id="editPencil" />
-                </Link>
+                <div className="dropdown">
+                  <button className="dropbtn">
+                    {" "}
+                    <img src={editIcon} alt="FavButton" id="editPencil" />
+                  </button>
+                  <div className="dropdown-content">
+                    <ul>
+                      <Link to={"/formeditanimal/" + animal.id}>
+                        <li>Editar animal</li>
+                      </Link>
+                      <Link to={"/formeditanimal/" + animal.id}>
+                        <li>Borrar Animal</li>
+                      </Link>
+                    </ul>
+                  </div>
+                </div>
               </div>
               <p className="location">
                 <img src={IconUbic} className="Card_IconUbic" /> {animal.city}
