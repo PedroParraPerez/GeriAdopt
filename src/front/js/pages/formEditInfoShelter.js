@@ -89,7 +89,7 @@ export const FormEditInfoShelter = () => {
                           [event.target.name]: event.target.value,
                         });
                       }}
-                      type="number"
+                      type="text"
                       className="form-control formRegisterUser_inputAgeAndCity"
                       name="address"
                     />
