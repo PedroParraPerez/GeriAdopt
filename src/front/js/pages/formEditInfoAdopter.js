@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/formRegisterUser.css";
 import { Context } from "../store/appContext.js";
@@ -6,6 +6,10 @@ import { Context } from "../store/appContext.js";
 export const FormEditInfoAdopter = () => {
   const [info, setInfo] = useState({});
   const { store, actions } = useContext(Context);
+
+  useEffect(() => {
+    actions.getAdopterInfo();
+  }, []);
 
   return (
     <>
@@ -31,7 +35,7 @@ export const FormEditInfoAdopter = () => {
                     type="text"
                     className="form-control formRegisterUser_Input"
                     name="name"
-                    required
+                    placeholder={store.adopterInfo.name}
                   />
                 </div>
                 <div className="row">
@@ -46,7 +50,7 @@ export const FormEditInfoAdopter = () => {
                     type="text"
                     className="form-control formRegisterUser_Input"
                     name="surname"
-                    required
+                    placeholder={store.adopterInfo.surname}
                   />
                 </div>
                 <div className="row">
@@ -61,7 +65,7 @@ export const FormEditInfoAdopter = () => {
                     type="email"
                     className="form-control formRegisterUser_Input"
                     name="email"
-                    required
+                    placeholder={store.adopterInfo.email}
                   />
                 </div>
                 <div className="row">
@@ -76,7 +80,6 @@ export const FormEditInfoAdopter = () => {
                     type="password"
                     className="form-control formRegisterUser_Input"
                     name="password"
-                    required
                   />
                 </div>
                 <div className="row">
@@ -91,7 +94,6 @@ export const FormEditInfoAdopter = () => {
                     type="password"
                     className="form-control formRegisterUser_Input"
                     name="passwordrepeat"
-                    required
                   />
                 </div>
                 <div className="row">
@@ -107,6 +109,7 @@ export const FormEditInfoAdopter = () => {
                       type="number"
                       className="form-control formRegisterUser_inputAgeAndCity"
                       name="age"
+                      placeholder={store.adopterInfo.age}
                     />
                   </div>
                   <div className="col-xl-6">
@@ -121,6 +124,7 @@ export const FormEditInfoAdopter = () => {
                       type="text"
                       className="form-control formRegisterUser_inputAgeAndCity"
                       name="city"
+                      placeholder={store.adopterInfo.city}
                     />
                   </div>
                 </div>
@@ -136,6 +140,7 @@ export const FormEditInfoAdopter = () => {
                     type="text"
                     className="form-control formRegisterUser_Input"
                     name="address"
+                    placeholder={store.adopterInfo.address}
                   />
                 </div>
                 <div className="col-XL-12 mt-2 d-flex justify-content-end mt-4">
@@ -151,7 +156,7 @@ export const FormEditInfoAdopter = () => {
                         actions.editInfoAdopter(info);
                         console.log(info);
                       } else {
-                        alert("La contraseña no coincide con la repetición");
+                        alert("Las contraseñas no coinciden");
                       }
                     }}
                     className="btn formRegisterUser_button"
