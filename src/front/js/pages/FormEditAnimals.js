@@ -208,7 +208,6 @@ export const FormEditAnimal = () => {
                   <button
                     onClick={(event) => {
                       event.preventDefault();
-                      console.log(info);
                       actions.editInfoAnimal(info, id);
                     }}
                     className="btn formRegisterProte_button"

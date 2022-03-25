@@ -73,7 +73,6 @@ def signUpAdopter():
         return jsonify({'token': token}), 201
 
     except Exception as err:
-        print(str(err))
         return jsonify({'message': str(err)}), 500
 
 @api.route('/signupshelter', methods=["POST"])
@@ -100,7 +99,6 @@ def signUpShelter():
         return jsonify({'token': token}), 201
 
     except Exception as err:
-        print(str(err))
         return jsonify({'message': str(err)}), 500
 
 @api.route('/registeranimal', methods=["POST"])
@@ -131,7 +129,6 @@ def registerAnimal():
         return jsonify({'results':animal.serialize()}), 200
 
     except Exception as err:
-        print(str(err))
         return jsonify({'message': str(err)}), 500
 
 # .........................OBTENER (GET) INFO DE LA API.....................................
@@ -177,7 +174,7 @@ def get_shelter_info():
     id = get_jwt_identity()
 
     shelter = Shelter.query.get(id)
-    # print(shelter.name, shelter.email, shelter.city, shelter.animals)
+
     return jsonify({'results': shelter.serialize()}),200
 
 # un GET de profile/animal prtegida por token
@@ -286,7 +283,7 @@ def edit_info_animal(id):
     age = request.json.get('age', None)
     description = request.json.get('description', None)
     short_description = request.json.get('short_description', None)
-    print("AAAAAAAAAAAAAA",age)
+    
   
 
     if  (name or species or gender or race or size or age or description or short_description ):
@@ -312,6 +309,17 @@ def edit_info_animal(id):
             return jsonify({'results': animal.serialize()}),201
 
 
+# ...........................DELETE ANIMALSS.......................................................
+
+@api.route("/deleteanimal/<int:id>", methods=["DELETE"])
+def delete_animal(id):
+    animal = Animal.query.get(id)
+    db.session.delete(animal)
+    db.session.commit()
+
+    return jsonify({'perfect':'Animal borrado con existo'}), 200
+
+
 # ...................RUTAS RELACIONADAS CON FAVORITOS MANYTOMANY...................................
 
 @api.route('/favanimal/<int:animal_id>', methods=['POST'])
@@ -332,29 +340,8 @@ def save_fav_animal(animal_id):
         db.session.commit()
         return jsonify({'response': False}),200
 
-# @api.route('/deleteanimal/<int:id>', methods=['POST'])
-# def delete_animal(id):
 
-    
-#     animal = Animal.query.get(id)
-#     animals = Animal.query.all()
 
-#     all_animals = [animal.serialize() for animal in animals]
-#     print("AAAAAAAAAAAAAAAAAAAA", animal, "BBBBBBBBBBBBBB", animals)
-#     print("ccccccccccccccc", all_animals)
-#     if animal in all_animals:
-#         animals.remove(animal)
-#         db.session.commit()
-#         return jsonify({'response': False}),200
-    
-# Endpoint for deleting a record
-@api.route("/deleteanimal/<int:id>", methods=["DELETE"])
-def delete_animal(id):
-    animal = Animal.query.get(id)
-    db.session.delete(animal)
-    db.session.commit()
-
-    return jsonify({'perfect':'Animal borrado con existo'}), 200
 
 
 @api.route('/user/favlist', methods=['GET'])

@@ -154,7 +154,6 @@ export const FormEditInfoAdopter = () => {
                       event.preventDefault();
                       if (info.password == info.passwordrepeat) {
                         actions.editInfoAdopter(info);
-                        console.log(info);
                       } else {
                         alert("Las contraseñas no coinciden");
                       }
