@@ -14,6 +14,7 @@ export const PerfilAdopter = () => {
 
   useEffect(() => {
     validateNoToken();
+    actions.getfavlist();
   }, []);
 
   const validateNoToken = async () => {

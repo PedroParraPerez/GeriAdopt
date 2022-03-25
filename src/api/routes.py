@@ -157,6 +157,12 @@ def get_shelter_profile_for_view_adopter(id):
     shelter = Shelter.query.get(id)
     return jsonify({'results': shelter.serialize()}),200
 
+@api.route('/animalsforviewadopter/<int:id>', methods=['GET'])
+def get_animals_in_shelter_for_view_adopter(id):
+    animals = Animal.query.filter(Animal.shelter_id == id)
+    
+    return ({'results':[animal.serialize() for animal in animals]})
+
 @api.route('/adopterinfo', methods=['GET'])
 @jwt_required()
 def get_adopter_info():

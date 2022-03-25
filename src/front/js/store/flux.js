@@ -16,6 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       animalsInMyShelter: [],
       isloged: false,
       shelterInfoForViewAdopter: [],
+      animalsInShelterForViewAdopter: [],
     },
     actions: {
       //.....................Login, LogOut RegisterUser, RegisterShelter, RegisterAnimal ........................................    //
@@ -227,6 +228,22 @@ const getState = ({ getStore, getActions, setStore }) => {
         );
         const data = await response.json();
         setStore({ shelterInfoForViewAdopter: data.results });
+      },
+
+      getAnimalsInShelterForViewAdopter: async (id) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "animalsforviewadopter/" + id,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+          }
+        );
+        const data = await response.json();
+
+        setStore({ animalsInShelterForViewAdopter: data.results });
       },
 
       // ................Añadir(y quitar) a favoritos, Obtener TODOS los favoritos de 1 adopter ..............................

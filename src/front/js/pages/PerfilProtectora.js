@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 
 import "../../styles/PerfilProtectora.css";
 
-import { CardProtectora } from "../component/cardProtectora.js";
+import { CardProtectora } from "../component/cardForProfileShelter.js";
 
 import ImgTitleFavs from "../../img/imagetitlefavs.png";
 import { Context } from "../store/appContext";
