@@ -332,8 +332,29 @@ def save_fav_animal(animal_id):
         db.session.commit()
         return jsonify({'response': False}),200
 
-    
+# @api.route('/deleteanimal/<int:id>', methods=['POST'])
+# def delete_animal(id):
 
+    
+#     animal = Animal.query.get(id)
+#     animals = Animal.query.all()
+
+#     all_animals = [animal.serialize() for animal in animals]
+#     print("AAAAAAAAAAAAAAAAAAAA", animal, "BBBBBBBBBBBBBB", animals)
+#     print("ccccccccccccccc", all_animals)
+#     if animal in all_animals:
+#         animals.remove(animal)
+#         db.session.commit()
+#         return jsonify({'response': False}),200
+    
+# Endpoint for deleting a record
+@api.route("/deleteanimal/<int:id>", methods=["DELETE"])
+def delete_animal(id):
+    animal = Animal.query.get(id)
+    db.session.delete(animal)
+    db.session.commit()
+
+    return jsonify({'perfect':'Animal borrado con existo'}), 200
 
 
 @api.route('/user/favlist', methods=['GET'])

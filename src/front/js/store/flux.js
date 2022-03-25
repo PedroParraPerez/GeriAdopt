@@ -167,6 +167,19 @@ const getState = ({ getStore, getActions, setStore }) => {
           }
         );
       },
+      deleteAnimal: async (id) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "deleteanimal/" + id,
+          {
+            method: "DELETE",
+          }
+        );
+        if (response.ok) {
+          getActions().getAnimalsOfMyShelter();
+        } else {
+          alert("No se ha podido borrar el animal");
+        }
+      },
 
       // ................... Obtener info de: TODOS los animales, UN SOLO animal,  TODAS las protectora.............................
 

@@ -10,7 +10,6 @@ import { Context } from "../store/appContext";
 import "../../styles/buttonEditAnimal.css";
 
 import { Link } from "react-router-dom";
-import { ButtonEditAnimal } from "./buttonEditAnimal";
 
 export const CardProtectora = () => {
   const { store, actions } = useContext(Context);
@@ -79,9 +78,21 @@ export const CardProtectora = () => {
                       <Link to={"/formeditanimal/" + animal.id}>
                         <li>Editar animal</li>
                       </Link>
-                      <Link to={"/formeditanimal/" + animal.id}>
-                        <li>Borrar Animal</li>
-                      </Link>
+
+                      <li
+                        className="deleteanimal"
+                        onClick={() => {
+                          if (
+                            window.confirm(
+                              "¿Seguro que quieres borrar este animal?"
+                            )
+                          ) {
+                            actions.deleteAnimal(animal.id);
+                          }
+                        }}
+                      >
+                        Borrar Animal
+                      </li>
                     </ul>
                   </div>
                 </div>
