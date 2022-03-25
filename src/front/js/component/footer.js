@@ -70,25 +70,25 @@ export const Footer = () => {
             <div className="col-lg-3 foot-colum2">
               <ul className="list-unstyled mb-0">
                 <li>
-                  <span href="#!" className="text-white-foot">
+                  <a href="#!" className="text-white-foot">
                     Aviso legal
-                  </span>
+                  </a>
                 </li>
                 <li>
-                  <span href="#!" className="text-white-foot">
+                  <a href="#!" className="text-white-foot">
                     Política de Privacidad
-                  </span>
+                  </a>
                 </li>
                 <li>
-                  <span href="#!" className="text-white-foot">
+                  <a href="#!" className="text-white-foot">
                     {" "}
                     Política de cookies
-                  </span>
+                  </a>
                 </li>
                 <li>
-                  <span href="#!" className="text-white-foot">
+                  <a href="#!" className="text-white-foot">
                     Protección de datos
-                  </span>
+                  </a>
                 </li>
                 <li>
                   <a
