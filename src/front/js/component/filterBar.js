@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 
-import "../../styles/filterbar.css";
+import "../../styles/alldogslist.css";
 import { Context } from "../store/appContext";
 
 export const FilterBar = () => {

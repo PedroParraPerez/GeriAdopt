@@ -1,0 +1,6 @@
+.list_animals_in_shelter_for_view_adopter {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 60%;
+}

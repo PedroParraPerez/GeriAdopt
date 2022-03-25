@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-
+import "../../styles/alldogslist.css";
 import { Card } from "../component/card.js";
 import { FilterBar } from "../component/filterBar.js";
 import { Context } from "../store/appContext.js";
