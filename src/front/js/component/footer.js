@@ -91,9 +91,12 @@ export const Footer = () => {
                   </span>
                 </li>
                 <li>
-                  <span href="#!" className="text-white-foot">
+                  <a
+                    className="text-white-foot"
+                    href="mailto:contacto@geriadopt.com?subject=Buenas tardes GeriAdopt! "
+                  >
                     Contacto
-                  </span>
+                  </a>
                 </li>
               </ul>
             </div>
