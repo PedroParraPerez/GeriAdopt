@@ -3,6 +3,7 @@ import profileimagegeneric from "../../img/profile_image_generic.jpg";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/card_with_info_shelters.css";
+
 export const CardShelter = () => {
   const { store, actions } = useContext(Context);
 

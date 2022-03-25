@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/formRegisterUser.css";
 import { Context } from "../store/appContext.js";
@@ -6,6 +6,10 @@ import { Context } from "../store/appContext.js";
 export const FormEditInfoShelter = () => {
   const [info, setInfo] = useState({});
   const { store, actions } = useContext(Context);
+
+  useEffect(() => {
+    actions.getShelterInfo();
+  }, []);
 
   return (
     <>
@@ -31,7 +35,7 @@ export const FormEditInfoShelter = () => {
                     type="text"
                     className="form-control formRegisterUser_Input"
                     name="name"
-                    required
+                    placeholder={store.shelterInfo.name}
                   />
                 </div>
                 <div className="row">
@@ -46,7 +50,7 @@ export const FormEditInfoShelter = () => {
                     type="email"
                     className="form-control formRegisterUser_Input"
                     name="email"
-                    required
+                    placeholder={store.shelterInfo.email}
                   />
                 </div>
                 <div className="row">
@@ -61,7 +65,6 @@ export const FormEditInfoShelter = () => {
                     type="password"
                     className="form-control formRegisterUser_Input"
                     name="password"
-                    required
                   />
                 </div>
                 <div className="row">
@@ -76,7 +79,6 @@ export const FormEditInfoShelter = () => {
                     type="password"
                     className="form-control formRegisterUser_Input"
                     name="passwordrepeat"
-                    required
                   />
                 </div>
                 <div className="row">
@@ -92,6 +94,7 @@ export const FormEditInfoShelter = () => {
                       type="text"
                       className="form-control formRegisterUser_inputAgeAndCity"
                       name="address"
+                      placeholder={store.shelterInfo.address}
                     />
                   </div>
                   <div className="col-xl-6">
@@ -106,6 +109,7 @@ export const FormEditInfoShelter = () => {
                       type="text"
                       className="form-control formRegisterUser_inputAgeAndCity"
                       name="city"
+                      placeholder={store.shelterInfo.city}
                     />
                   </div>
                 </div>
@@ -121,6 +125,7 @@ export const FormEditInfoShelter = () => {
                     type="text"
                     className="form-control formRegisterUser_Input"
                     name="tlf"
+                    placeholder={store.shelterInfo.tlf}
                   />
                 </div>
                 <div className="col-XL-12 mt-2 d-flex justify-content-end mt-4">
@@ -133,7 +138,6 @@ export const FormEditInfoShelter = () => {
                     onClick={(event) => {
                       event.preventDefault();
                       actions.editInfoShelter(info);
-                      console.log(info);
                     }}
                     className="btn formRegisterUser_button"
                   >
