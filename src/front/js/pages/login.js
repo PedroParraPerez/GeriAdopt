@@ -15,6 +15,15 @@ export const Login = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigateProfile();
+    }
+  }, []);
+  const navigateProfile = () => {
+    navigate("/profile");
+  };
+
   return (
     <>
       {!localStorage.getItem("token") ? (
@@ -89,7 +98,7 @@ export const Login = () => {
           </div>
         </div>
       ) : (
-        navigate("/profile")
+        navigateProfile()
       )}
     </>
   );

@@ -8,7 +8,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       detailAnimal: [], //Info de 1 solo animal
       isShelter: false, //false = Adopter ; true = Shelter
       validationToken: [], //validacion del token
-      animalcreated: false, // variable de control para la creacion de animales
+
       favlist: [], // Info de la lista de favoritos de un adoptante
       adopterInfo: [],
       shelterInfo: [],
@@ -116,8 +116,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
 
         if (response.status == 200) {
-          const data = await response.json();
-          setStore({ animalcreated: Math.random() });
           alert("animal creado");
         } else {
           alert("Falta un campo por especificar");
@@ -298,7 +296,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       //............................ Validacion de token con la informacion de la protectora y adoptante....................................
 
-      //Validacion de adopter con Token
+      // Validacion de adopter con Token
       getUserInformation: async () => {
         const response = await fetch(getStore().URLAPIDOGS + "user", {
           headers: {

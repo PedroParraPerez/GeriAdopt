@@ -88,9 +88,7 @@ export const QuienesSomos = () => {
           <div className="col-md-1"></div>
           <div className="col-md-10">
             <div className="centerTitleChappie">
-              <h1 className="titleChappie">
-                Chappie, la inspiración de nuestro logo
-              </h1>
+              <h1 className="titleChappie">Chappie, la inspiración.</h1>
             </div>
           </div>
           <div className="col-md-1"></div>

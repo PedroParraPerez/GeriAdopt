@@ -68,7 +68,12 @@ export const Navbar = () => {
                     <p className="spanNavbarLink">Mi cuenta </p>
                   </Link>
                   <Link to="/">
-                    <p onClick={actions.logout} className="spanNavbarLink">
+                    <p
+                      onClick={() => {
+                        actions.logout();
+                      }}
+                      className="spanNavbarLink"
+                    >
                       Cerrar Sesión
                     </p>
                   </Link>
