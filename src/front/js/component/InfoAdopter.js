@@ -5,6 +5,7 @@ import { Context } from "../store/appContext";
 
 import EditIcon from "../../img/editIcon.png";
 import { Link } from "react-router-dom";
+import { EditInfoButton } from "./editInfoButton";
 
 export const InfoAdopter = () => {
   const { store, actions } = useContext(Context);
@@ -29,19 +30,7 @@ export const InfoAdopter = () => {
             />
           </div>
           <div className="col-xl-4 Adopter_adopterInfo">
-            <div className="row Adopter_edit">
-              <div className="col-xl-12">
-                <div className="Adopter_editbutton">
-                  <Link to="/formeditinfoadopter">
-                    <img
-                      src={EditIcon}
-                      className="Adopter_editicon"
-                      alt="editIcon"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <EditInfoButton link="/formeditinfoAdopter" />
             <div className="row">
               <div className="col-xl-6 Adopter_primayinfo">
                 <p>

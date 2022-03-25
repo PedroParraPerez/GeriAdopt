@@ -2,9 +2,8 @@ import React, { useContext, useEffect } from "react";
 import ProfileImgGeneric from "../../img/profile_image_generic.jpg";
 import { Context } from "../store/appContext";
 
-import EditIcon from "../../img/editIcon.png";
-
 import { Link } from "react-router-dom";
+import { EditInfoButton } from "./editInfoButton";
 
 export const InfoShelter = () => {
   const { store, actions } = useContext(Context);
@@ -28,19 +27,7 @@ export const InfoShelter = () => {
             />
           </div>
           <div className="col-xl-4 Protectora_ProtectoraInfo">
-            <div className="row Protectora_edit">
-              <div className="col-xl-12">
-                <div className="Protectora_editbutton">
-                  <Link to="/formeditinfoshelter">
-                    <img
-                      src={EditIcon}
-                      className="Protectora_editicon"
-                      alt="editIcon"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <EditInfoButton link="/formeditinfoshelter" />
             <div className="row">
               <div className="col-xl-6 Protectora_primayinfo">
                 <p>
