@@ -11,10 +11,7 @@ export const CardShelter = () => {
     <>
       {store.allShelters.map((shelter) => {
         return (
-          <div
-            key={shelter.id.toString()}
-            className="row cardWithInfo_wrapcard"
-          >
+          <div key={shelter.id} className="row cardWithInfo_wrapcard">
             <div className="col-md-4 cardWithInfo_placelog">
               <img
                 src={shelter.image ? shelter.image : profileimagegeneric}
@@ -64,7 +61,7 @@ export const CardShelter = () => {
               </div>
               <div className="row">
                 <div className="col-md-12 placebottom">
-                  <Link to="/landingshelter">
+                  <Link to={"/landingshelter/" + shelter.id}>
                     <button className=" btn cardWithInfo_button">
                       Ver nuestros animales
                     </button>

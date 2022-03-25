@@ -68,7 +68,7 @@ const Layout = () => {
               path="/formregisteranimal"
               element={<FormRegisterAnimal />}
             />
-            <Route path="/landingshelter" element={<LandingShelter />} />
+            <Route path="/landingshelter/:id" element={<LandingShelter />} />
             <Route
               path="*"
               element={<h1 className="d-flex text-center">Not found</h1>}

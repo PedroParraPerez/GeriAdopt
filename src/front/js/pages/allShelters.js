@@ -10,9 +10,10 @@ import { Context } from "../store/appContext";
 
 export const AllShelterList = () => {
   const { store, actions } = useContext(Context);
+
   useEffect(() => {
     actions.getAllShelters();
-  });
+  }, []);
   return (
     <>
       <div className="container-fluid">
