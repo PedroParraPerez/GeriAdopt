@@ -271,9 +271,45 @@ def edit_info_shelter():
             
             return jsonify({'results': adopterId.serialize()}),201
         
-        
+     
+@api.route('/editinfoanimal/<int:id>', methods=['PUT'])
+@jwt_required()
+def edit_info_animal(id):
+    
+    animal = Animal.query.get(id)
+    
+    name = request.json.get('name', None)
+    species = request.json.get('species', None)
+    race = request.json.get('race', None)
+    gender = request.json.get('gender', None)
+    size = request.json.get('size', None)
+    age = request.json.get('age', None)
+    description = request.json.get('description', None)
+    short_description = request.json.get('short_description', None)
+    print("AAAAAAAAAAAAAA",age)
+  
 
-
+    if  (name or species or gender or race or size or age or description or short_description ):
+            if name != None:
+                animal.name = name
+            if species != None:  
+                animal.species = species
+            if gender != None:
+                animal.gender = gender
+            if race != None:
+                animal.race = race
+            if size !=None:
+                animal.size = size
+            if age !=None:
+                animal.age = age
+            if description != None:
+                animal.description = description
+            if short_description != None:
+                animal.short_description = short_description
+            
+            db.session.commit()
+            
+            return jsonify({'results': animal.serialize()}),201
 
 
 # ...................RUTAS RELACIONADAS CON FAVORITOS MANYTOMANY...................................

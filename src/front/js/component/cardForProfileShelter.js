@@ -66,7 +66,9 @@ export const CardProtectora = () => {
                 <button className="btn Card_btn">Conóceme!</button>
               </Link>
               <div className="editButton">
-                <img src={editIcon} alt="FavButton" id="editPencil" />
+                <Link to={"/formeditanimal/" + animal.id}>
+                  <img src={editIcon} alt="FavButton" id="editPencil" />
+                </Link>
               </div>
               <p className="location">
                 <img src={IconUbic} className="Card_IconUbic" /> {animal.city}

@@ -153,6 +153,21 @@ const getState = ({ getStore, getActions, setStore }) => {
         );
       },
 
+      editInfoAnimal: async (info, id) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "editinfoanimal/" + id,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            body: JSON.stringify(info),
+          }
+        );
+      },
+
       // ................... Obtener info de: TODOS los animales, UN SOLO animal,  TODAS las protectora.............................
 
       getAllAnimal: async () => {

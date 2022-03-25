@@ -23,6 +23,7 @@ import { PerfilProtectora } from "./pages/PerfilProtectora";
 import { FormRegisterAnimal } from "./pages/formRegisterAnimal";
 import { FormEditInfoAdopter } from "./pages/formEditInfoAdopter.js";
 import { FormEditInfoShelter } from "./pages/formEditInfoShelter";
+import { FormEditAnimal } from "./pages/FormEditAnimals";
 
 const Layout = () => {
   const basename = process.env.BASENAME || "";
@@ -63,6 +64,7 @@ const Layout = () => {
               path="/formeditinfoshelter"
               element={<FormEditInfoShelter />}
             />
+            <Route path="/formeditanimal/:id" element={<FormEditAnimal />} />
             <Route path="/contactus" element={<ContactUs />} />
             <Route
               path="/formregisteranimal"
