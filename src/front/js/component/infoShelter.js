@@ -31,7 +31,7 @@ export const InfoShelter = () => {
             <div className="row">
               <div className="col-xl-6 Protectora_primayinfo">
                 <p>
-                  <b>
+                  <b className="text-capitalize">
                     <span className="Protectora_labelprofileinfo">
                       Nombre:{" "}
                     </span>
@@ -39,7 +39,7 @@ export const InfoShelter = () => {
                   </b>
                 </p>
                 <p>
-                  <b>
+                  <b className="text-capitalize">
                     <span className="Protectora_labelprofileinfo">
                       Ciudad:{" "}
                     </span>
@@ -57,7 +57,7 @@ export const InfoShelter = () => {
                   </b>
                 </p>
                 <p>
-                  <b>
+                  <b className="text-capitalize">
                     <span className="Protectora_labelprofileinfo">
                       Teléfono:{" "}
                     </span>
@@ -65,7 +65,7 @@ export const InfoShelter = () => {
                   </b>
                 </p>
                 <p>
-                  <b>
+                  <b className="text-capitalize">
                     <span className="Protectora_labelprofileinfo">
                       Direción:{" "}
                     </span>

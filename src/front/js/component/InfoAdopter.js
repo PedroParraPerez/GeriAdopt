@@ -34,13 +34,13 @@ export const InfoAdopter = () => {
             <div className="row">
               <div className="col-xl-6 Adopter_primayinfo">
                 <p>
-                  <b>
+                  <b className="text-capitalize">
                     <span className="Adopter_labelprofileinfo">Nombre: </span>
                     {store.adopterInfo.name}
                   </b>
                 </p>
                 <p>
-                  <b>
+                  <b className="text-capitalize">
                     <span className="Adopter_labelprofileinfo">
                       Apellidos:{" "}
                     </span>
@@ -48,7 +48,7 @@ export const InfoAdopter = () => {
                   </b>
                 </p>
                 <p>
-                  <b>
+                  <b className="text-capitalize">
                     <span className="Adopter_labelprofileinfo">Ciudad: </span>
                     {store.adopterInfo.city}
                   </b>

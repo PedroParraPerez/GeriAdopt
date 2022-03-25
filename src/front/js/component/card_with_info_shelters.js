@@ -26,7 +26,7 @@ export const CardShelter = () => {
               <div className="row cardWithInfo_primayinfo">
                 <div className="col-md-12">
                   <span>
-                    <b>
+                    <b className="text-capitalize">
                       <span className="cardWithInfo_labelprofileinfo">
                         Nombre: {shelter.name}
                       </span>
@@ -34,7 +34,7 @@ export const CardShelter = () => {
                     </b>
                   </span>
                   <span>
-                    <b>
+                    <b className="text-capitalize">
                       <span className="cardWithInfo_labelprofileinfo">
                         Ciudad: {shelter.city}
                       </span>

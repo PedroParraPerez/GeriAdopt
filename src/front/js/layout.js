@@ -69,7 +69,10 @@ const Layout = () => {
               element={<FormRegisterAnimal />}
             />
             <Route path="/landingshelter" element={<LandingShelter />} />
-            <Route path="*" element={<h1>Not found</h1>}></Route>
+            <Route
+              path="*"
+              element={<h1 className="d-flex text-center">Not found</h1>}
+            ></Route>
           </Routes>
           <Footer />
         </ScrollToTop>
