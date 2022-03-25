@@ -198,7 +198,11 @@ export const FormRegisterAnimal = () => {
                     />
                   </div>
                 </div>
-                <div className="col-XL-12 mt-2 d-flex justify-content-end mt-4">
+                <div className="col-xl-6 mt-2  mt-4">
+                  <label htmlFor="image">Foto</label>
+                  <input type="file" name="image" />{" "}
+                </div>
+                <div className="col-xl-6 mt-2 d-flex justify-content-end mt-4">
                   <button
                     onClick={(event) => {
                       event.preventDefault();
@@ -212,7 +216,7 @@ export const FormRegisterAnimal = () => {
                     className="btn formRegisterProte_button"
                     type="submit"
                   >
-                    Crear Animal
+                    Guardar
                   </button>
                 </div>
               </div>

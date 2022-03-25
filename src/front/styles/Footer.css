@@ -63,6 +63,9 @@
   color: white;
   font-size: 1.2rem;
 }
+.text-white-foot:hover {
+  color: black;
+}
 
 .footer-circleone {
   padding-left: 3%;

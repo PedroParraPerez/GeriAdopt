@@ -85,7 +85,7 @@ export const CardAnimalsInShelterForViewAdopter = () => {
 
                     setTimeout(() => {
                       setMes(null);
-                    }, 4000);
+                    }, 1000);
                   }}
                   className="Card_FavButton"
                 >

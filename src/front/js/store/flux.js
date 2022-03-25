@@ -99,6 +99,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           localStorage.setItem("token", data.token);
           localStorage.setItem("isShelter", true);
           setStore({ isloged: true });
+          return true; //Variable de control para el navigate si todo sale bien
         } else {
           alert("Ya hay una protectora registrada con ese email");
         }

@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 
 import "../../styles/formRegisterProte.css";
 import { Context } from "../store/appContext";
@@ -122,21 +123,22 @@ export const FormRegisterProte = () => {
                   </div>
                 </div>
                 <div className="col-XL-12 mt-2 d-flex justify-content-end mt-4">
-                  <button
-                    onClick={(event) => {
-                      event.preventDefault();
-                      if (
-                        formregisterShelter.password ==
-                        formregisterShelter.passwordrepeat
-                      ) {
-                        actions.registerShelter(formregisterShelter);
-                      }
-                    }}
-                    className="btn formRegisterProte_button"
-                    type="submit"
-                  >
-                    Registrarme
-                  </button>
+                  <Link to="/profile">
+                    <button
+                      onClick={(event) => {
+                        if (
+                          formregisterShelter.password ==
+                          formregisterShelter.passwordrepeat
+                        ) {
+                          actions.registerShelter(formregisterShelter);
+                        }
+                      }}
+                      className="btn formRegisterProte_button"
+                      type="submit"
+                    >
+                      Registrarme
+                    </button>
+                  </Link>
                 </div>
               </div>
             </form>

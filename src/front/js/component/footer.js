@@ -102,7 +102,7 @@ export const Footer = () => {
                   <a
                     className="text-white-foot"
                     target="_blank"
-                    href="https://wa.me/36555555555"
+                    href="https://wa.me/+34666666666"
                   >
                     Contacto via WhatsApp
                   </a>
