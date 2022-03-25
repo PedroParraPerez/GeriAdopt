@@ -95,7 +95,16 @@ export const Footer = () => {
                     className="text-white-foot"
                     href="mailto:contacto@geriadopt.com?subject=Buenas tardes GeriAdopt! "
                   >
-                    Contacto
+                    Contacto via email
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-white-foot"
+                    target="_blank"
+                    href="https://wa.me/36555555555"
+                  >
+                    Contacto via WhatsApp
                   </a>
                 </li>
               </ul>
