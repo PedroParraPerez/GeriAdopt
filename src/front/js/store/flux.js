@@ -76,6 +76,9 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
           localStorage.setItem("token", data.token);
           localStorage.setItem("isShelter", false);
+
+          localStorage.setItem("isAdopter", true);
+
           setStore({ isloged: true });
           return true;
         } else {

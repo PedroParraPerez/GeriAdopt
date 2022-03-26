@@ -26,7 +26,9 @@ export const ButtonsForEditProfilePhoto = (props) => {
 
     if (response.ok) {
       console.log("entra al if");
-      props.getinfo;
+      () => {
+        props.getinfo;
+      };
       console.log("ejecuta la funcion");
       console.log(props.getinfo);
     } else {
