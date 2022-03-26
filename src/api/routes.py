@@ -10,6 +10,12 @@ from api.models import db, User, Animal, Shelter
 from api.utils import generate_sitemap, APIException
 from werkzeug.security import generate_password_hash, check_password_hash
 
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
 api = Blueprint('api', __name__)
 
 
@@ -307,6 +313,45 @@ def edit_info_animal(id):
             db.session.commit()
             
             return jsonify({'results': animal.serialize()}),201
+
+
+@api.route('/editprofilephotoshelter', methods=['PUT'])
+@jwt_required()
+def edit_profile_photo_shelter():
+    
+    id = get_jwt_identity()
+    shelterId = Shelter.query.get(id)
+
+    cloudinary.config(
+        cloud_name = 'dqhlna24b',
+        api_key='785699686264573',
+        api_secret='IEigIKmf9mWFvQG9jk87DYO39eo'
+    )
+
+    file_to_upload = request.files.get('file')
+    
+
+   
+
+
+    upload_result = None
+
+    if file_to_upload:
+        upload_result = cloudinary.uploader.upload(file_to_upload)      
+        if upload_result:
+            imageprofile = upload_result.get('secure_url')
+            shelterId.image = imageprofile
+            if shelterId.image:
+                final = shelterId.image
+                
+            try:
+                
+                db.session.commit()
+                return jsonify({'results':"guardado hecho perfecto"}), 200
+
+            except Exception as err:
+                print(str(err))
+                return jsonify({'message': str(err)}), 500
 
 
 # ...........................DELETE ANIMALSS.......................................................
