@@ -1,7 +1,7 @@
 .file-upload {
   border: 1px solid black;
-
-  padding: 3px;
+  text-align: center;
+  padding: 7px;
   cursor: pointer;
   background-color: #f8d2c3;
   border-radius: 15px;
@@ -19,7 +19,6 @@
 .buttoneditphoto {
   border: 1px solid black;
   padding: 7px;
-
   cursor: pointer;
   background-color: #f8d2c3;
   border-radius: 15px;
