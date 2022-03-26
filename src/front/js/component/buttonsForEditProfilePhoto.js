@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import ProfileImgGeneric from "../../img/profile_image_generic.jpg";
+import PropTypes from "prop-types";
 
 import "../../styles/buttonsforeditprofilephoto.css";
 import {} from "react/cjs/react.production.min";
-export const ButtonsForEditProfilePhoto = () => {
+export const ButtonsForEditProfilePhoto = (props) => {
   const { store, actions } = useContext(Context);
 
   const [image, setImage] = useState([]);
@@ -13,7 +14,7 @@ export const ButtonsForEditProfilePhoto = () => {
     var data = new FormData();
     data.append("file", image[0]);
     const response = await fetch(
-      store.URLAPIDOGS + "editprofilephotoshelter", //Pongo 12 por que el unico usuario creado tiene la ID 12
+      store.URLAPIDOGS + `${props.route}`, //Pongo 12 por que el unico usuario creado tiene la ID 12
       {
         method: "PUT",
         headers: {
@@ -24,7 +25,7 @@ export const ButtonsForEditProfilePhoto = () => {
     );
 
     if (response.ok) {
-      actions.getShelterInfo();
+      actions.getAdopterInfo();
     } else {
       alert("el guardado no se ha hecho");
     }
@@ -67,3 +68,6 @@ export const ButtonsForEditProfilePhoto = () => {
 src={ProfileImgGeneric} />}
 </label> */
 }
+ButtonsForEditProfilePhoto.propTypes = {
+  route: PropTypes.string,
+};

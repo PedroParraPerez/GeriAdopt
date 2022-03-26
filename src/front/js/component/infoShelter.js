@@ -18,7 +18,7 @@ export const InfoShelter = () => {
       <div className="container-fluid">
         <div className="row Protectora_Protectoraprofile">
           <div className="col-xl-2 Protectora_imgprofile">
-            <ButtonsForEditProfilePhoto />
+            <ButtonsForEditProfilePhoto route="editprofilephotoshelter" />
             <img
               src={
                 store.shelterInfo.image

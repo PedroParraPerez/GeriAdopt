@@ -330,10 +330,6 @@ def edit_profile_photo_shelter():
 
     file_to_upload = request.files.get('file')
     
-
-   
-
-
     upload_result = None
 
     if file_to_upload:
@@ -343,6 +339,40 @@ def edit_profile_photo_shelter():
             shelterId.image = imageprofile
             if shelterId.image:
                 final = shelterId.image
+                
+            try:
+                
+                db.session.commit()
+                return jsonify({'results':"guardado hecho perfecto"}), 200
+
+            except Exception as err:
+                print(str(err))
+                return jsonify({'message': str(err)}), 500
+
+@api.route('/editprofilephotoadopter', methods=['PUT'])
+@jwt_required()
+def edit_profile_photo_adopter():
+    
+    id = get_jwt_identity()
+    adopterId = User.query.get(id)
+
+    cloudinary.config(
+        cloud_name = 'dqhlna24b',
+        api_key='785699686264573',
+        api_secret='IEigIKmf9mWFvQG9jk87DYO39eo'
+    )
+
+    file_to_upload = request.files.get('file')
+    
+    upload_result = None
+
+    if file_to_upload:
+        upload_result = cloudinary.uploader.upload(file_to_upload)      
+        if upload_result:
+            imageprofile = upload_result.get('secure_url')
+            adopterId.image = imageprofile
+            if adopterId.image:
+                final = adopterId.image
                 
             try:
                 
