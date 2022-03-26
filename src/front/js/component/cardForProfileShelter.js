@@ -74,7 +74,7 @@ export const CardProtectora = () => {
                     <img src={editIcon} alt="FavButton" id="editPencil" />
                   </button>
                   <div className="dropdown-content">
-                    <ul>
+                    <ul className="dropdEditStyle">
                       <Link to={"/formeditanimal/" + animal.id}>
                         <li>Editar animal</li>
                       </Link>

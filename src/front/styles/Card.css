@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
 
 .Card_carddogs {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
   position: relative;
-  display: block;
+  display: grid;
+  place-items: center center;
+  grid-template-columns: repeat(auto-fit);
   width: 16rem;
   margin-top: 8rem;
   background-color: #faf4f7;
@@ -15,10 +20,12 @@
 .Card_dogcardsbody {
   margin-top: 5rem;
   width: 100%;
+  height: auto;
 }
 .Card_cardphoto {
   position: absolute;
-  top: -24%;
+  left: 5rem;
+  top: -6rem;
   margin-right: auto;
   margin-left: auto;
   left: 0;
@@ -30,6 +37,8 @@
 }
 .Card_textcarddog {
   width: 100%;
+  height: auto;
+  font-size: medium;
 }
 .Card_IconsAndDescription {
   margin-bottom: 1rem;
@@ -55,6 +64,7 @@
   background-color: #f8d2c3;
   color: black;
   border: none;
+  margin-bottom: 5px;
 }
 
 .Card_location {
@@ -64,6 +74,7 @@
 .Card_IconUbic {
   width: 0.7rem;
   height: 0.9rem;
+  margin-bottom: 5px;
 }
 
 .Card_FavButton {
@@ -136,4 +147,9 @@
   top: 70%;
   left: 85%;
   position: absolute;
+}
+
+.dropdEditStyle {
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: bold;
 }

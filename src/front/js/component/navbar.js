@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../../front/styles/navbar.css";
 import Logo_GeriAdopt_2 from "../../img/Logo_GeriAdopt_2.png";
+import userAccount from "../../img/userAccount.png";
 import { Context } from "../store/appContext";
 
 export const Navbar = () => {
@@ -64,19 +65,36 @@ export const Navbar = () => {
               {localStorage.getItem("token") ? (
                 <>
                   {" "}
-                  <Link to="/profile">
-                    <p className="spanNavbarLink">Mi cuenta </p>
-                  </Link>
-                  <Link to="/">
-                    <p
-                      onClick={() => {
-                        actions.logout();
-                      }}
-                      className="spanNavbarLink"
-                    >
-                      Cerrar Sesión
-                    </p>
-                  </Link>
+                  <div className="accountButton">
+                    <div className="dropdown">
+                      <button className="dropbtn">
+                        {" "}
+                        <img
+                          src={userAccount}
+                          alt="user account"
+                          id="userLogo"
+                        />
+                      </button>
+                      <div className="dropdown-content">
+                        <ul className="dropdStyle">
+                          {" "}
+                          <Link to="/profile">
+                            <p className="spanNavbarLink">Mi cuenta </p>
+                          </Link>
+                          <Link to="/">
+                            <p
+                              onClick={() => {
+                                actions.logout();
+                              }}
+                              className="spanNavbarLink"
+                            >
+                              Cerrar Sesión
+                            </p>
+                          </Link>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </>
               ) : (
                 <>
