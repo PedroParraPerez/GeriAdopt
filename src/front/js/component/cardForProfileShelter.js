@@ -97,9 +97,7 @@ export const CardProtectora = () => {
                   </div>
                 </div>
               </div>
-              <p className="location">
-                <img src={IconUbic} className="Card_IconUbic" /> {animal.city}
-              </p>
+              <p className="location"></p>
             </div>
           </div>
         );
