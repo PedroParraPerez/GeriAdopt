@@ -20,7 +20,12 @@ export const InfoAdopter = () => {
       <div className="container-fluid">
         <div className="row Adopter_adopterprofile">
           <div className="col-xl-2 Adopter_imgprofile">
-            <ButtonsForEditProfilePhoto route="editprofilephotoadopter" />
+            <ButtonsForEditProfilePhoto
+              route="editprofilephotoadopter"
+              getinfo={() => {
+                actions.getAdopterInfo();
+              }}
+            />
 
             <img
               src={

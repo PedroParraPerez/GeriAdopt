@@ -10,7 +10,7 @@ export const ButtonsForEditProfilePhoto = (props) => {
 
   const [image, setImage] = useState([]);
 
-  const editProfilePhotoShelter = async () => {
+  const editProfilePhoto = async () => {
     var data = new FormData();
     data.append("file", image[0]);
     const response = await fetch(
@@ -25,7 +25,10 @@ export const ButtonsForEditProfilePhoto = (props) => {
     );
 
     if (response.ok) {
-      actions.getAdopterInfo();
+      console.log("entra al if");
+      props.getinfo;
+      console.log("ejecuta la funcion");
+      console.log(props.getinfo);
     } else {
       alert("el guardado no se ha hecho");
     }
@@ -50,7 +53,9 @@ export const ButtonsForEditProfilePhoto = (props) => {
 
             <button
               type="button"
-              onClick={editProfilePhotoShelter}
+              onClick={() => {
+                editProfilePhoto();
+              }}
               className="buttoneditphoto"
             >
               Guardar
@@ -70,4 +75,5 @@ src={ProfileImgGeneric} />}
 }
 ButtonsForEditProfilePhoto.propTypes = {
   route: PropTypes.string,
+  getinfo: PropTypes.func,
 };
