@@ -25,3 +25,10 @@ export const ButtonsForEditProfilePhoto = () => {
     </>
   );
 };
+{
+  /* <label class="file-upload">
+<input type="file" multiple="multiple" name="fileToUpload" />
+{store.shelterInfo.image ? "Modificar" : <img
+src={ProfileImgGeneric} />}
+</label> */
+}
