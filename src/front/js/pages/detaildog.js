@@ -104,7 +104,11 @@ export const DetailDog = () => {
                         store.detailAnimal.shelter
                           ? store.detailAnimal.shelter.email
                           : ""
-                      }?subject=Buenas tardes GeriAdopt!`}
+                      }?subject=Muy buenas ${
+                        store.detailAnimal.shelter
+                          ? store.detailAnimal.shelter.name
+                          : ""
+                      }!`}
                     >
                       {" "}
                       Contacto via email

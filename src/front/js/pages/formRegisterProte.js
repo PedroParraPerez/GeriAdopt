@@ -20,7 +20,7 @@ export const FormRegisterProte = () => {
 
   return (
     <>
-      {!localStorage.getItem("token") ? (
+      {!localStorage.getItem("isShelter") ? (
         <div className="container-fluid">
           <div className="row">
             <div className="col-xl-5 formRegisterProte_view">

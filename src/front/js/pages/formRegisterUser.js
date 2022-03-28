@@ -17,7 +17,7 @@ export const FormRegisterUser = () => {
   };
   return (
     <>
-      {!localStorage.getItem("token") ? (
+      {!localStorage.getItem("isAdopter") ? (
         <div className="container-fluid">
           <div className="row">
             <div className="col-xl-5 formRegisterUser_view">
