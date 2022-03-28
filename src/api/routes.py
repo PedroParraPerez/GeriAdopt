@@ -118,7 +118,7 @@ def registerAnimal():
     )
 
     file_to_upload = request.files.get('file')
-    print(file_to_upload)
+    
     id = get_jwt_identity()
     shelter = Shelter.query.get(id)
     name = request.form.get('name', None)
@@ -129,37 +129,27 @@ def registerAnimal():
     age = request.form.get('age', None)
     short_description = request.form.get('short_description', None)
     description = request.form.get('description', None)
-    print(name)
-
-
-
-
-    if not (name and species and gender and race and size and age and short_description and description):
-        print("@@@@@")
-        return jsonify({'message': 'Data not provided'}), 400
     
+    if not (name and species and gender and race and size and age and short_description and description):
+        
+        return jsonify({'message': 'Data not provided'}), 400
     
     animal = Animal(name=name, species=species, gender=gender, race=race, size=size, age=age, short_description=short_description, description=description, shelter_id=shelter.id)
     try:
 
-
         db.session.add(animal)
         shelter.animals.append(animal)
         db.session.commit()
-        print("1")
+        
         if file_to_upload:
-            print("2")
             upload_result = cloudinary.uploader.upload(file_to_upload)      
             if upload_result:
-                print("3")
                 imageprofile = upload_result.get('secure_url')
                 animal.image = imageprofile
                 if animal.image:
-                    print("4")
                     final = animal.image
                     
                 try:
-                    print("5")
                     db.session.commit()
                     return jsonify({'results':"guardado hecho perfecto"}), 200
 
@@ -281,32 +271,32 @@ def edit_info_shelter():
     name = request.json.get('name', None)
     surname = request.json.get('surname', None)
     email = request.json.get('email', None)
-    password = request.json.get('password', None)
     age = request.json.get('age', None)
     city = request.json.get('city', None)
     address = request.json.get('address', None)
+    password = request.json.get('password', None)
     
-    if password != None:
-        hash_password = generate_password_hash(password)   
+    
+    hash_password = generate_password_hash(password)   
 
-    if  (name or surname or email or hash_password or age or city or address ):
-            if name != None:
-                adopterId.name = name
-            if surname != None:  
-                adopterId.surname = surname
-            if email != None:
-                adopterId.email = email
-            if password != None:
-                adopterId.password = hash_password
-            if age !=None:
-                adopterId.age = age
-            if city != None:
-                adopterId.city = city
-            if address != None:
-                adopterId.address = address
-            
+    if (name or surname or email or age or city or address or hash_password):
+        if name != None:
+            adopterId.name = name
+        if surname != None:  
+            adopterId.surname = surname
+        if email != None:
+            adopterId.email = email
+        if age !=None:
+            adopterId.age = age
+        if city != None:
+            adopterId.city = city
+        if address != None:
+            adopterId.address = address
+        if hash_password != None:
+            adopterId.password = hash_password
+                
             db.session.commit()
-            
+                
             return jsonify({'results': adopterId.serialize()}),201
         
      
@@ -536,7 +526,7 @@ def filter_animals():
             min_age = 7
         queries.append(Animal.age <= age)
         queries.append(Animal.age > min_age)
-    print(queries)
+    
     animals = Animal.query.filter(*queries)
 
     animal_by_city = []
