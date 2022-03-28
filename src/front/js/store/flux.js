@@ -1,8 +1,8 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      URLAPIDOGS:
-        "https://3001-sromk-proyectofinalpl-324avf55tyj.ws-eu38.gitpod.io/api/",
+      URLAPIDOGS: process.env.BASENAME,
+
       allAnimals: [], //Todos los animales
       allShelters: [], //Todas las protectoras
       detailAnimal: [], //Info de 1 solo animal
