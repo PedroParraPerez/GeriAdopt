@@ -111,11 +111,11 @@ def signUpShelter():
 @jwt_required()
 def registerAnimal():
 
-    cloudinary.config(
-        cloud_name = 'dqhlna24b',
-        api_key='785699686264573',
-        api_secret='IEigIKmf9mWFvQG9jk87DYO39eo'
-    )
+    # cloudinary.config(
+    #     cloud_name = 'dqhlna24b',
+    #     api_key='785699686264573',
+    #     api_secret='IEigIKmf9mWFvQG9jk87DYO39eo'
+    # )
 
     file_to_upload = request.files.get('file')
     
@@ -347,11 +347,11 @@ def edit_profile_photo_shelter():
     id = get_jwt_identity()
     shelterId = Shelter.query.get(id)
 
-    cloudinary.config(
-        cloud_name = 'dqhlna24b',
-        api_key='785699686264573',
-        api_secret='IEigIKmf9mWFvQG9jk87DYO39eo'
-    )
+    # cloudinary.config(
+    #     cloud_name = 'dqhlna24b',
+    #     api_key='785699686264573',
+    #     api_secret='IEigIKmf9mWFvQG9jk87DYO39eo'
+    # )
 
     file_to_upload = request.files.get('file')
     
