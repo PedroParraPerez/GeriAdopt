@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import Mojito from "../../img/Mojito.jpg";
 import "../../styles/Card.css";
 import BirthdayIcon from "../../img/BirthdayIcon.png";
@@ -13,6 +13,27 @@ import { Link } from "react-router-dom";
 
 export const CardProtectora = () => {
   const { store, actions } = useContext(Context);
+  const [image, setImage] = useState();
+
+  const editAnimalPhoto = async (id) => {
+    var data = new FormData();
+    data.append("file", image[0]);
+    const response = await fetch(store.URLAPIDOGS + "editanimal/" + id, {
+      method: "PUT",
+      body: data,
+    });
+
+    if (response.ok) {
+      console.log("entra al if");
+
+      actions.getAnimalsOfMyShelter();
+      console.log("ejecuta la funcionnnnnnnnnnnnnnnn");
+
+      console.log("ejecuta la funcion");
+    } else {
+      alert("el guardado no se ha hecho");
+    }
+  };
 
   return (
     <>
@@ -30,6 +51,26 @@ export const CardProtectora = () => {
               <p className="card-text Card_textcarddog">
                 {animal.short_description}
               </p>
+              <label className="editphotoanimal">
+                <input
+                  type="file"
+                  multiple="multiple"
+                  onChange={(event) => {
+                    setImage(event.target.files);
+                  }}
+                  name="fileToUpload"
+                />
+                Mod img
+              </label>
+              <button
+                type="button"
+                onClick={() => {
+                  editAnimalPhoto(animal.id);
+                }}
+                className="savephotoanimal"
+              >
+                Guardar
+              </button>
               <div className="Card_IconsAndDescription">
                 <div className="row Card_IconsCard">
                   <div className="col-xl-4">
