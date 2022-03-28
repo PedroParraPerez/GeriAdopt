@@ -99,9 +99,9 @@ export const Card = () => {
                 ""
               )}
 
-              <p className="location">
+              {/* <p className="location">
                 <img src={IconUbic} className="Card_IconUbic" />
-              </p>
+              </p> */}
             </div>
           </div>
         );

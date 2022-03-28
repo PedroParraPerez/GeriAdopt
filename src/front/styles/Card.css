@@ -21,6 +21,7 @@
   margin-top: 5rem;
   width: 100%;
   height: auto;
+  min-height: 17rem;
 }
 .Card_cardphoto {
   position: absolute;
@@ -64,7 +65,9 @@
   background-color: #f8d2c3;
   color: black;
   border: none;
-  margin-bottom: 5px;
+  position: absolute;
+  right: 32%;
+  bottom: 10%;
 }
 
 .Card_location {
