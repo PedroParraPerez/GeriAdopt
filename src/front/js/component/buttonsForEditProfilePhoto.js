@@ -13,16 +13,13 @@ export const ButtonsForEditProfilePhoto = (props) => {
   const editProfilePhoto = async () => {
     var data = new FormData();
     data.append("file", image[0]);
-    const response = await fetch(
-      store.URLAPIDOGS + `${props.route}`, //Pongo 12 por que el unico usuario creado tiene la ID 12
-      {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: data,
-      }
-    );
+    const response = await fetch(store.URLAPIDOGS + `${props.route}`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: data,
+    });
 
     if (response.ok) {
       console.log("entra al if");

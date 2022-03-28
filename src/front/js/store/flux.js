@@ -109,14 +109,23 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       registerAnimal: async (animal) => {
+        let formData = new FormData();
+
+        for (let key in animal) {
+          if (key != "image") {
+            formData.append(key, animal[key]);
+          } else {
+            formData.append("file", animal[key][0]);
+          }
+        }
         const response = await fetch(getStore().URLAPIDOGS + "registeranimal", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
+            // "Content-Type": "multipart/form-data",
+            // Accept: "application/json",
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
-          body: JSON.stringify(animal),
+          body: formData,
         });
 
         if (response.status == 200) {

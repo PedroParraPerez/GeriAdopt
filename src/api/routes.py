@@ -111,28 +111,63 @@ def signUpShelter():
 @jwt_required()
 def registerAnimal():
 
+    cloudinary.config(
+        cloud_name = 'dqhlna24b',
+        api_key='785699686264573',
+        api_secret='IEigIKmf9mWFvQG9jk87DYO39eo'
+    )
+
+    file_to_upload = request.files.get('file')
+    print(file_to_upload)
     id = get_jwt_identity()
     shelter = Shelter.query.get(id)
-    name = request.json.get('name', None)
-    species = request.json.get('species', None)
-    gender = request.json.get('gender', None)
-    race = request.json.get('race', None)
-    size = request.json.get('size', None)
-    age = request.json.get('age', None)
-    short_description = request.json.get('short_description', None)
-    description = request.json.get('description', None)
+    name = request.form.get('name', None)
+    species = request.form.get('species', None)
+    gender = request.form.get('gender', None)
+    race = request.form.get('race', None)
+    size = request.form.get('size', None)
+    age = request.form.get('age', None)
+    short_description = request.form.get('short_description', None)
+    description = request.form.get('description', None)
+    print(name)
+
+
+
 
     if not (name and species and gender and race and size and age and short_description and description):
+        print("@@@@@")
         return jsonify({'message': 'Data not provided'}), 400
     
     
     animal = Animal(name=name, species=species, gender=gender, race=race, size=size, age=age, short_description=short_description, description=description, shelter_id=shelter.id)
     try:
 
+
         db.session.add(animal)
         shelter.animals.append(animal)
         db.session.commit()
-        return jsonify({'results':animal.serialize()}), 200
+        print("1")
+        if file_to_upload:
+            print("2")
+            upload_result = cloudinary.uploader.upload(file_to_upload)      
+            if upload_result:
+                print("3")
+                imageprofile = upload_result.get('secure_url')
+                animal.image = imageprofile
+                if animal.image:
+                    print("4")
+                    final = animal.image
+                    
+                try:
+                    print("5")
+                    db.session.commit()
+                    return jsonify({'results':"guardado hecho perfecto"}), 200
+
+                except Exception as err:
+                    print(str(err))
+                    return jsonify({'message': str(err)}), 500
+
+            return jsonify({'results':animal.serialize()}), 200
 
     except Exception as err:
         return jsonify({'message': str(err)}), 500
@@ -478,17 +513,39 @@ def filter_animals():
     size = request.json.get('size', None)
     age = request.json.get('age', None)
     city = request.json.get('city', None)
-    min_age = 0
+    
 
-    if age == "cachorro":
-        age = 1
-    elif age == "adulto":
-        age = 7
-        min_age = 1
-    elif age == "mayor":
-        age = 1000
-        min_age = 7
-    animals = Animal.query.filter( Animal.species == species, Animal.gender == gender, Animal.size == size, Animal.age <= age, Animal.age > min_age)
+    
+
+    queries = []
+    if species:
+        queries.append(Animal.species == species)
+    if gender:
+        queries.append(Animal.gender == gender)
+    if size:
+        queries.append(Animal.size == size)
+    if age:
+        min_age = 0
+        if age == "cachorro":
+            age = 1
+        elif age == "adulto":
+            age = 7
+            min_age = 1
+        elif age == "mayor":
+            age = 1000
+            min_age = 7
+        queries.append(Animal.age <= age)
+        queries.append(Animal.age > min_age)
+    print(queries)
+    animals = Animal.query.filter(*queries)
+
+    animal_by_city = []
+    if city:
+        for animal in animals:
+            if Shelter.query.get(animal.shelter_id).city == city:
+                animal_by_city.append(animal)
+        return jsonify({'results': list(map(lambda animal: animal.serialize(), animal_by_city))}), 200
+
     
     return jsonify({'results': list(map(lambda animal: animal.serialize(), animals))}), 200
 

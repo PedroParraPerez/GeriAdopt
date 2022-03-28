@@ -59,7 +59,7 @@ export const InfoShelterForViewAdopter = () => {
                 <p>
                   <b className="text-capitalize">
                     <span className="Protectora_labelprofileinfo">
-                      Direción:{" "}
+                      Dirección:{" "}
                     </span>
                     {store.shelterInfoForViewAdopter.address}
                   </b>

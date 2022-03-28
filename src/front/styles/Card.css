@@ -160,21 +160,7 @@
   overflow: hidden;
   width: 0;
 }
-.editphotoanimal {
-  border: 1px solid black;
-  text-align: center;
-  padding: 7px;
-  cursor: pointer;
-  font-size: small;
-  background-color: #f8d2c3;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: #f8d2c3;
-  color: black;
-  position: absolute;
-  top: 5%;
-  left: -10%;
-}
+
 .savephotoanimal {
   border: 1px solid black;
   text-align: center;
@@ -190,5 +176,7 @@
   top: 20%;
   left: -9%;
 }
-.Card_carddogs:hover {
+.Card_cardphoto:hover {
+  cursor: pointer;
+  filter: blur(2px);
 }

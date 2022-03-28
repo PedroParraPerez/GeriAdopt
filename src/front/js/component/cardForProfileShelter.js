@@ -24,12 +24,7 @@ export const CardProtectora = () => {
     });
 
     if (response.ok) {
-      console.log("entra al if");
-
       actions.getAnimalsOfMyShelter();
-      console.log("ejecuta la funcionnnnnnnnnnnnnnnn");
-
-      console.log("ejecuta la funcion");
     } else {
       alert("el guardado no se ha hecho");
     }
@@ -40,17 +35,7 @@ export const CardProtectora = () => {
       {store.animalsInMyShelter.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
-            <img
-              src={!animal.image ? Mojito : animal.image}
-              className="Card_cardphoto"
-            />
-            <div className="Card_dogcardsbody">
-              <h5 className="Card_card-title">
-                <b>{animal.name}</b>
-              </h5>
-              <p className="card-text Card_textcarddog">
-                {animal.short_description}
-              </p>
+            {!animal.image ? (
               <label className="editphotoanimal">
                 <input
                   type="file"
@@ -60,8 +45,29 @@ export const CardProtectora = () => {
                   }}
                   name="fileToUpload"
                 />
-                Mod img
+                <img className="Card_cardphoto" src={Mojito} />
               </label>
+            ) : (
+              <label className="editphotoanimal">
+                <input
+                  type="file"
+                  multiple="multiple"
+                  onChange={(event) => {
+                    setImage(event.target.files);
+                  }}
+                  name="fileToUpload"
+                />
+                <img className="Card_cardphoto" src={animal.image} />
+              </label>
+            )}
+
+            <div className="Card_dogcardsbody">
+              <h5 className="Card_card-title">
+                <b>{animal.name}</b>
+              </h5>
+              <p className="card-text Card_textcarddog">
+                {animal.short_description}
+              </p>
               <button
                 type="button"
                 onClick={() => {
@@ -69,7 +75,7 @@ export const CardProtectora = () => {
                 }}
                 className="savephotoanimal"
               >
-                Guardar
+                Guardar img
               </button>
               <div className="Card_IconsAndDescription">
                 <div className="row Card_IconsCard">
@@ -106,7 +112,7 @@ export const CardProtectora = () => {
                 </div>
               </div>
               <Link to={"/detailanimal/" + animal.id}>
-                <button className="btn Card_btn">Conóceme!</button>
+                <button className="btn Card_btn">Más Info</button>
               </Link>
               <div className="editButton">
                 <div className="dropdown">
@@ -117,7 +123,7 @@ export const CardProtectora = () => {
                   <div className="dropdown-content">
                     <ul className="dropdEditStyle">
                       <Link to={"/formeditanimal/" + animal.id}>
-                        <li>Editar animal</li>
+                        <li>Mod datos</li>
                       </Link>
 
                       <li
