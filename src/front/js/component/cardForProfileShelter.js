@@ -22,7 +22,6 @@ export const CardProtectora = () => {
       method: "PUT",
       body: data,
     });
-
     if (response.ok) {
       actions.getAnimalsOfMyShelter();
     } else {

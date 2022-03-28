@@ -74,7 +74,7 @@ export const InfoShelter = () => {
                 <p>
                   <b className="text-capitalize">
                     <span className="Protectora_labelprofileinfo">
-                      Direción:{" "}
+                      Dirección:{" "}
                     </span>
                     {store.shelterInfo.address}
                   </b>
