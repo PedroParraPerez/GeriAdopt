@@ -97,6 +97,36 @@ export const DetailDog = () => {
                     ? store.detailAnimal.shelter.tlf
                     : ""}
                 </li>
+                <li className="detaildog_info_list">
+                  <button>
+                    <a
+                      href={`mailto:${
+                        store.detailAnimal.shelter
+                          ? store.detailAnimal.shelter.email
+                          : ""
+                      }?subject=Buenas tardes GeriAdopt!`}
+                    >
+                      {" "}
+                      Contacto via email
+                    </a>
+                  </button>
+                </li>
+                <li className="detaildog_info_list">
+                  <button>
+                    <a
+                      type="button"
+                      target="_blank"
+                      href={`https://wa.me/+34${
+                        store.detailAnimal.shelter
+                          ? store.detailAnimal.shelter.tlf
+                          : ""
+                      }`}
+                    >
+                      {" "}
+                      Contacto via Whatsapp
+                    </a>
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
