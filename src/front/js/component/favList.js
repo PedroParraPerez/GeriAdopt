@@ -5,7 +5,6 @@ import "../../styles/Card.css";
 import BirthdayIcon from "../../img/BirthdayIcon.png";
 import GenderIcon from "../../img/GenderIcon.png";
 import RazaIcon from "../../img/razaIcon.png";
-import IconUbic from "../../img/IconUbicacion.png";
 import IconHearth from "../../img/IconHearth.png";
 import Mojito from "../../img/Mojito.jpg";
 import { Link } from "react-router-dom";
@@ -75,9 +74,6 @@ export const FavList = () => {
               >
                 <img src={IconHearth} alt="FavButton" className="Card_hearth" />
               </div>
-              <p className="location">
-                <img src={IconUbic} className="Card_IconUbic" /> {animal.city}
-              </p>
             </div>
           </div>
         );

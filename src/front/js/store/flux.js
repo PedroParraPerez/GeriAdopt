@@ -1,14 +1,14 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      URLAPIDOGS: process.env.BASENAME,
+      URLAPIDOGS:
+        "https://3001-sromk-proyectofinalpl-w39jlqj4x8t.ws-eu38.gitpod.io/api/",
 
       allAnimals: [], //Todos los animales
       allShelters: [], //Todas las protectoras
       detailAnimal: [], //Info de 1 solo animal
       isShelter: false, //false = Adopter ; true = Shelter
       validationToken: [], //validacion del token
-
       favlist: [], // Info de la lista de favoritos de un adoptante
       adopterInfo: [],
       shelterInfo: [],

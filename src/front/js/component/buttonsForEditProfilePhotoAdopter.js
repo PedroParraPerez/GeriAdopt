@@ -1,19 +1,19 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import ProfileImgGeneric from "../../img/profile_image_generic.jpg";
-import PropTypes from "prop-types";
 
 import "../../styles/buttonsforeditprofilephoto.css";
 import {} from "react/cjs/react.production.min";
-export const ButtonsForEditProfilePhoto = (props) => {
+
+export const ButtonsForEditProfilePhotoAdopter = () => {
   const { store, actions } = useContext(Context);
 
   const [image, setImage] = useState([]);
 
-  const editProfilePhoto = async () => {
+  const editProfilePhotoAdopter = async () => {
     var data = new FormData();
     data.append("file", image[0]);
-    const response = await fetch(store.URLAPIDOGS + `${props.route}`, {
+    const response = await fetch(store.URLAPIDOGS + `editprofilephotoadopter`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -22,12 +22,7 @@ export const ButtonsForEditProfilePhoto = (props) => {
     });
 
     if (response.ok) {
-      console.log("entra al if");
-      () => {
-        props.getinfo;
-      };
-      console.log("ejecuta la funcion");
-      console.log(props.getinfo);
+      actions.getAdopterInfo();
     } else {
       alert("el guardado no se ha hecho");
     }
@@ -47,13 +42,12 @@ export const ButtonsForEditProfilePhoto = (props) => {
                 }}
                 name="fileToUpload"
               />
-              {store.shelterInfo.image ? "Modificar" : "Añadir imagen"}
+              Modificar imagen
             </label>
-
             <button
               type="button"
               onClick={() => {
-                editProfilePhoto();
+                editProfilePhotoAdopter();
               }}
               className="buttoneditphoto"
             >
@@ -64,15 +58,4 @@ export const ButtonsForEditProfilePhoto = (props) => {
       </div>
     </>
   );
-};
-{
-  /* <label class="file-upload">
-<input type="file" multiple="multiple" name="fileToUpload" />
-{store.shelterInfo.image ? "Modificar" : <img
-src={ProfileImgGeneric} />}
-</label> */
-}
-ButtonsForEditProfilePhoto.propTypes = {
-  route: PropTypes.string,
-  getinfo: PropTypes.func,
 };

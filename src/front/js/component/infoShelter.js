@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 
 import { Link } from "react-router-dom";
 import { EditInfoButton } from "./editInfoButton";
-import { ButtonsForEditProfilePhoto } from "./buttonsForEditProfilePhoto";
+import { ButtonsForEditProfilePhotoShelter } from "./buttonsForEditProfilePhotoShelter";
 
 export const InfoShelter = () => {
   const { store, actions } = useContext(Context);
@@ -18,12 +18,7 @@ export const InfoShelter = () => {
       <div className="container-fluid">
         <div className="row Protectora_Protectoraprofile">
           <div className="col-xl-2 Protectora_imgprofile">
-            <ButtonsForEditProfilePhoto
-              route="editprofilephotoshelter"
-              getinfo={() => {
-                actions.getShelterInfo();
-              }}
-            />
+            <ButtonsForEditProfilePhotoShelter />
             <img
               src={
                 store.shelterInfo.image

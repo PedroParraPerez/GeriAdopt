@@ -4,7 +4,6 @@ import "../../styles/Card.css";
 import BirthdayIcon from "../../img/BirthdayIcon.png";
 import GenderIcon from "../../img/GenderIcon.png";
 import RazaIcon from "../../img/razaIcon.png";
-import IconUbic from "../../img/IconUbicacion.png";
 import editIcon from "../../img/editIcon.png";
 import { Context } from "../store/appContext";
 import "../../styles/buttonEditAnimal.css";

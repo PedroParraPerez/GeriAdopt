@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 import EditIcon from "../../img/editIcon.png";
 import { Link } from "react-router-dom";
 import { EditInfoButton } from "./editInfoButton";
-import { ButtonsForEditProfilePhoto } from "./buttonsForEditProfilePhoto";
+import { ButtonsForEditProfilePhotoAdopter } from "./buttonsForEditProfilePhotoAdopter.js";
 
 export const InfoAdopter = () => {
   const { store, actions } = useContext(Context);
@@ -20,12 +20,7 @@ export const InfoAdopter = () => {
       <div className="container-fluid">
         <div className="row Adopter_adopterprofile">
           <div className="col-xl-2 Adopter_imgprofile">
-            <ButtonsForEditProfilePhoto
-              route="editprofilephotoadopter"
-              getinfo={() => {
-                actions.getAdopterInfo();
-              }}
-            />
+            <ButtonsForEditProfilePhotoAdopter />
 
             <img
               src={

@@ -5,7 +5,7 @@ import "../../styles/Card.css";
 import BirthdayIcon from "../../img/BirthdayIcon.png";
 import GenderIcon from "../../img/GenderIcon.png";
 import RazaIcon from "../../img/razaIcon.png";
-import IconUbic from "../../img/IconUbicacion.png";
+
 import IconHearth from "../../img/IconHearth.png";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
@@ -98,10 +98,6 @@ export const Card = () => {
               ) : (
                 ""
               )}
-
-              {/* <p className="location">
-                <img src={IconUbic} className="Card_IconUbic" />
-              </p> */}
             </div>
           </div>
         );

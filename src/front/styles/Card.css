@@ -74,11 +74,6 @@
   margin-top: 1rem;
   display: block;
 }
-.Card_IconUbic {
-  width: 0.7rem;
-  height: 0.9rem;
-  margin-bottom: 5px;
-}
 
 .Card_FavButton {
   position: absolute;
@@ -111,10 +106,6 @@
 .Card_location {
   margin-top: 1rem;
   display: block;
-}
-.Card_IconUbic {
-  width: 0.7rem;
-  height: 0.9rem;
 }
 
 @media only screen and (max-width: 1200px) {
