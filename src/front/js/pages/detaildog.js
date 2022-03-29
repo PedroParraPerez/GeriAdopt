@@ -97,40 +97,40 @@ export const DetailDog = () => {
                     ? store.detailAnimal.shelter.tlf
                     : ""}
                 </li>
-                <li className="detaildog_info_list">
-                  <button>
-                    <a
-                      href={`mailto:${
-                        store.detailAnimal.shelter
-                          ? store.detailAnimal.shelter.email
-                          : ""
-                      }?subject=Muy buenas ${
-                        store.detailAnimal.shelter
-                          ? store.detailAnimal.shelter.name
-                          : ""
-                      }!`}
-                    >
-                      {" "}
-                      Contacto via email
-                    </a>
-                  </button>
-                </li>
-                <li className="detaildog_info_list">
-                  <button>
-                    <a
-                      type="button"
-                      target="_blank"
-                      href={`https://wa.me/+34${
-                        store.detailAnimal.shelter
-                          ? store.detailAnimal.shelter.tlf
-                          : ""
-                      }`}
-                    >
-                      {" "}
-                      Contacto via Whatsapp
-                    </a>
-                  </button>
-                </li>
+
+                <button className="buttonContactShelterOne">
+                  <a
+                    className="ancorforbuttoncontact"
+                    href={`mailto:${
+                      store.detailAnimal.shelter
+                        ? store.detailAnimal.shelter.email
+                        : ""
+                    }?subject=Muy buenas ${
+                      store.detailAnimal.shelter
+                        ? store.detailAnimal.shelter.name
+                        : ""
+                    }!`}
+                  >
+                    {" "}
+                    Contacto via email
+                  </a>
+                </button>
+
+                <button className="buttonContactShelterTwo">
+                  <a
+                    className="ancorforbuttoncontact"
+                    type="button"
+                    target="_blank"
+                    href={`https://wa.me/+34${
+                      store.detailAnimal.shelter
+                        ? store.detailAnimal.shelter.tlf
+                        : ""
+                    }`}
+                  >
+                    {" "}
+                    Contacto via Whatsapp
+                  </a>
+                </button>
               </ul>
             </div>
           </div>

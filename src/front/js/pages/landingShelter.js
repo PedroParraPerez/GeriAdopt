@@ -18,7 +18,7 @@ export const LandingShelter = () => {
   return (
     <>
       <InfoShelterForViewAdopter />
-      <MiniTitle title="Nuestros Animales" />
+      <MiniTitle title="Animales" />
       <div className=" row list_animals_in_shelter_for_view_adopter">
         <CardAnimalsInShelterForViewAdopter />
       </div>

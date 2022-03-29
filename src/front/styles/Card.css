@@ -167,7 +167,24 @@
   top: 20%;
   left: -9%;
 }
-.Card_cardphoto:hover {
+
+.Card_photo_profile_shelter:hover {
   cursor: pointer;
   filter: blur(2px);
+}
+
+#card_photo_profile_text {
+  visibility: hidden;
+  z-index: 2;
+  cursor: pointer;
+  font-size: x-large;
+  position: absolute;
+  top: -10%;
+  left: 25%;
+  color: white;
+  border-style: solid 1px black;
+}
+
+.editphotoanimal:hover > #card_photo_profile_text {
+  visibility: visible;
 }

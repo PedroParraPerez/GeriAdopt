@@ -7,7 +7,7 @@
 
 .btnContact {
   margin: 3rem;
-  margin-left: 86rem;
+  margin-left: 63rem;
   width: 8rem;
   border-radius: 1rem;
   padding: 1rem 1rem;
@@ -18,4 +18,10 @@
   font-weight: bolder;
   margin-bottom: 2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.containerFormContact {
+  padding: 5rem;
+}
+.btnContact:hover {
+  background-color: #f5c0ab;
 }

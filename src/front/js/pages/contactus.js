@@ -4,7 +4,7 @@ import "../../styles/contactus.css";
 export const ContactUs = () => {
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid containerFormContact">
         <section class="mb-4">
           <h2 class="h1-responsive font-weight-bold text-center my-4 titleContact">
             ¡Queremos saber de ti!

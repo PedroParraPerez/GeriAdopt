@@ -43,7 +43,10 @@ export const CardProtectora = () => {
                   }}
                   name="fileToUpload"
                 />
-                <img className="Card_cardphoto" src={Mojito} />
+                <img
+                  className="Card_cardphoto Card_photo_profile_shelter"
+                  src={Mojito}
+                />
               </label>
             ) : (
               <label className="editphotoanimal">
@@ -55,7 +58,11 @@ export const CardProtectora = () => {
                   }}
                   name="fileToUpload"
                 />
-                <img className="Card_cardphoto" src={animal.image} />
+                <img
+                  className="Card_cardphoto Card_photo_profile_shelter"
+                  src={animal.image}
+                />
+                <span id="card_photo_profile_text">Editar imagen</span>
               </label>
             )}
 
