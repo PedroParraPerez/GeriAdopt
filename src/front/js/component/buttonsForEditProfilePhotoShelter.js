@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
-import ProfileImgGeneric from "../../img/profile_image_generic.jpg";
 
 import "../../styles/buttonsforeditprofilephoto.css";
 import {} from "react/cjs/react.production.min";
