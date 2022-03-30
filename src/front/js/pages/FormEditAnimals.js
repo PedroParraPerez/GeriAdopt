@@ -200,10 +200,7 @@ export const FormEditAnimal = () => {
                     />
                   </div>
                 </div>
-                <div className="col-xl-6 mt-2  mt-4">
-                  <label htmlFor="image">Foto</label>
-                  <input type="file" name="image" />{" "}
-                </div>
+                <div className="col-xl-6 mt-2  mt-4"></div>
                 <div className="col-xl-6 mt-2 d-flex justify-content-end mt-4">
                   <button
                     onClick={(event) => {

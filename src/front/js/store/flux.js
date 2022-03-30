@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       URLAPIDOGS:
-        "https://3001-sromk-proyectofinalpl-w39jlqj4x8t.ws-eu38.gitpod.io/api/",
+        "https://3001-sromk-proyectofinalpl-z1eydvosas7.ws-eu38.gitpod.io/api/",
 
       allAnimals: [], //Todos los animales
       allShelters: [], //Todas las protectoras
@@ -129,7 +129,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
 
         if (response.status == 200) {
-          alert("animal creado");
+          alert("Animal creado");
         } else {
           alert("Falta un campo por especificar");
         }
@@ -149,6 +149,11 @@ const getState = ({ getStore, getActions, setStore }) => {
             body: JSON.stringify(info),
           }
         );
+        if (response.ok) {
+          alert("Datos guardados");
+        } else {
+          alert("No se ha podido borrar el animal");
+        }
       },
       editInfoShelter: async (info) => {
         const response = await fetch(
@@ -163,6 +168,11 @@ const getState = ({ getStore, getActions, setStore }) => {
             body: JSON.stringify(info),
           }
         );
+        if (response.ok) {
+          alert("Datos guardados");
+        } else {
+          alert("No se ha podido editar la infomación");
+        }
       },
 
       editInfoAnimal: async (info, id) => {
@@ -178,6 +188,11 @@ const getState = ({ getStore, getActions, setStore }) => {
             body: JSON.stringify(info),
           }
         );
+        if (response.ok) {
+          alert("Información del animal modificada");
+        } else {
+          alert("No se ha podido modificar la información");
+        }
       },
       deleteAnimal: async (id) => {
         const response = await fetch(
