@@ -38,27 +38,37 @@ export const Navbar = () => {
           <ul className="navbar-nav ms-3 enlaces">
             <li className="nav-item">
               <Link to="/quienes-somos">
-                <span className="spanNavbarLink">Quienes Somos</span>
+                <span className="spanNavbarLink">
+                  <b>Quienes Somos</b>
+                </span>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/alldogslist">
-                <span className="spanNavbarLink">Encuentra tu Match</span>
+                <span className="spanNavbarLink">
+                  <b>Encuentra tu Match</b>
+                </span>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/allshelters">
-                <span className="spanNavbarLink">Protectoras</span>
+                <span className="spanNavbarLink">
+                  <b>Protectoras</b>
+                </span>
               </Link>
             </li>
             <li className="nav-item dropdown">
               <Link to="/blogsection">
-                <span className="spanNavbarLink">Blog de Noticias</span>
+                <span className="spanNavbarLink">
+                  <b>Blog de Noticias</b>
+                </span>
               </Link>
             </li>
             <li className="nav-item dropdown">
               <Link to="/contactus">
-                <span className="spanNavbarLink">Contacto</span>
+                <span className="spanNavbarLink">
+                  <b>Contacto</b>
+                </span>
               </Link>
             </li>
             <li className="nav-item dropdown">
