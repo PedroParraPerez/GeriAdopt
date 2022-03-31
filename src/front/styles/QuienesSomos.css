@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400&family=Comforter&family=Josefin+Sans:ital,wght@1,500&family=Sansita+Swashed:wght@300&family=Ubuntu:wght@300&display=swap");
 
 .picQuienesSomos {
-  width: 70%;
+  width: 40%;
   height: auto;
   margin-top: 5rem;
   border-radius: 10%;
@@ -120,4 +120,42 @@
   font-size: 1.1rem;
   font-weight: bolder;
   margin-top: 2rem;
+}
+
+.centerTitleChappie {
+  width: 90%;
+  margin-bottom: 5rem;
+  display: flex;
+  padding-top: 8rem;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleChappie {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 60px;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 4%;
+}
+
+.picChappie {
+  width: 50%;
+  height: auto;
+}
+
+.textoChappie {
+  margin-top: 4%;
+  font-family: "Alegreya Sans", sans-serif;
+  text-align: center;
+}
+
+.textoChappieDos {
+  margin-top: 4%;
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bolder;
 }

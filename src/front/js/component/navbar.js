@@ -1,19 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../../front/styles/navbar.css";
 import Logo_GeriAdopt_2 from "../../img/Logo_GeriAdopt_2.png";
-import PropTypes from "prop-types";
+import userAccount from "../../img/userAccount.png";
 import { Context } from "../store/appContext";
 
-export const Navbar = (props) => {
-  // const [isLogged, setIsLogged] = useState(false);
+export const Navbar = () => {
   const { store, actions } = useContext(Context);
-
-  // useEffect(() => {
-  //   if (localStorage.getItem("token")) {
-  //     setIsLogged(true);
-  //   }
-  // }, [store.logedUser]);
 
   return (
     <>
@@ -45,39 +38,73 @@ export const Navbar = (props) => {
           <ul className="navbar-nav ms-3 enlaces">
             <li className="nav-item">
               <Link to="/quienes-somos">
-                <span className="spanNavbarLink">Quienes Somos</span>
+                <span className="spanNavbarLink">
+                  <b>Quienes Somos</b>
+                </span>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/alldogslist">
-                <span className="spanNavbarLink">Encuentra tu Match</span>
+                <span className="spanNavbarLink">
+                  <b>Encuentra tu Match</b>
+                </span>
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/allshelters">
-                <span className="spanNavbarLink">Protectoras</span>
+                <span className="spanNavbarLink">
+                  <b>Protectoras</b>
+                </span>
               </Link>
             </li>
             <li className="nav-item dropdown">
               <Link to="/blogsection">
-                <span className="spanNavbarLink">Blog de Noticias</span>
+                <span className="spanNavbarLink">
+                  <b>Blog de Noticias</b>
+                </span>
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <Link to="/contacto">
-                <span className="spanNavbarLink">Contacto</span>
+              <Link to="/contactus">
+                <span className="spanNavbarLink">
+                  <b>Contacto</b>
+                </span>
               </Link>
             </li>
             <li className="nav-item dropdown">
               {localStorage.getItem("token") ? (
                 <>
                   {" "}
-                  <Link to="/profile">
-                    <p className="spanNavbarLink">Mi cuenta </p>
-                  </Link>
-                  <p onClick={actions.logout} className="spanNavbarLink">
-                    Cerrar Sesión
-                  </p>
+                  <div className="accountButton">
+                    <div className="dropdown">
+                      <button className="dropbtn">
+                        {" "}
+                        <img
+                          src={userAccount}
+                          alt="user account"
+                          id="userLogo"
+                        />
+                      </button>
+                      <div className="dropdown-content">
+                        <ul className="dropdStyle">
+                          {" "}
+                          <Link to="/profile">
+                            <p className="spanNavbarLink">Mi cuenta </p>
+                          </Link>
+                          <Link to="/">
+                            <p
+                              onClick={() => {
+                                actions.logout();
+                              }}
+                              className="spanNavbarLink"
+                            >
+                              Cerrar Sesión
+                            </p>
+                          </Link>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </>
               ) : (
                 <>
@@ -128,8 +155,4 @@ export const Navbar = (props) => {
       </div>
     </>
   );
-};
-
-Navbar.propTypes = {
-  name: PropTypes.string,
 };

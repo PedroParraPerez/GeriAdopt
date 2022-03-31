@@ -20,10 +20,7 @@ const injectContext = (PassedComponent) => {
       })
     );
 
-    useEffect(() => {
-      state.actions.getAllAnimal();
-      state.actions.getAllShelters();
-    }, []);
+    useEffect(() => {}, []);
 
     return (
       <Context.Provider value={state}>

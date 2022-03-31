@@ -1,30 +1,25 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 
 import "../../styles/allShelters.css";
 import SOSPeludos from "../../img/sospeludos.jpeg";
 import ImgTitleFavs from "../../img/imagetitlefavs.png";
-import { CardPerfilShelter } from "../component/cardperfilshelter";
+import { CardShelter } from "../component/card_with_info_shelters";
+import { MiniTitle } from "../component/minititle";
+
+import { Context } from "../store/appContext";
 
 export const AllShelterList = () => {
+  const { store, actions } = useContext(Context);
+
+  useEffect(() => {
+    actions.getAllShelters();
+  }, []);
   return (
     <>
       <div className="container-fluid">
-        <div className="row shelter_titleFavs">
-          <div className="col-xl-1">
-            <img
-              src={ImgTitleFavs}
-              alt="titlecat"
-              className="shelter_ImgTitleFavs"
-            />
-          </div>
-          <div className="col-xl-2">
-            <h2 className="titleShelter">
-              <b>Protectoras</b>
-            </h2>
-          </div>
-        </div>
-        <div className="row shelter_cardlist">
-          <CardPerfilShelter />
+        <MiniTitle title="Protectoras" />
+        <div className="row shelter_cardlist d-block">
+          <CardShelter />
         </div>
       </div>
     </>

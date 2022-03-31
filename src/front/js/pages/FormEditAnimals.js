@@ -1,11 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "../../styles/formRegisterUser.css";
+import { Context } from "../store/appContext.js";
+import { useParams } from "react-router-dom";
 
-import "../../styles/formRegisterProte.css";
-import { Context } from "../store/appContext";
-
-export const FormRegisterAnimal = () => {
-  const [formregisterAnimal, setFormregisterAnimal] = useState({});
+export const FormEditAnimal = () => {
+  const [info, setInfo] = useState({});
   const { store, actions } = useContext(Context);
+  const id = useParams().id;
 
   return (
     <>
@@ -14,7 +16,7 @@ export const FormRegisterAnimal = () => {
           <div className="col-xl-5 formRegisterProte_view">
             <div className="row formRegisterProte_title">
               <div className="col-xl-12">
-                <h2>REGISTRO DE ANIMALES</h2>
+                <h2>EDITAR ANIMAL</h2>
               </div>
             </div>
             <form>
@@ -23,8 +25,8 @@ export const FormRegisterAnimal = () => {
                   <label htmlFor="name">Nombre:</label>
                   <input
                     onChange={(event) => {
-                      setFormregisterAnimal({
-                        ...formregisterAnimal,
+                      setInfo({
+                        ...info,
                         [event.target.name]: event.target.value,
                       });
                     }}
@@ -38,8 +40,8 @@ export const FormRegisterAnimal = () => {
                   <label htmlFor="species">Especie:</label>
                   <select
                     onChange={(e) => {
-                      setFormregisterAnimal({
-                        ...formregisterAnimal,
+                      setInfo({
+                        ...info,
                         species: e.target.value,
                       });
                     }}
@@ -74,8 +76,8 @@ export const FormRegisterAnimal = () => {
                   <label htmlFor="race">Raza:</label>
                   <input
                     onChange={(event) => {
-                      setFormregisterAnimal({
-                        ...formregisterAnimal,
+                      setInfo({
+                        ...info,
                         [event.target.name]: event.target.value,
                       });
                     }}
@@ -89,8 +91,8 @@ export const FormRegisterAnimal = () => {
                   <label htmlFor="gender">Genero (M o F):</label>
                   <select
                     onChange={(e) => {
-                      setFormregisterAnimal({
-                        ...formregisterAnimal,
+                      setInfo({
+                        ...info,
                         gender: e.target.value,
                       });
                     }}
@@ -121,8 +123,8 @@ export const FormRegisterAnimal = () => {
                     <label htmlFor="size">Tamaño:</label>
                     <select
                       onChange={(e) => {
-                        setFormregisterAnimal({
-                          ...formregisterAnimal,
+                        setInfo({
+                          ...info,
                           size: e.target.value,
                         });
                       }}
@@ -157,8 +159,8 @@ export const FormRegisterAnimal = () => {
                     <label htmlFor="age">Edad:</label>
                     <input
                       onChange={(event) => {
-                        setFormregisterAnimal({
-                          ...formregisterAnimal,
+                        setInfo({
+                          ...info,
                           [event.target.name]: event.target.value,
                         });
                       }}
@@ -173,8 +175,8 @@ export const FormRegisterAnimal = () => {
                     </label>
                     <input
                       onChange={(event) => {
-                        setFormregisterAnimal({
-                          ...formregisterAnimal,
+                        setInfo({
+                          ...info,
                           [event.target.name]: event.target.value,
                         });
                       }}
@@ -187,8 +189,8 @@ export const FormRegisterAnimal = () => {
                     <label htmlFor="description">Descripcion larga:</label>
                     <input
                       onChange={(event) => {
-                        setFormregisterAnimal({
-                          ...formregisterAnimal,
+                        setInfo({
+                          ...info,
                           [event.target.name]: event.target.value,
                         });
                       }}
@@ -198,34 +200,17 @@ export const FormRegisterAnimal = () => {
                     />
                   </div>
                 </div>
-                <div className="col-xl-6 mt-2  mt-4">
-                  <label htmlFor="image">Foto</label>
-                  <input
-                    type="file"
-                    name="image"
-                    onChange={(event) => {
-                      setFormregisterAnimal({
-                        ...formregisterAnimal,
-                        [event.target.name]: event.target.files,
-                      });
-                    }}
-                  />
-                </div>
+                <div className="col-xl-6 mt-2  mt-4"></div>
                 <div className="col-xl-6 mt-2 d-flex justify-content-end mt-4">
                   <button
                     onClick={(event) => {
                       event.preventDefault();
-                      if (
-                        formregisterAnimal.password ==
-                        formregisterAnimal.passwordrepeat
-                      ) {
-                        actions.registerAnimal(formregisterAnimal);
-                      }
+                      actions.editInfoAnimal(info, id);
                     }}
                     className="btn formRegisterProte_button"
                     type="submit"
                   >
-                    Guardar
+                    Guardar Cambios
                   </button>
                 </div>
               </div>

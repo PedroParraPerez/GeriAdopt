@@ -142,12 +142,11 @@ export const BlogNoticias = () => {
           </div>
           <div className="row d-flex justify-content-center">
             <div className="col-md-12 d-flex justify-content-center">
-              <button
-                href="#"
-                className="btn justify-content-center blognoticias-botonfinal"
-              >
-                Más Noticias
-              </button>
+              <Link to="/blognoticias">
+                <button className="btn justify-content-center blognoticias-botonfinal">
+                  Más Noticias
+                </button>
+              </Link>
             </div>
           </div>
         </div>

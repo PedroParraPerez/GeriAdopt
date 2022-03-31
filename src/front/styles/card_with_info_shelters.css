@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
+
+.cardWithInfo_wrapcard {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center center;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  margin: auto;
+  margin-top: 2rem;
+  max-width: 35rem;
+  height: auto;
+  border: solid 1px black;
+  border-radius: 2rem;
+  background-color: #f8d2c3;
+}
+.cardWithInfo_shelterLogo {
+  border: 1px solid black;
+  background-color: white;
+  width: 10em;
+  height: auto;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+
+.cardWithInfo_placelog {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.cardWithInfo_allinfo {
+  margin-top: 1rem;
+  align-items: center;
+}
+.placebottom {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.cardWithInfo_button {
+  background-color: white;
+  color: black;
+  border: none;
+  border: 1px solid black;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Alegreya Sans", sans-serif;
+  background-color: #f09977;
+}
+.cardWithInfo_labelprofileinfo {
+  font-family: "Alegreya Sans", sans-serif;
+}

@@ -70,30 +70,42 @@ export const Footer = () => {
             <div className="col-lg-3 foot-colum2">
               <ul className="list-unstyled mb-0">
                 <li>
-                  <span href="#!" className="text-white-foot">
+                  <a href="#!" className="text-white-foot">
                     Aviso legal
-                  </span>
+                  </a>
                 </li>
                 <li>
-                  <span href="#!" className="text-white-foot">
+                  <a href="#!" className="text-white-foot">
                     Política de Privacidad
-                  </span>
+                  </a>
                 </li>
                 <li>
-                  <span href="#!" className="text-white-foot">
+                  <a href="#!" className="text-white-foot">
                     {" "}
                     Política de cookies
-                  </span>
+                  </a>
                 </li>
                 <li>
-                  <span href="#!" className="text-white-foot">
+                  <a href="#!" className="text-white-foot">
                     Protección de datos
-                  </span>
+                  </a>
                 </li>
                 <li>
-                  <span href="#!" className="text-white-foot">
-                    Contacto
-                  </span>
+                  <a
+                    className="text-white-foot"
+                    href="mailto:contacto@geriadopt.com?subject=Buenas tardes GeriAdopt! "
+                  >
+                    Contacto via email
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-white-foot"
+                    target="_blank"
+                    href="https://wa.me/+34666666666"
+                  >
+                    Contacto via WhatsApp
+                  </a>
                 </li>
               </ul>
             </div>

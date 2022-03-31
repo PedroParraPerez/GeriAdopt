@@ -2,38 +2,25 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       URLAPIDOGS:
-        "https://3001-sromk-proyectofinalpl-s4v9tm6h9qb.ws-eu34.gitpod.io/api/",
-      allAnimals: [],
-      allShelters: [],
-      detailAnimal: [],
-      // logedUser: false, //No indica si hay ALGUN usuario conectado
+        "https://3001-sromk-proyectofinalpl-z1eydvosas7.ws-eu38.gitpod.io/api/",
+
+      allAnimals: [], //Todos los animales
+      allShelters: [], //Todas las protectoras
+      detailAnimal: [], //Info de 1 solo animal
       isShelter: false, //false = Adopter ; true = Shelter
-      detailUser: [],
-      AdopterInfo: [], //MAPEO DE LA VARIBLE EN EL PERFIL DE PERFIL
-      animalcreated: false,
+      validationToken: [], //validacion del token
+      favlist: [], // Info de la lista de favoritos de un adoptante
+      adopterInfo: [],
+      shelterInfo: [],
+      filteranimals: [],
+      animalsInMyShelter: [],
+      isloged: false,
+      shelterInfoForViewAdopter: [],
+      animalsInShelterForViewAdopter: [],
     },
     actions: {
-      // Obtener un listado de TODOS los animales
-      getAllAnimal: async () => {
-        const response = await fetch(getStore().URLAPIDOGS + "animal");
-        const data = await response.json();
-        setStore({ allAnimals: data.results });
-      },
-      // Obtener un listado de TODAS las protectoras
-      getAllShelters: async () => {
-        const response = await fetch(getStore().URLAPIDOGS + "shelters");
-        const data = await response.json();
-        setStore({ allShelters: [...data.results] });
-      },
-      // Obtener toda la información de un solo animal
-      getDetailOfOneAnimal: async (id) => {
-        const response = await fetch(
-          getStore().URLAPIDOGS + "detailanimal/".concat(id)
-        );
-        const data = await response.json();
-        setStore({ detailAnimal: data.results });
-      },
-      // Iniciar sesión
+      //.....................Login, LogOut RegisterUser, RegisterShelter, RegisterAnimal ........................................    //
+
       login: async (email, password, type) => {
         const response = await fetch(getStore().URLAPIDOGS + "login", {
           method: "POST",
@@ -49,24 +36,32 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
         if (response.status == 200) {
           const data = await response.json();
+          setStore({
+            currentMember: [data.user],
+          });
+          setStore({ isloged: true });
+
           localStorage.setItem("token", data.token);
-          setStore({ isShelter: data.type });
-          localStorage.setItem("isShelter", getStore().isShelter);
-          setStore({ logedUser: true });
-          setStore({ currentMember: [data.user] });
+          localStorage.setItem("isShelter", data.type);
+          if (data.type == false) {
+            localStorage.setItem("isAdopter", true);
+          }
+          return true;
         } else {
           alert("Contraseña o usuario incorrectos");
+          return false;
         }
       },
-      // Desconexion de la cuenta
+
       logout: () => {
         localStorage.removeItem("token");
         localStorage.removeItem("isShelter");
-        window.location.reload(false);
+        localStorage.removeItem("isAdopter");
+        setStore({ isloged: false });
       },
-      // Registro de adoptante
+
       registerUser: async (user) => {
-        const response = await fetch(getStore().URLAPIDOGS + "signup", {
+        const response = await fetch(getStore().URLAPIDOGS + "signupadopter", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -76,13 +71,22 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
         if (response.status == 201) {
           const data = await response.json();
+          setStore({
+            currentMember: [data.user],
+          });
           localStorage.setItem("token", data.token);
-          setStore({ logedUser: data.token });
+          localStorage.setItem("isShelter", false);
+
+          localStorage.setItem("isAdopter", true);
+
+          setStore({ isloged: true });
+          return true;
         } else {
           alert("Ya hay un usuario registrado con ese email");
+          return false;
         }
       },
-      // Registro de protectora
+
       registerShelter: async (shelter) => {
         const response = await fetch(getStore().URLAPIDOGS + "signupshelter", {
           method: "POST",
@@ -96,32 +100,260 @@ const getState = ({ getStore, getActions, setStore }) => {
         if (response.status == 201) {
           const data = await response.json();
           localStorage.setItem("token", data.token);
-          setStore({ logedUser: data.token, isShelter: true });
+          localStorage.setItem("isShelter", true);
+          setStore({ isloged: true });
+          return true; //Variable de control para el navigate si todo sale bien
         } else {
           alert("Ya hay una protectora registrada con ese email");
         }
       },
-      // Creación de animal
+
       registerAnimal: async (animal) => {
+        let formData = new FormData();
+
+        for (let key in animal) {
+          if (key != "image") {
+            formData.append(key, animal[key]);
+          } else {
+            formData.append("file", animal[key][0]);
+          }
+        }
         const response = await fetch(getStore().URLAPIDOGS + "registeranimal", {
+          method: "POST",
+          headers: {
+            // "Content-Type": "multipart/form-data",
+            // Accept: "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: formData,
+        });
+
+        if (response.status == 200) {
+          alert("Animal creado");
+        } else {
+          alert("Falta un campo por especificar");
+        }
+      },
+      // ...............................EDITAR DETERMINADOS VALORES DE LAS BASES DE DATOS............................................................
+
+      editInfoAdopter: async (info) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "editinfoadpoter",
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            body: JSON.stringify(info),
+          }
+        );
+        if (response.ok) {
+          alert("Datos guardados");
+        } else {
+          alert("No se ha podido borrar el animal");
+        }
+      },
+      editInfoShelter: async (info) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "editinfoshelter",
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            body: JSON.stringify(info),
+          }
+        );
+        if (response.ok) {
+          alert("Datos guardados");
+        } else {
+          alert("No se ha podido editar la infomación");
+        }
+      },
+
+      editInfoAnimal: async (info, id) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "editinfoanimal/" + id,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            body: JSON.stringify(info),
+          }
+        );
+        if (response.ok) {
+          alert("Información del animal modificada");
+        } else {
+          alert("No se ha podido modificar la información");
+        }
+      },
+      deleteAnimal: async (id) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "deleteanimal/" + id,
+          {
+            method: "DELETE",
+          }
+        );
+        if (response.ok) {
+          getActions().getAnimalsOfMyShelter();
+        } else {
+          alert("No se ha podido borrar el animal");
+        }
+      },
+
+      // ................... Obtener info de: TODOS los animales, UN SOLO animal,  TODAS las protectora.............................
+
+      getAllAnimal: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "allanimals");
+        const data = await response.json();
+        setStore({ allAnimals: data.results });
+      },
+
+      getAllShelters: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "allshelters");
+        const data = await response.json();
+        setStore({ allShelters: [...data.results] });
+      },
+
+      getDetailOfOneAnimal: async (id) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "detailanimal/".concat(id)
+        );
+        const data = await response.json();
+        setStore({ detailAnimal: data.results });
+      },
+
+      getAnimalsOfMyShelter: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "profile/animal", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        const data = await response.json();
+
+        setStore({ animalsInMyShelter: data.results });
+      },
+      //..................................Obtener info de individual de ADOPTANTE Y PROTECTORA para perfil
+
+      getAdopterInfo: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "adopterinfo", {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        const data = await response.json();
+        setStore({ adopterInfo: data.results });
+      },
+      getShelterInfo: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "shelterinfo", {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        const data = await response.json();
+        setStore({ shelterInfo: data.results });
+      },
+
+      // .................Obtener info y aniamls for ladingShelter.........................................
+
+      getShelterInfoForViewAdopter: async (id) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "shelterinfoforviewadopter/" + id,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+          }
+        );
+        const data = await response.json();
+        setStore({ shelterInfoForViewAdopter: data.results });
+      },
+
+      getAnimalsInShelterForViewAdopter: async (id) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "animalsforviewadopter/" + id,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+          }
+        );
+        const data = await response.json();
+
+        setStore({ animalsInShelterForViewAdopter: data.results });
+      },
+
+      // ................Añadir(y quitar) a favoritos, Obtener TODOS los favoritos de 1 adopter ..............................
+
+      saveFavAnimal: async (animalId) => {
+        const response = await fetch(
+          getStore().URLAPIDOGS + "favanimal/" + animalId,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
+
+        if (response.status == 200) {
+          getActions().getfavlist();
+          const blabla = await response.json();
+          return blabla.response;
+        }
+      },
+      getfavlist: async () => {
+        const response = await fetch(getStore().URLAPIDOGS + "user/favlist", {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        if (response.ok) {
+          const data = await response.json();
+          console.log();
+          setStore({ favlist: data });
+        }
+      },
+
+      // .................................Barra de filtrado .........................................................
+
+      filteranimals: async (filter) => {
+        const response = await fetch(getStore().URLAPIDOGS + "filteranimals", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
           },
-          body: JSON.stringify(animal),
+          body: JSON.stringify(filter),
         });
-
-        if (response.status == 200) {
+        if (response.ok) {
           const data = await response.json();
-          // setStore({ animalcreated: !animalcreated });
-          alert("animal creado");
-          window.location.reload(false);
-        } else {
-          alert("Ya hay una protectora registrada con ese email");
+          setStore({ allAnimals: data.results });
         }
       },
-      //Validacion de usuario con Token
+
+      //............................ Validacion de token con la informacion de la protectora y adoptante....................................
+
+      // Validacion de adopter con Token
       getUserInformation: async () => {
         const response = await fetch(getStore().URLAPIDOGS + "user", {
           headers: {
@@ -129,9 +361,11 @@ const getState = ({ getStore, getActions, setStore }) => {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         });
-        const data = await response.json();
-        setStore({ AdopterInfo: data });
-        console.log(data); // informacion del usuario que inicio sesion
+
+        if (response.ok) {
+          const data = await response.json();
+          setStore({ validationToken: data });
+        }
       },
       //Validacion de protectora con Token
       getShelterInformation: async () => {
@@ -141,8 +375,10 @@ const getState = ({ getStore, getActions, setStore }) => {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         });
-        const data = await response.json();
-        console.log(data); // informacion de la protectora que inicio sesion
+        if (response.ok) {
+          const data = await response.json();
+          setStore({ validationToken: data });
+        }
       },
     },
   };

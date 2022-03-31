@@ -4,38 +4,35 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./pages/home";
 import { BlogSection } from "./pages/blogsection.js";
 import { QuienesSomos } from "./pages/QuienesSomos.js";
-import injectContext, { Context } from "./store/appContext";
+import injectContext from "./store/appContext";
 import { Footer } from "./component/footer.js";
 import { PerfilAdopter } from "./pages/PerfilAdopter";
 import { Navbar } from "./component/navbar";
 import { AllDogsList } from "./pages/alldogslist";
 import { DetailDog } from "./pages/detaildog";
-import { ShelterAnimals } from "./pages/shelterAnimals.js";
+import { LandingShelter } from "./pages/landingShelter.js";
 import { AllShelterList } from "./pages/allShelters.js";
 import { FormRegisterUser } from "./pages/formRegisterUser.js";
+import { ContactUs } from "./pages/contactus.js";
 import { Login } from "./pages/login";
 import { FormRegisterProte } from "./pages/formRegisterProte";
 import { BlogArt } from "./pages/blogart.js";
 import { BlogNoticias } from "./pages/blognoticias.js";
 import { PerfilProtectora } from "./pages/PerfilProtectora";
-import { useContext } from "react";
+
 import { FormRegisterAnimal } from "./pages/formRegisterAnimal";
+import { FormEditInfoAdopter } from "./pages/formEditInfoAdopter.js";
+import { FormEditInfoShelter } from "./pages/formEditInfoShelter";
+import { FormEditAnimal } from "./pages/FormEditAnimals";
 
-//create your first component
 const Layout = () => {
-  //the basename is used when your project is published in a subdirectory and not in the root of the domain
-  // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
   const basename = process.env.BASENAME || "";
-  const { store, actions } = useContext(Context);
+
+  // Validación para mostrar page perfil adoptante o de protectora
   const [validation, setValidation] = useState(false);
-
-  console.log("isshelter layaout", localStorage.getItem("isShelter"));
-
-  // useEffect(() => {
-  //   localStorage.getItem("isShelter")
-  //     ? setValidation(!validation)
-  //     : setValidation(false);
-  // }, [localStorage.getItem("isShelter")]);
+  useEffect(() => {
+    setValidation(JSON.parse(localStorage.getItem("isShelter")));
+  });
 
   return (
     <div>
@@ -45,19 +42,11 @@ const Layout = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-
-            {store.isShelter === true ? (
+            {validation === true ? (
               <Route path="/profile" element={<PerfilProtectora />} />
             ) : (
               <Route path="/profile" element={<PerfilAdopter />} />
             )}
-
-            {/* {localStorage.getItem(`isShelter`) === true ? (
-              <Route path="/profile" element={<PerfilProtectora />} />
-            ) : (
-              <Route path="/profile" element={<PerfilAdopter />} />
-            )} */}
-
             <Route path="/alldogslist" element={<AllDogsList />} />
             <Route path="/blogsection" element={<BlogSection />} />
             <Route path="/blogart" element={<BlogArt />} />
@@ -68,12 +57,24 @@ const Layout = () => {
             <Route path="/formregisteruser" element={<FormRegisterUser />} />
             <Route path="/formregisterprote" element={<FormRegisterProte />} />
             <Route
+              path="/formeditinfoAdopter"
+              element={<FormEditInfoAdopter />}
+            />
+            <Route
+              path="/formeditinfoshelter"
+              element={<FormEditInfoShelter />}
+            />
+            <Route path="/formeditanimal/:id" element={<FormEditAnimal />} />
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route
               path="/formregisteranimal"
               element={<FormRegisterAnimal />}
             />
-            <Route path="/shelteranimals" element={<ShelterAnimals />} />
-            <Route path="/shelteranimals" element={<ShelterAnimals />} />
-            <Route path="*" element={<h1>Not found</h1>}></Route>
+            <Route path="/landingshelter/:id" element={<LandingShelter />} />
+            <Route
+              path="*"
+              element={<h1 className="d-flex text-center">Not found</h1>}
+            ></Route>
           </Routes>
           <Footer />
         </ScrollToTop>
