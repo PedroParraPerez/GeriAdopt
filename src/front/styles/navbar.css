@@ -7,6 +7,8 @@ nav {
 
 a,
 .spanNavbarLink {
+  font-size: 1.2rem;
+  font-weight: 500;
   text-decoration: none;
   color: black;
   cursor: pointer;
@@ -29,13 +31,13 @@ a,
 }
 
 .logoNav {
-  width: 97px;
-  height: 97px;
+  width: 8%;
+  height: auto;
 }
 
 .navbarBrand {
   font-family: "Sansita Swashed", cursive;
-  font-size: larger;
+  font-size: 2rem;
   font-weight: bolder;
 }
 
@@ -77,4 +79,15 @@ a,
   .navbar-circletwo {
     display: none;
   }
+}
+
+#userLogo {
+  margin-top: 0.4rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.dropdStyle {
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: bold;
 }

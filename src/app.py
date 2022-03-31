@@ -11,6 +11,7 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from flask_jwt_extended import JWTManager
+import cloudinary
 #from models import Person
 
 ENV = os.getenv("FLASK_ENV")
@@ -31,8 +32,15 @@ jwt = JWTManager(app)
 MIGRATE = Migrate(app, db, compare_type = True)
 db.init_app(app)
 
+app.config["CLOUD_NAME"] = os.environ.get("CLOUD_NAME")
+app.config["API_KEY"] = os.environ.get("API_KEY")
+app.config["API_SECRET"] = os.environ.get("API_SECRET")
 
-
+cloudinary.config(
+        cloud_name = app.config["CLOUD_NAME"],
+        api_key=app.config["API_KEY"],
+        api_secret=app.config["API_SECRET"]
+    )
 # Allow CORS requests to this API
 CORS(app)
 

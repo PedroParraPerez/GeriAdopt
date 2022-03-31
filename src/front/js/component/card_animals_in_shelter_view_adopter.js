@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { DeleteToFavoritesPoster } from "./deleteToFavoritesPoster";
 
-export const Card = () => {
+export const CardAnimalsInShelterForViewAdopter = () => {
   const { store, actions } = useContext(Context);
   const [mes, setMes] = useState(null);
 
@@ -24,7 +24,7 @@ export const Card = () => {
       ) : (
         ""
       )}
-      {store.allAnimals.map((animal) => {
+      {store.animalsInShelterForViewAdopter.map((animal) => {
         return (
           <div key={animal.id} className="card Card_carddogs">
             <img

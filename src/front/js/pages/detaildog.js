@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import Mojito from "../../img/Mojito.jpg";
+
 import "../../styles/detaildog.css";
 import { Context } from "../store/appContext";
 
@@ -19,7 +20,9 @@ export const DetailDog = () => {
         <div className="row detaildog_view">
           <div className="col-xxl-6 d-flex justify-content-center align-items-center ">
             <img
-              src={Mojito}
+              src={
+                !store.detailAnimal.image ? Mojito : store.detailAnimal.image
+              }
               className="detaildog_photos_principalphoto"
               alt="dog-photo"
             />
@@ -34,7 +37,8 @@ export const DetailDog = () => {
               <ul>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Edad: </span>
-                  {store.detailAnimal.age} años
+                  {store.detailAnimal.age}{" "}
+                  {store.detailAnimal.age <= 1 ? "año" : "años"}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Raza: </span>
@@ -42,48 +46,91 @@ export const DetailDog = () => {
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Genero: </span>
-                  {store.detailAnimal.gender}
+                  {store.detailAnimal.gender == "H" ? "Hembra" : "Macho"}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Tamaño: </span>
                   {store.detailAnimal.size}
                 </li>
                 <li className="detaildog_info_list">
+                  <p className="detaildog_info_list">
+                    <span className="detaildog_info_list_label">
+                      Descripcion:{" "}
+                    </span>
+                    {store.detailAnimal.description}
+                  </p>
+                </li>
+                <br />
+                <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">
-                    Esterilizado:{" "}
+                    Protectora:{" "}
                   </span>
-                  NO MAPEADO
+                  {store.detailAnimal.shelter
+                    ? store.detailAnimal.shelter.name
+                    : ""}
+                </li>
+                <li className="detaildog_info_list">
+                  <span className="detaildog_info_list_label">Dirección: </span>
+                  {store.detailAnimal.shelter
+                    ? store.detailAnimal.shelter.address
+                    : ""}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">Ciudad: </span>
-                  {store.detailAnimal.city}
-                </li>
-                <li className="detaildog_info_list">
-                  <span className="detaildog_info_list_label">Protectora:</span>
-                  NO MAPEADO
-                </li>
-                <li className="detaildog_info_list">
-                  <span className="detaildog_info_list_label">Ubicación: </span>
-                  NO MAPEADO
+                  {store.detailAnimal.shelter
+                    ? store.detailAnimal.shelter.city
+                    : ""}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">
-                    Correo de contacto:
+                    Correo de contacto:{" "}
                   </span>
-                  NO MAPEADO (Correo de la prote)
+                  {store.detailAnimal.shelter
+                    ? store.detailAnimal.shelter.email
+                    : ""}
                 </li>
                 <li className="detaildog_info_list">
                   <span className="detaildog_info_list_label">
-                    Teléfono de contacto:
+                    Teléfono de contacto:{" "}
                   </span>
-                  NO MAPEADO
+                  {store.detailAnimal.shelter
+                    ? store.detailAnimal.shelter.tlf
+                    : ""}
                 </li>
-                <p className="detaildog_info_list">
-                  <span className="detaildog_info_list_label">
-                    Descripcion:{" "}
-                  </span>
-                  {store.detailAnimal.description}
-                </p>
+
+                <button className="buttonContactShelterOne">
+                  <a
+                    className="ancorforbuttoncontact"
+                    href={`mailto:${
+                      store.detailAnimal.shelter
+                        ? store.detailAnimal.shelter.email
+                        : ""
+                    }?subject=Muy buenas ${
+                      store.detailAnimal.shelter
+                        ? store.detailAnimal.shelter.name
+                        : ""
+                    }!`}
+                  >
+                    {" "}
+                    Contacto via email
+                  </a>
+                </button>
+
+                <button className="buttonContactShelterTwo">
+                  <a
+                    className="ancorforbuttoncontact"
+                    type="button"
+                    target="_blank"
+                    href={`https://wa.me/+34${
+                      store.detailAnimal.shelter
+                        ? store.detailAnimal.shelter.tlf
+                        : ""
+                    }`}
+                  >
+                    {" "}
+                    Contacto via Whatsapp
+                  </a>
+                </button>
               </ul>
             </div>
           </div>

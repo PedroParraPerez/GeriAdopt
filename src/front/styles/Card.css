@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
 
 .Card_carddogs {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
   position: relative;
-  display: block;
+  display: grid;
+  place-items: center center;
+  grid-template-columns: repeat(auto-fit);
   width: 16rem;
   margin-top: 8rem;
   background-color: #faf4f7;
@@ -15,10 +20,13 @@
 .Card_dogcardsbody {
   margin-top: 5rem;
   width: 100%;
+  height: auto;
+  min-height: 17rem;
 }
 .Card_cardphoto {
   position: absolute;
-  top: -24%;
+  left: 5rem;
+  top: -6rem;
   margin-right: auto;
   margin-left: auto;
   left: 0;
@@ -30,6 +38,8 @@
 }
 .Card_textcarddog {
   width: 100%;
+  height: auto;
+  font-size: medium;
 }
 .Card_IconsAndDescription {
   margin-bottom: 1rem;
@@ -55,47 +65,16 @@
   background-color: #f8d2c3;
   color: black;
   border: none;
+  position: absolute;
+  right: 32%;
+  bottom: 10%;
 }
 
 .Card_location {
   margin-top: 1rem;
   display: block;
 }
-.Card_IconUbic {
-  width: 0.7rem;
-  height: 0.9rem;
-}
 
-@media only screen and (max-width: 1200px) {
-  .Card_cardphoto {
-    display: relative;
-  }
-  .Card_CaractIcon {
-    display: none;
-  }
-  .Card_iconTexInv {
-    display: none;
-  }
-  .Card_card-title {
-    padding-top: 2rem;
-  }
-}
-
-.editButton {
-  top: 70%;
-  left: 85%;
-  position: absolute;
-  border-radius: 50%;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgb(238, 167, 101) 50%,
-    rgb(221, 107, 107) 100%
-  );
-  width: 2.9rem;
-  height: 2.9rem;
-}
 .Card_FavButton {
   position: absolute;
   top: 70%;
@@ -128,10 +107,6 @@
   margin-top: 1rem;
   display: block;
 }
-.Card_IconUbic {
-  width: 0.7rem;
-  height: 0.9rem;
-}
 
 @media only screen and (max-width: 1200px) {
   .Card_cardphoto {
@@ -146,4 +121,70 @@
   .Card_card-title {
     padding-top: 2rem;
   }
+}
+.Card_FavButton img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.Card_FavButton:hover img {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+/* class for cardForProfileShelter */
+.deleteanimal {
+  cursor: pointer;
+}
+.editButton {
+  top: 70%;
+  left: 85%;
+  position: absolute;
+}
+
+.dropdEditStyle {
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: bold;
+}
+.editphotoanimal input {
+  overflow: hidden;
+  width: 0;
+}
+
+.savephotoanimal {
+  border: 1px solid black;
+  text-align: center;
+  padding: 7px;
+  cursor: pointer;
+  font-size: small;
+  background-color: #f8d2c3;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #f8d2c3;
+  color: black;
+  position: absolute;
+  top: 20%;
+  left: -9%;
+}
+
+.Card_photo_profile_shelter:hover {
+  cursor: pointer;
+  filter: blur(2px);
+}
+
+#card_photo_profile_text {
+  visibility: hidden;
+  z-index: 2;
+  cursor: pointer;
+  font-size: x-large;
+  position: absolute;
+  top: -10%;
+  left: 25%;
+  color: white;
+  border-style: solid 1px black;
+}
+
+.editphotoanimal:hover > #card_photo_profile_text {
+  visibility: visible;
 }

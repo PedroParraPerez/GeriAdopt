@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
+
+.deletetofavoritesposter_wrap {
+  width: 15rem;
+  padding-top: 1%;
+  border-radius: 5px;
+  box-shadow: 3px 3px rgb(152, 152, 152);
+  text-decoration: underline;
+  border: solid 2px rgb(200, 200, 200);
+  color: rgb(39, 39, 39);
+  background-color: rgb(129, 129, 129);
+  margin-bottom: 2rem;
+  position: fixed;
+  top: 25%;
+  left: 80%;
+}
